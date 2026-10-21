@@ -166,6 +166,12 @@ button,.card,.list li{-webkit-tap-highlight-color:transparent;touch-action:manip
 .modal .msg{font-size:.85rem;color:var(--muted)}
 .modal .msg.good{color:var(--o)} .modal .msg.bad{color:var(--x)}
 .modal .go2{background:var(--accent);border-color:var(--accent);color:var(--surface);font-weight:700}
+.modal .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:4px 0}
+.modal .stats div{background:var(--bg);border-radius:12px;padding:12px 6px;text-align:center}
+.modal .stats b{display:block;font-size:1.5rem}
+.modal .stats .g b{color:var(--o)} .modal .stats .x b{color:var(--x)}
+.modal .rate{font-size:2.4rem;font-weight:800;text-align:center;color:var(--accent);margin:2px 0}
+.modal .rate small{display:block;font-size:.8rem;font-weight:500;color:var(--muted)}
 .modal .close{position:absolute;top:10px;right:10px;background:var(--bg);color:var(--ink);border:0;border-radius:999px;width:36px;height:36px;font-size:1rem;cursor:pointer}
 .keys{font-size:.78rem;color:var(--muted);text-align:center;margin:0}
 .touch{display:none}
@@ -312,6 +318,17 @@ h2{font-size:1.1rem;margin:12px 0 0}
   </div>
 </div>
 
+<div class="modal" id="done" hidden role="dialog" aria-modal="true" aria-labelledby="doneTitle">
+  <div class="sheet">
+    <h2 id="doneTitle">한 바퀴 다 풀었어요!</h2>
+    <p class="sub" id="doneSub"></p>
+    <div class="rate" id="doneRate"></div>
+    <div class="stats"><div class="g"><b id="doneGood"></b>맞힘</div><div class="x"><b id="doneBad"></b>틀림</div><div><b id="doneUnk"></b>모름</div></div>
+    <div class="row"><button class="btn go2" id="doneRetry">틀린·모르는 문제만 다시 풀기</button><button class="btn" id="doneOk">확인</button></div>
+    <button class="close" id="doneClose" aria-label="닫기">✕</button>
+  </div>
+</div>
+
 <div class="lb" id="lb" hidden>
   <img id="lbImg" alt="이미지 확대">
   <button class="close" id="lbClose" aria-label="닫기">✕</button>
@@ -329,7 +346,7 @@ h2{font-size:1.1rem;margin:12px 0 0}
    · 문제 그림: 정답 전에 보여 줄 필기 없는 그림(같은 img 폴더). 고정 ID: 문장을 고쳐도 기록이 이어지게 예전 ID를 적어 둠
    채점 기록은 '문제 문장'에 붙어 저장되므로 문항을 중간에 넣거나 빼거나 순서를 바꿔도 기록이 유지됩니다.
    (문제 문장 자체를 고치면 그 한 문항만 새 문항으로 취급) 문항 파일을 고친 뒤에는 DATA_V를 올리고 version.txt도 같은 값으로 바꿔 주세요. */
-var DATA_V = '20261022f';
+var DATA_V = '20261022g';
 /* 새 버전 자동 반영: version.txt(캐시 없이 확인)가 이 페이지의 DATA_V와 다르면 한 번만 새로고침 */
 (function(){
   try {
@@ -748,9 +765,24 @@ var CATALOG = [
   function flip(){ if (state.order.length) { state.flipped = !state.flipped; render(); } }
   function move(d){
     var t = state.order.length; if (!t) return;
+    var wrap = d > 0 && state.idx + d >= t;
     state.idx = (state.idx + d + t) % t; state.flipped = false; state.answered = false; render(); save();
     $('stage').scrollIntoView({ block:'nearest', behavior:'smooth' });
+    if (wrap) showDone();
   }
+  // 소주제(지금 고른 단원 칩) 문항을 모두 풀고 처음으로 돌아오면 결과 팝업
+  function showDone(){
+    var o = state.order, g = 0, b = 0, u = 0;
+    o.forEach(function(x){ var v = results[x.id]; if (v === true) g++; else if (v === false) b++; else if (v === 'u') u++; });
+    if (!o.length || g + b + u < o.length) return; // 진행도 100%일 때만
+    var pct = Math.round(g / o.length * 1000) / 10;
+    $('doneSub').textContent = (deck ? deck.name + ' › ' : '') + (state.ch === 'all' ? '전체' : label(state.ch)) + (state.wrongOnly ? ' · 틀린·모르는 문제' : '') + ' ' + o.length + '문항 결과';
+    $('doneRate').innerHTML = pct + '%<small>정답률 (맞힘 ÷ 전체)</small>';
+    $('doneGood').textContent = g; $('doneBad').textContent = b; $('doneUnk').textContent = u;
+    $('doneRetry').hidden = b + u === 0;
+    $('done').hidden = false; $('doneOk').focus();
+  }
+  function closeDone(){ $('done').hidden = true; }
   function guess(g){
     var c = state.order[state.idx]; if (!c || state.flipped) return;
     results[c.id] = g === 'U' ? 'u' : (g === c.ans); save();
@@ -759,6 +791,11 @@ var CATALOG = [
   function openLb(){ var c = state.order[state.idx]; if (!c || !c.img) return; $('lbImg').src = src(c); tile($('lbImg'), c, true); $('lb').hidden = false; $('lbClose').focus(); }
   function closeLb(){ $('lb').hidden = true; }
 
+  $('doneOk').addEventListener('click', closeDone);
+  $('doneClose').addEventListener('click', closeDone);
+  $('done').addEventListener('click', function(e){ if (e.target === this) closeDone(); });
+  $('done').addEventListener('keydown', function(e){ if (e.key === 'Escape' || (e.key === 'Enter' && e.target.tagName !== 'BUTTON')) { e.preventDefault(); closeDone(); } e.stopPropagation(); });
+  $('doneRetry').addEventListener('click', function(){ closeDone(); state.wrongOnly = true; renderChips(); buildOrder(); });
   $('card').addEventListener('click', function(e){ if (e.target.closest('#fig')) return; flip(); });
   $('fig').addEventListener('click', function(e){ e.stopPropagation(); openLb(); });
   $('lb').addEventListener('click', closeLb);
@@ -789,7 +826,7 @@ var CATALOG = [
     state.wrongOnly = false; renderChips(); buildOrder();
   });
   document.addEventListener('keydown', function(e){
-    if ($('vQuiz').hidden || !$('bk').hidden) return;
+    if ($('vQuiz').hidden || !$('bk').hidden || !$('done').hidden) return;
     if (!$('lb').hidden) { if (e.key === 'Escape' || e.key === 'z' || e.key === 'Z') closeLb(); return; }
     if (e.target.tagName === 'BUTTON' && (e.key === ' ' || e.key === 'Enter')) return;
     if (e.key === 'Enter') { e.preventDefault(); if (state.flipped) move(1); else flip(); }
@@ -807,13 +844,13 @@ var CATALOG = [
     var parts = (location.hash || '').replace(/^#\/?/, '').split('/').filter(Boolean);
     var s = parts[0] && findSubject(parts[0]), t = s && parts[1] && findTopic(s, parts[1]);
     if (parts[0] === 'review') { s = { id:'', name:'전체 주제' }; t = REVIEW; }
-    $('vHome').hidden = !!s; $('vSubject').hidden = !(s && !t); $('vQuiz').hidden = !t; closeLb();
+    $('vHome').hidden = !!s; $('vSubject').hidden = !(s && !t); $('vQuiz').hidden = !t; closeLb(); closeDone();
     if (t) openDeck(s, t); else if (s) renderSubject(s); else renderHome();
     window.scrollTo(0, 0);
   }
   document.addEventListener('keydown', function(e){
     if (e.key !== 'Backspace' && e.key !== 'Escape') return;
-    if (!$('lb').hidden || /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+    if (!$('lb').hidden || !$('done').hidden || /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
     var v = !$('vQuiz').hidden ? $('qBack') : (!$('vSubject').hidden ? document.querySelector('#vSubject .navback') : null);
     if (v) { e.preventDefault(); location.hash = v.getAttribute('href'); }
   });
