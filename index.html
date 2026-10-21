@@ -1,0 +1,1865 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><title>복습퀴즈</title><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="복습퀴즈"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="theme-color" content="#fff4f7"><link rel="apple-touch-icon" href="icon.png"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<meta charset="utf-8">
+<title>생물·화학 복습퀴즈</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* 홈(과목) → 주제 목록 → 카드 학습기. 해시(#/bio/organelle)로 이동해 뒤로가기도 동작 */
+:root{
+  --bg:#fff4f7; --surface:#ffffff; --ink:#3b2230; --muted:#8a6475; --line:#f6d5e0;
+  --accent:#d6457a; --accent-soft:#fde3ec;
+  --bio:#e0517f; --bio-soft:#fde3ec; --chem:#a64fb8; --chem-soft:#f3e4f7;
+  --o:#23804f; --o-soft:#e1f3e8; --x:#c0432c; --x-soft:#fbe6e1; --u:#a8650a; --u-soft:#fbefd9;
+  --figbg:#ffffff; --scrim:rgba(12,16,32,.84);
+  --shadow:0 10px 30px rgba(214,69,122,.12);
+  --sans:"IBM Plex Sans KR",system-ui,-apple-system,"Malgun Gothic",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#1a1217; --surface:#251a21; --ink:#f5e7ee; --muted:#bf9fae; --line:#3d2a34;
+    --accent:#f48fb1; --accent-soft:#3d2230;
+    --bio:#f48fb1; --bio-soft:#3d2230; --chem:#d39bf0; --chem-soft:#33203d;
+    --o:#5fcf8f; --o-soft:#1a3526; --x:#ff8a72; --x-soft:#3a211c; --u:#f2b55a; --u-soft:#3a2c14;
+    --figbg:#f4f5f8; --scrim:rgba(0,0,0,.88); --shadow:0 10px 30px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#1a1217; --surface:#251a21; --ink:#f5e7ee; --muted:#bf9fae; --line:#3d2a34;
+  --accent:#f48fb1; --accent-soft:#3d2230;
+  --bio:#f48fb1; --bio-soft:#3d2230; --chem:#d39bf0; --chem-soft:#33203d;
+  --o:#5fcf8f; --o-soft:#1a3526; --x:#ff8a72; --x-soft:#3a211c; --u:#f2b55a; --u-soft:#3a2c14;
+  --figbg:#f4f5f8; --scrim:rgba(0,0,0,.88); --shadow:0 10px 30px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:760px;margin:0 auto;padding-block:28px 64px;display:flex;flex-direction:column;gap:20px}
+h1{margin:0;font-size:1.6rem;text-wrap:balance}
+.sub{margin:2px 0 0;color:var(--muted)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.crumb{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:.88rem;color:var(--muted)}
+.crumb a{color:var(--accent);text-decoration:none;font-weight:500}
+.crumb a:hover{text-decoration:underline}
+.topbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;position:sticky;top:0;z-index:5;margin:0 -16px;padding:10px 16px;background:var(--bg);border-bottom:1px solid var(--line)}
+.navback{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;font-weight:600;font-size:.9rem;text-decoration:none}
+.navback:hover{border-color:var(--accent);color:var(--accent)}
+.navback:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* 홈·주제 목록 */
+.hero{padding:12px 0 4px}
+.hero h1{font-size:2rem}
+.subjects{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tile{display:flex;flex-direction:column;gap:6px;text-align:left;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:16px;padding:22px 20px;box-shadow:var(--shadow);font:inherit;cursor:pointer;text-decoration:none;transition:transform .15s,border-color .15s}
+.tile:hover{transform:translateY(-2px)}
+.tile:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.tile .big{font-size:1.5rem;font-weight:700}
+.tile .meta2{font-size:.85rem;color:var(--muted)}
+.tile.bio{border-top:4px solid var(--bio)} .tile.bio .big{color:var(--bio)}
+.tile.chem{border-top:4px solid var(--chem)} .tile.chem .big{color:var(--chem)}
+.tile.note{border-top:4px solid var(--u)} .tile.note .big{color:var(--u)}
+.topics{display:flex;flex-direction:column;gap:10px}
+.topic{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:14px;padding:16px 18px;text-decoration:none;box-shadow:var(--shadow)}
+.topic:hover{border-color:var(--accent)}
+.topic:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.topic .name{font-size:1.15rem;font-weight:700}
+.topic .desc{grid-column:1;font-size:.88rem;color:var(--muted)}
+.topic .stat{grid-row:1 / 3;grid-column:2;text-align:right;font-size:.82rem;color:var(--muted)}
+.topic .stat b{display:block;font-size:1rem;color:var(--ink)}
+.soon{padding:14px 18px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);font-size:.88rem;text-align:center}
+/* 홈 학습 현황판 */
+.hs{display:flex;flex-direction:column;gap:12px}
+.hs h3{margin:6px 0 0;font-size:1rem}
+.sbox{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:16px 18px}
+.hrow{display:flex;align-items:center;gap:14px}
+.kpis{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;text-align:center}
+.kpis b{display:block;font-size:1.35rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.kpis span{font-size:.75rem;color:var(--muted)}
+.ring{--p:0%;width:74px;height:74px;border-radius:50%;background:conic-gradient(var(--accent) 0 var(--p),var(--accent-soft) 0);display:grid;place-items:center;flex:none}
+.ring b{width:56px;height:56px;border-radius:50%;background:var(--surface);display:grid;place-items:center;font-size:1rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.tps{display:flex;flex-direction:column;gap:2px;padding:10px 12px}
+.tp{display:grid;grid-template-columns:minmax(0,8.4em) 1fr 3em;gap:10px;align-items:center;font-size:.85rem;color:var(--ink);text-decoration:none;padding:7px 6px;border-radius:8px}
+.tp:hover{background:var(--accent-soft)}
+.tp:focus-visible,.cta:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.tp em{font-style:normal;color:var(--muted);text-align:right;font-size:.78rem;font-variant-numeric:tabular-nums}
+.pbar{height:8px;background:var(--accent-soft);border-radius:99px;overflow:hidden}
+.pbar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.cta{display:block;text-align:center;background:var(--accent);color:var(--surface);border-radius:12px;padding:13px;font-weight:700;text-decoration:none}
+.cta.off{background:var(--accent-soft);color:var(--muted);font-weight:500}
+
+/* 카드 학습기 */
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:5px 12px;font:inherit;font-size:.85rem;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.chip.wrong[aria-pressed="true"]{background:var(--x);border-color:var(--x)}
+.chip:focus-visible,.btn:focus-visible,.card:focus-visible,.fig:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:.9rem;color:var(--muted)}
+.progress{height:4px;background:var(--line);border-radius:2px;overflow:hidden;margin-top:6px}
+.progress>i{display:block;height:100%;background:var(--accent);transition:width .25s}
+.stage{perspective:1400px}
+button,.card,.list li{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.card{position:relative;width:100%;min-height:300px;cursor:pointer;transform-style:preserve-3d;-webkit-transform-style:preserve-3d;-webkit-user-select:none;user-select:none;transition:transform .45s cubic-bezier(.2,.7,.2,1);display:grid}
+.card.flipped{transform:rotateY(180deg)}
+.face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:28px 28px 22px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.front{transform:rotateY(0deg)}
+/* 보이지 않는 면은 높이에서 빼서, 앞면(문제)이 뒷면(해설+이미지) 높이만큼 늘어나지 않게 함 */
+.card:not(.flipped) .back,.card.flipped .front{position:absolute;top:0;left:0;right:0;pointer-events:none}
+.back{transform:rotateY(180deg)}
+.meta{display:flex;justify-content:space-between;gap:8px;font-size:.8rem;color:var(--muted);letter-spacing:.03em}
+.tag{background:var(--accent-soft);color:var(--accent);border-radius:6px;padding:1px 8px;font-weight:500}
+.q{flex:1;display:flex;align-items:center;font-size:1.25rem;font-weight:500;line-height:1.6;text-wrap:pretty}
+.hint{font-size:.8rem;color:var(--muted);text-align:center}
+.verdict{display:flex;align-items:center;gap:14px}
+.next2{margin-left:auto;flex:none;border:0;border-radius:12px;background:var(--accent);color:var(--surface);font:inherit;font-weight:700;font-size:.95rem;padding:12px 14px;cursor:pointer;white-space:nowrap}
+.next2:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.mark{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-size:2.2rem;font-weight:700;flex:none}
+.mark.O,.mark.good{background:var(--o-soft);color:var(--o)}
+.mark.X,.mark.bad{background:var(--x-soft);color:var(--x)}
+.mark.unsure{background:var(--u-soft);color:var(--u)}
+.result{font-weight:700;font-size:1.25rem;display:flex;flex-direction:column;gap:4px}
+.result.good{color:var(--o)} .result.bad{color:var(--x)} .result.unsure{color:var(--u)}
+.result .ansline{font-size:.9rem;font-weight:500;color:var(--muted)}
+.result .ansline b{display:inline-grid;place-items:center;min-width:1.7em;height:1.7em;margin-left:4px;border-radius:6px;font-weight:700;color:var(--surface)}
+.result .ansline b.O{background:var(--o)} .result .ansline b.X{background:var(--x)}
+.face.back.good{border-top:6px solid var(--o)} .face.back.bad{border-top:6px solid var(--x)} .face.back.unsure{border-top:6px solid var(--u)}
+.exp{font-size:1.05rem}
+.fig{display:block;margin:0;padding:8px;background:var(--figbg);border:1px solid var(--line);border-radius:10px;cursor:zoom-in}
+.fig img{display:block;width:100%;height:auto;max-height:52vh;object-fit:contain}
+.fig figcaption{font-size:.75rem;color:#8a6475;display:flex;justify-content:space-between;gap:8px;padding-top:4px}
+.qsmall{font-size:.88rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.controls{display:grid;grid-template-columns:auto 1fr 1fr 1fr auto;gap:10px;align-items:stretch}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:12px 16px;font:inherit;font-weight:500;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.o{color:var(--o);font-size:1.3rem;font-weight:700}
+.btn.x{color:var(--x);font-size:1.3rem;font-weight:700}
+.btn.o:hover{background:var(--o-soft);border-color:var(--o)} .btn.x:hover{background:var(--x-soft);border-color:var(--x)}
+.btn.go{background:var(--accent);border-color:var(--accent);color:var(--surface);grid-column:2 / 5;font-weight:700}
+.btn.u{color:var(--u);font-size:1.3rem;font-weight:700}
+.btn.u:hover{background:var(--u-soft);border-color:var(--u)}
+.btn .sub2{display:block;font-size:.7rem;font-weight:500;line-height:1.1}
+.tools{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.tools .btn{padding:7px 14px;font-size:.88rem;border-radius:999px}
+.btn[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.sync{margin:0;text-align:center;font-size:.8rem;color:var(--muted)}
+.cfix{display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center;background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:12px}
+.cfix .row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.cfix input{font:inherit;font-size:16px;border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:var(--bg);color:var(--ink);min-width:0;width:12em}
+.cfix .go2{background:var(--accent);border-color:var(--accent);color:var(--surface);font-weight:700;padding:9px 14px}
+.cfix #retryCloud{padding:7px 14px;font-size:.85rem;border-radius:999px}
+.ctitle{font-size:1rem}
+.who{margin:0;text-align:center;font-size:.85rem;color:var(--muted)}
+.who .link{border:0;background:none;color:var(--accent);font:inherit;text-decoration:underline;cursor:pointer;padding:0 4px}
+.cdiag{margin:0;font-size:.72rem;color:var(--muted);word-break:break-all}
+.cnote{margin:0;font-size:.78rem;color:var(--muted)}
+.sync[data-s="ok"],.sync[data-s="device"]{color:var(--o)} .sync[data-s="error"],.sync[data-s="full"]{color:var(--x)}
+.modal{position:fixed;inset:0;z-index:30;background:var(--scrim);display:flex;align-items:center;justify-content:center;padding:16px}
+.modal .sheet{position:relative;width:100%;max-width:520px;max-height:100%;overflow:auto;background:var(--surface);color:var(--ink);border-radius:16px;padding:22px 20px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow)}
+.modal h2{margin:0;font-size:1.15rem}
+.modal .lbl{font-size:.85rem;font-weight:600;margin-top:6px}
+.modal textarea{width:100%;font-family:var(--mono);font-size:.78rem;border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--bg);color:var(--ink);resize:vertical;word-break:break-all}
+.modal .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.modal .msg{font-size:.85rem;color:var(--muted)}
+.modal .msg.good{color:var(--o)} .modal .msg.bad{color:var(--x)}
+.modal .go2{background:var(--accent);border-color:var(--accent);color:var(--surface);font-weight:700}
+.modal .close{position:absolute;top:10px;right:10px;background:var(--bg);color:var(--ink);border:0;border-radius:999px;width:36px;height:36px;font-size:1rem;cursor:pointer}
+.keys{font-size:.78rem;color:var(--muted);text-align:center;margin:0}
+.touch{display:none}
+@media (hover:none) and (pointer:coarse){.keys.desk{display:none}.keys.touch{display:block}}
+kbd{font-family:var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:var(--surface)}
+.empty{padding:40px 20px;text-align:center;color:var(--muted);background:var(--surface);border:1px dashed var(--line);border-radius:16px}
+h2{font-size:1.1rem;margin:12px 0 0}
+.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.list li{display:grid;grid-template-columns:3.2em 1fr 2.4em;gap:12px;padding:12px 16px;border-top:1px solid var(--line);cursor:pointer}
+.list li>span{min-width:0}
+.list li:first-child{border-top:0}
+.list li:hover{background:var(--accent-soft)}
+.list .n{color:var(--muted);font-size:.8rem;padding-top:3px}
+.list .e{display:block;color:var(--muted);font-size:.88rem;margin-top:2px}
+.list .a{font-weight:700;text-align:center}
+.list .a.O{color:var(--o)} .list .a.X{color:var(--x)}
+.list li.bad .n{color:var(--x)}
+.list li.unsure .n{color:var(--u)}
+.list .st{font-size:.72rem;font-weight:700;margin-left:4px}
+.list li.bad .st{color:var(--x)} .list li.unsure .st{color:var(--u)}
+.lb{position:fixed;inset:0;z-index:20;background:var(--scrim);display:flex;align-items:center;justify-content:center;padding:calc(16px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));cursor:zoom-out}
+.lb img{max-width:100%;max-height:100%;background:#fff;border-radius:8px;padding:8px}
+.lb .close{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px));background:var(--surface);color:var(--ink);border:0;border-radius:999px;width:40px;height:40px;font-size:1.2rem;cursor:pointer}
+@media (max-width:560px){
+  .hero h1{font-size:1.6rem}
+  .face{padding:16px 16px 14px;gap:10px}
+  .card{min-height:0}
+  .front{min-height:190px}
+  .q{font-size:1.08rem}
+  .hint{font-size:.75rem}
+  .verdict{gap:10px}
+  .mark{width:52px;height:52px;font-size:1.8rem}
+  .result{font-size:1.1rem}
+  .next2{padding:11px 12px;font-size:.9rem}
+  .controls{grid-template-columns:repeat(6,1fr)}
+  .controls .o,.controls .x,.controls .u{grid-column:span 2}
+  .controls .nav{order:2;grid-column:span 3}
+  .btn.go{grid-column:1 / 7;order:1}
+}
+@media (max-width:380px){.subjects{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.card,.progress>i,.tile{transition:none}}
+</style>
+
+<!-- 홈 -->
+<div class="wrap" id="vHome" hidden>
+  <header class="hero">
+    <h1>생물·화학 복습퀴즈</h1>
+    <p class="sub">과목을 고르고 주제를 선택하면 O·X 카드가 시작돼요. 채점 기록은 주제별로 따로 저장됩니다.</p>
+  </header>
+  <div class="cfix" id="cfix" hidden>
+    <b class="ctitle" id="ctitle">내 기록 불러오기</b>
+    <p class="cdiag mono" id="cdiag"></p>
+    <div class="row" id="nickRow" hidden>
+      <input id="nickIn" maxlength="20" placeholder="내 이름(예: 홍길동)" autocomplete="nickname">
+      <button class="btn go2" id="nickGo">이 이름으로 저장</button>
+    </div>
+    <p class="cnote" id="nickNote" hidden>이름을 입력하면 그 이름으로 저장된 기록을 불러오고, 앞으로 푼 기록도 그 이름으로 저장돼요. 다음에 열 때도 같은 이름을 쓰세요. (이 퀴즈를 공유받은 사람은 서로의 기록을 볼 수 있어요)</p>
+    <button class="btn" id="retryCloud">계정 저장 다시 시도</button>
+  </div>
+  <p class="who" id="who" hidden><span id="whoTxt"></span> <button class="link" id="nickChange">이름 바꾸기</button></p>
+  <p class="sync" aria-live="polite"></p>
+  <div class="subjects" id="subjects"></div>
+  <section class="hs" id="stats" aria-label="나의 학습 현황"></section>
+</div>
+
+<!-- 주제 목록 -->
+<div class="wrap" id="vSubject" hidden>
+  <div class="topbar"><a class="navback" href="#/" aria-label="과목 선택으로 돌아가기">← 뒤로</a><nav class="crumb"><a href="#/">복습퀴즈</a><span>›</span><span id="sCrumb"></span></nav></div>
+  <header><h1 id="sTitle"></h1><p class="sub">주제를 선택하세요.</p></header>
+  <div class="topics" id="topics"></div>
+  <div class="soon">새 주제는 계속 추가될 예정이에요.</div>
+</div>
+
+<!-- 카드 학습기 -->
+<div class="wrap" id="vQuiz" hidden>
+  <div class="topbar"><a class="navback" id="qBack" href="#/" aria-label="주제 목록으로 돌아가기">← 뒤로</a><nav class="crumb"><a href="#/">복습퀴즈</a><span>›</span><a id="qCrumbSub" href="#/"></a><span>›</span><span id="qCrumbTopic"></span></nav></div>
+  <header>
+    <h1 id="qTitle"></h1>
+    <p class="sub" id="qSub"></p>
+  </header>
+
+  <nav class="chips" id="chips" aria-label="단원 선택"></nav>
+
+  <div>
+    <div class="bar"><span class="mono" id="pos"></span><span id="score"></span></div>
+    <div class="progress"><i id="prog" style="width:0"></i></div>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="card" id="card" tabindex="0" role="button" aria-label="카드 뒤집기">
+      <div class="face front">
+        <div class="meta"><span class="tag" id="fTag"></span><span class="mono" id="fNum"></span></div>
+        <div class="q" id="fQ"></div>
+        <div class="hint">O 또는 X를 고르세요 · 카드를 누르면 바로 정답을 볼 수 있어요</div>
+      </div>
+      <div class="face back">
+        <div class="meta"><span class="tag" id="bTag"></span><span class="mono" id="bNum"></span></div>
+        <div class="verdict"><div class="mark" id="mark"></div><div class="result" id="result"></div><button class="next2" id="goNext2" type="button">다음 문제 →</button></div>
+        <div class="exp" id="exp"></div>
+        <figure class="fig" id="fig" tabindex="0" role="button" aria-label="이미지 크게 보기" hidden>
+          <img id="figImg" alt="근거 이미지">
+          <figcaption><span id="figPage"></span><span id="figHint"></span></figcaption>
+        </figure>
+        <div class="qsmall" id="bQ"></div>
+      </div>
+    </div>
+  </div>
+  <div class="empty" id="empty" hidden>틀리거나 모르는 문제가 없어요. 다른 단원을 골라 보세요.</div>
+
+  <div class="controls" id="controls">
+    <button class="btn nav" id="prev" aria-label="이전 카드">←</button>
+    <button class="btn o" id="gO">O</button>
+    <button class="btn u" id="gU" aria-label="모르겠어요">△<span class="sub2">모르겠어요</span></button>
+    <button class="btn x" id="gX">X</button>
+    <button class="btn go" id="goNext" hidden>다음 문제 →</button>
+    <button class="btn nav" id="next" aria-label="다음 카드">→</button>
+  </div>
+
+  <div class="tools">
+    <button class="btn" id="shuffle" aria-pressed="false">섞기</button>
+    <button class="btn" id="reset">채점 기록 지우기</button>
+    <button class="btn" id="backupBtn">기록 백업 · 불러오기</button>
+  </div>
+  <p class="sync" id="sync" aria-live="polite"></p>
+  <p class="keys touch">카드를 탭하면 뒤집히고, 좌우로 밀면 다음·이전 카드로 넘어가요. 이미지를 누르면 크게 볼 수 있어요.</p>
+  <p class="keys desk"><kbd>O</kbd> <kbd>X</kbd> 답 고르기 · <kbd>M</kbd> 모르겠어요 · <kbd>Enter</kbd> 다음 문제 · <kbd>Space</kbd> 뒤집기 · <kbd>←</kbd> <kbd>→</kbd> 이동 · <kbd>Z</kbd> 이미지 확대 · <kbd>Esc</kbd> 뒤로</p>
+
+  <h2 id="listTitle"></h2>
+  <ul class="list" id="list"></ul>
+</div>
+
+<div class="modal" id="bk" hidden role="dialog" aria-modal="true" aria-labelledby="bkTitle">
+  <div class="sheet">
+    <h2 id="bkTitle">기록 백업 · 불러오기</h2>
+    <p class="sub">모든 주제의 채점 기록과 마지막 위치가 코드 하나에 담겨요. 코드를 복사해 두었다가 다른 기기나 브라우저에서 붙여넣으면 그대로 이어서 풀 수 있어요.</p>
+    <label class="lbl" for="bkOut">내 기록 코드</label>
+    <textarea id="bkOut" readonly rows="3"></textarea>
+    <div class="row"><button class="btn" id="bkCopy">코드 복사</button><span class="msg" id="bkCopyMsg" aria-live="polite"></span></div>
+    <label class="lbl" for="bkIn">기록 불러오기 (코드 붙여넣기)</label>
+    <textarea id="bkIn" rows="3" placeholder="여기에 기록 코드를 붙여넣으세요"></textarea>
+    <div class="row"><button class="btn go2" id="bkLoad">불러오기</button><span class="msg" id="bkMsg" aria-live="polite"></span></div>
+    <button class="close" id="bkClose" aria-label="닫기">✕</button>
+  </div>
+</div>
+
+<div class="lb" id="lb" hidden>
+  <img id="lbImg" alt="이미지 확대">
+  <button class="close" id="lbClose" aria-label="닫기">✕</button>
+</div>
+
+<!-- ===== 퀴즈 데이터: 한 줄 = [단원] 문장 \t 정답(→ 해설) \t 이미지 \t (필기 쪽수) ===== -->
+<script type="text/plain" id="d-organelle">
+[현미경] 현미경의 배율을 높이면 상의 크기는 커지지만, 보이는 상의 개수는 늘어나고 시야는 밝아진다.	X → 배율↑ → 상의 크기↑, 보이는 상의 개수 감소, 시야 어두워짐, 작동거리 짧아짐.	o01.webp#0/8@549x473	1
+[현미경] 해상력(분해능)은 아주 가까운 두 점이 두 개의 점으로 분리되어 보이는 최소한의 거리이다.	O → 광학현미경의 해상력은 약 0.2 μm.	o01.webp#1/8@549x473	1
+[현미경] 해상도를 나타내는 D값이 클수록 해상도가 좋아진다.	X → D값이 작을수록 해상도가 좋아진다(증가).	o01.webp#2/8@549x473	1
+[현미경] D = 0.61λ / (N·sinθ)이므로 파장(λ)이 짧을수록, 굴절률(N)과 θ가 클수록 해상도가 좋아진다.	O → λ: 파란색·보라색·자외선처럼 짧을수록 유리 / N: 공기 < 물 < 기름.	o01.webp#3/8@549x473	1
+[현미경] 유침액(immersion oil)은 굴절률이 낮아 광원에서 나온 빛이 렌즈로 덜 모이게 한다.	X → 유침액은 높은 굴절률 때문에 빛이 더 많이 렌즈로 집적된다.	o01.webp#4/8@549x473	1
+[현미경] 광학현미경으로는 핵, 미토콘드리아, 엽록체 같은 크기가 큰 세포소기관을 관찰할 수 있다.	O → 단, 미세한 구조까지 관찰하기에는 불충분하다.	o01.webp#5/8@549x473	2
+[현미경] 명시야 현미경은 검은 배경에 시료가 밝게 보인다.	X → 명시야: 배경 밝고 표본은 어둡게. 검은 배경에 밝은 상은 암시야 현미경.	o01.webp#6/8@549x473	2
+[현미경] 명시야 현미경으로 살아있는 세포를 관찰할 수 있지만, 염색을 위해 고정 과정을 거치면 세포가 죽는다.	O → 염색하지 않으면 대비가 거의 안 되어 구별이 힘들다.	o01.webp#7/8@549x473	2
+[현미경] 암시야 현미경은 명시야 현미경보다 해상력이 낮고, 반드시 염색해야 관찰할 수 있다.	X → 암시야는 명시야보다 해상력이 증가하고, 염색하지 않은 살아있는 세포·개체를 관찰할 수 있다.	o02.webp#0/8@549x473	2
+[현미경] 위상차 현미경은 시료 내 굴절률과 밀도 차이로 경계면에서 일어나는 상쇄 간섭을 이용해, 염색하지 않은 살아있는 세포를 관찰한다.	O → 명암의 대조를 강조한 현미경.	o02.webp#1/8@549x473	3
+[현미경] 공초점 주사 현미경은 전자선으로 시료를 스캔하는 전자현미경의 일종이다.	X → 레이저광을 렌즈와 작은 구멍에 통과시켜 분해능을 향상시킨 '형광현미경'의 일종 → 3차원의 뚜렷한 영상.	o02.webp#2/8@549x473	3
+[현미경] 전자현미경의 실제 일반적인 해상력은 0.5~2 nm로, 광학현미경보다 약 100배 높다.	O → 이론상 해상력은 0.002 nm.	o02.webp#3/8@549x473	4
+[현미경] 전자현미경은 시료를 진공 상태에 두므로 살아있는 세포를 관찰할 수 있다.	X → 전자는 공기 중 원자에 흡수되므로 진공에 두어야 하고, 따라서 죽은 세포만 관찰한다.	o02.webp#4/8@549x473	4
+[현미경] TEM에서 전자가 밀집된 표본 부위는 투과 전자가 감소하여 검게 나타난다.	O → TEM은 얇게 절단된 시료를 투과 → 2차원 단면 구조 관찰.	o02.webp#5/8@549x473	4
+[현미경] 음성 염색법은 중금속이 덜 침착된 시료 부분을 전자선이 통과해 이미지를 만들며, 세균·바이러스 입자 관찰에 쓰인다.	O → 우라늄·텅스텐 등 중금속으로 막을 코팅 후 건조.	o02.webp#6/8@549x473	4
+[현미경] SEM은 중금속을 얇게 씌운 표본 표면에 전자를 주사하고 반사된 전자를 모아 3차원 입체 구조를 관찰한다.	O → SEM 시료는 금·백금 코팅으로 표면에 전기전도성을 부여한다.	o02.webp#7/8@549x473	5
+[현미경] SEM은 TEM보다 해상도가 높아 세포 내 작은 소기관 관찰에 주로 사용된다.	X → SEM은 해상도가 TEM보다 낮아 세포 전체 관찰에 쓰이고, 세포 내 작은 소기관 관찰에는 TEM이 유용하다.	o03.webp#0/8@549x473	5
+[현미경] 세포의 길이를 측정할 때는 시료를 대물 micrometer 위에 올려 직접 잰다.	X → 대물 micrometer는 시료가 눈금을 가리고 방향을 바꿀 수 없어, 길이 측정에는 접안 micrometer를 쓴다.	o03.webp#1/8@549x473	6
+[시료준비] 광학현미경 시료 준비 순서는 고정 → 탈수 → 투명화 → 파라핀 포매 → 절편화 → 파라핀 제거 → 수화 → 염색이다.	O → 암기법: 고·타·투·경·박하게·염색·됐네.	o03.webp#2/8@549x473	7
+[시료준비] 고정액을 처리한 세포는 가수분해효소가 기능하지 못해 살아있을 때와 같은 구조를 유지하며, 세포는 계속 살아있다.	X → 구조와 상태는 살아있을 때처럼 유지되지만 세포는 죽은 세포이다.	o03.webp#3/8@549x473	7
+[시료준비] 열고정은 세포 내부 구조까지 잘 보존하므로 진핵세포 관찰에 주로 쓰인다.	X → 열고정은 전체 형태는 유지되지만 내부 구조는 파괴 → 내부 구조가 거의 없는 원핵생물(세균) 관찰에 주로 사용.	o03.webp#4/8@549x473	7
+[시료준비] 고정액은 조직 내 인접한 분자의 아미노기 사이에 가역적인 교차연결을 형성한다.	X → 비가역적인 교차연결(공유결합)을 형성해 단백질-단백질, 단백질-핵산 결합을 안정화한다.	o03.webp#5/8@549x473	7
+[시료준비] EM 시료는 글루타르알데히드로 1차 고정한 뒤 오스뮴 테트록사이드로 2차 고정하여 단백질과 지질을 안정화한다.	O	o03.webp#6/8@549x473	7
+[시료준비] 포매에 쓰이는 파라핀은 친수성이므로 고정액이 남아 있어도 바로 침투할 수 있다.	X → 파라핀은 소수성 → 알콜로 친수성 고정액과 물을 최대한 제거(탈수)해야 한다.	o03.webp#7/8@549x473	7
+[시료준비] 탈수 과정에서는 내용물의 급격한 수축을 막기 위해 알콜 농도를 70 → 80 → 90 → 100%로 순차적으로 높인다.	O	o04.webp#0/8@549x473	7
+[시료준비] 투명화 단계에서는 알콜과 파라핀 모두와 결합 가능한 자일렌을 사용하며, 이때 세포가 투명해진다.	O → 톨루엔, 벤젠, 클로로포름도 사용 가능.	o04.webp#1/8@549x473	8
+[시료준비] 파라핀 제거는 파라핀이 비극성이고 염료가 극성이기 때문에 자일렌·톨루엔으로 파라핀을 제거하는 과정이다.	O → 이후 수화: 자일렌 → 알콜 → 물로 대치.	o04.webp#2/8@549x473	8
+[시료준비] 염기성 염료는 (+)전하를 띠어 핵산 등 음전하 분자를 염색하며, 메틸렌 블루·헤마톡실린·크리스탈 바이올렛이 이에 속한다.	O	o04.webp#3/8@549x473	8
+[시료준비] 에오신은 염기성 염료로 핵을 청색으로 염색한다.	X → 에오신은 산성 염료((-)전하)로 세포질의 염기성 단백질을 분홍색으로 염색한다. 핵을 청색으로 염색하는 것은 헤마톡실린.	o04.webp#4/8@549x473	8
+[시료준비] 인디아 잉크, 니그로신 같은 음성 염색 염료는 시료 이외의 배경을 염색한다.	O	o04.webp#5/8@549x473	8
+[염색·약물] EtBr과 PI는 핵산 염색 시약이며, EtBr은 DNA 염기쌍 사이에 끼어드는 intercalator이다.	O	o25.webp#0/7@717x676	10
+[염색·약물] CBB(Coomassie brilliant blue)는 핵산 염색에 쓰이고, AgNO₃는 단백질 염색에만 쓰인다.	X → CBB는 단백질 염색. AgNO₃(은염색)는 핵산과 단백질 모두에 쓰인다.	o25.webp#1/7@717x676	10
+[염색·약물] trypan blue는 살아있는 세포를, neutral red는 죽은 세포를 염색한다.	X → 반대다. 죽은 세포 = trypan blue, 살아있는 세포 = neutral red.	o25.webp#2/7@717x676	10
+[염색·약물] barbiturate, 알콜 등은 SER과 CYP450을 증가시켜 해독률을 높이므로 약에 대한 내성이 증가한다.	O → 같은 진정 효과를 내려면 더 많은 약물이 필요하고, 다른 약(항생제, phenytoin)의 효력도 감소시킨다.	o25.webp#3/7@717x676	10
+[염색·약물] phenobarbital(CYP2C9 유도제)과 phenytoin을 병용할 때는 phenytoin의 투여 용량을 감소시키고 투여 간격을 늘려야 한다.	X → phenytoin 대사가 증가해 효력이 감소하므로 용량을 증가시키거나 투여 간격을 감소시켜야 한다.	o25.webp#4/7@717x676	10
+[염색·약물] 자몽주스·ketoconazole은 CYP3A4를 억제하므로, terfenadine 병용 시 혈중 농도가 증가하여 투여 횟수를 감소시켜야 한다.	O → 효력 증가, 혈중 농도 증가, 투여 횟수 감소 (↑, ↑, ↓).	o25.webp#5/7@717x676	10
+[염색·약물] ATP 의존성 K⁺ 채널을 여는 약물은 인슐린 분비를 촉진하는 당뇨병 치료제로 사용된다.	X → 채널을 '닫는' 약물 → 탈분극 → 전압 의존성 Ca²⁺ 채널 열림 → 인슐린 분비 촉진.	o25.webp#6/7@717x676	10
+[세포분획] 같은 원심력에서 침전 속도가 빠른 물질일수록 침강계수가 크고 튜브의 더 아래쪽에 위치한다.	O → 침강계수(S) = 침전속도 / 원심가속도.	o04.webp#6/8@549x473	11
+[세포분획] 물질의 질량과 밀도가 클수록, 그리고 펼쳐진 정도가 클수록 침강계수가 커진다.	X → 질량↑, 밀도↑, 펼쳐진 정도↓일 때 침강계수↑.	o04.webp#7/8@549x473	11
+[세포분획] 분별 원심분리에서는 낮은 원심력에서 작은 소기관이 먼저 침전되고, 높은 원심력에서 크고 무거운 입자가 침전된다.	X → 반대다. 낮은 원심력 → 크고 무거운 입자, 점점 높은 원심력 → 작은 소기관.	o05.webp#0/8@549x473	11
+[세포분획] 동물세포 분별 원심분리의 침전 순서는 핵 → 미토콘드리아(리소좀·퍼옥시좀) → 소포체·골지체 → 리보솜이다.	O → 식물세포: 세포벽 → 핵 → 엽록체 → 미토콘드리아 → 소포체·골지체 → 리보솜.	o05.webp#1/8@549x473	11
+[세포분획] 속도침강 원심분리는 다른 입자가 섞여 침전될 위험을 줄일 수 있고, 많은 양의 샘플을 한 번에 처리하기 좋다.	X → 섞일 위험은 최소화하지만 적은 양의 샘플만 원심분리할 수 있다.	o05.webp#2/8@549x473	12
+[세포분획] 등밀도 원심분리에서 각 물질은 자신과 밀도가 같은 용매 지점(1-ρ̄v = 0)에서 이동을 멈춘다.	O → 1-ρ̄v < 0이면 떠오르고, > 0이면 가라앉는다.	o05.webp#3/8@549x473	12
+[추적·FACS] 펄스-추적 실험에서 ³H-류신을 짧은 시간 처리하면, 그동안 합성된 단백질에 방사능이 표지된다(pulse labeling).	O	o05.webp#4/8@549x473	13
+[추적·FACS] 추적(chase) 단계에서는 세포를 ³H-류신이 포함된 배지로 옮겨 계속 표지한다.	X → 세척 후 ³H-류신을 포함하지 않는 배지로 옮겨 재배양한다. 이후 합성되는 단백질에는 표지 X.	o05.webp#5/8@549x473	13
+[추적·FACS] 분비 단백질의 방사능은 시간이 지남에 따라 RER → 골지체 → 분비소낭 순으로 이동한다.	O → T=0 RER, T=10 min 골지체, T=45 min 분비과립.	o05.webp#6/8@549x473	13
+[추적·FACS] T세포는 DN(CD4⁻CD8⁻) → DP(CD4⁺CD8⁺) → CD4⁺ 또는 CD8⁺ 단일양성 순으로 성숙한다.	O	o05.webp#7/8@549x473	13
+[추적·FACS] FACS로 DNA 함량을 측정할 때 PI는 DNA에만 결합하므로 RNase 처리는 필요 없다.	X → PI는 RNA에도 결합하므로 RNase를 미리 처리해 DNA 유래 형광만 측정한다.	o06.webp#0/8@549x473	14
+[추적·FACS] CD4는 Tc 세포, CD8은 TH 세포의 세포막 표면 특이 단백질이다.	X → 반대다. CD4 = TH, CD8 = Tc.	o06.webp#1/8@549x473	14
+[원핵·진핵] 세포 직경이 2 → 20 → 200 μm로 커지면 표면적 대 부피비는 상대적으로 증가한다.	X → 3.0:1 → 0.3:1 → 0.003:1로 감소한다.	o06.webp#2/8@549x473	15
+[원핵·진핵] 진정세균은 1개의 원형 dsDNA를, 진핵세포는 여러 개의 선형 dsDNA를 가진다.	O	o06.webp#3/8@549x473	15
+[원핵·진핵] 진정세균과 진핵세포 모두 히스톤 단백질로 이루어진 뉴클레오솜을 가진다.	X → 뉴클레오솜(히스톤 ptn)은 진핵세포만 O, 진정세균은 X.	o06.webp#4/8@549x473	15
+[원핵·진핵] 진핵세포의 RNA pol Ⅰ은 45S rRNA, pol Ⅱ는 mRNA, pol Ⅲ는 tRNA와 5S rRNA를 전사한다.	O → 진정세균의 RNA pol은 1종류.	o06.webp#5/8@549x473	15
+[원핵·진핵] mRNA 가공은 진정세균과 진핵세포 모두에서 일어나지만, r·tRNA 가공은 진핵세포에서만 일어난다.	X → 반대다. mRNA 가공은 진핵세포만 O, r·tRNA 가공은 둘 다 O.	o06.webp#6/8@549x473	15
+[원핵·진핵] mRNA의 리보솜 결합 서열은 진정세균이 5' cap, 진핵세포가 Shine-Dalgarno 서열이다.	X → 반대다. 진정세균 = Shine-Dalgarno sequence, 진핵세포 = mRNA의 5' cap.	o06.webp#7/8@549x473	15
+[원핵·진핵] 진정세균 세포막에는 일반적으로 스테롤이 없지만 Mycoplasma는 예외이며, 진핵세포는 식물 phytosterol, 균류 ergosterol, 동물 cholesterol을 가진다.	O	o07.webp#0/8@549x473	15
+[원핵·진핵] 진정세균 편모는 tubulin(9+2)으로 활주운동을 하고, 진핵세포 편모는 flagellin으로 회전운동을 한다.	X → 반대다. 진정세균 = flagellin, 회전운동, H⁺ 농도기울기 / 진핵 = tubulin 미세소관 9+2, 디네인, 활주운동, ATP.	o07.webp#1/8@549x473	15
+[원핵·진핵] 진핵세포 80S 리보솜의 60S 대단위체는 5S·5.8S·28S rRNA를, 40S 소단위체는 18S rRNA를 가진다.	O → 원핵 70S: 50S(5S, 23S) + 30S(16S).	o07.webp#2/8@549x473	15
+[핵] 핵질(nucleoplasm)은 인을 포함한 핵 전체 부위를 말한다.	X → 핵질은 인을 제외한 핵의 부위이다.	o07.webp#3/8@549x473	16
+[핵] 핵막은 단일막이며, 분열기 말기에 골지체에서 유래한 소낭이 모여 다시 형성된다.	X → 핵막은 지질 이중층으로 된 이중막(외막+내막)이고, 말기에 '소포체' 유래 소낭이 모여 재형성된다.	o07.webp#4/8@549x473	16
+[핵] 핵의 외막은 소포체와 연결되며, 외막의 세포질 쪽 표면에 리보솜이 결합해 기능적으로 소포체와 유사하다.	O	o07.webp#5/8@549x473	16
+[핵] 염색질은 핵막하층(nuclear lamina)인 라민 단백질의 섬유상 망상구조와 연결되어 있으며, 라민은 중간섬유에 속한다.	O → 일부 원생생물·균류·식물은 다른 단백질이 고정한다.	o07.webp#6/8@549x473	16
+[핵] Hutchinson-Gilford progeria syndrome은 Lamin 유전자 이상, Werner syndrome은 helicase 이상으로 생기는 조로증이다.	O → HGPS = 소아조로증(상염색체 우성), Werner = 성인조로증(상염색체 열성).	o07.webp#7/8@549x473	16
+[핵] 분자량 10,000 dalton 미만의 작은 분자는 핵공을 자유롭게 확산하지만, 대부분의 단백질 같은 큰 분자는 특수한 수송기작(능동수송)을 이용한다.	O → 이 선택적 투과로 세포질과 핵 내 물질 구성의 차이가 생긴다.	o08.webp#0/8@549x473	17
+[핵] 히스톤, 전사인자, DNA 중합효소는 핵에서 번역된 뒤 핵공을 통해 세포질로 방출된다.	X → 이들은 세포질에서 번역되어 핵질로 유입된다. 핵공으로 방출되는 것은 mRNA와 리보솜 소단위체.	o08.webp#1/8@549x473	17
+[핵] 히스톤은 (+)전하를 띠는 Arg, Lys이 많아 인산기 때문에 (-)전하를 띠는 DNA와 이온결합한다.	O	o08.webp#2/8@549x473	17
+[핵] 뉴클레오솜에서 H1 : H2A : H2B : H3 : H4 = 1 : 2 : 2 : 2 : 2이다.	O → 히스톤 팔량체 = H2A, H2B, H3, H4 각 2개. H1은 linker DNA에 결합.	o08.webp#3/8@549x473	17
+[핵] 히스톤 H1은 히스톤 팔량체를 구성하는 핵심 단백질이며 linker DNA에는 결합하지 않는다.	X → H1은 팔량체에 포함되지 않고 linker DNA에 결합하여 뉴클레오솜을 안정화하고 염색질 응축을 돕는다.	o08.webp#4/8@549x473	17
+[핵] 인(nucleolus)은 막으로 둘러싸인 막성 세포소기관이다.	X → 인은 막이 없는 구조이다(막성 세포소기관 X). 전자현미경에서 섬유와 과립 덩어리로 보인다.	o08.webp#5/8@549x473	18
+[핵] 인에서는 45S rRNA를 먼저 합성한 뒤 절단하여 18S, 5.8S, 28S rRNA를 만든다.	O → 메틸화 등의 가공도 일어난다.	o08.webp#6/8@549x473	18
+[핵] 5S rRNA는 인에서 RNA pol Ⅰ에 의해 45S rRNA와 함께 전사된다.	X → 5S rRNA는 RNA pol Ⅲ에 의해 인 바깥 핵에서 전사된 뒤 인으로 유입된다.	o08.webp#7/8@549x473	18
+[리보솜] 리보솜은 rRNA와 단백질로 구성된 비막성 세포소기관으로 원핵세포와 진핵세포 모두에서 관찰된다.	O	o09.webp#0/8@549x473	19
+[리보솜] 리소좀의 산성가수분해효소, 내재성 막단백질, 분비 단백질은 부착 리보솜에서 합성된다.	O → 소포체·골지체 단백질도 부착 리보솜.	o09.webp#1/8@549x473	19
+[리보솜] 미토콘드리아, 엽록체, 퍼옥시좀으로 가는 단백질은 RER의 부착 리보솜에서 합성된다.	X → 세포질·핵·mt·ct·퍼옥시좀에서 기능하는 단백질은 자유 리보솜에서 합성된다.	o09.webp#2/8@549x473	19
+[리보솜] 자유 리보솜과 부착 리보솜은 구조적으로 동일하며, 위치하는 곳만 다르다.	O → 합성 중인 단백질의 신호서열에 따라 위치가 결정된다.	o09.webp#3/8@549x473	19
+[리보솜] 테트라사이클린, 스트렙토마이신은 진핵세포의 80S 리보솜에 작용해 단백질 합성을 억제한다.	X → 세균(70S)의 리보솜에 작용하는 항생제이다.	o09.webp#4/8@549x473	19
+[소포체] 소포체 소낭을 밀도차 원심분리하면 SER이 아래, RER이 위에 위치한다.	X → 리보솜이 붙은 RER이 무거워 아래, SER이 위.	o09.webp#5/8@549x473	20
+[소포체] 콜레스테롤 합성의 초기 반응은 SER에서, 후기 반응은 세포질에서 일어난다.	X → 초기 반응은 세포질, 후기 반응은 SER. HMG-CoA reductase가 SER막에 박혀 있다.	o09.webp#6/8@549x473	21
+[소포체] 인지질, 콜레스테롤 등 막 지질의 대부분은 SER에서 합성되며, 원핵세포에서는 세포막에서 합성된다.	O	o09.webp#7/8@549x473	21
+[소포체] 동물세포에서 지방산 생합성(최대 16:0)은 세포질에서, 지방산의 불포화와 신장은 SER에서 일어난다.	O → mt와 SER에서 C16보다 긴 지방산을 합성할 수 있다.	o10.webp#0/8@549x473	21
+[소포체] SER의 해독작용은 약물에 수산화기를 붙여 소수성을 증가시킨다.	X → 수산화기를 붙여 친수성을 증가시켜 체내에서 쉽게 제거되도록 한다.	o10.webp#1/8@549x473	21
+[소포체] 간세포의 글리코겐은 ER막의 glucose-6-phosphatase에 의해 세포질에서 포도당으로 전환된다.	X → 포도당으로의 전환은 ER '내강(lumen)'에서 일어난다. 이후 포도당은 혈관으로 이동.	o10.webp#2/8@549x473	21
+[소포체] 근섬유의 SER은 Ca²⁺ pump로 내강에 Ca²⁺을 저장했다가 필요 시 세포질로 방출해 근수축을 유발한다.	O → IP₃ 같은 2차 전달자에 의해 다른 세포의 SER에서도 Ca²⁺이 방출된다.	o10.webp#3/8@549x473	21
+[소포체] RER은 분비 단백질(인슐린), 세포막 단백질(Na⁺/K⁺ pump), 리소좀 산가수분해효소, 내막계 막단백질(glucose-6-phosphatase)을 합성한다.	O	o10.webp#4/8@549x473	23
+[소포체] SRP는 ER 신호서열에 결합해 번역을 일시 멈추게 하고, SRP 수용체와 결합한 뒤 분리되어 재사용된다.	O	o10.webp#5/8@549x473	23
+[소포체] N-말단의 소포체 이동 신호서열은 골지체에서 제거된다.	X → 신호서열은 RER 내강에서 번역 후 가공 과정 중 제거된다.	o10.webp#6/8@549x473	23
+[소포체] PDI(protein disulfide isomerase)는 Cys 잔기 사이의 이황화결합을 형성하고, 잘못 연결된 이황화결합을 재배열한다.	O	o10.webp#7/8@549x473	24
+[소포체] N-당화는 돌리콜에 올리고당을 합성한 뒤 폴리펩타이드의 세린 잔기로 옮기는 과정이다.	X → 세린이 아니라 아스파라긴 잔기로 옮긴다(N-linked oligosaccharide).	o11.webp#0/8@549x473	24
+[골지체] 골지체의 시스터나는 서로 연결된 납작한 소낭으로 network를 형성한다.	X → 골지체는 서로 연결되지 않은 납작한 시스터나로 이루어져 있다. (서로 연결된 network는 RER)	o11.webp#1/8@549x473	25
+[골지체] 골지체의 형성면(cis)은 주로 원형질막을 향하고, 성숙면(trans)은 소포체 근처에 위치한다.	X → 반대다. cis = 소포체 근처, trans = 원형질막 쪽.	o11.webp#2/8@549x473	25
+[골지체] N-linked 올리고당은 RER에서 아스파라긴에, O-linked 올리고당은 골지체에서 세린·트레오닌에 결합한다.	O → 암기법: N·조이·아스파라거스 / O·골게·세트.	o11.webp#3/8@549x473	25
+[골지체] 식물의 골지체는 셀룰로오스를 합성하여 세포벽을 만든다.	X → 골지체는 비셀룰로오스성 다당류인 펙틴, 헤미셀룰로오스를 생성한다. 셀룰로오스는 세포막의 셀룰로오스 합성효소가 합성.	o11.webp#4/8@549x473	25
+[골지체] 산가수분해효소의 만노오스 6번 탄소에 인산기가 붙으면(M-6-P) 골지체 trans면에서 출아하여 리소좀으로 이동한다.	O → 표지를 붙이지 못하면 저장병이 발생한다.	o11.webp#5/8@549x473	26
+[골지체] N 말단의 KDEL 서열이 노출된 단백질은 다시 소포체로 되돌려보내진다.	X → N 말단이 아니라 C 말단의 KDEL(Lys-Asp-Glu-Leu) 서열이다.	o11.webp#6/8@549x473	26
+[리소좀] 리소좀막의 H⁺ ATPase가 H⁺을 능동수송하여 내부를 세포질보다 낮은 pH(약 5)로 유지한다.	O	o11.webp#7/8@549x473	27
+[리소좀] 리소좀이 하나 터지면 세포질(pH 7)에서도 가수분해효소가 강하게 작용해 즉시 세포가 파괴된다.	X → 가수분해효소는 산성(pH 5)에서만 활성 → 세포질에서는 작용 X(세포 보호). 단, 과도하게 파괴되면 세포질이 산성화되어 세포가 파괴될 수 있다(자살캡슐).	o12.webp#0/8@549x473	27
+[리소좀] 리소좀의 막 성분과 산성가수분해효소는 골지체에서 처음 만들어진다.	X → RER에서 만들어지고 골지체로 전달되어 가공 과정을 거친다.	o12.webp#1/8@549x473	27
+[리소좀] 자가포식(autophagy)은 손상된 소기관이나 기아 상태에서 자신의 소기관을 막으로 둘러싸 리소좀과 융합해 분해하는 작용이다.	O → 인간의 간세포는 매주 간 고분자 물질의 절반을 재활용한다.	o12.webp#2/8@549x473	27
+[리소좀] I세포 질환은 GlcNAc-1-phosphotransferase가 결핍되어 M-6-P 표지가 되지 않아 어떤 가수분해효소도 리소좀으로 가지 못한다.	O	o12.webp#3/8@549x473	28
+[리소좀] 테이-삭스 병은 헥소사미니데이스 A 결핍으로 뇌세포 리소좀에 글리코겐이 축적되는 질환이다.	X → 글리코겐이 아니라 갱글리오시드가 축적된다(상염색체 열성). 글리코겐 축적은 폼페병.	o12.webp#4/8@549x473	28
+[리소좀] 폼페병은 α-글루코시데이스 결핍으로 리소좀의 글리코겐을 분해하지 못해 리소좀이 팽창하며, 주로 간과 근육에 이상이 생긴다.	O	o12.webp#5/8@549x473	28
+[리소좀] 고셔병은 글루코세레브로시다아제 결핍으로 글루코세레브로사이드가 축적되며, 간·비장 비대, 빈혈, 뼈 이상이 나타난다.	O	o12.webp#6/8@549x473	29
+[액포] 식물과 균류에는 리소좀이 없는 대신, 액포의 산가수분해효소가 가수분해를 담당하며 액포 내부는 pH 5의 산성이다.	O → 액포막에도 리소좀처럼 양성자 펌프가 있다.	o12.webp#7/8@549x473	30
+[액포] 수축포는 바다에 사는 원생생물이 세포 안으로 물을 끌어들이는 데 사용한다.	X → 민물(담수)에 사는 단세포 원생생물(ex. 유글레나)이 여분의 물을 세포 밖으로 펌프질하는 데 쓴다.	o13.webp#0/8@549x473	30
+[액포] 공변세포 액포에 저장된 설탕, 말산, K⁺, Cl⁻은 수분 유입을 유발해 기공을 닫히게 한다.	X → 수분 유입 → 기공 열림을 초래한다.	o13.webp#1/8@549x473	30
+[미토콘드리아] 미토콘드리아 외막은 β-통(barrel) 구조의 포린 단백질을 통해 대부분의 수용성 물질이 통과한다.	O → 외막은 물질 투과를 크게 제한하지 않는다.	o13.webp#2/8@549x473	32
+[미토콘드리아] 미토콘드리아 막간공간은 전자전달계 반응 결과 H⁺ 농도가 매우 낮다.	X → 막간공간은 H⁺ 농도가 매우 높게 형성되어 있다.	o13.webp#3/8@549x473	32
+[미토콘드리아] 미토콘드리아 내막은 대부분의 물질에 비투과성이며, H⁺ 농도 기울기 유지를 위해 카르디올리핀이 풍부하다.	O → 크리스타 → 넓은 표면적 → ATP 합성효율↑.	o13.webp#4/8@549x473	32
+[미토콘드리아] 시트르산 회로와 지방산 β-산화 관련 효소는 미토콘드리아 막간공간에 존재한다.	X → 기질(matrix)에 존재한다.	o13.webp#5/8@549x473	32
+[미토콘드리아] mtDNA에는 rRNA, tRNA, 전자전달계 관련 유전자가 있으며 인트론이 많다.	X → mtDNA에는 인트론이 없다. (ctDNA는 일부 유전자에 인트론 O)	o13.webp#6/8@549x473	32
+[미토콘드리아] mtDNA의 대부분은 내막에 결합되어 있지만, mtDNA가 존재하는 장소는 기질로 정의된다.	O	o13.webp#7/8@549x473	32
+[미토콘드리아] 미토콘드리아에 필요한 단백질의 약 30%는 mtDNA 유래 mRNA를 mt리보솜(70S)이 번역하고, 나머지 70%는 핵 DNA 유래로 세포질 자유 리보솜에서 합성되어 수송된다.	O	o14.webp#0/8@549x473	33
+[미토콘드리아] mtDNA는 핵 염색체와 독립적으로 복제되므로 S기에만 복제된다.	X → 핵 DNA와 독립적으로 복제되기 때문에 S, G1, M 등 전 세포주기에 걸쳐 복제될 수 있다.	o14.webp#1/8@549x473	33
+[미토콘드리아] mtDNA는 DNA pol γ로 복제되며, 수선 기능이 뛰어나 돌연변이율이 핵 DNA보다 낮다.	X → DNA 수선의 부재와 잦은 복제로 mtDNA의 돌연변이율은 핵 DNA보다 높다.	o14.webp#2/8@549x473	33
+[미토콘드리아] mtDNA와 ctDNA는 일반적으로 난자만 세포질을 전달하므로 모계 유전된다.	O → 세포질 유전 = 모계 유전.	o14.webp#3/8@549x473	33
+[미토콘드리아] 레버 유전성 시신경 질환(LHON)은 mtDNA의 NADH 탈수소효소 복합체 유전자 missense 돌연변이로, 시신경 손상으로 급격한 시력 소실이 나타난다.	O	o14.webp#4/8@549x473	33
+[미토콘드리아] 미토콘드리아는 세포의 체세포분열·감수분열과 동시에, 그에 맞추어 분열한다.	X → 기존 mt의 이분법으로 생성되며, 체세포분열·감수분열과 무관하게 별도로 진행된다.	o14.webp#5/8@549x473	33
+[엽록체] 엽록체 내막은 남세균의 세포막에서, 외막은 숙주세포가 삼킨 막에서 유래했다.	O	o14.webp#6/8@549x473	34
+[엽록체] 명반응은 스트로마에서, 탄소환원반응(캘빈회로)은 틸라코이드막에서 일어난다.	X → 반대다. 명반응 = 틸라코이드막, 캘빈회로 = 스트로마.	o14.webp#7/8@549x473	34
+[엽록체] ctDNA에는 인트론이 전혀 없다.	X → ctDNA의 일부 유전자에는 인트론이 있다. (mtDNA는 인트론 X)	o15.webp#0/8@549x473	34
+[엽록체] 녹말체(백색체)는 녹말을 저장하며 특히 잎에 발달한다.	X → 녹말체는 특히 뿌리, 줄기에 발달한다.	o15.webp#1/8@549x473	35
+[엽록체] 내부공생설에서 호기성 원핵생물은 엽록체로, 광합성 원핵생물은 미토콘드리아로 진화했다.	X → 반대다. 호기성 원핵생물 → mt, 독립영양(광합성) 원핵생물(남세균) → ct.	o15.webp#2/8@549x473	36
+[엽록체] 미토콘드리아와 엽록체가 자신의 dsDNA와 리보솜을 갖고, 이중막을 지니며, 세포 안에서 스스로 자라고 복제한다는 점은 내부공생설의 증거이다.	O → 내부공생설은 Lynn Margulis가 제안.	o15.webp#3/8@549x473	36
+[퍼옥시좀] 퍼옥시좀은 산화효소로 부산물 H₂O₂를 만들고, 카탈라아제가 이를 물로 전환하거나 다른 유기물의 산화로 분해한다.	O	o15.webp#4/8@549x473	37
+[퍼옥시좀] 퍼옥시좀은 RER로부터 단백질을 공급받으므로 내막계에 속한다.	X → 조면소포체를 통해 단백질을 공급받지 않으므로 내막계 X.	o15.webp#5/8@549x473	37
+[퍼옥시좀] 간의 퍼옥시좀은 알콜 해독, 과잉 퓨린 분해로 요산 형성, 콜레스테롤로부터 담즙산 합성을 한다.	O	o15.webp#6/8@549x473	37
+[퍼옥시좀] 퍼옥시좀의 β-산화는 미토콘드리아와 마찬가지로 ATP를 생성한다.	X → 퍼옥시좀 β-산화는 아세틸기만 생성할 뿐 ATP를 생성하지 않는다(화학에너지 → 열에너지).	o15.webp#7/8@549x473	37
+[퍼옥시좀] ALD(부신백질위축증)는 X 염색체 연관 반성유전 질환으로, VLCFA를 퍼옥시좀으로 수송하는 ABC 펌프가 결핍되어 나타난다.	O	o16.webp#0/8@549x473	37
+[퍼옥시좀] 소기관 표지 단백질로 핵은 라민, SER은 cytP450, 퍼옥시좀은 catalase, 리소좀은 헥소사미니다아제 A이다.	O → mt의 표지 단백질 = 숙신산 디하이드로제네이스.	o16.webp#1/8@549x473	37
+[퍼옥시좀] 광합성을 시작하면 퍼옥시좀이 사라지고 글리옥시좀이 생성된다.	X → 반대다. 광합성으로 스스로 당을 합성하면 글리옥시좀이 사라지고 퍼옥시좀이 생성된다.	o16.webp#2/8@549x473	38
+[퍼옥시좀] 척추동물은 글리옥실산 회로를 가져 지방산이나 아세트산으로부터 당을 합성할 수 있다.	X → 척추동물은 불가능하다. E. coli, 효모, 발아 중인 식물 종자는 글리옥실산 회로로 가능.	o16.webp#3/8@549x473	38
+[미세소관] 미세소관은 직경 25 nm로 세포골격 중 가장 크며, 13개의 원섬유로 구성된 속이 빈 섬유이다.	O	o16.webp#4/8@549x473	40
+[미세소관] 미세소관의 (+)말단에는 α-튜불린이, (-)말단에는 β-튜불린이 노출된다.	X → 반대다. (+)말단 = β-튜불린 노출, (-)말단 = α-튜불린 노출.	o16.webp#5/8@549x473	40
+[미세소관] 미세소관의 양성말단(+)은 중합과 해리 반응속도가 더 느린 말단이다.	X → 반응속도가 더 빠른 말단이 (+), 느린 말단이 (-).	o16.webp#6/8@549x473	40
+[미세소관] 동물세포의 중심체는 서로 직각으로 배열된 2개의 중심립으로 구성되며, 미세소관 중합의 핵으로 작용하는 γ-튜불린을 포함한다.	O	o16.webp#7/8@549x473	41
+[미세소관] 식물세포에는 중심립이 없으며, 중심립은 미세소관 중합에 반드시 필요하다.	X → 중심립은 미세소관 중합에 영향을 미치지 않는다. 중심립만 제거한 중심체도 MTOC 기능을 계속한다.	o17.webp#0/8@549x473	41
+[미세소관] 생체 내(in vivo)에서 미세소관의 (-)말단은 중심체에 묻혀 있어 오직 (+)말단에서만 성장·해체를 반복한다.	O → in vitro에서는 (+), (-) 말단 모두 성장·해체.	o17.webp#1/8@549x473	41
+[미세소관] 중심립은 미세소관 이합체(doublet) 9개와 중앙의 미세소관 2개로 이루어진 9+2 구조이다.	X → 중심립은 미세소관 삼합체(triplet) 9개가 반복되는 9+0 구조이다.	o17.webp#2/8@549x473	41
+[미세소관] 식물·균류는 중심립 없이 γ-튜불린을 포함한 방추체 극체(극모)로 미세소관을 형성할 수 있다.	O	o17.webp#3/8@549x473	41
+[미세소관] β-튜불린의 GTP가 GDP로 가수분해되면 튜불린의 미세소관에 대한 친화력이 높아진다.	X → GTP 상태일 때 친화력이 높고, GDP로 가수분해되면 친화력이 낮아진다.	o17.webp#4/8@549x473	42
+[미세소관] GTP-튜불린이 첨가되는 속도가 GTP 가수분해 속도보다 빠르면 GTP-모자가 형성되어 미세소관이 성장한다.	O → 반대로 첨가가 느리면 GDP-모자 → 부채 모양으로 해체.	o17.webp#5/8@549x473	42
+[미세소관] 미세소관은 4℃에서 중합이 촉진되고 37℃에서 해리된다.	X → 반대다. 4℃ 해리, 37℃ 중합 촉진.	o17.webp#6/8@549x473	43
+[미세소관] 파국(catastrophe)은 축소기에서 성장기로의 전환이고, 구제(rescue)는 성장기에서 축소기로의 전환이다.	X → 반대다. 파국 = 성장기 → 축소기, 구제 = 축소기 → 성장기.	o17.webp#7/8@549x473	43
+[미세소관] 미세소관 말단의 GTP 모자(cap)는 동적 불안정성을 결정하며, 유사분열기에는 간기보다 미세소관의 역동성이 증가한다.	O	o18.webp#0/8@549x473	43
+[미세소관] 콜히친은 튜불린과 결합해 방추사 중합을 억제하므로 세포가 분열 중기에 멈춘다.	O → 콜세미드, 노코다졸도 같은 계열.	o18.webp#1/8@549x473	43
+[미세소관] 택솔은 미세소관의 중합을 억제하는 주목나무 유래 항암제이다.	X → 택솔은 미세소관에 결합해 '해리를 방지'(안정화)하여 세포분열을 억제한다.	o18.webp#2/8@549x473	43
+[미세소관] MAP는 미세소관 구조를 안정화하고, 카타스트로핀은 ATP를 소모하며 미세소관을 빠르게 분해한다.	O → 뉴런 내 tau(MAP) 단백질의 축적은 알츠하이머와 관련.	o18.webp#3/8@549x473	44
+[미세소관] 키네신은 미세소관의 (+)말단에서 (-)말단으로, 디네인은 (-)말단에서 (+)말단으로 이동한다.	X → 반대다. 디네인: (+) → (-), 키네신: (-) → (+).	o18.webp#4/8@549x473	45
+[미세소관] 미세소관과 미세섬유는 특이적인 운동 단백질을 가지지만, 중간섬유는 운동 단백질이 없다.	O	o18.webp#5/8@549x473	45
+[미세소관] 섬모와 편모의 운동에는 키네신과 디네인이 모두 관여한다.	X → 섬모·편모의 운동에는 디네인만 관여한다.	o18.webp#6/8@549x473	45
+[섬모·편모] 중심체, 기저체, 섬모·편모의 미세소관은 역동성이 커서 쉽게 중합·해리된다.	X → 이들 미세소관은 역동성을 나타내지 않는 안정한 형태이다.	o18.webp#7/8@549x473	47
+[섬모·편모] 1차 섬모는 비운동성이고 세포당 하나만 존재하며, 신호를 받는 안테나처럼 작용한다.	O → 뇌기능·배아발달 신호전달에 중요.	o19.webp#0/8@549x473	47
+[섬모·편모] 편모는 섬모보다 짧고 노젓기 운동을 하며, 섬모는 S자형 파동 운동을 한다.	X → 반대다. 섬모: 짧고 노젓기 운동(역타·회복타). 편모: 섬모보다 길고 S자형 파동 운동.	o19.webp#1/8@549x473	47
+[섬모·편모] 카르타게너 증후군은 디네인 유전자 결함으로 기관지 감염에 취약하고, 남성은 정자가 비운동성이어서 불임이 된다.	O → 환자의 50%는 내부 장기의 좌우가 역전된다.	o19.webp#2/8@549x473	47
+[섬모·편모] 기저체는 9+0(삼합체) 구조이고, 섬모·편모의 융기부는 9+2(이합체) 구조이다.	O → 기저체는 중심립과 구조적으로 동일.	o19.webp#3/8@549x473	48
+[섬모·편모] 비운동성 섬모인 1차 섬모는 9+2 구조를 가진다.	X → 1차 섬모는 9+0 구조이다.	o19.webp#4/8@549x473	48
+[섬모·편모] 넥신은 섬모·편모의 미세소관 사이를 단단히 고정하여, 디네인의 활주가 미세소관의 휨 운동(채찍 운동)으로 나타나게 한다.	O	o19.webp#5/8@549x473	48
+[미세섬유] 미세섬유는 직경 7 nm로, G-액틴으로 이루어진 F-액틴 이중나선이며 세포골격 중 가장 많다.	O	o19.webp#6/8@549x473	50
+[미세섬유] 미세섬유는 압력에 저항하고, 미세소관은 중간섬유와 함께 장력에 저항한다.	X → 반대다. 미세소관 = 압력에 저항, 미세섬유는 중간섬유와 함께 장력에 저항.	o19.webp#7/8@549x473	50
+[미세섬유] 액틴 중합의 핵화(nucleation) 단계는 빠르게 일어난다.	X → 핵화는 느리게 일어나는 속도제한단계이다.	o20.webp#0/8@549x473	51
+[미세섬유] 정상 상태(steady state)에서는 G-액틴의 교체가 전혀 일어나지 않는다.	X → G-액틴의 교체는 지속적으로 일어나지만 F-액틴의 전체 길이에는 변화가 없다(동적 평형).	o20.webp#1/8@549x473	51
+[미세섬유] 임계농도(Cc)는 해리속도상수/첨가속도상수로 해리상수(Kd)와 같다.	O → G-액틴 농도 > Cc → 중합, < Cc → F-액틴 해체.	o20.webp#2/8@549x473	51
+[미세섬유] 미세섬유의 (+)말단은 (-)말단보다 신장에 필요한 임계농도가 훨씬 높다.	X → (+)말단의 임계농도가 훨씬 낮다(Cc⁺ = 0.12 μM < Cc⁻ = 0.60 μM).	o20.webp#3/8@549x473	51
+[미세섬유] 액틴 단량체 농도가 두 말단의 Cc 사이에 있으면 (+)말단은 신장, (-)말단은 해체되어 treadmilling이 일어날 수 있다.	O	o20.webp#4/8@549x473	52
+[미세섬유] treadmilling은 (+)말단의 순중합과 (-)말단의 순해리가 같은 속도로 일어나 전체 길이가 변하지 않는 상태이다.	O	o20.webp#5/8@549x473	52
+[미세섬유] G-액틴의 ATP가 ADP로 가수분해되면 미세섬유에 대한 친화력이 높아져 신장이 촉진된다.	X → ATP 상태일 때 친화력이 높고, ADP로 가수분해되면 친화력이 낮아져 떨어져 나간다.	o20.webp#6/8@549x473	52
+[미세섬유] 사이토칼라신 D는 미세섬유의 (-)말단에 결합해 해리를 촉진한다.	X → 사이토칼라신 D는 (+)말단에 결합해 (+)말단의 합성을 막는 미세섬유 합성 저해제이다.	o20.webp#7/8@549x473	53
+[미세섬유] k₁(첨가)과 k₂(해리)가 I말단 12.0, 1.4 / II말단 1.3, 0.8일 때, Cc = k₂/k₁이 더 작은 I말단이 양성(+)말단이다.	O → Cc(I) = 1.4/12.0 < Cc(II) = 0.8/1.3. (2011 MD 예제)	p54_F42.webp	54
+[미세섬유] 미오신은 머리의 ATPase로 ATP를 가수분해하며 미세섬유의 (-)말단에서 (+)말단 방향으로 이동한다.	O → 구형 머리·목·꼬리의 중사슬 + ATPase를 조절하는 경사슬.	o21.webp#0/8@549x473	55
+[미세섬유] 적혈구 세포막은 스펙트린-액틴 망상구조로 지지되고, 근육세포는 디스트로핀으로 지지되며 그 이상은 듀센형 근위축증을 일으킨다.	O	o21.webp#1/8@549x473	55
+[미세섬유] 동물세포의 세포질 분열 시 적도판에 미세소관으로 구성된 수축환이 생겨 세포를 조인다.	X → 수축환은 미세섬유로 구성된다.	o21.webp#2/8@549x473	55
+[미세섬유] 소장 상피세포의 미세융모는 미세소관 다발이 지지한다.	X → 미세융모는 미세섬유(액틴)가 지지한다. 원형질막 아래 액틴 망상구조가 세포막과 미세융모를 지지.	o21.webp#3/8@549x473	55
+[미세섬유] 세포가 기어갈 때 진행 방향의 미세섬유는 분해·수축하고, 반대쪽 끝의 미세섬유는 합성·신장한다.	X → 반대다. 진행 방향 = 합성·신장, 반대쪽 끝 = 분해·수축.	o21.webp#4/8@549x473	57
+[중간섬유] 중간섬유는 직경 10 nm로 액틴 필라멘트와 미세소관의 중간 크기이며, 양 말단은 극성을 가진다.	X → 중간섬유의 양 말단은 극성이 없다.	o21.webp#5/8@549x473	58
+[중간섬유] 중간섬유 조립에는 ATP·GTP 같은 뉴클레오타이드가 관여하지 않으며 treadmilling을 보이지 않지만, 인산화로 조립·해체가 조절될 수 있다.	O	o21.webp#6/8@549x473	58
+[중간섬유] 미세섬유·미세소관과 마찬가지로 중간섬유도 모든 진핵세포에서 발견된다.	X → 중간섬유는 척추동물을 포함한 일부 동물에서만 발견된다(효모·식물·일부 곤충 X).	o21.webp#7/8@549x473	58
+[중간섬유] 중간섬유의 단위체는 액틴·튜불린처럼 구형 단백질이다.	X → 중간섬유 단위체는 선형(섬유성) 단백질. 액틴·튜불린이 구형.	o22.webp#0/8@549x473	58
+[중간섬유] 상피세포에는 케라틴, 결합조직·근육·신경아교세포에는 비멘틴, 신경세포에는 신경필라멘트가 존재한다.	O	o22.webp#1/8@549x473	58
+[중간섬유] 핵라민은 세포골격 중 유일하게 세포질이 아닌 핵막하층에 존재하며, 라민의 인산화·탈인산화가 핵막의 해체·재구성을 조절한다.	O	o22.webp#2/8@549x473	58
+[중간섬유] ALS(루게릭병)는 운동뉴런의 세포체와 축삭에 신경필라멘트가 비정상적으로 축적되어 축삭 퇴행과 근육약화가 일어난다.	O	o22.webp#3/8@549x473	59
+[중간섬유] 조로증(HGPS)은 비멘틴 필라멘트 결함으로 발생한다.	X → 특정 핵라민의 결함으로 발생한다.	o22.webp#4/8@549x473	59
+[ECM·세포벽] 콜라젠은 동물세포 전체 단백질의 약 40%를 차지하는 당단백질로 강한 섬유구조를 형성해 장력에 저항한다.	O	o22.webp#5/8@549x473	60
+[ECM·세포벽] 피브로넥틴은 세포막을 관통하는 막 삽입 단백질로, 세포외 환경의 자극을 세포 내로 전달한다.	X → 그것은 인테그린이다. 피브로넥틴은 콜라젠과 인테그린 사이에 끼어든 형태로 존재한다.	o22.webp#6/8@549x473	60
+[ECM·세포벽] 중엽은 세포가 분열할 때 가장 먼저 생기며 펙틴(갈락투론산)이 주성분이다.	O → 펙틴의 음전하에 Ca²⁺, Mg²⁺이 결합해 세포 간 부착을 돕는다.	o22.webp#7/8@549x473	62
+[ECM·세포벽] 2차 세포벽은 성장이 멈춘 세포의 중엽과 1차 세포벽 사이에 생긴다.	X → 세포막과 1차 세포벽 사이에 생긴다. 합성 순서: (밖) 중엽 → 1차벽 → 2차벽 (안).	o23.webp#0/8@549x473	62
+[세포연접] 원형질연락사는 이웃한 세포의 막단백질이 서로 연결된 구조이다.	X → 세포벽에 구멍이 나 세포막이 서로 연결된 구조이며, 막단백질로 연결된 구조가 아니다.	o23.webp#1/8@549x473	63
+[세포연접] 원형질연락사로는 물·이온·단량체뿐 아니라 핵산, 단백질, 바이러스 같은 거대분자도 이동할 수 있다.	O	o23.webp#2/8@549x473	63
+[세포연접] 원형질연락사는 세포질 H⁺, Ca²⁺ 농도가 높아지면 닫힐 수 있고, 병원균 감염 시 리그닌을 침착해 영구 폐쇄할 수도 있다.	O	o23.webp#3/8@549x473	63
+[세포연접] 데스모튜불은 원형질연락사를 통해 이웃 식물세포 간에 공유되는 골지체 유래 구조이다.	X → 데스모튜불은 원형질연락사를 통해 공유되는 소포체(SER) 구조이다.	o23.webp#4/8@549x473	63
+[세포연접] 밀착연접은 오클루딘, 클라우딘 단백질로 구성되며, 미세섬유가 세포질 쪽에서 밀착연접을 지지한다.	O	o23.webp#5/8@549x473	64
+[세포연접] 밀착연접은 막단백질과 지질의 측면 확산을 제한하여 정단면과 기저면의 막 성분이 섞이지 않게 한다.	O	o23.webp#6/8@549x473	64
+[세포연접] 신장 헨레 루프 상행지와 집합관에는 느슨한(leaky) 밀착연접이, 하행지와 소장 상피에는 단단한(tight) 밀착연접이 발달한다.	X → 반대다. 단단한 = 헨레 루프 상행지·집합관, 느슨한 = 헨레 루프 하행지·소장 상피.	o23.webp#7/8@549x473	64
+[세포연접] 점착성 연접(adherens junction)은 밀착연접보다 기저쪽에 있으며 카드헤린으로 구성되어 액틴 필라멘트와 연결된다.	O	o24.webp#0/8@549x473	64
+[세포연접] 데스모좀은 플라크 단백질을 통해 카드헤린과 액틴 미세섬유가 연결된 구조이다.	X → 데스모좀은 카드헤린과 중간 필라멘트(케라틴)가 연결된다. 장소: 상피세포, 심근.	o24.webp#1/8@549x473	64
+[세포연접] 데스모좀은 카드헤린으로 세포끼리, 헤미데스모좀은 인테그린으로 세포와 ECM을 연결한다.	O	o24.webp#2/8@549x473	64
+[세포연접] 카드헤린은 Ca²⁺ 의존성 부착 단백질로, 같은 종류끼리만 결합한다.	O → E-cadherin = 표피, N-cadherin = 신경관.	o24.webp#3/8@549x473	64
+[세포연접] 간극연접으로는 약 10 kDa 이하의 단백질까지 통과할 수 있다.	X → 간극연접은 1 kDa 이하의 작은 분자·이온만 교환(물·이온·단량체 유기물). 10 kDa는 원형질연락사.	o24.webp#4/8@549x473	65
+[세포연접] 간극연접은 심근과 단일단위 평활근에서 세포 사이 활동전위를 빠르게 전도한다.	O → 전기적 시냅스. 각막·뼈세포에서는 양분 교환.	o24.webp#5/8@549x473	65
+[세포연접] E-cadherin은 신경관에, N-cadherin은 표피에 주로 존재한다.	X → 반대다. E-cadherin = 표피, N-cadherin = 신경관.	o24.webp#6/8@549x473	66
+[세포연접] 셀렉틴은 당을 매개로 세포-세포를 결합하며, 염증 시 백혈구의 혈관외이동(diapedesis)에 관여한다.	O → WBC의 integrin은 내피세포의 ICAM과 결합.	o24.webp#7/8@549x473	66
+</script>
+<script type="text/plain" id="d-nmr">
+[분광학개요] 결합 길이는 진동 분광학, 결합 세기는 회전 분광학으로 알 수 있다.	X → 반대다. 결합 길이 → 회전 분광학, 결합 세기 → 진동 분광학.	IMG01.webp
+[분광학개요] 분자의 에너지 흐름 통로는 전자 들뜸 분광학, 결합 작용기 및 이들 사이의 상호작용은 자기 공명 분광학으로 알 수 있다.	O	IMG01.webp
+[분광학개요] 라디오파(RF) 영역은 핵 spin 전이(NMR)와 관련되며, 핵 가까이에 있는 전자 구조에 대한 정보를 준다.	O	IMG01.webp
+[분광학개요] 마이크로파(극초단파) 영역은 분자의 진동운동과 관련되어 결합의 세기를 알려준다.	X → 마이크로파는 회전운동(핵간거리)과 관련되며 결합 길이와 결합각을 알려준다. 진동운동은 IR(근적외선).	IMG01.webp
+[분광학개요] IR(적외선)은 진동운동과, UV-Vis는 HOMO→LUMO 전자전이와 관련된다.	O	IMG01.webp
+[분광학개요] X선 영역(10¹⁷–10¹⁹ s⁻¹)은 원자가전자와 관련되어 전자 배치 정보를 준다.	X → X선은 핵심부 전자와 관련되어 핵심부 전자의 에너지 정보를 준다. 원자가전자·전자배치는 가시광선 및 자외선.	IMG01.webp
+[분광학개요] 스펙트럼 영역의 진동수는 라디오파 < 극초단파 < 근적외선 < 가시·자외선 < X선 순으로 커진다.	O	IMG01.webp
+[에너지준위] 각각의 양자화된 진동 에너지 상태 안에 여러 개의 전자 에너지 상태가 포함된다.	X → 반대다. 양자화된 전자 에너지 상태 하나가 진동 및 회전의 양자화된 에너지 상태들을 포함한다. (전자 > 진동 > 회전)	IMG02.webp
+[에너지준위] 에너지 준위 도표의 방출 화살표처럼 전이가 일어나면 전자 상태만 바뀌고 회전·진동 상태는 그대로 유지된다.	X → 이 경우 분자의 회전, 진동 및 전자 상태 모두가 바뀐다.	IMG02.webp
+[에너지준위] 병진운동 에너지 En = n²h²/8mL²에서 n은 0부터 시작하며, L은 질량을 의미한다.	X → n = 1, 2, 3…이고, m은 질량, L은 공간의 크기다.	IMG03.webp
+[에너지준위] 회전운동 에너지 En = h²/(8π²I)·J(J+1)에서 I는 관성모멘트이며 I = μR²(μ: 환산질량)이다.	O	IMG03.webp
+[에너지준위] 진동운동 에너지 En = (½ + n)hν에서 가장 낮은 진동 준위(n = 0)의 에너지는 0이다.	X → n = 0, 1, 2…이며 n = 0일 때도 En = ½hν로 0이 아니다.	IMG03.webp
+[에너지준위] 진동수 ν = (1/2π)√(k/μ)이므로 힘상수 k가 클수록, 환산질량 μ가 클수록 진동수가 커진다.	X → k가 클수록 ν는 커지지만, μ가 클수록 ν는 작아진다.	IMG03.webp
+[NMR개요] NMR(핵자기공명분광법)은 스펙트럼의 RF(Radio Frequency, 라디오파) 영역의 방사를 이용한다.	O	IMG04.webp
+[NMR개요] NMR은 초전도 자석으로 시료에 매우 높은 외부 자기장을 걸어주며, 이를 Bext라고 약칭한다.	O	IMG04.webp
+[NMR개요] 대부분의 NMR 분광기는 UV-vis·IR처럼 시료를 통과한 방사선의 세기를 분석하여 흡광도를 측정한다.	X → NMR은 흡수된 RF 방사선의 일부가 동일한 주파수에서 재방출되는 것을 이용해 검출한다. 투과광 세기 분석은 UV-vis·IR 방식이다.	IMG04.webp
+[NMR개요] 외부 자기장이 없어도 적절한 RF 방사선을 조사하면 시료가 이를 흡수해 NMR 스펙트럼을 얻을 수 있다.	X → 자기장이 없으면 어떤 RF 방사선도 흡수될 수 없고 어떤 NMR 스펙트럼도 기록될 수 없다.	
+[핵spin] 양성자의 spin은 +½ 또는 -½로 양자화되며, +½은 β spin 상태, -½은 α spin 상태에 해당한다.	X → +½ = α spin 상태(spin up), -½ = β spin 상태(spin down).	IMG05.webp
+[핵spin] 핵 spin을 가져 NMR에 나타나려면 양성자 또는 중성자 수가 홀수여야 한다.	O	IMG06.webp
+[핵spin] ¹H, ²H, ¹³C, ¹⁹F, ³¹P는 모두 외부 자기장의 영향을 받는 핵이다.	O	IMG06.webp
+[핵spin] ¹²C와 ¹⁶O는 핵 spin을 가지므로 NMR peak를 나타낸다.	X → ¹²C, ¹⁶O, ⁴He는 양성자·중성자 수가 모두 짝수여서 외부 자기장의 영향을 받지 않는다(NMR 불활성).	IMG06.webp
+[핵spin] 외부 자기장이 가해지면 Bext에 정렬된 α 상태의 에너지가 β 상태보다 약간 높아진다.	X → α 상태의 에너지가 β 상태보다 약간 낮다.	IMG07.webp
+[핵spin] α·β 상태 사이의 에너지 차이(ΔEspin)는 외부 자기장의 크기에 따라 결정되며, Bext가 클수록 ΔEspin도 커진다.	O	IMG07.webp
+[핵spin] 강한 자기장에서 ΔEspin의 전형적인 값은 전자기 스펙트럼의 적외선(IR) 영역 광자 에너지에 해당한다.	X → ΔEspin은 RF(라디오파) 영역의 광자 에너지에 해당한다.	IMG07.webp
+[핵spin] α 상태 핵이 광자를 흡수하여 β 상태로 들떴다가 다시 α 상태로 이완될 때 peak가 생성된다.	O	IMG08.webp
+[핵spin] 광자를 흡수해 위로 들뜨는 것만을 '공명'이라 하고, 아래로 이완되는 과정은 공명에 포함되지 않는다.	X → 위로 들뜨는 것과 아래로 이완되는 것을 함께 '공명'이라고 한다.	IMG08.webp
+[차폐] 양성자를 둘러싼 전자들은 Bext와 같은 방향의 국소 자기장(Bloc)을 만든다.	X → 전자들은 Bext에 '대항하는' 국소 자기장(Bloc)을 만든다.	
+[차폐] 핵이 실질적으로 느끼는 자기장(Beff)은 Bext와 Bloc의 합이다.	O	IMG11.webp
+[차폐] 벤젠의 6개 H는 전자 분포가 모두 같아 화학적으로 동등하므로 ¹H NMR peak가 1개 나타난다.	O	IMG09.webp
+[차폐] H-C≡C-COOH처럼 환경이 다른 H가 2종류인 분자는 TMS를 제외하고 peak가 2개 나타난다.	O → 환경이 다른 H의 개수만큼 peak의 개수가 나타난다.	IMG10.webp
+[차폐] DMF(N,N-다이메틸폼아마이드)는 상온에서 peak 2개, 100℃에서 peak 3개를 나타낸다.	X → 반대다. 상온에서 peak 3개, 100℃에서 peak 2개다.	IMG11.webp
+[차폐] 아세트산(CH₃CO₂H)에는 환경이 다른 수소가 세 종류 존재한다.	X → CH₃의 H들은 C-C 결합 회전으로 빠르게 상호 전환되므로 동등하다. 환경이 다른 수소는 CH₃와 OH 두 종류다.	IMG12.webp
+[차폐] 아세트산의 CH₃ 수소는 shielding(up field), OH 수소는 deshielding(downfield)되어 나타난다.	O	IMG13.webp
+[화학적이동] 화학적 이동은 절대값이므로 기준 물질이 필요 없다.	X → 화학적 이동은 상댓값이므로 기준 물질(TMS)이 필요하다.	IMG14.webp
+[화학적이동] ¹H NMR의 기준 화합물인 TMS는 테트라메틸실란 (CH₃)₄Si이며, 그 양성자의 화학적 이동은 항상 0 ppm이다.	O	
+[화학적이동] 화학적 이동(ppm) = [(ν샘플 − νTMS)/ν작동] × 10⁶ 이며, 세 진동수는 모두 Hz 단위이다.	O	
+[화학적이동] peak의 진동수와 화학적 이동은 모두 자석의 세기(Bext)에 따라 달라진다.	X → peak의 진동수는 Bext에 의존해 바뀌지만, 화학적 이동은 상댓값이므로 Bext와 독립적이다. 그래서 x축에 진동수 대신 화학적 이동을 표시한다.	
+[화학적이동] 관례상 NMR 스펙트럼에서 화학적 이동은 왼쪽에서 오른쪽으로 증가한다.	X → 화학적 이동은 오른쪽에서 왼쪽으로 증가한다.	IMG14.webp
+[화학적이동] 전자가 부족한(deshielding) 양성자는 downfield(왼쪽, δ 큼)에, 전자가 풍부한(shielding) 양성자는 up field(오른쪽, δ 작음)에 나타난다.	O	IMG14.webp
+[화학적이동] CH₄의 H를 F로 치환하면 남은 H는 shielding되어 up field로 이동한다.	X → 전기음성도가 큰 F 때문에 deshielding되어 downfield로 이동한다.	IMG14.webp
+[특징적이동] 알케인 R-CH₃ 양성자의 화학적 이동은 약 0.9 ppm으로 가리워짐(shielding, up field)이 크다.	O	IMG16.webp
+[특징적이동] 알릴 자리(C=C-CH₃) 양성자는 약 1.7 ppm, 벤질 자리(Ar-CH₃) 양성자는 약 2.3 ppm에서 나타난다.	O	IMG16.webp
+[특징적이동] 말단 알킨 H(R-C≡C-H)는 약 4.7 ppm, 말단 알켄 H(R₂C=CH₂)는 약 2.4 ppm에서 나타난다.	X → 반대다. 알킨 H ≈ 2.4 ppm, 말단 알켄 H ≈ 4.7 ppm.	IMG16.webp
+[특징적이동] 카복실산(RCOOH)의 OH 양성자는 2–5 ppm, 알코올(ROH)의 OH 양성자는 10–12 ppm에서 나타난다.	X → 카복실산 OH = 10–12 ppm, 알코올 OH = 2–5 ppm이다.	IMG16.webp
+[특징적이동] 알데하이드(RCHO)의 H는 9–10 ppm으로, 카복실산 H보다는 오른쪽(up field)에 나타난다.	O	IMG15.webp
+[특징적이동] R-NH, R-OH, Ar-OH 양성자는 수소결합을 하므로 화학적 이동이 넓은 범위(각각 1.5–4, 2–5, 4–7 ppm)로 나타난다.	O	IMG16.webp
+[특징적이동] 케톤의 α-H(RCOCH₂-H)는 약 2.1 ppm, 내부 알켄 H(R₂C=CRH)는 약 5.3 ppm에서 나타난다.	O	IMG16.webp
+[특징적이동] 할로젠에 결합한 CH₂의 H는 Br(2.7) > Cl(3.1) > F(4.1) ppm 순으로 화학적 이동이 크다.	X → F(4.1) > Cl(3.1) > Br(2.7) ppm 순이다. 전기음성도가 클수록 화학적 이동이 크다.	IMG16.webp
+[유도효과] ClCH₃ 양성자의 화학적 이동이 FCH₃ 양성자보다 크다.	X → F가 Cl보다 전기음성이므로 FCH₃ 양성자의 화학적 이동이 더 크다.	
+[비등방성] 벤젠 H가 7.3 ppm으로 크게 다운필드 이동하는 것은 전기음성 원자에 의한 유도 효과 때문이다.	X → 벤젠에는 전기음성이 높은 원자가 없으므로 유도 효과로는 설명할 수 없다. 자기적 비등방성 때문이다.	IMG17.webp
+[비등방성] 벤젠 고리 바깥쪽 H에서는 π 전자가 만든 자기장이 Bext와 같은 방향이어서 Beff가 증가하고 deshielding된다.	O	IMG17.webp
+[비등방성] [18]아눌렌에서 고리 안쪽 H는 deshielding(약 9.3 ppm), 고리 바깥쪽 H는 shielding(약 3 ppm)된다.	X → 반대다. 고리 안쪽 H는 유도 자기장이 Bext와 반대여서 shielding(약 3 ppm), 바깥쪽 H는 deshielding(약 9.3 ppm).	IMG18.webp
+[비등방성] 바이닐 H(C=C-H)도 π 전자의 원형 운동으로 H 위치의 Beff가 증가하여 비교적 큰 화학적 이동을 가진다.	O	IMG19.webp
+[비등방성] 알킨 H는 삼중결합 전자 밀도가 결합 축을 중심으로 원통형 대칭이어서, H 위치에서 Bloc이 Bext와 같은 방향이 되어 Beff가 커진다.	X → 알킨 H는 Bloc이 Bext에 반대하는 곳에 놓여 Beff = Bext − Bloc으로 작아지므로 shielding되어 약 2.4 ppm의 낮은 화학적 이동을 가진다.	IMG20.webp
+[이동경향] 차폐에 영향을 주는 효과는 부가적이어서 Cl 수가 늘수록 CH₃(0.9) < CH₂Cl(3.1) < CHCl₂(5.3 ppm)로 화학적 이동이 증가한다.	O	IMG21.webp
+[이동경향] 차폐 효과는 거리에 따라 천천히 감소하므로 3~4개 탄소 떨어진 원자도 화학적 이동에 크게 영향을 준다.	X → 차폐 효과는 거리에 따라 매우 빠르게 떨어지며, 탄소 2개 이상 떨어지면 영향이 일반적으로 매우 작다.	IMG22.webp
+[이동경향] 에틸벤젠에서 방향족 고리에 가장 가까운 H는 약 7.2 ppm, 벤질 자리 H는 약 2.6 ppm, CH₃ H는 약 1.2 ppm이다.	O	IMG22.webp
+[이동경향] 에틸벤젠의 CH₃(1.2 ppm)는 일반 알케인 CH₃(0.9 ppm)보다 약간 크게 나타나는데, 이는 벤젠의 영향이다.	O	IMG22.webp
+[적분] 흡수 peak의 높이(최고점)가 그 peak를 생성하는 양성자의 수에 비례한다.	X → peak 아래의 '면적'이 양성자의 수에 비례한다. (peak 크기 = 면적 ∝ 개수)	IMG23.webp
+[적분] p-자일렌(4-메틸톨루엔)의 ¹H NMR에서 2.3 ppm peak는 4개의 방향족 H, 7.1 ppm peak는 6개의 CH₃ H를 나타낸다.	X → 반대다. 2.3 ppm = 6개의 CH₃ H, 7.1 ppm = 4개의 방향족 H이며, 비율은 6 : 4로 적분 계단 높이 비율과 같다.	IMG23.webp
+[적분] 적분값은 정수비의 최소 집합으로 변환하며, 각 peak가 나타내는 실제 H 수는 정수비와 같거나 그 배수이다.	O	
+[N+1규칙] 짝지움된(spin-spin 결합) 양성자는 일반적으로 3개 이하의 단일결합으로 서로 분리되어 있다.	O	
+[N+1규칙] 서로 동등한 N개의 이웃 양성자에 결합된 양성자는 N개의 peak로 갈라진다.	X → N+1개의 peak로 갈라진다.	IMG25.webp
+[N+1규칙] 오중항(quintet)의 상대 peak 높이 비는 1:4:4:1이다.	X → 오중항은 1:4:6:4:1이다. (파스칼 삼각형)	IMG26.webp
+[N+1규칙] 1,1,2-트라이클로로에테인(Cl₂CHCH₂Cl)에서 C1의 H는 이중항, C2의 H₂는 삼중항으로 나타난다.	X → 반대다. C1의 H는 C2의 H 2개와 짝지움해 삼중항(N+1=3), C2의 H₂는 C1의 H 1개와 짝지움해 이중항(N+1=2).	IMG24.webp
+[N+1규칙] 이웃 양성자가 α 상태이면 Beff와 δ를 약간 증가시키고, β 상태이면 Beff와 δ를 약간 감소시킨다.	O	IMG27.webp
+[N+1규칙] 이웃 양성자 2개가 αβ 또는 βα 조합이면 Beff에 변화가 없으며, 이 조합이 2가지이므로 삼중항의 가운데 peak가 2배로 크다.	O	IMG27.webp
+[N+1규칙] (CH₃)₃C-CHCl-CH₃에서 CHCl의 H는 오중항으로 나타난다.	X → 이웃한 동등 H는 CH₃의 3개뿐(4차 탄소엔 H 없음)이므로 N+1 = 4중선이다.	IMG28.webp
+[N+1규칙] (CH₃)₂CH-CHCl-CH₃에서 CHCl의 H는 이웃 H 4개에 의해 5중선으로 나타난다(J가 같다고 가정).	O	IMG28.webp
+[decoupling] 에틸아민(H₂N-CH₂-CH₃)에서 NH₂ 양성자(δ≈3.7)와 CH₂ 양성자(δ≈2.7)는 서로 짝지움하지 않는다.	O	IMG29.webp
+[decoupling] 에틸아민의 CH₂는 NH₂와 CH₃ 모두와 짝지움하므로 육중항으로 나타난다.	X → NH₂와는 짝지움하지 않으므로 CH₃의 3개 H에 의해 4중선, CH₃는 3중선이다. (peak 3개)	IMG29.webp
+[decoupling] O·N에 결합한 양성자는 수소결합으로 빠르게 교환되는데, 이 교환이 NMR 측정 시간보다 훨씬 빨라 평균 자기 환경을 반영한 미분할 단일항이 된다.	O	
+[decoupling] O나 N에 결합한 양성자는 C에 결합한 양성자보다 화학적 환경이 잘 정의되어 있어 peak가 날카롭다.	X → 잘 정의되지 않은 화학적 환경을 가지므로 넓은 범위의 주파수를 흡수해 peak 폭이 넓어진다.	
+[짝지움상수] 헥산-3-온의 두 CH₃ 삼중항은 90 MHz보다 300 MHz 분광기에서 더 분명하게 구별된다.	O	IMG30.webp
+[짝지움상수] 분광기의 자석이 강해지면 peak의 위치(화학적 이동)도 함께 달라지면서 해상도가 증가한다.	X → peak의 위치(δ)는 같지만 peak가 더 세분화되어 해상도가 증가한다.	IMG30.webp
+[짝지움상수] peak 갈라짐을 일으키는 자기장은 주변 핵들의 spin 조합에 의해 만들어지므로 Bext에 독립적이다.	O	IMG31.webp
+[짝지움상수] 짝지움 상수(J)는 갈라진 peak 사이의 주파수 차이(Hz)로, Bext가 커지면 함께 커진다.	X → J는 Bext의 세기와 상관없이 변하지 않는다. 그래서 강한 자석에서 ppm 축상의 다중선 폭이 더 좁아 보인다.	IMG31.webp
+[짝지움상수] 1-브로모-4-에틸벤젠에서 사중항과 삼중항은 7.6 Hz, 두 이중항은 8.5 Hz의 J를 가져 각각 서로 짝지움되어 있음을 알 수 있다.	O	IMG32.webp
+[짝지움상수] H-C-C-H(vicinal) 짝지움 상수는 6–9 Hz이고, H-C-C-C-H 짝지움 상수는 약 0 Hz이다.	O	IMG33.webp
+[짝지움상수] 알켄에서 cis H-H의 J(13–18 Hz)는 trans H-H의 J(7–12 Hz)보다 크다.	X → trans가 13–18 Hz, cis가 7–12 Hz로 trans의 J가 더 크다.	IMG33.webp
+[짝지움상수] 벤젠 고리에서 J는 ortho(6–9 Hz) > meta(1–3 Hz) > para(0–1 Hz) 순이다.	O	IMG33.webp
+[짝지움상수] 같은 탄소의 두 H 사이의 짝지움(²J)은 geminal coupling이며, 알켄 =CH₂의 geminal J는 1–3 Hz이다.	O	IMG38.webp
+[복잡한갈라짐] 브로모에텐(H₂C=CHBr)의 H_B는 H_C(J=7.1 Hz)와 H_A(J=1.8 Hz)에 의해 갈라져 1:1:1:1 비율의 doublet of doublets로 나타난다.	O	IMG35.webp
+[복잡한갈라짐] doublet of doublets는 어느 이웃 H에 의한 갈라짐을 먼저 적용하느냐에 따라 최종 peak 모양이 달라진다.	X → H_C 먼저든 H_A 먼저든 같은 doublet of doublets가 된다.	IMG35.webp
+[복잡한갈라짐] 브로모에텐 H_B는 이웃 H가 2개이므로 N+1 규칙에 따라 1:2:1 삼중항으로 나타난다.	X → H_A와 H_C는 화학적으로 다르고 J도 다르므로(7.1, 1.8 Hz) 삼중항이 아니라 doublet of doublets(1:1:1:1)가 된다.	IMG34.webp
+[복잡한갈라짐] 부탄알(CH₃CH₂CH₂CHO)에서 알데하이드 H 옆 CH₂ peak는 1:1:2:2:1:1 높이 비의 6개 peak(triplet of doublets)로 나타난다.	O	IMG36.webp
+[복잡한갈라짐] 프로필벤젠의 C2 양성자는 이론상 12개 peak(사중항의 삼중항)이지만, 두 J가 거의 같아 N=5일 때의 육중항처럼 보인다.	O	IMG37.webp
+[복잡한갈라짐] 두 종류의 이웃 양성자에 대한 J가 거의 같으면 peak가 겹치지 않아 이론적인 peak 수가 모두 관찰된다.	X → J가 거의 같으면 일부 peak가 겹쳐 하나로 합쳐지므로, 두 종류를 동등하게 취급한 N+1 규칙 결과와 같아진다.	IMG37.webp
+[13C_NMR] ¹³C 핵은 ¹H와 마찬가지로 ½의 spin을 가져 강한 자기장 안에서 RF 영역 방사선을 흡수할 수 있다.	O	
+[13C_NMR] ¹³C의 자기회전비는 양성자의 약 4배이므로 ¹³C NMR의 RF 진동수가 ¹H NMR보다 높다.	X → ¹³C의 자기회전비는 양성자의 약 1/4이므로 RF 진동수가 ¹H NMR보다 현저히 낮다.	
+[13C_NMR] ¹³C의 천연 존재비는 약 1.1%이며, 나머지 약 98.9%인 ¹²C는 핵 spin이 없어 방사선을 흡수하지 못한다.	O	
+[13C_NMR] peak 평균화(signal averaging)를 하면 무작위 잡음과 peak가 함께 감소한다.	X → 잡음은 무작위여서 평균화로 감소하지만 peak 자체는 일정하게 유지된다.	IMG39.webp
+[13C_NMR] 1-클로로프로페인의 ¹³C NMR에서 77 ppm peak는 TMS, 0 ppm peak는 용매 CDCl₃에 의한 것이다.	X → 반대다. 0 ppm = 기준 TMS, 77 ppm = 용매 CDCl₃의 탄소 peak. 시료 자체 peak는 3개다.	IMG39.webp
+[13C_NMR] ¹³C NMR 스펙트럼은 인접한 ¹³C-¹³C 짝지움 때문에 다중선이 흔히 관찰된다.	X → 인접한 두 ¹³C를 가질 확률이 약 1/10,000에 불과해 짝지움이 관찰되지 않으며, 모두 단일선이다.	
+[13C_NMR] ¹³C 화학적 이동에서 알데하이드·케톤 C=O(190–220 ppm)는 카복실산·에스터·아마이드 C=O(160–185 ppm)보다 왼쪽에 나타난다.	O	IMG40.webp
+[13C_NMR] ¹³C NMR에서 벤젠 탄소는 약 128 ppm, 알켄 탄소는 105–150 ppm, 알카인 탄소는 65–85 ppm에서 나타난다.	O	IMG40.webp
+[13C_NMR] ¹³C NMR에서 C-OH 탄소(55–70 ppm)는 C-NH₂ 탄소(35–40 ppm)보다 작은 화학적 이동을 갖는다.	X → C-OH(55–70 ppm)가 C-NH₂(35–40 ppm)보다 큰 화학적 이동을 갖는다.	IMG40.webp
+[13C_NMR] ¹³C NMR에서 R-CH₃는 10–25 ppm, Cl-CH₂R은 35–55 ppm, Br-CH₂R은 25–35 ppm이다.	O	IMG40.webp
+[정보정리] ¹³C NMR의 peak 분열 양상으로 각 탄소에 결합한 수소 원자의 수를 알 수 있다.	X → ¹³C NMR은 모두 단일선이다. 각 탄소에 있는 수소 원자의 수는 DEPT 스펙트럼으로 안다.	
+[정보정리] ¹³C NMR에서는 peak 총 수로 구별되는 탄소의 수를, 화학적 이동으로 각 탄소의 상대적 환경(디실딩 정도)을 알 수 있다.	O
+</script>
+<script type="text/plain" id="d-cellcycle">
+[분열개요] 무성생식을 하는 단세포 생물에서는 체세포분열과 감수분열의 구분이 없으며, 세포 수의 증가가 곧 개체의 증식이다.	O → 세포의 수가 늘어남이 개체의 증식이고, 이는 다음 세대의 개체가 이어짐을 의미한다.	k01.webp#0/8@543x472	1
+[분열개요] 원핵세포는 여러 개의 복제원점을 가지며, 복제는 반대편의 복제원점(ori)에서 끝난다.	X → 원핵세포는 1개의 복제원점(ori)을 가지며, 복제는 반대편의 종결자(ter site)에서 끝난다.	k01.webp#1/8@543x472	1
+[분열개요] 세균의 FtsZ는 액틴 유사 단백질로, 세포질 피층에 나선형으로 배열되어 유전물질 분배에 관여한다.	X → 그것은 MreB다. FtsZ는 튜불린 유사 단백질로 정중앙에 Z링을 형성해 격막 형성을 돕는다.	k01.webp#2/8@543x472	1
+[분열개요] 유사분열(mitosis)은 미세소관으로 구성된 방추사가 염색체를 분리하는 분열 형태로, 원핵세포와 진핵세포 모두에서 나타난다.	X → 유사분열은 오직 진핵세포에서만 나타나는 세포분열 형태다. 원핵세포는 방추사가 없는 이분법(무사분열)을 한다.	k01.webp#3/8@543x472	2
+[염색체구조] 히스톤 단백질은 음전하를 띠는 DNA와 결합하기 위해 Lys, Arg 같은 양전하 아미노산이 풍부하다.	O	k01.webp#4/8@543x472	2
+[염색체구조] 30nm 섬유는 뉴클레오솜 단위체들의 링커 지역이 꺾이고 뒤틀려 지그재그로 배열되어 뭉친 구조다.	O	k01.webp#5/8@543x472	3
+[염색체구조] 이질염색질은 히스톤 아세틸화↑, DNA 메틸화↓ 상태로 11nm 섬유처럼 풀려 있다.	X → 그것은 진정염색질이다. 이질염색질은 히스톤 아세틸화↓, DNA 메틸화↑ 상태로 30nm 상태로 뭉쳐 있다.	k01.webp#6/8@543x472	3
+[염색체구조] 중심절(centromere)은 단백질 복합체로서 세포분열 과정 중 방추사가 결합하는 '방추사 부착점' 기능을 한다.	X → 그것은 동원체(kinetochore)다. 중심절은 자매 염색분체가 가장 가까이 붙어 있는 염색체 DNA 부위('허리')다.	k01.webp#7/8@543x472	4
+[염색체구조] 코헤신은 자매 염색분체의 쌍을 부착시키는 결합 단백질 복합체이고, 콘덴신은 분열기 전기에 활성화되어 염색질을 염색체 수준으로 응축시킨다.	O	k02.webp#0/8@543x472	4
+[염색체구조] 텔로미어는 유전자를 포함하지 않는 반복서열(사람: TTAGGG)로, 체세포가 분열하며 DNA를 복제할 때마다 일정 길이씩 소실된다.	O	k02.webp#1/8@543x472	4
+[염색체구조] 핵형 분석으로 염색체 수 이상은 확인할 수 있지만, 염색체 구조 이상 돌연변이는 확인할 수 없다.	X → 핵형 분석으로 염색체 구조 이상 돌연변이와 수 이상 돌연변이 모두를 파악할 수 있다.	k02.webp#2/8@543x472	3
+[간기·G0] G1기는 세포 종류와 관계없이 지속시간이 거의 일정하다.	X → G1기는 세포의 생활에서 결정시점이므로 세포 종류에 따라 지속시간이 매우 다양하다. 예) 사람 골수세포의 G1기는 16~24시간.	k02.webp#3/8@543x472	5
+[간기·G0] 줄기세포는 분열이 활발한 불안정세포(labile cell)이고, 신경세포·근육세포는 영구적 G0 상태인 영구세포(permanent cell)다.	O	k02.webp#4/8@543x472	5
+[간기·G0] 림프구는 항원 침입 같은 자극을 받아도 G0기를 벗어나지 못하는 영구세포다.	X → 림프구는 G0 상태지만 항원 침입 같은 자극이 주어지면 G1기로 진행한다.	k02.webp#5/8@543x472	5
+[간기·G0] ³H-우리딘을 흡수한 세포는 DNA 복제가 활발한 S기 세포로 구분된다.	X → ³H-우리딘 흡수는 전사 활성이 높다는 의미다. S기 세포는 ³H-티미딘이나 BrdU 흡수로 구분한다.	k02.webp#6/8@543x472	6
+[간기·G0] 유세포분석 그래프에서 각 구획의 면적은 각 세포주기의 길이에 비례한다.	O → 각 구획의 면적으로 각 세포주기에 해당하는 세포 수를 알 수 있다.	k02.webp#7/8@543x472	6
+[간기·G0] 유세포분석에서 콜히친을 처리하면 DNA 상대량이 1보다 작은 비정상적 세포(D 구간)가 증가한다.	X → 콜히친은 미세소관 형성을 억제해 M기에서 멈추게 하므로 C(G2/M) 구간이 증가한다. D 증가는 세포자살이 늘었을 때다.	k03.webp#0/8@543x472	6
+[체세포분열] 전기에는 염색체가 응축되면서 RNA 전사가 멈추고, 단백질 번역도 전기 끝 무렵 최소 수준으로 감소한다.	O	k03.webp#1/8@543x472	8
+[체세포분열] 전기에 자매 염색분체를 전체적으로 붙잡고 있던 코헤신은 대부분 분해되고, 중심절 부분에만 남는다.	O	k03.webp#2/8@543x472	8
+[체세포분열] 전기에도 소포체와 골지체는 막 구조를 그대로 유지한다.	X → 전기에 소포체, 골지체 막은 소낭(vesicle)으로 쪼개진다.	k03.webp#3/8@543x472	8
+[체세포분열] 사람 세포의 동원판 하나에는 보통 1개의 미세소관만 결합하고, 효모의 동원판에는 20~40개의 미세소관이 결합한다.	X → 반대다. 사람은 동원판 하나에 20~40개, 효모는 단 한 개의 미세소관이 결합한다.	k03.webp#4/8@543x472	9
+[체세포분열] 콜히친으로 '중기에 멈춘' 세포는 사실 전중기 상태로, 염색체가 세포질에 흩어져 있다.	O	k03.webp#5/8@543x472	9
+[체세포분열] APC는 시큐린뿐 아니라 M기 사이클린(cyclin B)의 분해도 유도하는 유비퀴틴 연결효소(ubiquitin ligase)다.	O	k03.webp#6/8@543x472	10
+[체세포분열] 후기A에서 튜불린의 제거는 GTP 가수분해 에너지를 이용하는 운동단백질 catastrophin에 의해 일어난다.	X → ATP 가수분해 에너지를 이용하는 미세소관 운동단백질 catastrophin에 기인한다.	k03.webp#7/8@543x472	10
+[체세포분열] 동원판 방추사 레이저 표백 실험에서 염색체가 표백 부위 쪽으로 다가오므로, 튜불린은 동원판(염색체가 결합한 곳) 쪽에서 소실됨을 알 수 있다.	O	k04.webp#0/8@543x472	10
+[체세포분열] 말기에는 라민 단백질들이 인산화되어 핵층이 형성된다.	X → 라민 단백질들이 '탈인산화'되어 핵층이 형성된다. 인산화는 전중기의 핵층 붕괴다.	k04.webp#1/8@543x472	11
+[체세포분열] 와편모조류는 분열 시 핵막이 사라지고, 염색체가 방추사와 직접 결합하여 양쪽으로 이동한다.	X → 와편모조류는 핵막이 유지되고, 방추사가 핵막의 터널을 관통하며, 염색체는 방추사와 결합하지 않고 핵막을 따라 양끝으로 이동한다.	k04.webp#2/8@543x472	12
+[체세포분열] Hypermastigotes는 핵막이 사라지지 않으며, 동원체가 핵막에 붙은 채 동원체 방추사와 연결되어 염색체를 양 끝으로 끌고 간다.	O	k04.webp#3/8@543x472	12
+[감수분열] 무성생식은 짧은 시간에 대량의 자손을 생산할 수 있지만, 자손의 유전적 다양성을 증가시킬 수 없다는 단점이 있다.	O	k04.webp#4/8@543x472	13
+[감수분열] 상동염색체, 비자매 염색분체, 대립유전자의 개념은 무성생식을 하는 경우에도 동일하게 적용된다.	X → 유성생식을 하는 경우에만 상동염색체, 비자매 염색분체, 대립유전자의 개념을 가진다.	k04.webp#5/8@543x472	13
+[감수분열] 교차는 감수 1분열 동안 사람의 상동염색체 한 쌍에서 최대 1번만 일어난다.	X → 감수 1분열 동안 사람의 상동염색체에서 최소한 1번, 평균 2~3번의 교차가 일어난다.	k04.webp#6/8@543x472	14
+[감수분열] 이동기(diakinesis)에는 접합사복합체가 해체되면서 상동염색체 쌍이 완전히 분리된다.	X → 접합사복합체가 해체된 후 상동염색체 쌍은 약간 떨어져 있으나 여전히 결합된 상태로 존재한다.	k04.webp#7/8@543x472	15
+[감수분열] 체세포분열 중기에는 상동염색체가 쌍을 이룬 2가 염색체 형태로 적도판에 배열된다.	X → 2가 염색체의 적도판 배열은 감수 1분열 중기의 특징이다. 체세포분열 중기에는 각 염색체가 개별적으로 배열된다.	k05.webp#0/8@543x472	16
+[감수분열] 감수 1분열과 감수 2분열 사이(중간기)에는 DNA 복제가 일어나지 않는다.	O	k05.webp#1/8@543x472	16
+[감수분열] 감수 1분열 후기에는 동원체에 위치한 코헤신까지 모두 분해되어 자매 염색분체가 분리된다.	X → 슈고신이 동원체 코헤신의 분해를 막아 자매 염색분체 연결은 지속되고, 상동염색체 쌍만 분리된다.	k05.webp#2/8@543x472	16
+[유전적다양성] 교차는 상동염색체의 4개 염색분체 중 어느 두 개 사이에서든 나타날 수 있으며, 일어나는 위치도 무작위다.	O	k05.webp#3/8@543x472	18
+[유전적다양성] 홀리데이 모델에서 교차는 두 DNA 각각의 두 가닥이 모두 동시에 절단되면서 시작된다.	X → 두 DNA에서 각각 '한 가닥'이 동시에 절단되면 RecA가 절단된 가닥을 옆 DNA의 상보가닥과 짝지어 홀리데이 접합을 만든다.	k05.webp#4/8@543x472	18
+[유전적다양성] 체세포분열 시에도 자매 염색분체 사이 교차가 일어날 수 있지만, 염기서열이 같아 일반적으로는 관찰할 수 없다.	O	k05.webp#5/8@543x472	19
+[유전적다양성] 정자와 난자의 무작위적 수정으로 특정 유전적 조합을 지닌 수정란이 생길 확률은 약 1/840만이다.	X → 1/840만(정자) × 1/840만(난자) = 약 1/70조이다.	k05.webp#6/8@543x472	19
+[유전적다양성] 환경이 변화할 때는 새로운 대립유전자 조합이 유리할 수 있어 유성생식이, 환경이 안정적일 때는 기존 조합을 보존하는 무성생식이 더 유리하다.	O	k05.webp#7/8@543x472	20
+[유전적다양성] 델로이드 로티퍼는 유성생식 없이도 다른 생물의 DNA 조각을 받아들여 유전적 변이를 증가시키므로, 유성생식만이 유전적 다양성을 얻는 유일한 방법은 아니다.	O	k06.webp#0/8@543x472	20
+[생활사] 포자는 수정에 참여하지 않는 반수체(n) 세포로, 체세포분열을 통해 배우자체를 형성한다.	O → 배우자(gamete)는 수정에 참여하며 체세포 분열을 할 수 없다.	k06.webp#1/8@543x472	21
+[생활사] 동물의 생활사에서 반수체 세포(배우자)는 체세포분열을 하여 다세포 배우자체를 만든다.	X → 동물은 반수체 생활사에서 절대 체세포분열을 하지 않으며, 포자체·포자가 없다.	k06.webp#2/8@543x472	21
+[생활사] 제1난모세포는 사춘기 이후 LH의 작용으로 감수분열을 재개하고, FSH의 작용으로 배란된다.	X → 반대다. FSH(여포자극호르몬)의 작용으로 감수분열을 재개하고, LH(황체형성호르몬)의 작용으로 제2난모세포가 배란된다.	k06.webp#3/8@543x472	22
+[생활사] 제1난모세포가 전기 I(복사기)에 멈춰 있는 동안 모계효과 유전자의 전사가 활발히 일어난다.	O	k06.webp#4/8@543x472	22
+[생활사] 정자형성의 감수분열은 사춘기 이후 시작되지만, 난자형성의 감수분열은 출생 이전 태아시기에 이미 시작된다.	O	k06.webp#5/8@543x472	22
+[생활사] 현화식물의 소포자는 체세포분열로 생식세포와 화분관세포를 만들고, 생식세포가 다시 체세포분열하여 2개의 정세포가 된다.	O	k06.webp#6/8@543x472	23
+[생활사] 배낭은 살아남은 대포자 1개가 3회의 체세포분열(핵분열)을 거쳐 형성되며, 7세포 8핵으로 구성된다.	O → 4개의 대포자 중 3개는 퇴화하고 1개만 포자로 생장한다.	k06.webp#7/8@543x472	23
+[생활사] 감수분열에서는 감수 1분열 전과 감수 2분열 전에 각각 DNA 복제가 일어난다.	X → DNA 복제는 감수 1분열 시작 전 간기의 S기에만 일어나고, 감수 2분열 전에는 일어나지 않는다.	k07.webp#0/8@543x472	25
+[생활사] 체세포분열은 동물의 배우자 형성 시, 감수분열은 식물의 배우자 형성 시 일어난다.	X → 체세포분열은 동식물의 생장·세포교체·무성생식과 '식물의 배우자 형성' 시, 감수분열은 '동물의 배우자 형성'과 '식물의 포자 형성' 시 일어난다.	k07.webp#1/8@543x472	25
+[검문지점] G1 검문지점에서는 세포 크기, 영양 조건, 성장인자, DNA 손상 여부를 확인한다.	O	k07.webp#2/8@543x472	26
+[검문지점] G2 검문지점에서는 방추사의 정상부착을, M 검문지점에서는 DNA 복제 완료를 확인한다.	X → G2 검문지점(MPF): DNA 복제, 세포 크기 / M 검문지점(APC): 방추사의 정상부착(중기→후기).	k07.webp#3/8@543x472	26
+[검문지점] 특정 check point에서 문제가 감지되면 정지 신호가 유발되어 세포주기 전체를 중단시키거나 세포자살을 유도할 수 있다.	O	k07.webp#4/8@543x472	26
+[외적신호] 표피생장인자(EGF)는 침샘에서 생산되므로, 동물이 상처 부위를 핥으면 상처 치유에 도움이 된다.	O	k07.webp#5/8@543x472	27
+[외적신호] 인터루킨은 혈소판에서 분비되어 콜라겐을 분비하는 섬유아세포의 분열을 유도한다.	X → 그것은 PDGF다. 인터루킨은 백혈구에서 분비되어 면역세포의 세포분열을 유도한다.	k07.webp#6/8@543x472	27
+[외적신호] 생장인자 신호는 Ras 활성화와 MAPK 연쇄 인산화를 거쳐 전사인자 Myc를 발현시키고, 그 결과 사이클린 D가 발현된다.	O	k07.webp#7/8@543x472	27
+[Cyclin·Cdk] Cdk는 세포주기 동안 농도가 크게 오르내리며, 이 농도 변화로 활성이 조절된다.	X → 성장하는 세포에서 Cdk는 일정한 농도로 유지되고, cyclin에 따라 특정 시기에 활성-비활성이 조절된다.	k08.webp#0/8@543x472	28
+[Cyclin·Cdk] G1 사이클린-Cdk 복합체는 cyclin D + cdk4 또는 cdk6, M 사이클린-Cdk 복합체는 cyclin B + cdk1이다.	O	k08.webp#1/8@543x472	28
+[Cyclin·Cdk] 사이클린-Cdk 복합체에 의한 세포주기 진행은 가역적이어서 필요하면 이전 단계로 되돌아갈 수 있다.	X → 역할이 끝난 cyclin은 곧 분해되므로 세포주기의 진행은 절대적으로 비가역적이다.	k08.webp#2/8@543x472	28
+[Cyclin·Cdk] MPF의 활성이 최대가 되는 시기는 후기이며, 말기에 cyclin B가 분해되면서 MPF 활성이 종결된다.	X → MPF 활성은 중기에 최대이며 후기를 촉진하는 신호를 전달하고, 후기에 cyclin B가 빠르게 분해되어 활성이 종결된다.	k08.webp#3/8@543x472	29
+[Cyclin·Cdk] 초기 G1기에는 cyclin D/Cdk4,6이, 늦은 G1기에는 cyclin E/Cdk2가 pRb를 인산화한다.	O	k08.webp#4/8@543x472	29
+[Cyclin·Cdk] p21은 Cdk 억제제(CKI) 중 INK4 가족에 속한다.	X → p21은 Cip/Kip 가족이고, INK4 가족은 p16이다.	k08.webp#5/8@543x472	33
+[Cyclin·Cdk] DNA 손상 시 활성화된 p53은 p21 유전자를 발현시켜 G1 arrest를 일으키고, 손상이 너무 심하면 Bax를 활성화해 세포자살을 촉진한다.	O	k08.webp#6/8@543x472	29
+[Cyclin·Cdk] 분열효모에서 cyclin B/Cdk1 복합체는 형성되자마자 활성 상태로 존재한다.	X → M기 전까지 Wee1과 CAK의 인산화로 불활성화 상태로 존재하다가, G2 말 Cdc25가 Tyr15의 억제 인산기를 제거하면 활성화된다.	k08.webp#7/8@543x472	30
+[Cyclin·Cdk] Cdc25가 결손되거나 Wee1이 과발현되면 G2기가 길어져 길쭉하고 큰 세포가 만들어진다.	O → Wee1 결손·Cdc25 과발현이면 M기에 조기 진입하여 작은 세포가 된다.	k09.webp#0/8@543x472	30
+[Cyclin·Cdk] CAK는 Cdk1의 Thr161에 활성 인산기를 붙이고, Cdc25는 Tyr15의 억제 인산기를 제거한다.	O	k09.webp#1/8@543x472	37
+[Cyclin·Cdk] Wee1 기능소실 돌연변이에서는 억제성 인산화가 일어나지 않아 분열이 일어나지 않는다.	X → 분열은 일어나지만 바로 M기로 진행해 G2기가 부족하므로 세포 크기가 작아진다.	k09.webp#2/8@543x472	37
+[Cyclin·Cdk] 활성화된 MPF는 미오신을 인산화하여 수축환이 조기에 생성되도록 촉진한다.	X → 미오신 인산화는 수축환의 조기 생성을 '방지'한다. (라민 인산화 → 핵막 분해, 콘덴신 인산화 → 염색체 응축)	k09.webp#3/8@543x472	37
+[Cyclin·Cdk] Cdc14 phosphatase는 Cdh1을 탈인산화하고, Cdh1이 APC와 결합하여 MPF를 불활성화한다.	O → 복제원점 결합 단백질들도 탈인산화하여 다음 세포주기를 준비한다.	k09.webp#4/8@543x472	38
+[Cyclin·Cdk] 유비퀴틴화 효소 중 E1은 ATP를 사용해 유비퀴틴과 결합하고, 표적 단백질을 특이적으로 인식하는 것은 E3다.	O	k09.webp#5/8@543x472	38
+[Cyclin·Cdk] 유비퀴틴화 효소 중 특이성이 가장 높고 종류도 가장 많은 것은 E1이다.	X → 특이성이 높고 종류가 많은 것은 E3(유비퀴틴 연결효소)다. 사람에서 약 600종이 규명되었다.	k09.webp#6/8@543x472	38
+[Cyclin·Cdk] 세포 크기 신호: G1기 세포가 성장하면서 cyclin D가 계속 합성되어 이를 억제하는 단백질의 양을 초과하면 cyclin D + cdk4 복합체가 생긴다.	O	k09.webp#7/8@543x472	34
+[Cyclin·Cdk] 복제가 시작된 복제원점에는 같은 S기 안에서 Cdc6가 다시 결합하여 재복제를 준비한다.	X → 새로 생긴 복제원점에는 인산화된 ORC가 붙어 다른 조절 단백질의 부착을 억제하므로 중복 복제가 일어나지 않는다. 인산화된 Cdc6는 분해된다.	k10.webp#0/8@543x472	36
+[조절실험] M기 세포와 G2기 세포를 융합하면 G2기 세포의 염색체가 조기 응축한다.	O	k10.webp#1/8@543x472	31
+[조절실험] G1기 세포와 G2기 세포를 융합하면 G1기 핵은 즉시 S기로, G2기 핵은 즉시 M기로 진입한다.	X → 각 핵은 영향을 주지 않고 정상적으로 G1기 핵은 S기로, G2기 핵은 M기로 진행한다.	k10.webp#2/8@543x472	31
+[조절실험] 아프리카발톱개구리 난모세포는 프로게스테론에 의해 제1감수분열을 마치고 제2감수분열 전기에서 멈춘다.	X → 제2감수분열 '중기'(난자 단계)에서 멈추며, 수정이 이루어져야 감수분열을 완성한다.	k10.webp#3/8@543x472	32
+[암특성] TGF-β는 표적세포의 사멸을 유도하고 p21 단백질 합성을 촉진하여 세포 분열을 억제한다.	O	k10.webp#4/8@543x472	39
+[암특성] ECM에 부착하면 인테그린이 세포 내로 분열 유도 신호를 전달하므로, ECM에 부착하지 못한 정상세포는 분열을 멈춘다.	O	k10.webp#5/8@543x472	39
+[암특성] 양성종양은 피막이 없어 주위 조직으로 침윤하며, 수술로 제거해도 재발이 잦다.	X → 그것은 악성종양이다. 양성종양은 피막이 있어 침윤을 막고 완전 제거가 용이하며 재발이 거의 없다.	k10.webp#6/8@543x472	40
+[암특성] 악성종양은 양성종양보다 핵/세포질 비율이 크고 분열지수가 높다.	O	k10.webp#7/8@543x472	40
+[암특성] 암세포에서는 배아 특유 단백질인 AFP(α-fetoprotein)나 CEA가 다량 합성되는데, 이는 탈분화의 특징이다.	O	k11.webp#0/8@543x472	41
+[암특성] 손상이 없는 정상 체세포는 배지에서 약 30~50회 분열한 후 사멸하며, 이를 세포노화라 부른다.	O	k11.webp#1/8@543x472	41
+[암특성] 암세포는 인테그린, 카드헤린 등의 발현이 증가하여 부착 의존성이 커진다.	X → 인테그린·카드헤린 발현이 감소해 부착 비의존적으로 변하고, 부유 상태에서도 증식한다.	k11.webp#2/8@543x472	41
+[암특성] 암세포는 콜라겐가수분해효소 같은 단백질분해효소를 분비해 세포외 기질을 분해하고 인접한 정상조직에 침윤한다.	O	k11.webp#3/8@543x472	41
+[암특성] 암세포는 우리 몸에서 가장 빠르게 분열하는 세포로, 사람의 배아세포보다도 자주 분열한다.	X → 암은 유래한 정상세포보다 많이 분열하지만 항상 가장 빠르게 분열하는 세포는 아니며, 배아세포보다 자주 분열하지 않는다.	k11.webp#4/8@543x472	42
+[암특성] 대부분의 암은 여러 세포에서 동시에 시작된다.	X → 대부분의 암은 하나의 단일 세포에서 시작하며, 암은 그 세포에서 유래한 세포집단(clone)이다.	k11.webp#5/8@543x472	42
+[암특성] 암세포가 분비하는 MMP는 혈관내피세포의 세포외 기질을 분해하여 혈관내피세포가 암세포 주변으로 쉽게 이동하게 한다.	O	k11.webp#6/8@543x472	43
+[암특성] 엔도스타틴은 대표적인 혈관신생 촉진물질로, VEGF와 함께 암의 전이를 돕는다.	X → 안지오스타틴, 엔도스타틴, 트롬보스폰딘은 대표적인 혈관신생 '억제'물질이다.	k11.webp#7/8@543x472	43
+[암발생] 대장암 모델에서 폴립에 ras 발암유전자 돌연변이와 SMAD4 결손이 일어나면 큰 양성 종양으로 변한다.	O → 이후 p53 기능 소실이 일어나면 악성 종양(암)이 된다.	k12.webp#0/8@543x472	44
+[암발생] 유방암은 ERα, PR, 그리고 HER2·HER3 같은 티로신 인산화효소 수용체의 비정상적 신호전달 차이에 근거해 3가지로 분류된다.	O	k12.webp#1/8@543x472	45
+[암발생] 내강 유형 유방암에는 타목시펜뿐 아니라 에스트로젠 합성 억제제도 치료제로 쓸 수 있다.	O	k12.webp#2/8@543x472	45
+[암발생] HNPCC(린치증후군)는 DNA 수선에 관여하는 유전자의 상염색체 열성 돌연변이로 나타난다.	X → DNA 수선에 관여하는 유전자의 상염색체 우성 돌연변이로 나타나며, 일생 동안 대장암 발병 확률을 50~70% 증가시킨다.	k12.webp#3/8@543x472	45
+[암발생] 가족성 선종성 용종증의 원인 유전자인 APC는 세포 이동과 부착을 조절하는 원발암유전자다.	X → APC는 종양 억제 유전자이며, 열성 돌연변이로 2개의 대립유전자에 모두 돌연변이가 일어나야 기능이 소실된다.	k12.webp#4/8@543x472	45
+[암발생] 간에서 cytP450이 돌연변이원을 해독하는 과정에서 돌연변이원이 산화되며 오히려 더 큰 반응성을 갖게 되기도 한다.	O	k12.webp#5/8@543x472	47
+[암발생] HPV는 숙주 상피세포의 헤파린 황산 수용체에 결합해 endocytosis되며, 엔도좀의 pH가 낮아지면 캡시드가 제거된다.	O	k12.webp#6/8@543x472	48
+[암발생] HPV의 E1은 바이러스 복제원점에 E2의 부착을 유도하고, E2는 helicase 활성을 가진다.	X → 반대다. E1이 helicase 활성을 지니고, E2가 바이러스 DNA 복제원점에 E1의 부착을 유도한다.	k12.webp#7/8@543x472	48
+[암발생] HPV DNA가 우연히 숙주 염색체에 삽입되면 캡시드를 조립해 방출할 수 없으므로, 숙주세포는 바이러스 DNA를 지닌 채 계속 분열하여 암화된다.	O	k13.webp#0/8@543x472	48
+[암발생] SV40은 p53의 전사활성을 억제하며, 흉막·복막 등을 덮는 중피에서 발생하는 중피종을 유발한다.	O	k13.webp#1/8@543x472	49
+[암발생] RSV에서 Gag-Pol 융합 단백질은 스플라이싱된 mRNA에서 번역된다.	X → Gag-Pol은 전체 길이 mRNA에서 약 10번 중 한 번의 번역 틀이동으로 합성된다. 스플라이싱된 mRNA는 Env 단백질을 만든다.	k13.webp#2/8@543x472	51
+[암발생] v-Src는 c-Src에 조절 도메인이 추가되어 티로신 카이네이스 활성이 억제된 유전자다.	X → v-Src는 c-Src의 활성을 조절하는 도메인이 결실되어 티로신 카이네이스 활성이 지속되는 돌연변이 유전자다.	k13.webp#3/8@543x472	52
+[암발생] HIV와 HTLV-1은 모두 레트로바이러스이며, 둘 다 암을 유발한다.	X → HTLV-1은 성인 T세포 백혈병을 유발하지만, HIV는 AIDS를 일으킬 뿐 암을 유발하지 않는다.	k13.webp#4/8@543x472	52
+[암발생] 원발암유전자는 기능 획득 돌연변이가 대립유전자 하나에만 일어나도 효과가 나타나는 우성이고, 종양억제유전자는 기능 상실 돌연변이로 작용하는 열성이다.	O	k13.webp#5/8@543x472	53
+[암발생] p53은 동원체 복제, 방추체 형성, 염색체 분리에도 중요하므로 p53 돌연변이 시 불균등한 염색체 분리가 일어날 수 있다.	O	k13.webp#6/8@543x472	53
+[암발생] 버킷림프종은 t(8;14)(q24;q32), 만성골수성백혈병(CML)은 t(9;22)(q34;q11) 전좌로 생긴다.	O	k13.webp#7/8@543x472	54
+[암발생] 글리벡은 Abl-Bcr 티로신 키나아제의 기질 결합 부위에 결합하지만, ATP의 결합은 방해하지 않는다.	X → 글리벡(imatinib)은 Abl-Bcr 티로신 키나아제와 기질인 ATP의 결합을 저해해 세포분열을 억제한다.	k14.webp#0/8@543x472	54
+[암발생] 색소성 건피증은 뉴클레오타이드 절제수선(NER) 관련 유전자, 유전성 비용종성 대장암은 불일치 수선 관련 유전자의 돌연변이에 기인한다.	O	k14.webp#1/8@543x472	54
+[항암제] 양성자 치료는 표적 부위에 도달하기 전까지 방사선을 거의 방출하지 않아 감마선·X선보다 정확한 치료가 가능하다.	O	k14.webp#2/8@543x472	55
+[항암제] 시스플라틴은 백금을 포함하며 주로 고환암에 사용되고, 구아닌과 공유결합해 DNA 두 나선이 분리되지 못하게 한다.	O	k14.webp#3/8@543x472	55
+[항암제] 에토포시드(podophyllotoxin)는 토포이소머레이스를 억제하는 M기 특이적 항암제다.	X → 에토포시드는 S기 특이적이다. M기 특이적인 것은 방추사를 억제하는 빈카 알칼로이드와 택솔이다.	k14.webp#4/8@543x472	55
+[항암제] 메토트렉세이트는 이수소엽산(DHF)보다 약 100배 더 강하게 DHFR에 결합하는 경쟁적 저해제다.	O	kw01.webp#0/8@860x472	58
+[항암제] 5-FU는 FdUMP로 전환된 뒤 thymidylate synthase와 결합해 이를 불활성화시키는 기전 기반 불활성화제다.	O	kw01.webp#1/8@860x472	58
+[항암제] 종양세포는 산화적 인산화보다 젖산 발효가 우세하며, DCA는 PDH 인산화효소를 억제해 시트르산 회로를 활성화하고 종양세포의 세포자살을 유도한다.	O	kw01.webp#2/8@860x472	57
+[항암제] 알킬화제는 휴식 중인 세포에 가장 강한 독성을 보이며, 발암성이 없어 이차 암 위험이 없다.	X → 신속하게 분열하는 세포에 가장 독성이 강하고, 변이성·발암성이 있어 이차적인 암을 초래할 수도 있다.	kw01.webp#3/8@860x472	59
+[항암제] 택솔(paclitaxel)은 튜불린에 결합해 미세소관 중합을 저해한다.	X → 택솔은 미세소관 '해리' 저해제로 중합체를 지나치게 안정화시킨다. 중합 저해제는 콜히친, 빈크리스틴·빈블라스틴 등이다.	kw01.webp#4/8@860x472	59
+[항암제] 랄록시펜은 타목시펜처럼 유방의 증식만 억제하고, 자궁의 증식은 오히려 촉진한다.	X → 랄록시펜은 타목시펜과 달리 유방과 자궁의 증식을 모두 억제한다. 또한 뼈에 작용해 골밀도를 증가시킨다.	kw01.webp#5/8@860x472	59
+[항암제] 타목시펜은 뼈의 골밀도를 증가시키지만, 부작용으로 자궁내막 증식 위험을 높여 자궁암의 원인이 되기도 한다.	O	kw01.webp#6/8@860x472	59
+[항암제] 탈세바·이레사는 VEGFR과 PDGFR을 모두 억제하는 다중 표적 억제제다.	X → 탈세바·이레사는 EGFR 표적 저해제(비소세포폐암)다. VEGFR·PDGFR 다중 표적 억제제는 수텐트·넥사바다.	kw01.webp#7/8@860x472	60
+[항암제] 퍼제타(pertuzumab)는 HER2 수용체의 이합체 형성을 억제하고, 어비툭스(cetuximab)는 EGFR에 작용해 신호를 차단한다.	O	kw02.webp#0/8@860x472	60
+[항암제] 입랜스(palbociclib)는 CDK1을 억제해 G2기에서 M기로의 진행을 억제한다.	X → 입랜스는 CDK4와 CDK6를 억제해 G1기에서 S기로의 진행을 억제하며, 특히 유방암 치료에 많이 쓰인다.	kw02.webp#1/8@860x472	61
+[항암제] 젤보라프는 MEK 억제제, 매큐셀은 B-raf 억제제다.	X → 반대다. 젤보라프(vemurafenib) = B-raf 억제제, 매큐셀(trametinib) = MEK 억제제.	kw02.webp#2/8@860x472	61
+[항암제] 암세포는 PD-L1을 이용해 T세포의 PD-1 수용체에 결합함으로써 면역세포를 무력화한다.	O	kw02.webp#3/8@860x472	61
+[항암제] 면역관문억제제는 T세포의 '브레이크'를 제거하므로 자가면역질환 발생 위험이 증가하는 부작용이 있다.	O	kw02.webp#4/8@860x472	62
+[항암제] CAR-T 치료는 높은 특이성과 개인 맞춤형 치료가 장점이며, 혈액암뿐 아니라 고형암에서도 성공 사례가 많다.	X → CAR-T는 혈액암 외에는 성공 사례가 없으며, 과도한 면역반응 부작용·긴 제작 기간·고비용이 단점이다.	kw02.webp#5/8@860x472	63
+[항암제] 수동면역 항암요법은 면역 기억을 형성하므로 효과가 장기적으로 지속된다.	X → 수동면역은 면역 기억이 없고 효과는 빠르지만 일시적(반복 투여 필요)이다. 면역 기억과 장기 효과는 능동면역의 특징이다.	kw02.webp#6/8@860x472	64
+[세포죽음] 세포자살은 개별 세포(single cell) 단위로, 세포괴사는 세포 집단(group of cells) 단위로 일어난다.	O	k14.webp#5/8@543x472	65
+[세포죽음] 세포괴사에서는 PS가 세포막 외층으로 이동해 대식세포의 식작용을 유도한다.	X → PS가 외층으로 이동하는 것은 세포자살이다. 세포괴사에서 PS 위치는 불변이다.	k14.webp#6/8@543x472	65
+[세포죽음] 세포자살 과정에서는 미토콘드리아가 팽창하고, 세포괴사 과정에서는 미토콘드리아에 거의 변화가 없다.	X → 반대다. 세포괴사에서 미토콘드리아가 팽창하고, 세포자살에서는 거의 변화가 없다.	k14.webp#7/8@543x472	65
+[세포죽음] 세포괴사 시에는 리소좀이 파괴되면서 방출된 DNase가 히스톤에 감긴 DNA까지 분해하므로 무작위적인 절단이 일어난다.	O	k15.webp#0/8@543x472	65
+[세포죽음] 손가락 뼈 사이 세포가 죽어 손가락이 형성되는 것, 자궁 속막 세포가 매달 떨어져 나가는 것은 세포자살의 예다.	O	k15.webp#1/8@543x472	66
+[세포죽음] 식물에서 잎의 탈리는 옥신 호르몬에 의한 세포자살이다.	X → 잎의 탈리는 에틸렌 호르몬에 의한 세포자살이다.	k15.webp#2/8@543x472	66
+[세포죽음] 세포자살된 세포는 세포사멸체로 나뉘어 주변 세포나 대식세포에 의해 빠르게 제거되므로 염증을 유발하지 않는다.	O	k15.webp#3/8@543x472	66
+[세포죽음] Tc 세포가 FasL이나 퍼포린/그랜자임으로 표적세포의 caspase를 활성화하는 것은 내인성 경로다.	X → 외인성(extrinsic) 경로다. 내인성 경로의 핵심은 미토콘드리아 cyt c 방출이다.	k15.webp#4/8@543x472	66
+[세포죽음] TNF 수용체는 원형질막 안쪽(세포질 쪽)에 TNF 결합자리를 가진다.	X → TNF 결합자리는 원형질막 바깥쪽에 있고, 세포질 쪽에는 TRADD와 상호작용하는 사망영역(death domain)이 있다.	k15.webp#5/8@543x472	67
+[세포죽음] Fas나 FasL에 돌연변이가 생긴 사람은 B/T 림프구 수가 비정상적으로 감소한다.	X → 림프구 제거가 되지 않아 비정상적인 B/T 림프구의 '증가'가 나타난다.	k15.webp#6/8@543x472	68
+[세포죽음] 신경세포는 표적세포가 분비하는 한정된 양의 생존인자(NGF 등)를 놓고 경쟁하며, 충분히 획득한 신경세포만 살아남는다.	O	k15.webp#7/8@543x472	68
+[세포죽음] 예쁜꼬마선충의 Ced-9은 미토콘드리아 외막에 위치하며, 포유류의 Bcl-2에 해당한다.	O	k16.webp#0/8@543x472	68
+[세포죽음] 세포자살 신호가 오면 Ced-9이 활성화되어 Ced-4가 Ced-3을 활성화하도록 돕는다.	X → 신호가 오면 Ced-9이 '불활성화'되고, 풀려난 Ced-4가 Ced-3과 결합해 Ced-3의 가수분해를 유도·활성화시킨다.	k16.webp#1/8@543x472	68
+[세포죽음] Caspase는 효소원(zymogen) 상태로 생성되며, 다른 caspase에 의해 또는 스스로 절단된 뒤 활성화된다.	O	k16.webp#2/8@543x472	68
+[세포죽음] caspase는 약 40여 개의 표적 단백질을 절단하며, 핵 라민 분해로 핵막이 응축·소실되고 골지체 기질 단백질 분해로 골지체가 분절된다.	O	k16.webp#3/8@543x472	69
+[세포죽음] caspase의 활성화는 일반적으로 인산화에 의해 일어난다.	X → caspase의 활성화는 '부분적인 절단과 구조 변화'에 의해 일어난다.	kw02.webp#7/8@860x472	70
+[세포죽음] 네크롭토시스와 파이롭토시스는 모두 신호전달에 의존하는 프로그램된 사멸이지만, 세포막이 파열되고 염증 반응을 유발한다.	O	kw03.webp#0/2@860x472	70
+[세포죽음] 네크롭토시스의 주요 단백질은 Gasdermin D이고, 파이롭토시스의 주요 단백질은 RIPK-1/3과 MLKL이다.	X → 반대다. 네크롭토시스 = RIPK-1/3, MLKL / 파이롭토시스 = Caspase-1/4/5/11, Gasdermin D.	kw03.webp#1/2@860x472	70
+[사멸확인] AO/EB 염색에서 EB는 세포막을 자유롭게 통과하므로 살아있는 세포의 핵을 붉게 염색한다.	X → AO가 세포막을 자유롭게 통과해 녹색 형광을 띠고, EB는 세포막을 통과하지 못한다. 살아있는 세포는 녹색이다.	k16.webp#4/8@543x472	71
+[사멸확인] AO/EB 염색에서 세포자살 초기 세포는 오렌지색으로 관찰된다.	X → 세포자살 초기는 밝은 녹색에 핵 응축 또는 분절이다. 오렌지색은 세포자살 후기(핵 응축·분절)와 세포괴사(온전한 핵 모양)다.	k16.webp#5/8@543x472	71
+[사멸확인] 세포자살이나 세포괴사가 일어나면 세포질 성분인 젖산 탈수소효소가 세포 밖으로 방출된다.	O	k16.webp#6/8@543x472	71
+[사멸확인] 아넥신 V 분석에서는 CaCl₂가 들어 있는 완충용액을 처리한 뒤 FITC-아넥신 V와 PI를 처리해 형광 유세포 분류기로 분석한다.	O	k16.webp#7/8@543x472	71
+[사멸확인] TUNEL 분석에서 세포자살 초기 세포는 TUNEL(+), PI(+)로 나타난다.	X → 세포자살 초기는 TUNEL(+), PI(-)이고, 세포자살 후기 또는 세포괴사는 TUNEL(+), PI(+)이다.	k17.webp#0/2@543x472	72
+[사멸확인] 조직에서 세포 수가 감소했다면, 세포분열 감소인지 세포사멸 증가인지를 TUNEL 분석으로 다시 확인할 수 있다.	O	k17.webp#1/2@543x472	72
+</script>
+
+<script type="text/plain" id="d-enzyme">
+[물질대사] ΔH > 0이면 발열반응으로 에너지를 방출한다.	X → ΔH > 0은 흡열(에너지 흡수)이고, ΔH < 0이 발열(에너지 방출)이다.	e01.webp#0/8	1
+[물질대사] ΔG < 0이면 자발적이고 ΔG > 0이면 비자발적이다.	O	e01.webp#1/8	1
+[물질대사] 자발적 반응은 활성화 에너지 장벽 없이 곧바로 진행된다.	X → 자발적 반응도 활성화 에너지(Ea) 장벽을 넘어야 하므로 반응 속도론의 이해가 따로 필요하다.	e01.webp#2/8	1
+[ATP] 인산기의 O- 사이에는 서로 인력이 작용하여 바깥쪽 두 개의 인산-에스테르 결합이 안정하다.	X → 서로 척력이 작용하며 그 결과 바깥쪽 두 개의 인산-에스테르 결합은 불안정하다.	e01.webp#3/8	2
+[ATP] ATP의 고에너지 인산-에스테르 결합은 2회에 걸쳐 끊어질 수 있다.	O	e01.webp#4/8	2
+[ATP] ATP는 인산 다이에스터 결합의 형태로 에너지를 저장하고 있다.	X → 인산 안하이드라이드(Phosphoanhydride) 결합의 형태로 저장한다.	e01.webp#5/8	2
+[ATP] 세포 내의 조건은 표준조건과 같으므로 세포도 정확히 7.3kcal의 에너지를 방출한다.	X → 세포 내 조건은 표준조건과 다르므로 7.3kcal보다 많은 양의 에너지를 방출한다.	e01.webp#6/8	2
+[ATP] ATP 가수분해 시 고에너지가 방출되는 이유에는 Pi기의 공명 현상에 의한 안정화와 인산기 사이 반발력 감소가 있다.	O	e01.webp#7/8	2
+[ATP] 자연상태에서 일어나기 어려운 발열반응이 ATP를 매개로 흡열반응과 연계되어 쉽게 일어난다.	X → 일어나기 어려운 흡열반응이 ATP를 매개로 발열반응과 연계되어 쉽게 일어난다.	e02.webp#0/8	2
+[ATP] 어떤 흡열 반응의 ΔG가 ATP 가수분해로 방출되는 에너지 양보다 작다면 두 반응은 짝물림될 수 있고 전체 짝물림 반응은 발열 반응이 된다.	O	e02.webp#1/8	3
+[ATP] ATP 가수분해 시 인산기를 내어주는 분자를 인산화된 중간물질이라 한다.	X → 인산기를 수용하는 분자를 인산화된 중간물질이라 한다.	e02.webp#2/8	3
+[ATP] 글루탐산-글루타민 반응(ΔG = +3.4)을 ATP 가수분해와 짝지으면 전체 ΔG는 -3.9 kcal/mol이 된다.	O	e02.webp#3/8	3
+[ATP] 분리된 무기인산염은 공명구조 때문에 매우 불안정하다.	X → 공명구조로 인해 매우 안정하다.	e02.webp#4/8	3
+[ATP] ADP와 Pi가 만나 다시 ATP로 합성되는 인산화 반응은 발열반응이다.	X → 흡열반응이며 외부에서 공급되는 에너지가 반드시 필요하다.	e02.webp#5/8	3
+[ATP] ATP는 이화대사로부터 나오는 에너지에 의해 충전되며 특히 세포호흡이 그 에너지를 제공한다.	O	e02.webp#6/8	3
+[ATP] ATP는 RNA를 만들 때 기질로 사용된다.	O	e02.webp#7/8	4
+[ATP] 청량음료에 루시페린과 루시퍼레이스를 첨가했을 때 세균이 존재하면 발광이 사라진다.	X → 세균이 존재하면 ATP가 있으므로 루시페린이 산소와 결합해 발광하게 된다.	e03.webp#0/8	4
+[ATP] 반응속도는 ΔG의 크기에 비례한다.	X → 반응속도는 활성화 에너지에 기인하며 ΔG와는 관련성이 없다.	e03.webp#1/8	5
+[효소개요] 효소는 생물학적 유기촉매로서 활성화 에너지를 감소시켜 반응속도를 빠르게 해주는 물질이다.	O	e03.webp#2/8	5
+[효소개요] 생체 내 모든 효소는 단백질로만 구성된다.	X → 대부분의 효소는 단백질로 구성되지만 일부 RNA가 효소의 기능을 하는 예외가 있다.	e03.webp#3/8	5
+[효소개요] 효소는 활성화 장벽을 낮춤으로써 반응 속도를 증가시키며 반응 평형에도 영향을 미친다.	X → 반응 평형에는 영향을 미치지 않는다.	e03.webp#4/8	5
+[효소개요] 효소는 촉매 반응의 기질 상태에 가장 강하게 결합한다.	X → 촉매 반응의 전이상태에 가장 강하게 결합한다.	e03.webp#5/8	5
+[효소개요] 동일 효소는 일반적으로 정반응과 역반응을 모두 촉매한다.	O	e03.webp#6/8	5
+[효소개요] 효소는 평형에 도달하는 반응속도를 촉진시키지만 평형의 위치는 변화시키지 않는다.	O	e03.webp#7/8	5
+[효소개요] 평형농도는 반응물과 생성물의 자유에너지차(ΔG)에 의해서만 변화하는 값이다.	O	e04.webp#0/8	5
+[효소개요] 효소의 기질 특이성은 효소의 1차 구조에 의한 것이다.	X → 효소의 3차원적 구조에 의한 기질과 효소 활성자리의 정확한 상호작용에 기인한다.	e04.webp#1/8	5
+[효소개요] 모든 효소는 기질 특이성의 정도가 동일하다.	X → 효소마다 다를 수 있다(글루코키네이스는 포도당만, 헥소키네이스는 육탄당).	e04.webp#2/8	5
+[효소개요] 효소와 기질 간의 결합은 수소결합, 반데르발스 결합, 일시적인 공유결합 등으로 이루어진다.	O	e04.webp#3/8	5
+[속도영향] 알로스테릭 효소는 기질농도에 대해 쌍곡선 형태의 그래프를 나타낸다.	X → S자형 곡선을 나타내며, 쌍곡선 형태는 MM식을 따르는 효소다.	e04.webp#4/8	7
+[속도영향] 단백질은 최적 pH에서 가장 안정된 입체구조를 형성하며 과다한 산이나 알칼리는 효소를 변성시켜 활성을 감소시킨다.	O	e04.webp#5/8	7
+[속도영향] 온도가 대체로 10℃ 올라가면 반응속도는 2배 증가하나, 너무 높은 온도에서는 효소가 변성되어 반응속도가 감소한다.	O	e04.webp#6/8	7
+[속도영향] 촉매성 RNA인 리보자임은 유전자 발현에서 특이적인 기능을 나타내지만 일반적인 대사반응에는 관여하지 않는 듯하다.	O	e04.webp#7/8	7
+[속도영향] 상당수의 알려진 리보자임들은 성숙된 mRNA의 엑손을 잘라내는 촉매작용을 갖는다.	X → 미성숙 RNA의 인트론을 잘라내거나 붙이는 촉매작용을 갖는다.	e05.webp#0/8	7
+[속도영향] 대장균에서 펩티드 결합을 형성하는 리보자임은 50S에 있는 23S rRNA다.	O	e05.webp#1/8	7
+[속도영향] 단순 단백질 효소의 예로 대다수의 산화-환원 효소들이 있다.	X → 대다수의 가수분해 효소들이 단순 단백질 효소의 예다.	e05.webp#2/8	7
+[속도영향] 전효소는 주효소와 보조인자로 구성되며, 주효소는 비단백 물질이다.	X → 주효소가 단백질이고 보조인자가 비단백 물질이다.	e05.webp#3/8	7
+[속도영향] 주효소와 공유결합하는 보조인자를 조효소(Coenzyme), 비공유결합하는 것을 보결원자단이라 한다.	X → 반대다. 비공유결합이 조효소, 공유결합이 보결원자단(보조단)이다.	e05.webp#4/8	7
+[속도영향] RNA World 가설은 중심원리가 성립되기 이전에 RNA가 유전물질과 생체 촉매 역할을 모두 수행했을 것으로 예상한다.	O	e05.webp#5/8	10
+[속도영향] RNA에서 DNA로의 진화 과정에서 티민 대신 우라실을 사용하게 되었다.	X → 우라실 대신 티민을 사용하게 되었다.	e05.webp#6/8	10
+[속도영향] 리보스위치는 RNA의 구조가 상황에 따라 바뀌면서 스스로 단백질 번역의 조절자 역할을 하는 것이다.	O	e05.webp#7/8	10
+[속도영향] SELEX로 리보자임을 획득할 때는 충전제에 기질 자체를 붙여 컬럼에 채운다.	X → 기질의 전이상태 유사체 물질을 붙여서 컬럼에 채운다.	e06.webp#0/8	10
+[속도영향] 니트로셀룰로오스 필터에는 RNA가 비특이적으로 결합하지만 단백질은 결합하지 않는다.	X → 반대다. 단백질이 비특이적으로 결합하고 RNA는 결합하지 않는다.	e06.webp#1/8	10
+[작용방식] 비용매화(Desolvation)는 기질을 감싸고 있는 물 분자를 더 많이 끌어와 작용기들을 보호하는 것이다.	X → 물 분자를 떼어내서 반응을 일으키는 작용기들을 노출시키는 것이다.	e06.webp#2/8	11
+[작용방식] 유도적합 모델에서는 효소와 기질이 결합하는 과정에서 기질의 모양이 변화하여 효소에 들어맞게 된다.	X → 효소의 기질 결합 부위의 모양에 가벼운 변화가 일어나 기질과 잘 들어맞게 된다.	e06.webp#3/8	11
+[작용방식] 효소의 활성자리는 기질 그 자체에 대해 상보적이다.	X → 기질 자체가 아니라, 기질이 반응산물로 전환되면서 거치는 전이상태에 대하여 상보적이다.	e06.webp#4/8	11
+[작용방식] 효소의 활성 부위가 기질의 전이 상태와 상보적인 구조를 형성하면 전이 상태가 안정되어 활성화 에너지가 감소한다.	O	e06.webp#5/8	11
+[작용방식] 헥소키네이스에 ATP만 처리하면 ATP가 활발히 가수분해된다.	X → ATP만 처리하면 ATP는 가수분해되지 않는다.	e06.webp#6/8	11
+[작용방식] 헥소키네이스에 자일로오스와 ATP를 함께 처리하면 자일로오스가 인산화되며 ATP 가수분해 활성도 관찰된다.	X → 자일로오스는 전환(인산화)되지 않지만 ATP의 가수분해 활성은 관찰된다.	e06.webp#7/8	11
+[작용방식] 자일로오스는 활성자리에 결합해 효소의 활성이 일어나는 구조를 만들어 효소를 속임으로써 ATP 가수분해 활성을 유도한 것이다.	O	e07.webp#0/8	11
+[작용방식] 산-염기 촉매작용은 활성자리의 산성 또는 염기성 곁사슬이 기질과 H+를 주고받아 기질 분자 내 공유결합을 불안정하게 만드는 것이다.	O	e07.webp#1/8	11
+[작용방식] 공유결합성 촉매작용에서 효소는 기질과 공유결합함으로써 기질을 인식한다.	X → 공유결합은 촉매 과정이지 효소와 기질의 인식(특이적 결합)과는 무관하다.	e07.webp#2/8	13
+[작용방식] 촉매항체는 기질 자체를 인식하는 항체를 얻어 기질을 산물로 전환시키는 것이다.	X → 기질의 전이 상태 유사체 물질을 합성한 후 이를 인식할 수 있는 항체를 얻는 것이다.	e07.webp#3/8	12
+[작용방식] 전이 상태 유사체 저해제는 효소의 기질 결합 부위에 잘 붙어서 효소와 기질이 반응하는 것을 효과적으로 억제한다.	O	e07.webp#4/8	12
+[작용방식] 대부분의 효소 반응에서 기질은 공유결합으로 활성 부위에 결합한다.	X → 비공유결합(약한 상호작용)으로 활성 부위에 결합한다.	e07.webp#5/8	13
+[작용방식] 기질과 효소 사이의 약한 비공유결합 형성은 결과적으로 기질의 탈용매화를 가져온다.	O	e07.webp#6/8	13
+[작용방식] 전이상태는 매우 안정하고 낮은 자유에너지를 갖는 상태다.	X → 매우 불안정하고 높은 자유에너지를 갖는 활성화된 상태다.	e07.webp#7/8	13
+[명명법] E.C number 2.7.1.1에서 맨 앞의 2는 전달효소(transferase) class를 의미한다.	O	e08.webp#0/8	14
+[명명법] 퍼옥시다아제는 RH2 + O2 → R + H2O2 반응을 촉매한다.	X → 그것은 옥시다아제다. 퍼옥시다아제는 RH2 + H2O2 → R + 2H2O를 촉매한다.	e08.webp#1/8	14
+[명명법] 키나아제(kinase), 아미노기 전이효소, 메틸기 전이효소, 펩티드기 전이효소는 전달효소에 속한다.	O	e08.webp#2/8	14
+[명명법] 가수분해효소가 촉매하는 반응은 일반적으로 가역적이다.	X → 비가역적이다. 가역적인 것은 리아제(lyase)다.	e08.webp#3/8	14
+[명명법] 탈탄산효소, 알돌라아제, 엔올라아제는 이성질화효소에 속한다.	X → 리아제(lyase)에 속한다.	e08.webp#4/8	14
+[명명법] 뮤타아제와 라세마아제는 산화-환원효소에 속한다.	X → 이성질화효소(isomerase)에 속한다.	e08.webp#5/8	14
+[명명법] 리가아제는 ATP 에너지를 이용하여 새로운 C-C, C-O, C-N 결합을 만드는 효소다.	O	e08.webp#6/8	14
+[명명법] 자리옮김효소(translocase)는 세포막을 통한 분자·이온의 이동에 관여하는 효소다.	O	e08.webp#7/8	14
+[명명법] synthase는 ATP를 사용하고 synthetase는 ATP를 사용하지 않는다.	X → 반대다. synthase는 ATP를 사용하지 않고 synthetase는 사용한다.	e09.webp#0/8	14
+[명명법] 아미노아실 tRNA 합성효소는 synthetase에 해당한다.	O	e09.webp#0/8	14
+[보조인자] 대부분의 효소는 단백질로만 구성된 단순 단백질 효소로 작용한다.	X → 대부분의 효소는 결손효소(apoenzyme)와 보조인자로 구성된 전효소(holoenzyme)로 작용한다.	e09.webp#1/8	15
+[보조인자] urease의 보조 금속이온은 Zn2+다.	X → Ni2+다. Zn2+는 탄산 탈수효소, 알코올 탈수소효소에 관여한다.	e09.webp#2/8	15
+[보조인자] 헥소키나아제, G6Pase, 피루브산 키나아제, DNA polymerase의 보조 금속이온은 Mg2+다.	O	e09.webp#3/8	15
+[보조인자] 광계 II의 산소발생복합체(O.E.C)에 관여하는 금속이온은 Mo다.	X → Mn2+다. Mo는 dinitrogenase, xanthine oxidase에 관여한다.	e09.webp#3/8	15
+[보조인자] 카탈라아제와 퍼옥시다아제에는 Cu2+가 관여한다.	X → Fe가 관여한다. Cu2+는 시토크롬 산화효소에 관여한다.	e09.webp#4/8	15
+[보조인자] 조효소는 작은 유기물로 수용성 비타민에서 유래된다.	O	e09.webp#5/8	15
+[보조인자] 하나의 조효소는 기질특이성이 낮으므로 여러 종류의 주효소에 조효소로 작용한다.	O	e09.webp#6/8	15
+[보조인자] NAD+와 NADP+는 전자를 운반하며 나이아신(비타민 B3)에서 유래한다.	O	e09.webp#7/8	15
+[보조인자] FAD는 리보플라빈(비타민 B2)에서 유래하며 활성기는 이소알록사진 고리다.	O	e10.webp#0/8	16
+[보조인자] Thiamine pyrophosphate(TPP)는 아실기를 운반하며 티아민에서 유래한다.	X → 알데히드기를 운반한다. 아실기 운반은 CoA와 리포산이다.	e10.webp#1/8	15
+[보조인자] Coenzyme A는 판토텐산(비타민 B5)에서 유래하며 아실기와 고에너지를 전달한다.	O	e10.webp#2/8	16
+[보조인자] Biotin은 아미노기를 운반한다.	X → 카르복실기(CO2)를 운반한다. 아미노기 운반은 PLP다.	e10.webp#3/8	15
+[보조인자] Pyridoxal phosphate(PLP)는 피리독신(비타민 B6)에서 유래하며 아미노기를 운반한다.	O	e10.webp#4/8	15
+[보조인자] Tetrahydrofolate는 엽산에서 유래하며 카르복실기를 운반한다.	X → 1-탄소(one carbon) 작용기를 운반한다.	e10.webp#5/8	15
+[보조인자] NADPH는 주로 세포호흡에, NADH는 주로 환원력 공급과 PPP에 쓰인다.	X → 반대다. NAD+가 세포호흡, NADP+가 환원력 공급과 PPP에 쓰인다.	e10.webp#6/8	15
+[보조인자] 조효소 중 biotin은 효소에 공유결합한다.	O	e10.webp#7/8	15
+[보조인자] FMN은 미토콘드리아 내막의 시토크롬 복합체에 존재하며 전자전달에 관여한다.	X → NADH 탈수소효소 복합체(복합체 I)에 존재한다.	e11.webp#0/8	16
+[보조인자] 환원형 NADH는 340nm에서 피크가 나타난다.	O	e11.webp#1/8	8
+[MM식] 효소 초기반응속도식에서 Vo = k2[ES]로 나타낸다.	O	e11.webp#2/8	17
+[MM식] 기질 농도가 무한대로 갈 때 [Et] = [E]가 된다.	X → 모든 효소가 기질로 포화되므로 [Et] = [ES]가 된다.	e11.webp#3/8	17
+[MM식] kcat은 단위효소에 의해 단위 시간당 생성되는 산물의 수로 turnover number라고도 한다.	O	e11.webp#4/8	17
+[MM식] [S]가 낮을 경우 V는 [S]에 비례하는 1차 반응 양상을 보인다.	O	e11.webp#5/8	17
+[MM식] [S] 농도가 높아지면 1차 반응 양상을 보인다.	X → 0차 반응 양상을 보이며 V는 [S]에 따라 거의 바뀌지 않고 최대한계에 이른다.	e11.webp#6/8	17
+[MM식] MM식의 가정 중 하나는 기질의 몰농도가 효소보다 훨씬 높다는 것이다.	O	e11.webp#7/8	17
+[MM식] [ES]의 근사치 계산에는 E·S 생성속도와 해리속도가 같다는 정류상태 근사법을 이용한다.	O	e12.webp#0/8	17
+[MM식] 정상상태 근사가 성립하려면 생체 내에서 [E]가 [S]보다 훨씬 커야 한다.	X → [E] <<< [S]이어야 한다.	e12.webp#1/8	17
+[MM식] 효소 농도를 2배로 하면 Km도 2배가 된다.	X → Vmax = k2[Et]이므로 Vmax가 2배가 되며 Km은 변하지 않는다.	e12.webp#2/8	18
+[MM식] Km은 k1 / (k-1 + k2)로 정의된다.	X → Km = (k-1 + k2) / k1이다.	e12.webp#3/8	18
+[MM식] Km이 작을수록 효소와 기질 간의 친화력이 높다.	O	e12.webp#4/8	18
+[MM식] Km << [S]인 경우 Vo는 Vmax에 근접하며 [S]와 무관한 0차 함수가 된다.	O	e12.webp#5/8	19
+[MM식] Km >> [S]인 경우 Vo는 (kcat/Km)[Et][S]로 나타나며 [S]에 비례하는 1차 함수가 된다.	O	e12.webp#6/8	19
+[MM식] 라인웨버-버크식은 미하엘리스-멘텐 식의 양변을 제곱하여 정리한 것이다.	X → 양변을 역수로 취하여 정리한 것이다.	e12.webp#7/8	21
+[MM식] 라인웨버-버크 그래프의 기울기는 Vmax/Km이고 y절편은 -1/Km이다.	X → 기울기는 Km/Vmax, y절편은 1/Vmax, x절편은 -1/Km이다.	e13.webp#0/8	21
+[MM식] 미하엘리스-멘텐 식의 그래프는 효소의 최대반응속도를 정확히 측정할 수 있다는 장점이 있다.	X → 정확히 측정할 수 없다는 것이 한계점이며, 그래서 라인웨버-버크 식을 사용한다.	e13.webp#1/8	21
+[MM식] 효소의 반응 속도를 정확히 측정하려면 충분한 양의 기질을 넣고 아주 짧은 시간 동안만 반응을 수행해야 한다.	O	e13.webp#2/8	21
+[상수] Km은 최대속도(Vmax)의 절반이 되는 지점에서의 기질 농도다.	O	e13.webp#3/8	23
+[상수] Km은 활성자리가 모두 채워져 있을 때의 기질 농도다.	X → 활성자리의 절반이 채워져 있을 때의 기질 농도다.	e13.webp#4/8	23
+[상수] Km 값은 효소에 따라 다르지만 같은 효소라면 기질, pH, 온도가 달라져도 항상 같다.	X → 같은 효소라도 기질, pH, 온도 등에 따라 다르다.	e13.webp#5/8	23
+[상수] k2 >> k-1 일 경우에 한해서 Km은 효소와 기질의 친화력을 나타낸다.	X → k-1 >> k2 일 경우에 한해서 Km이 ES 복합체의 친화력을 나타낸다.	e13.webp#6/8	23
+[상수] Km은 Kd와 같은 의미를 가진다.	O	e13.webp#7/8	23
+[상수] 반응이 몇 단계로 구성되고 그 중 하나가 속도제한단계인 경우 Kcat은 가장 빠른 단계의 속도상수와 같다.	X → 그 속도제한 단계의 속도상수와 같다.	e14.webp#0/8	23
+[상수] Kcat/Km은 촉매효율이자 특이성 상수로 ES 복합체가 산물을 생성하는 방향으로 반응을 진행하려는 경향 값이다.	O	e14.webp#1/8	24
+[상수] 생리적 조건 하에서 대부분의 효소는 기질에 포화되어 있다.	X → 포화되어 있지 않으며 [S] <<< Km이고 대부분의 활성자리는 점유되어 있지 않다.	e14.webp#2/8	24
+[상수] 매우 낮은 기질 농도에서는 대부분의 효소가 효소-기질 복합체로 존재한다.	X → 대부분이 자유효소로 존재하므로 [E] ≒ [Et]이다.	e14.webp#3/8	24
+[상수] Km은 효소의 기질 친화력에 반비례하고 Kcat은 효소의 속도에 정비례한다.	O	e14.webp#4/8	24
+[상수] Km이 작을수록, Kcat이 클수록, Kcat/Km이 클수록 좋은 효소다.	O	e14.webp#5/8	23
+[상수] 키모트립신의 활성자리에서는 His이 H+를 내어주는 산으로 작용하면서 촉매반응을 유도한다.	X → H+를 받는 염기로 작용하면서 촉매반응을 유도한다.	e14.webp#6/8	25
+[상수] 키모트립신에서 pH 8.0보다 낮은 pH에서는 활성자리의 His이 H+를 받아들여 염기 기능을 못하므로 Km의 증가가 관찰된다.	X → kcat의 감소가 관찰된다.	e14.webp#7/8	25
+[상수] 키모트립신에서 pH 8.0보다 높은 pH에서는 활성자리의 Ile이 H+를 내어놓아 Asp과 이온결합을 형성할 수 없게 되어 Km의 증가가 관찰된다.	O	e15.webp#0/8	25
+[비가역저해] 비가역적 저해제는 효소에 단단히 결합(주로 공유결합)하여 기능기의 파괴나 변형을 초래해 효소 활성을 영구적으로 상실시킨다.	O	e15.webp#1/8	26
+[비가역저해] 비가역적 저해제는 반드시 효소와 공유결합해야 한다.	X → 비공유결합이라도 결합력이 매우 강할 경우에는 비가역적 저해 효과를 가진다.	e15.webp#2/8	26
+[비가역저해] DIPF는 활성 자리에 히스티딘을 가지는 트립신, AchE 등에 대한 비가역적 저해제다.	X → 활성 자리에 세린(Ser)을 가지는 효소에 대한 비가역적 저해제다.	e15.webp#3/8	26
+[비가역저해] 사린(sarin)은 DIPF와 유사한 기전으로 AchE에 작용하며 신경가스로 분류된다.	O	e15.webp#4/8	26
+[비가역저해] 말라티온은 사람의 AchE에 대한 선택성이 높아 신경가스로 사용된다.	X → 곤충의 AchE에 대한 선택성이 높아 살충제로 작용한다.	e15.webp#5/8	26
+[비가역저해] 아스피린은 COX1, 2의 활성자리에 아세틸기를 공유결합시켜 효소 활성을 억제한다.	O	e15.webp#6/8	26
+[비가역저해] 페니실린은 펩티도글리칸 형성 시 교차결합을 촉매하는 트랜스펩티다아제에 공유결합하여 비가역적으로 저해한다.	O	e15.webp#7/8	26
+[비가역저해] 효소가 자기 자신의 저해에 관여한다는 의미에서 페니실린의 저해를 자살 기질에 의한 저해라고 부른다.	O	e16.webp#0/8	26
+[비가역저해] 페니실린 G는 산에 안정화된 형태로 개발되어 경구 투여가 가능하다.	X → 그것은 페니실린 V다. 페니실린 G는 위산에 분해되어 주사로만 처방한다.	e16.webp#1/8	28
+[비가역저해] 아목시실린은 가장 활용도가 넓고 경구 투여가 가능하여 가장 많이 처방되는 β-락탐 계열 항생제다.	O	e16.webp#2/8	28
+[비가역저해] 암피실린은 그람 양성균에만 효과를 갖도록 R기를 변형한 항생제다.	X → 그람 양성균과 음성균 모두에 효과를 갖도록 R기를 변형한 것으로, 외막의 포린 단백질 구멍을 잘 통과한다.	e16.webp#3/8	28
+[비가역저해] 내성균은 β-lactam을 분해하는 트랜스펩티다아제를 생성한다.	X → β-lactamase(페니실리네이스)를 생성한다.	e16.webp#4/8	26
+[비가역저해] 클라불란 산은 자살 불활성제의 원리를 이용해 β-락타메이스를 비가역적으로 저해한다.	O	e16.webp#5/8	30
+[비가역저해] 오그멘틴(augmentin)은 아목시실린과 클라불란 산의 혼합제제다.	O	e16.webp#6/8	30
+[비가역저해] 트랜스펩티다아제의 활성자리 His이 β-락탐 계열 항생제와 반응하여 공유결합 중간체를 형성한다.	X → 활성자리의 Ser-OH가 반응하여 안정한 공유결합 중간체를 형성한다.	e16.webp#7/8	29
+[비가역저해] ~실린계 항생제에 대한 감수성은 항산성세균 > 그람음성균 > 그람양성균 순이다.	X → 그람양성균 > 그람음성균 > 항산성세균 순이다.	e17.webp#0/8	29
+[비가역저해] 폴리아민 합성의 첫 번째 단계는 오르니틴 탈카르복실화효소에 의해 유도되며 티아민 조효소를 필요로 한다.	X → 피리독살 인산(PLP, 비타민 B6 유도체) 조효소를 필요로 한다.	e17.webp#1/8	27
+[비가역저해] DFMO는 PLP와 반응한 후 효소의 활성자리에 공유결합함으로써 PLP의 재생을 막는 자살 불활성제다.	O	e17.webp#2/8	27
+[비가역저해] 전이-상태 유사체는 효소의 활성자리에 공유결합하여 비가역적 저해 효과를 낸다.	X → 비공유결합이지만 매우 단단히 결합함으로써 비가역적 저해 효과를 낸다.	e17.webp#3/8	31
+[비가역저해] 메탄올 중독 환자에게는 메탄올과 경쟁하는 에탄올을 혈중에 일정농도로 유지시키기 위해 정맥주사한다.	O	e17.webp#4/8	33
+[비가역저해] 알코올 탈수소효소에 의해 메탄올은 아세트알데히드로, 에탄올은 포름알데히드로 전환된다.	X → 반대다. 에탄올이 아세트알데히드로, 메탄올이 독성이 높은 포름알데히드로 전환된다.	e17.webp#5/8	33
+[비가역저해] 일산화탄소가 결합하면 헤모글로빈의 O2 친화도가 낮아져 조직으로의 산소 해리도가 증가한다.	X → O2 친화도를 높은 상태로 유지시켜 협동성이 사라지고 조직으로의 O2 해리도가 줄어든다.	e17.webp#6/8	33
+[비가역저해] 피롤-2-카르복실산은 프롤린 라세미화효소의 전이상태 유사체로 효소를 효과적으로 저해한다.	O	e17.webp#7/8	33
+[가역저해] 생체 내 대부분의 효소 저해제는 가역적 저해제다.	O	e18.webp#0/8	32
+[가역저해] 경쟁적 저해제는 기질과 전혀 다른 구조를 지닌다.	X → 기질과 비슷한 구조를 지닌다(전이상태 유사체를 형성).	e18.webp#1/8	32
+[가역저해] 경쟁적 저해에서는 ES, EI 복합체는 물론 ESI 복합체도 형성된다.	X → ESI 복합체는 형성되지 않는다.	e18.webp#2/8	32
+[가역저해] 경쟁적 저해제가 존재하면 Km은 증가하고 Vmax는 일정하다.	O	e18.webp#3/8	32
+[가역저해] 경쟁적 저해제가 존재하면 Kcat이 감소한다.	X → Kcat은 변화하지 않는다. Kcat/Km은 감소한다.	e18.webp#4/8	32
+[가역저해] 경쟁적 저해는 기질 농도를 높이면 저해 효과를 극복할 수 있다.	O	e18.webp#5/8	32
+[가역저해] 숙신산탈수소효소에 대한 기질 유사체인 말론산은 경쟁적 저해제의 예다.	O	e18.webp#6/8	32
+[가역저해] sulfonamide는 PABA의 유사체로 엽산 합성을 저해하여 살균작용을 나타낸다.	X → 핵산 합성 저해로 인해 정균작용을 나타낸다.	e18.webp#7/8	32
+[가역저해] 타미플루는 인플루엔자 바이러스의 뉴라미니다아제에 작용하는 뉴클레오티드 유사체다.	X → 시알산의 구조유사체다.	e19.webp#0/8	32
+[가역저해] 무경쟁적 저해제는 자유 효소와 ES 복합체 모두에 결합한다.	X → [ES] 복합체에 대해서만 기질 결합 부위 이외의 다른 자리에 결합한다.	e19.webp#1/8	34
+[가역저해] 무경쟁적 저해제가 존재하면 Km과 Vmax가 동일한 정도로 감소하므로 Km/Vmax는 일정하다.	O	e19.webp#2/8	34
+[가역저해] 무경쟁적 저해는 정상 기질의 농도를 증가시키면 저해 효과가 극복된다.	X → 저해 효과가 극복되지 않는다.	e19.webp#3/8	34
+[가역저해] Ag, Hg 등의 중금속과 글리포세이트(round up)는 무경쟁적 저해제의 예다.	O	e19.webp#4/8	34
+[가역저해] 혼합형 저해제는 [E] 또는 [ES] 복합체의 기질 결합 부위 이외의 다른 자리에 결합한다.	O	e19.webp#5/8	35
+[가역저해] 혼합형 저해제의 존재는 k1, k2, k-1을 모두 감소시켜 Vmax를 감소시키며 Km은 높아지거나 낮아질 수 있다.	O	e19.webp#6/8	35
+[가역저해] 혼합형 저해 중 Km이 변하지 않는 특수한 경우를 비경쟁적 저해제(noncompetitive)라고 정의해 왔다.	O	e19.webp#7/8	35
+[가역저해] 비경쟁적 저해제는 기질 유사체이므로 기질과 같은 자리에 결합한다.	X → 기질 유사체가 아니며, 저해제와 기질이 서로 다른 결합자리에서 동시에 한 효소에 결합할 수 있다.	e20.webp#0/8	35
+[가역저해] 비경쟁적 저해제는 기질과 결합하는 효소의 비율을 감소시킴으로써 작용한다.	X → 효소의 대사회전수(turnover number)를 감소시킴으로써 작용한다.	e20.webp#1/8	35
+[효소조절] 비가역 조절에서 효소는 번역 직후 활성을 지닌 상태로 존재하다가 일부가 절단되면서 불활성화된다.	X → 번역 직후에는 활성이 없는 전구체(효소원, Zymogen) 상태로 존재하다가 폴리펩티드 일부가 절단되면서 활성화된다.	e20.webp#2/8	37
+[효소조절] 보체, Caspase, 혈액 응고 인자, 펩신·트립신·키모트립신은 비가역 조절의 예다.	O	e20.webp#3/8	37
+[효소조절] 펩시노젠은 위 내강에서 NaOH에 의해 펩티드 결합이 잘리며 펩신이 된다.	X → HCl에 의해 펩티드 결합이 잘리며 펩신이 된다.	e20.webp#4/8	37
+[효소조절] 가역 조절에는 인산화, 아데닐화, 우리딜화, ADP-리보실화, 메틸화 등의 공유 결합 변형이 있다.	O	e20.webp#5/8	37
+[효소조절] 인산화는 항상 효소의 활성을 증가시킨다.	X → 효소의 종류나 결합 부위에 따라 활성을 증가시킬 수도, 감소시킬 수도 있다.	e20.webp#6/8	37
+[효소조절] 인산기의 첨가는 단백질 인산화효소, 제거는 단백질 탈인산화효소에 의해 일어난다.	O	e20.webp#7/8	37
+[효소조절] 카이네이스는 다른 분자에서 인산기를 떼어 ATP에 전달하는 효소다.	X → ATP에서 인산기를 떼서 다른 분자에 전달하는 효소다.	e21.webp#0/8	37
+[효소조절] PKA는 cAMP가 조절 단위체에 결합하면 촉매 단위체가 분리되어 활성화된다.	O	e21.webp#1/8	38
+[알로스테릭] 협동성은 한 소단위체의 변화가 다른 소단위체에 전달되는 방법이다.	O	e21.webp#2/8	38
+[알로스테릭] 조절자의 결합은 기질과 달리 비특이적이다.	X → 조절자의 결합은 기질처럼 특이적이다.	e21.webp#3/8	38
+[알로스테릭] 협동성에 의해 효소의 기질-반응속도 곡선은 포물선이 아닌 S자형이 된다.	O	e21.webp#4/8	38
+[알로스테릭] 헤모글로빈은 효소이면서 협동성을 설명하는 가장 좋은 예다.	X → Hb은 효소는 아니지만 다른자리 입체성 단백질로 협동성을 설명하는 가장 좋은 예다.	e21.webp#5/8	38
+[알로스테릭] 알로스테릭 효소는 일반적으로 대사경로의 초기과정에 관여하는 거대효소다.	O	e21.webp#6/8	38
+[알로스테릭] 조절자는 알로스테릭 자리에 가역적으로 결합한다.	O	e21.webp#7/8	38
+[알로스테릭] 일반적으로 알로스테릭 효소는 4차 구조이며, 모든 4차 구조 효소가 알로스테릭 효소인 것은 아니다.	O	e21.webp#6/8	38
+[알로스테릭] 활성형(R, relaxed)은 기질과 친화력이 낮은 상태이고 불활성형(T, taut)은 높은 상태다.	X → 반대다. R형이 기질과 친화력이 높고 T형이 낮다.	e22.webp#0/8	38
+[알로스테릭] 동종조절(homotropic)은 기질과 조절자가 동일한 조절 효소이며 Hb의 O2 협동성이 그 예다.	O	e22.webp#1/8	38
+[알로스테릭] 이질조절(heterotropic)의 예로 Hb의 O2 협동성이 있다.	X → 그것은 동종조절의 예다. 이질조절의 예는 PFK-1이다.	e22.webp#2/8	38
+[알로스테릭] 2,3-BPG는 산소가 충분하고 이산화탄소가 적을 때 적혈구가 생성한다.	X → 산소가 부족하고 이산화탄소가 많을 때 적혈구가 해당과정 중 부산물로 생성한다.	e22.webp#3/8	39
+[알로스테릭] 2,3-BPG가 Hb의 알로스테리 자리에 결합하면 산소 결합력이 강해진다.	X → 산소결합력이 약해져 쉽게 산소가 해리되어 조직에 더 많이 공급된다.	e22.webp#4/8	39
+[알로스테릭] H+는 Hb의 α-사슬 알로스테리 자리에 결합한다.	X → β-사슬의 알로스테리 자리에 결합한다.	e22.webp#5/8	39
+[알로스테릭] Hb에 대해 O2는 협동성으로, 2,3-BPG와 H+는 음성 알로스테리로 작용한다.	O	e22.webp#6/8	39
+[되먹임] 되먹임 억제에서는 대사의 최종 생성물이 대사 경로의 초기에 작용하는 효소에 알로스테릭 억제제로 결합한다.	O	e22.webp#7/8	40
+[되먹임] 대사경로에서 A → B 단계는 일반적으로 비가역 반응이다.	O	e23.webp#0/8	40
+[되먹임] 대사경로의 초기 단계에 작용하는 효소 1은 일반적으로 가수분해 효소다.	X → 일반적으로 알로스테릭 효소다.	e23.webp#1/8	40
+[되먹임] 양성 피드백은 큰 자극을 감소시켜 작은 효과를 얻고자 할 때 흔히 나타난다.	X → 작은 자극을 증폭해 큰 효과를 얻고자 할 때 흔히 나타난다.	e23.webp#2/8	40
+[되먹임] 양성 피드백에서 지나치게 반응이 커지면 결국 계의 파괴(Catastrophe)를 통해 전체 과정을 멈춘다.	O	e23.webp#3/8	40
+[되먹임] 트레오닌에서 아이소류신을 합성하는 대사에서 최종산물 아이소류신은 트레오닌 탈아민효소의 다른자리에 결합한다.	O	e23.webp#4/8	40
+[되먹임] ATCase는 Asp과 카르바모일인산을 분해하는 과정을 촉매한다.	X → Asp과 카르바모일인산을 결합시켜 N-카르바모일 Asp을 형성하는 과정을 촉매한다.	e23.webp#5/8	40
+[되먹임] 최종산물인 CTP의 농도가 증가하면 CTP는 ATCase의 알로스테릭 활성자로 작용한다.	X → 알로스테릭 억제자로 작용하여 효소 활성을 감소시킨다.	e23.webp#6/8	40
+[되먹임] 피드 포워드 조절은 대사가 진행되면서 생긴 중간물질이 하위 단계의 효소를 미리 활성화해서 앞으로 일어날 생리적 변화에 대비하도록 조절하는 현상이다.	O	e23.webp#7/8	41
+[동질효소] 동질효소는 동일반응을 매개하지만 1차 구조가 서로 다르다.	O	e24.webp#0/8	42
+[동질효소] 동질효소는 Km, Vmax, 조효소, 발현되는 세포, 발현 시기 등이 서로 같다.	X → 조절되는 특성뿐 아니라 Km, Vmax, 조효소, 발현 세포, 세포질 내 위치, 발현 시기 등이 서로 다르다.	e24.webp#1/8	42
+[동질효소] 포유류의 LDH는 A(M)와 B(H) 소단위체로 구성되며 M과 H는 서로 다른 유전자에 암호화되어 있다.	O	e24.webp#2/8	42
+[동질효소] LDH는 2개의 펩타이드로 구성되며 3종류의 동질효소로 나누어진다.	X → 4개의 펩타이드로 구성되며 5종류의 동질효소로 나누어진다. 2개 펩타이드·3종류는 CK다.	e24.webp#3/8	42
+[동질효소] 근육에서는 B4(H4)형이, 심장에서는 A4(M4)형이 주요 동질효소다.	X → 반대다. 근육이 A4(M4), 심장이 B4(H4)다.	e24.webp#4/8	42
+[동질효소] 근육의 A4(M4)형은 근육의 무산소성 환경에 잘 작용한다.	O	e24.webp#5/8	42
+[동질효소] 혈액에서 B4(H4)의 증가는 심근세포가 파괴되었음을 의미하므로 심근경색의 임상진단에 이용할 수 있다.	O	e24.webp#6/8	42
+[동질효소] CK는 3개의 펩타이드로 구성되며 5종류의 동질효소로 나누어진다.	X → 2개의 펩타이드로 구성되며 BB(CK1), BM(CK2), MM(CK3)의 3종류다.	e24.webp#7/8	42
+[동질효소] 심근은 다른 조직에 비해 특이적으로 5% 이상의 CK2 분획을 가지는 유일한 조직이다.	O	e25.webp#0/4	42
+[동질효소] AST는 간세포의 효소이며 혈장의 AST 증가가 간세포 손상을 의미한다.	X → 노트에는 ALT가 간세포의 효소이며 혈장 ALT의 증가가 간세포 손상을 의미한다고 되어 있다.	e25.webp#1/4	42
+[동질효소] 대립효소(allozyme)는 서로 다른 유전자에 의해 발현된다.	X → 동일한 유전자의 서로 다른 대립 유전자(allele)에 의해 발현된다.	e25.webp#2/4	42
+[동질효소] 글루코키네이스는 헥소키네이스 IV에 해당한다.	O	e25.webp#3/4	42
+</script>
+
+<script type="text/plain" id="d-plant">
+[01구조] 정단우성은 정단에서 생성되는 옥신이 곁눈의 생장을 억제하는 현상이다.	O	pl01.webp#0/8	2
+[01구조] 곁눈은 엽액에 존재하지만 자체적인 정단분열조직은 갖지 않는다.	X → 곁눈은 각각의 정단분열조직을 갖는다.	pl01.webp#1/8	2
+[01구조] 1기 생장은 목본식물에서만 일어나는 길이생장이다.	X → 1기 생장은 모든 식물에서 정단분열조직에 의해 일어나는 길이생장이다.	pl01.webp#2/8	2
+[01구조] 원표피, 기본분열조직, 전형성층은 각각 표피조직, 기본조직, 관다발조직으로 분화한다.	O	pl01.webp#3/8	3
+[01구조] 2기 생장은 모든 겉씨식물과 속씨 쌍떡잎 목본식물의 뿌리·줄기 측생분열조직에서 나타난다.	O	pl01.webp#4/8	2
+[01구조] 코르크 형성층은 관다발 조직의 세포로부터 발달한다.	X → 피층(cortex)의 유세포로부터 발달한다.	pl01.webp#5/8	2
+[01구조] 목본식물 줄기·뿌리의 비후는 대부분 2기 물관부에 의해 일어난다.	O	pl01.webp#6/8	2
+[01구조] 식물에서 잎·꽃·열매는 무한생장을, 줄기·뿌리는 유한생장을 한다.	X → 반대다. 잎·꽃·열매가 유한생장, 줄기·뿌리가 무한생장을 한다.	pl01.webp#7/8	3
+[02조직계] 표피세포, 털, 뿌리털에는 엽록체가 없지만 공변세포는 예외적으로 엽록체를 가진다.	O	pl02.webp#0/8	4
+[02조직계] 큐티클은 잎·줄기뿐 아니라 뿌리의 표피에도 형성된다.	X → 뿌리의 표피에는 큐티클이 없다.	pl02.webp#1/8	4
+[02조직계] 뿌리털은 여러 개의 표피세포가 모여 만든 다세포 구조다.	X → 하나의 표피세포가 신장된 단일세포 구조다.	pl02.webp#2/8	4
+[02조직계] 코르크조직(phellem)은 수베린을 포함한 죽은 세포로 방수·단열 작용을 한다.	O	pl02.webp#3/8	4
+[02조직계] 관다발 안쪽의 기본조직을 피층, 바깥쪽의 기본조직을 수(pith)라고 한다.	X → 안쪽이 수(pith), 바깥쪽이 피층(cortex)이다.	pl02.webp#4/8	4
+[02조직계] 유세포는 분열 능력이 있어 실험실에서 1개의 세포로부터 온전한 식물체를 재분화할 수 있다.	O	pl02.webp#5/8	4
+[02조직계] 후각조직은 리그닌이 포함된 2차 세포벽을 가진 죽은 조직이다.	X → 성숙해도 살아있으며, 리그닌이 없는 두꺼운 1차 세포벽을 가진다.	pl02.webp#6/8	4
+[02조직계] 후벽조직은 리그닌을 포함한 2차 세포벽을 가진 죽은 조직으로, 생장이 정지된 부위에서 나타난다.	O	pl02.webp#7/8	4
+[02조직계] 배의 돌세포와 종피를 구성하는 것은 섬유(fiber)다.	X → 보강세포(sclereid)다. 섬유는 다발 형태로 가늘고 길며 뾰족하다.	pl03.webp#0/8	7
+[02조직계] 모든 관다발식물의 물관부에는 헛물관이 나타난다.	O	pl03.webp#1/8	5
+[02조직계] 겉씨식물의 물관부에는 헛물관과 물관이 모두 존재한다.	X → 겉씨식물은 헛물관만 가지며, 헛물관과 물관을 모두 가지는 것은 속씨식물이다.	pl03.webp#2/8	5
+[02조직계] 체관요소는 기능적으로 완성된 상태에서 죽은 세포다.	X → 살아있는 세포이지만 핵, 리보솜, 액포 등이 없다.	pl03.webp#3/8	5
+[02조직계] 동반세포는 양분 운반에 특수화된 세포다.	X → 양분을 직접 수송하지 않고, 원형질연락사를 통해 체관요소의 양분 이동을 돕는다.	pl03.webp#4/8	5
+[02조직계] 체관이 손상되면 P 단백질이 구멍을 막고, 장기적으로는 β-1,3-글루칸 성분의 캘로스가 쌓인다.	O	pl03.webp#5/8	8
+[03뿌리] 뿌리 표피세포가 두 개의 피층세포와 접하면 GLABRA-2가 발현되지 않아 뿌리털이 자란다.	O	pl03.webp#6/8	9
+[03뿌리] 분열지연 중심부(quiescent center)는 주변 세포보다 빠르게 분열하여 뿌리를 생장시킨다.	X → 비교적 느리게 분열하면서 손상된 분열조직 세포를 대체한다.	pl03.webp#7/8	9
+[03뿌리] 곁뿌리(측근)는 뿌리털처럼 표피에서 유래한다.	X → 곁뿌리는 내초에서 유래한 다세포성 구조다.	pl04.webp#0/8	9
+[03뿌리] 새로 나오는 곁뿌리는 피층과 표피를 파괴적으로 밀고 나온다.	O	pl04.webp#1/8	9
+[03뿌리] 산성 생장설에서 옥신은 H+ 펌프를 억제해 세포벽을 알칼리화시킨다.	X → H+ 펌프를 활성화해 세포벽을 산성화하고, 그 결과 익스팬신이 활성화된다.	pl04.webp#2/8	9
+[03뿌리] 익스팬신은 셀룰로오스 미세섬유 사이의 수소결합을 끊어 세포 신장을 돕는다.	O	pl04.webp#3/8	42
+[03뿌리] 외떡잎식물의 수염뿌리는 배에서 유래한 어린뿌리가 그대로 자라 형성된다.	X → 어린뿌리가 죽고, 대신 줄기에서 많은 막뿌리(부정근)가 나온다.	pl04.webp#4/8	10
+[03뿌리] 수염뿌리계는 지지 기능이 약하지만 표토를 붙들어 토양 침식 방지에 유리하다.	O	pl04.webp#5/8	10
+[03뿌리] 뿌리의 2기 생장에서 유관속형성층은 안쪽에 2기 체관부, 바깥쪽에 2기 물관부를 만든다.	X → 안쪽에 2기 물관부, 바깥쪽에 2기 체관부를 만든다.	pl04.webp#6/8	10
+[04잎] 잎은 뿌리·줄기와 마찬가지로 활발한 2기 생장을 한다.	X → 잎의 2기 생장은 미약하거나 존재하지 않는다.	pl04.webp#7/8	12
+[04잎] 책상 엽육조직은 엉성하게 배열되어 CO2와 O2를 순환시키기에 적당하다.	X → 그것은 해면 엽육조직의 특징이다.	pl05.webp#0/8	12
+[04잎] 관다발초세포(유관속초세포)는 C4 식물에서 뚜렷하게 나타난다.	O	pl05.webp#1/8	12
+[04잎] 흡수된 수분의 95~99%는 광합성에 이용되고 1~5%만 증산으로 소실된다.	X → 반대다. 95~99%가 증산으로 소실되고 1~5%만 광합성에 쓰인다.	pl05.webp#2/8	12
+[04잎] CAM 식물은 밤에 기공을 열고 낮에 기공을 닫는다.	O	pl05.webp#3/8	12
+[04잎] 일액현상은 증산이 활발한 낮에 수공을 통해 물이 액체 상태로 방출되는 현상이다.	X → 증산이 일어나지 않는 밤에 근압에 의해 일어난다.	pl05.webp#4/8	13
+[04잎] 대부분의 속씨식물은 교번 잎차례를 가지며, 이전 잎으로부터 약 137.5° 떨어져 다음 잎이 생긴다.	O	pl05.webp#5/8	13
+[04잎] 양지의 잎은 음지의 잎보다 책상 엽육조직이 더 두껍게 발달한다.	O	pl05.webp#6/8	13
+[04잎] 잎의 탈리는 옥신의 양이 증가하고 탈리대 세포의 에틸렌 민감도가 감소할 때 일어난다.	X → 옥신의 양이 감소하고 에틸렌 민감도가 증가할 때 분리층이 형성된다.	pl05.webp#7/8	12
+[04잎] 공변세포는 기공 쪽(안쪽) 세포벽이 얇고 바깥쪽 세포벽이 두껍다.	X → 기공 쪽(안쪽) 세포벽이 두껍고 바깥쪽이 얇다.	pl06.webp#0/8	12
+[05줄기] 곁가지는 곁뿌리처럼 내부 조직에서 유래하므로 다른 조직을 파열시킨다.	X → 곁가지는 줄기 표면의 곁눈에서 유래하므로 다른 조직을 파열시키지 않는다.	pl06.webp#1/8	13
+[05줄기] 속씨 쌍떡잎식물 줄기에서 물관은 피층 가까이, 체관은 수 가까이 위치한다.	X → 물관이 수 가까이, 체관이 피층 가까이 위치한다.	pl06.webp#2/8	15
+[05줄기] 속씨 외떡잎식물 줄기는 관다발이 기본조직 전체에 흩어져 있어 수와 피층을 갈라놓지 않는다.	O	pl06.webp#3/8	15
+[05줄기] 외떡잎식물 줄기에도 관다발형성층이 있어 2기 생장을 한다.	X → 외떡잎식물은 형성층이 없어 2기 생장을 하지 않는다.	pl06.webp#4/8	15
+[05줄기] 줄기가 두꺼워지면 오래된 2기 체관부는 탈락하므로, 체관부는 2기 물관부처럼 축적되지 않는다.	O	pl06.webp#5/8	15
+[05줄기] 관다발 방사조직은 2기 물관부와 2기 체관부 사이에서 물과 양분을 운반하고 녹말을 저장한다.	O	pl06.webp#6/8	15
+[05줄기] 춘재는 두꺼운 세포벽으로 지지하고, 추재는 직경이 커서 물 수송을 최대로 한다.	X → 반대다. 춘재가 얇은 벽과 큰 직경으로 물을 수송하고, 추재가 두꺼운 벽으로 지지한다.	pl06.webp#7/8	15
+[05줄기] 나이테는 전년도 추재와 다음 해 춘재의 경계이며, 다습한 열대지방 나무에서는 형성되지 않는다.	O	pl07.webp#0/8	15
+[05줄기] 심재는 줄기 바깥쪽에 위치하며 물관액을 계속 운반한다.	X → 그것은 변재다. 심재는 오래된 내부 2기 물관부로 더 이상 물을 운반하지 않는다.	pl07.webp#1/8	15
+[05줄기] 주피는 수베린 때문에 물과 가스가 통과하지 못하므로, 기체교환은 피목을 통해 이루어진다.	O	pl07.webp#2/8	16
+[06수분이동] 단거리 수송 경로들은 서로 독립적이어서 한 물질은 한 가지 경로만 사용한다.	X → 서로 독립적이지 않아 한 물질이 하나 이상의 경로를 사용할 수 있다.	pl07.webp#3/8	16
+[06수분이동] 뿌리세포는 질산염(NO3-)을 H+와 함께 들여오는 2차 능동수송으로 흡수한다.	O	pl07.webp#4/8	16
+[06수분이동] 용질을 첨가하면 용질 퍼텐셜은 항상 (-) 방향으로 낮아진다.	O	pl07.webp#5/8	19
+[06수분이동] 압력 퍼텐셜은 용질 퍼텐셜처럼 항상 (-) 값만 가진다.	X → (+)와 (-)가 모두 가능하다. 팽압은 (+), 장력은 (-)다.	pl07.webp#6/8	19
+[06수분이동] Ψp=0, Ψs=-0.7 MPa인 세포를 Ψ=-0.9 MPa인 설탕 용액에 넣으면 원형질분리가 일어난다.	O	pl07.webp#7/8	19
+[06수분이동] 세포 부피가 5% 줄 때 수분 퍼텐셜이 떨어지는 주된 원인은 용질 퍼텐셜 감소다.	X → 5% 감소 시에는 압력 퍼텐셜이 크게 감소한다. 부피가 10% 이상 줄어야 용질 퍼텐셜이 주된 원인이 된다.	pl08.webp#0/8	19
+[06수분이동] 뿌리의 호흡이 저해되면 세포질 pH가 낮아져 아쿠아포린 발현이 줄고 닫혀 식물이 시든다.	O	pl08.webp#1/8	19
+[06수분이동] 부피 유동은 삼투처럼 용질의 농도에 의해 결정된다.	X → 용질 농도와 무관하게 압력 퍼텐셜만 관여하며, 확산이나 능동수송보다 훨씬 빠르다.	pl08.webp#2/8	19
+[07물관수송] 아포플라스트 경로의 물과 무기질은 카스파리선 때문에 내피의 원형질막을 선택적으로 통과해야 한다.	O	pl08.webp#3/8	20
+[07물관수송] 카스파리선은 내피 세포벽 6면 모두에 수베린이 채워진 구조다.	X → 6면 중 4면에 채워져 있다.	pl08.webp#4/8	20
+[07물관수송] 모든 물과 무기물은 중심주로 들어가기 위해 반드시 심플라스트로 유입되어야 한다.	O	pl08.webp#5/8	20
+[07물관수송] 뿌리압은 물관부 수송의 가장 주요한 원동력이다.	X → 3~5기압에 불과해 주요한 힘이 아니며, 가장 크게 기여하는 것은 증산에 의한 당기는 힘이다.	pl08.webp#6/8	20
+[07물관수송] 증산-응집력-장력 기작에서 물관액은 정상적으로 음압(장력) 상태에 있다.	O	pl08.webp#7/8	20
+[07물관수송] 물관부 내 수분 퍼텐셜은 주로 용질 퍼텐셜에 의해 결정된다.	X → 물관부는 생명활동이 없어 농도차가 없으므로 압력 퍼텐셜로 결정된다.	pl09.webp#0/8	20
+[07물관수송] 식물은 물관액을 부피 유동으로 끌어올릴 때 ATP를 소비한다.	X → 에너지를 소비하지 않으며, 원동력은 증산을 일으키는 태양에너지다.	pl09.webp#1/8	21
+[08증산기공] 기공은 잎 표면적의 1~2%에 불과하지만, 식물이 잃는 물의 약 95%가 기공으로 방출된다.	O	pl09.webp#2/8	22
+[08증산기공] 대부분의 초본식물은 잎의 윗면에 기공이 더 많다.	X → 아랫면에 더 많으며, 많은 수목은 아랫면에만 기공이 있다.	pl09.webp#3/8	22
+[08증산기공] 경계층의 두께는 1차적으로 바람 속도로 결정되며, 공기가 안정적이면 경계층이 두꺼워져 증산이 억제된다.	O	pl09.webp#4/8	22
+[08증산기공] 공변세포의 청색광 수용체인 제아크산틴은 H+ 펌프를 억제하여 기공을 연다.	X → H+ 펌프를 활성화해 세포 내부를 (-)전압으로 만든다.	pl09.webp#5/8	22
+[08증산기공] 바나듐산 처리 시 청색광에 의한 기공 열림이 사라지는 것은 청색광이 양성자 펌프를 통해 작용함을 보여준다.	O	pl09.webp#6/8	22
+[08증산기공] 청색광으로 막전위가 형성되면 K+은 전압의존성 채널을 통해 세포 밖으로 빠져나간다.	X → 세포 안으로 들어온다.	pl09.webp#7/8	22
+[08증산기공] 광합성 산물인 녹말도 공변세포의 용질 퍼텐셜을 낮춰 기공 열림에 직접 기여한다.	X → 용질 퍼텐셜을 낮추려면 수용성이어야 하므로 녹말은 관여하지 않는다.	pl10.webp#0/8	22
+[08증산기공] 이른 아침의 기공 열림에는 주로 설탕이, 오후의 기공 열림에는 주로 K+이 관여한다.	X → 반대다. 오전에는 K+(청색광), 오후에는 설탕(광합성 산물)이 주로 관여한다.	pl10.webp#1/8	23
+[08증산기공] 적색광으로 광포화시킨 뒤 청색광을 더하면 기공이 더 열리므로, 청색광은 광합성과 무관한 원리로도 기공을 연다.	O	pl10.webp#2/8	23
+[08증산기공] 잎 내부의 CO2 농도가 낮아지면 기공이 닫힌다.	X → CO2가 적어지면 기공이 열린다.	pl10.webp#3/8	22
+[08증산기공] 가뭄 시 ABA가 만들어져 낮에도 기공이 닫히므로, CO2 유입과 광합성이 감소한다.	O	pl10.webp#4/8	22
+[09체관수송] 체관액의 90%는 아미노산이다.	X → 체관액의 90%는 설탕이다.	pl10.webp#5/8	24
+[09체관수송] 체관액은 물관액처럼 항상 뿌리에서 잎 방향으로만 이동한다.	X → 공급원에서 수용부로 이동하므로 방향이 다양하고, 이웃한 관끼리 반대 방향일 수도 있다.	pl10.webp#6/8	24
+[09체관수송] 체관수송은 중력에 영향을 받지 않는다.	O	pl10.webp#7/8	24
+[09체관수송] 엽육세포의 설탕이 체관요소나 동반세포로 들어갈 때는 H+ 기울기를 이용한 2차 능동수송이 필요하다.	O	pl11.webp#0/8	24
+[09체관수송] 수용원 세포의 자유당 농도는 항상 체관보다 높다.	X → 당이 사용되거나 녹말로 전환되므로 항상 체관보다 낮다.	pl11.webp#1/8	24
+[09체관수송] 압류설에 따르면 공급원 체관에 당이 실리면 수분 퍼텐셜이 낮아져 물이 들어오고 양압이 생긴다.	O	pl11.webp#2/8	25
+[09체관수송] 물관과 체관의 원거리 수송은 모두 압류설로 설명된다.	X → 압류설은 체관 수송에만 해당한다.	pl11.webp#3/8	25
+[09체관수송] 세포호흡저해제를 처리하면 체관의 물질 이동이 멈추므로, 체관 수송에는 에너지를 소모하는 기작이 있다.	O	pl11.webp#4/8	24
+[09체관수송] 진딧물 실험에서 침이 당 수용부에 가까울수록 체관액의 당 농도가 높았다.	X → 당 공급원에 가까울수록 높았다.	pl11.webp#5/8	26
+[10토양무기질] 표토의 토양입자는 대부분 양전하를 띠어 질산이온, 인산이온과 잘 결합한다.	X → 음전하를 띠므로 음이온과 결합하지 않고, 음이온은 용탈되기 쉽다.	pl11.webp#6/8	27
+[10토양무기질] 뿌리가 방출한 H+는 토양입자에 붙은 무기질 양이온을 토양용액으로 떼어내고, 뿌리는 이를 흡수한다.	O	pl11.webp#7/8	27
+[10토양무기질] 화학 비료는 무기질을 서서히 방출하고, 유기질 비료는 한꺼번에 방출한다.	X → 반대다. 유기질 비료가 서서히, 화학 비료가 한꺼번에 방출한다.	pl12.webp#0/8	27
+[10토양무기질] 식물은 양이온 무기질을 잘 흡수하기 위해 약염기성 토양을 선호한다.	X → 약산성 토양을 선호한다.	pl12.webp#1/8	27
+[10토양무기질] 토양 pH가 5 이하로 낮아지면 독성 Al3+의 흡수가 늘어 뿌리 생장과 Ca2+ 흡수가 저해된다.	O	pl12.webp#2/8	27
+[10토양무기질] 식물 생중량의 80~90%는 물이며, 건조 중량의 약 95%는 탄수화물이다.	O	pl12.webp#3/8	27
+[10토양무기질] 필수원소 중 다량원소는 9가지이며, 철과 염소도 다량원소에 속한다.	X → 철(Fe)과 염소(Cl)는 미량원소다.	pl12.webp#4/8	27
+[10토양무기질] 모든 무기질 가운데 질소는 식물의 생장과 작물 생산에 가장 크게 기여한다.	O	pl12.webp#5/8	27
+[10토양무기질] 마그네슘은 이동성이 높아서 결핍되면 어린잎에서 먼저 황화현상이 나타난다.	X → 이동성이 높아 어린잎이 끌어가므로, 성숙하고 오래된 잎에서 먼저 나타난다.	pl12.webp#6/8	27
+[10토양무기질] 철은 엽록소 구성성분은 아니지만 엽록소 합성에 필요하고, 이동성이 낮아 결핍 증상이 어린잎에서 먼저 나타난다.	O	pl12.webp#7/8	27
+[10토양무기질] N, Mg, Mo 결핍은 어린잎에서, Fe, S, Mn 결핍은 성숙한 잎에서 먼저 나타난다.	X → 반대다. N·Mg·Mo는 성숙한 잎, Fe·S·Mn은 어린잎에서 먼저 나타난다.	pl13.webp#0/8	27
+[11질소고정균근] 대기의 약 80%가 질소이므로 식물은 질소기체를 직접 이용할 수 있다.	X → 삼중결합이 단단해 직접 이용할 수 없다.	pl13.webp#1/8	29
+[11질소고정균근] 질산화 과정에서 질산균이 NH4+를 NO2-로, 아질산균이 NO2-를 NO3-로 산화한다.	X → 아질산균이 NH4+→NO2-, 질산균이 NO2-→NO3-로 산화한다.	pl13.webp#2/8	29
+[11질소고정균근] 식물은 주로 질산이온(NO3-) 형태로 질소를 흡수한다.	O	pl13.webp#3/8	29
+[11질소고정균근] 탈질화세균은 산소가 있는 조건에서 질산이온을 질소기체로 전환한다.	X → 무산소 조건에서 질산이온(NO3-)을 질소기체(N2)로 전환한다.	pl13.webp#4/8	29
+[11질소고정균근] 모든 질소고정생물은 세균이다.	O	pl13.webp#5/8	29
+[11질소고정균근] 질소고정효소(nitrogenase)는 산소가 있을 때 활성이 높아진다.	X → 산소가 있으면 작용이 저해된다.	pl13.webp#6/8	29
+[11질소고정균근] 레그헤모글로빈은 산소와 가역적으로 결합해 뿌리혹 내 산소 농도를 낮게 유지하며, 철 때문에 뿌리혹이 붉게 보인다.	O	pl13.webp#7/8	29
+[11질소고정균근] 뿌리혹은 세균 세포로 구성되며, 라이조비움은 식물세포 사이 공간에 존재한다.	X → 뿌리혹은 식물세포로 구성되며, 라이조비움은 뿌리세포의 소낭 안에서 박테로이드 형태로 존재한다.	pl14.webp#0/8	29
+[11질소고정균근] 아조토박터는 대표적인 자유형 질소고정세균이다.	O	pl14.webp#1/8	29
+[11질소고정균근] 남세균(Anabaena)은 오리나무와, 방선균은 개구리밥과 공생한다.	X → 방선균이 오리나무, 남세균이 개구리밥과 공생한다.	pl14.webp#2/8	29
+[11질소고정균근] 외생균근은 내생균근보다 훨씬 흔하여 전체 식물의 80% 이상에서 발견된다.	X → 내생균근이 훨씬 흔하며(80% 이상), 외생균근은 약 10%다.	pl14.webp#3/8	30
+[11질소고정균근] 내생균근의 균사는 세포벽은 통과하지만 원형질막을 뚫지 않고, 함입된 막 안에서 수지상체를 만든다.	O	pl14.webp#4/8	30
+[11질소고정균근] 균근의 곰팡이는 숙주로부터 당을 받고, 인산 등의 무기질을 식물에 공급한다.	O	pl14.webp#5/8	30
+[11질소고정균근] 새삼과 라플레시아는 엽록소를 가지지만, 겨우살이는 엽록소가 없다.	X → 새삼·라플레시아는 엽록소가 없고, 겨우살이(반기생)는 광합성을 하기도 한다.	pl14.webp#6/8	30
+[12생식기관] 바람이나 물로 수분되는 식물은 꽃잎이 화려하게 발달한다.	X → 꽃가루 매개자를 유인할 필요가 없어 꽃잎이 발달하지 않는다.	pl14.webp#7/8	33
+[12생식기관] 소포자 모세포(2n)는 체세포분열로 4개의 소포자를 만든다.	X → 감수분열로 4개의 소포자(n)를 만든다.	pl15.webp#0/8	31
+[12생식기관] 소포자는 체세포분열로 생식세포와 관세포를 만들고, 생식세포가 다시 분열해 2개의 정세포가 된다.	O	pl15.webp#1/8	31
+[12생식기관] 대포자 모세포의 감수분열로 생긴 4개의 대포자는 모두 생장한다.	X → 1개만 남고 3개는 퇴화한다.	pl15.webp#2/8	32
+[12생식기관] 배낭은 7세포 8핵으로 이루어진 암배우체다.	O	pl15.webp#3/8	32
+[12생식기관] 조세포는 꽃가루관을 유인하고, 반족세포는 난세포에 양분을 공급한다.	X → 반족세포의 기능은 아직 알려지지 않았다.	pl15.webp#4/8	32
+[12생식기관] 정세포와 2개의 극핵이 수정하여 2n의 배젖이 된다.	X → 3n의 배젖이 된다.	pl15.webp#5/8	32
+[12생식기관] 겉씨식물의 배젖은 수정되지 않은 암배우체가 자란 n 조직이다.	O	pl15.webp#6/8	37
+[12생식기관] 수정 후 밑씨는 종자가 되고, 씨방은 열매가 된다.	O	pl15.webp#7/8	32
+[12생식기관] 접합자의 첫 분열 후 바닥세포가 배의 대부분을 이루고, 끝세포는 배자루를 만든다.	X → 반대다. 끝세포가 배의 대부분을, 바닥세포가 배자루를 만든다.	pl16.webp#0/8	33
+[12생식기관] 수정된 난세포는 세포질의 Ca2+ 농도를 높여 다수정을 방지한다.	O	pl16.webp#1/8	37
+[13종자발아] 배젖의 발생은 일반적으로 배의 발생보다 늦게 일어난다.	X → 배젖이 배보다 먼저 발생한다.	pl16.webp#2/8	34
+[13종자발아] 완두콩, 강낭콩, 땅콩의 성숙한 종자에는 배젖이 풍부하게 남아 있다.	X → 영양소가 배젖에서 떡잎으로 옮겨가므로 성숙한 종자에 배젖이 없다.	pl16.webp#3/8	34
+[13종자발아] 벼과식물의 어린싹은 근초로, 어린뿌리는 자엽초로 싸여 보호된다.	X → 반대다. 어린싹은 자엽초, 어린뿌리는 근초로 싸여 있다.	pl16.webp#4/8	34
+[13종자발아] 옥수수의 배반은 넓은 방패 모양의 떡잎으로, 발아하는 동안 배젖에서 양분을 흡수한다.	O	pl16.webp#5/8	34
+[13종자발아] 파인애플은 한 꽃의 여러 심피에서 발생한 집합과다.	X → 여러 꽃의 심피에서 발생한 복합과다.	pl16.webp#6/8	34
+[13종자발아] 사과의 과육은 씨방이 아니라 비대해진 화탁에서 생긴 부과다.	O	pl16.webp#7/8	34
+[13종자발아] 곡물이 발아할 때 배젖에서 지베렐린이 만들어져 배에 작용한다.	X → 배에서 지베렐린이 만들어져 배젖의 호분층에 작용한다.	pl17.webp#0/8	35
+[13종자발아] 호분층에서 생산된 α-아밀라아제는 배젖의 녹말을 이동성·용해성 당류로 분해한다.	O	pl17.webp#1/8	47
+[13종자발아] 종자의 휴면에는 식물호르몬인 앱시스산(ABA)이 작용한다.	O	pl17.webp#2/8	35
+[14생식전략] 무수정생식은 수분이나 수정 없이 씨를 만들며, 대개 대포자 모세포가 감수분열을 하지 못해 2배체 상태로 발생한다.	O	pl17.webp#3/8	35
+[14생식전략] 무수정생식으로 생긴 자손은 유전적으로 다양하다.	X → 체세포성 배를 가지므로 어버이와 유전적으로 동일한 클론이다.	pl17.webp#4/8	35
+[14생식전략] 자웅이숙은 은행나무처럼 암그루와 수그루가 따로 있는 것이다.	X → 그것은 자웅이주다. 자웅이숙은 수술과 심피의 성숙 시기가 다른 것이다.	pl17.webp#5/8	36
+[14생식전략] 배우체 자가불화합성에서 S1S2 식물의 S1 꽃가루는 S2S3 꽃과 수정할 수 있다.	O	pl17.webp#6/8	36
+[14생식전략] 포자체 자가불화합성에서 S1S2 식물의 S1 꽃가루는 S2S3 꽃과 수정할 수 있다.	X → 꽃가루 벽에 붙은 부모 포자체(S1S2)의 산물 때문에 수정할 수 없다.	pl17.webp#7/8	36
+[14생식전략] 무성생식은 수분 매개자가 필요 없고, 부모의 유전자를 자손에게 100% 전달한다.	O	pl18.webp#0/8	35
+[15ABC모델] leafy, apetala1은 분열조직 결정 유전자로, 영양생장에서 생식생장으로의 전환을 유도한다.	O	pl18.webp#1/8	36
+[15ABC모델] 꽃기관 결정 유전자는 MADS box를 가진 호메오 유전자로, 전사인자를 암호화한다.	O	pl18.webp#2/8	36
+[15ABC모델] 꽃잎은 B와 C 유전자가 함께 발현될 때 만들어진다.	X → 꽃잎은 A+B, 수술은 B+C가 발현될 때 만들어진다.	pl18.webp#3/8	36
+[15ABC모델] A 유전자가 결핍되면 꽃은 바깥쪽부터 심피-수술-수술-심피가 된다.	O	pl18.webp#4/8	36
+[15ABC모델] B 유전자가 결핍되면 꽃은 바깥쪽부터 꽃받침-꽃잎-꽃잎-꽃받침이 된다.	X → 그것은 C 결핍이다. B 결핍은 꽃받침-꽃받침-심피-심피다.	pl18.webp#5/8	36
+[16옥신] 식물호르몬에 대한 반응은 절대량보다 다른 호르몬과의 상대적 농도에 따라 결정된다.	O	pl18.webp#6/8	39
+[16옥신] 다윈 실험에서 빛을 인지하는 곳과 굴곡이 일어나는 곳은 모두 자엽초 정단이다.	X → 빛은 정단에서 인지하지만, 굴곡은 정단보다 조금 아래에서 일어난다.	pl18.webp#7/8	39
+[16옥신] 보이슨-젠슨 실험에서 생장 자극은 젤라틴은 통과했지만 운모판은 통과하지 못했다.	O	pl19.webp#0/8	39
+[16옥신] 벤트는 옥신을 분리하고 그 구조가 IAA임을 밝혔다.	X → 옥신을 분리하고 IAA임을 밝힌 사람은 티만이다. 벤트는 옥신을 명명하고 굴곡 검정법을 개발했다.	pl19.webp#1/8	39
+[16옥신] 굴광성은 빛을 받는 쪽 세포가 옥신에 반응해 더 빨리 자라서 나타난다.	X → 그늘진 쪽 세포가 옥신에 반응해 더 빨리 자라서 나타난다.	pl19.webp#2/8	39
+[16옥신] 이미 생장을 멈춘 줄기도 굴성을 나타낸다.	X → 굴성은 자라고 있는 기관에서만 일어난다.	pl19.webp#3/8	39
+[16옥신] 2,4-D는 쌍떡잎식물이 빠르게 분해하므로 외떡잎 잡초를 선택적으로 제거하는 데 쓰인다.	X → 외떡잎식물이 빠르게 분해하므로 민들레 같은 쌍떡잎 잡초를 선택적으로 제거한다.	pl19.webp#4/8	42
+[16옥신] 옥신의 극성 수송은 중력의 영향을 받는다.	X → 극성 수송은 중력과 무관하다. 중력의 영향을 받는 것은 측면 수송이다.	pl19.webp#5/8	40
+[16옥신] 방사성 옥신 실험에서 줄기를 거꾸로 놓으면 옥신 수송이 차단된다.	O	pl19.webp#6/8	40
+[16옥신] 옥신 유출단백질(PIN)은 세포의 기저부에만 존재한다.	O	pl19.webp#7/8	41
+[16옥신] 청색광은 포토트로핀을 활성화하여 옥신을 그늘진 쪽으로 측면 이동시킨다.	O	pl20.webp#0/8	41
+[16옥신] 줄기 생장을 촉진하는 최적 농도(10^-7~10^-6 M)의 옥신은 뿌리 생장을 억제한다.	O	pl20.webp#1/8	42
+[16옥신] 최적 농도보다 높은 옥신이 신장을 억제하는 것은 에틸렌 합성을 유도하기 때문이다.	O	pl20.webp#2/8	42
+[16옥신] 옥신에 의한 양성 굴광성은 빛을 받은 쪽에서 옥신이 분해되기 때문에 나타난다.	X → 빛을 받은 쪽의 옥신은 파괴되지 않는다. 옥신이 그늘진 쪽으로 옮겨가는 측면 재분포 때문이다.	pl20.webp#3/8	43
+[16옥신] 뿌리를 수평으로 두면 뿌리골무세포의 평형석이 아래로 가라앉고, 아래쪽에 쌓인 고농도 옥신이 그쪽 세포의 신장을 억제해 양성 굴중성이 나타난다.	O	pl20.webp#4/8	43
+[16옥신] 끝눈에서 아래로 극성 수송되는 옥신은 곁눈 생장을 억제하는 스트리고락톤의 합성을 유도한다.	O	pl20.webp#5/8	43
+[16옥신] 뿌리에서 올라오는 사이토키닌은 옥신·스트리고락톤과 함께 곁눈의 생장을 억제한다.	X → 사이토키닌은 옥신·스트리고락톤과 반대로 곁눈 생장을 촉진한다. 그래서 정단에서 먼 곁눈일수록 길게 자란다.	pl20.webp#6/8	43
+[16옥신] 미수정 씨방을 발달시켜 종자 없는 열매를 만드는 단위결실에는 옥신만 관여하고 지베렐린은 관여하지 않는다.	X → 옥신과 지베렐린 모두 수분·수정 없이 씨방을 발달시켜 단위결실을 유도한다.	pl20.webp#7/8	43
+[17지베렐린] 대부분의 식물에서 실제로 줄기 신장을 조절하는 지베렐린은 GA3이다.	X → GA1 한 가지다. 다른 지베렐린은 GA1을 만드는 중간산물이며, GA3는 상업적으로 이용되는 형태다.	pl21.webp#0/8	46
+[17지베렐린] 지베렐린을 처리하면 정상 옥수수는 키가 크게 자라지만 왜성 식물에는 효과가 없다.	X → 반대다. 왜성 식물은 정상 키로 자라고, 정상 옥수수는 이미 일정 수준의 호르몬을 갖고 있어 효과가 없다.	pl21.webp#1/8	46
+[17지베렐린] 2년생 식물을 지베렐린으로 처리하면 저온기를 거치지 않고도 추대(bolting)하여 개화할 수 있다.	O	pl21.webp#2/8	46
+[17지베렐린] 지베렐린은 씨 없는 포도의 열매자루를 길게 만들어 포도알이 너무 밀집되지 않게 하고 포도알을 크게 만든다.	O	pl21.webp#3/8	47
+[18ABA] ABA는 옥신·사이토키닌·지베렐린처럼 생장을 촉진하는 호르몬이다.	X → 생장 억제 호르몬이다. 물이 부족하면 축적되어 '스트레스 호르몬'이라고도 한다.	pl21.webp#4/8	48
+[18ABA] 종자의 휴면과 발아는 ABA와 지베렐린의 비율에 의해 결정된다.	O	pl21.webp#5/8	48
+[18ABA] 수분 스트레스가 시작되면 ABA는 주로 잎에서 합성되어 뿌리로 이동한다.	X → 물과 직접 닿는 뿌리에서 합성되어 물관부를 따라 잎으로 이동하는 뿌리 신호다.	pl21.webp#6/8	48
+[18ABA] ABA는 Ca2+ 등의 2차 신호전달자를 거쳐 공변세포의 K+ 통로와 Cl- 채널을 열어, K+과 Cl-을 잃게 하고 기공을 닫는다.	O	pl21.webp#7/8	48
+[18ABA] 수분 스트레스 시 물관부 수액이 산성화되어 엽육세포가 ABA를 더 잘 흡수한다.	X → 물관부 수액이 약알칼리화되어 ABA가 ABA-로 해리된다. ABA-는 막을 잘 통과하지 못하므로 더 많은 ABA가 공변세포에 도달한다.	pl22.webp#0/8	48
+[19에틸렌] 에틸렌의 직접적인 전구체는 ACC이며, ACC는 산소가 있을 때 ACC 산화효소에 의해 에틸렌으로 전환된다.	O	pl22.webp#1/8	49
+[19에틸렌] AOA와 AVG는 ACC 산화효소를 억제하고, 코발트 이온은 ACC 생성효소를 억제한다.	X → 반대다. AOA·AVG는 AdoMet이 ACC로 바뀌는 단계(ACC 생성효소)를 막고, 코발트 이온은 ACC 산화효소를 억제한다.	pl22.webp#2/8	49
+[19에틸렌] 과일 성숙 과정에서 에틸렌은 음성 피드백으로 자신의 합성을 줄인다.	X → 양성 피드백으로 자신의 합성을 늘린다.	pl22.webp#3/8	49
+[19에틸렌] 사과·바나나·토마토는 성숙 전에 에틸렌 생산과 호흡이 급등하지만, 귤·포도는 그렇지 않다.	O	pl22.webp#4/8	49
+[19에틸렌] 에틸렌에 의한 삼중반응은 줄기 신장 촉진, 줄기 비후화 억제, 굴중성 민감도 증가로 이루어진다.	X → 줄기 신장 억제, 측면 비대생장(비후화) 촉진, 굴중성 민감도 감소(옆으로 자람)로 이루어진다.	pl22.webp#5/8	50
+[19에틸렌] ctr 돌연변이체는 에틸렌 신호전달 이상으로 에틸렌이 없어도 삼중반응을 보이며, 에틸렌 합성 억제제로도 정상화되지 않는다.	O	pl22.webp#6/8	50
+[20시토키닌기타] 뿌리에서 만들어진 시토키닌은 주로 체관을 통해 상층부로 이동한다.	X → 주로 물관을 통해 이동한다.	pl22.webp#7/8	51
+[20시토키닌기타] 캘러스에서 시토키닌의 상대 농도가 높아지면 뿌리가, 옥신이 높아지면 줄기가 발달한다.	X → 반대다. 시토키닌이 높으면 줄기, 옥신이 높으면 뿌리가 발달한다.	pl23.webp#0/8	51
+[20시토키닌기타] 시토키닌은 잎의 노화를 늦추고, 처리한 조직으로 영양소가 우선 수송되게 한다.	O	pl23.webp#1/8	51
+[20시토키닌기타] 자스몬산은 리놀렌산에서 유래하며, 초식동물과 병원균에 대한 식물의 방어에 관여한다.	O	pl23.webp#2/8	51
+[21식물방어] 과산화물과 NO는 과민반응의 일부로 세포죽음을 유도하거나 병원체를 직접 죽인다.	O	pl23.webp#3/8	52
+[21식물방어] 피토알렉신은 감염 전부터 항상 합성되어 있는 구성적 방어 물질이다.	X → 감염 후 몇 시간 안에 생성되는 항미생물성 2차 대사물질(유도성 방어)이다.	pl23.webp#4/8	52
+[21식물방어] PAMP는 세포질 수용체인 R 단백질과 결합해 일반적 면역반응을 일으킨다.	X → PAMP는 막관통 수용체인 PRR과 결합한다. R 단백질은 작동자와 결합하는 세포질 수용체다.	pl23.webp#5/8	52
+[21식물방어] 작동자-유도 면역은 특정 식물과 특정 병원체 사이에서 특이적으로 일어나며, 일반적 면역반응보다 강력하다.	O	pl23.webp#6/8	52
+[21식물방어] Avr1Avr2 유전자형 병원균이 R3R4 유전자형 토마토를 감염하면 토마토는 병든다.	O	pl23.webp#7/8	53
+[21식물방어] 전신획득저항(SAR)에서는 살리실산이 관다발을 따라 이동한 뒤 메틸살리실산으로 전환된다.	X → 메틸살리실산이 관다발을 따라 이동한 뒤, 감염 부위에서 떨어진 곳에서 살리실산으로 전환된다.	pl24.webp#0/8	53
+[21식물방어] 상처 입은 식물은 폴리펩티드 호르몬인 시스테민을 방출하고, 이는 자스몬산 생성을 거쳐 단백질 분해효소 억제제의 발현을 유도한다.	O	pl24.webp#1/8	55
+[22광수용체] 포토트로핀은 플라빈 모노뉴클레오티드를 가진 청색광 수용체이며, 세린/트레오닌 인산화효소 활성을 가진다.	O	pl24.webp#2/8	60
+[22광수용체] 크립토크롬은 적색광을 흡수하여 하배축 신장을 촉진한다.	X → 청색광과 자외선을 흡수하며, 하배축 신장을 억제한다.	pl24.webp#3/8	60
+[22광수용체] 피토크롬 Pr은 근적외선(730nm)을, Pfr은 적색광(660nm)을 주로 흡수한다.	X → Pr이 적색광(660nm), Pfr이 근적외선(730nm)을 흡수한다.	pl24.webp#4/8	60
+[22광수용체] 적색광을 처리하면 Pr은 100% Pfr로 전환된다.	X → 두 형태의 흡수 스펙트럼이 겹치므로 약 80%만 Pfr로 존재한다.	pl24.webp#5/8	61
+[22광수용체] 상추 종자에 적색광→근적외선→적색광 순서로 빛을 비추면 발아한다.	O	pl24.webp#6/8	61
+[22광수용체] 암소에서 발아한 유식물에서는 Pr에 의해 엽록소 결여, 급속한 줄기 신장, 정단훅 형성 같은 황백화가 나타난다.	O	pl24.webp#7/8	61
+[22광수용체] 다른 나무 그늘에 가려진 양지식물은 Pfr/Ptotal 비율이 높아져 수직 신장이 억제된다.	X → 근적외선을 주로 받아 Pfr/Ptotal이 낮아지고, 신장이 촉진되어 음지를 회피한다.	pl25.webp#0/8	61
+[23개화조절] 개화를 결정하는 핵심 요인은 낮의 길이가 아니라 연속적인 밤(암기)의 길이다.	O	pl25.webp#1/8	62
+[23개화조절] 국화, 코스모스, 포인세티아는 장일식물이다.	X → 단일식물(장야식물)이다. 유채, 보리, 상추가 장일식물이다.	pl25.webp#2/8	62
+[23개화조절] 단일식물의 긴 밤을 적색광으로 잠깐 중단하면 개화한다.	X → 개화하지 않는다. 적색광으로 광중단하면 단일식물은 개화하지 않고 장일식물은 개화한다.	pl25.webp#3/8	62
+[23개화조절] 광중단 때 적색광과 근적외선을 번갈아 비추면 마지막에 비춘 빛이 개화 여부를 결정한다.	O	pl25.webp#4/8	62
+[23개화조절] 광주기 자극은 줄기 정단분열조직에서 직접 인지된다.	X → 잎에서 인지된다. 개화자극 산물(FT)이 잎에서 만들어져 꽃이 될 눈분열조직으로 이동한다.	pl25.webp#5/8	62
+[23개화조절] 잎의 동반세포에서 CO 단백질이 FT 발현을 촉진하고, FT는 체관을 통해 정단분열조직으로 이동해 FD와 결합한다.	O	pl25.webp#6/8	63
+[23개화조절] 저온은 FLC의 합성을 촉진하여 개화를 유도한다.	X → 저온은 FLC(FT·FD 발현을 억제하는 인자)의 합성을 막아서 개화를 진행시킨다.	pl25.webp#7/8	63
+</script>
+
+<script type="text/plain" id="d-membrane">
+[막구조] 새로 합성된 인지질을 막 이중층의 반대쪽 층으로 이동시켜 비대칭을 만드는 효소는 세퍼레이스(separase)이다.	X → 플립페이스(flippase)이다. separase는 자매염색분체 분리에 관여하는 효소다.	q01.webp	90
+[막구조] 플립페이스(flippase)는 인지질을 막 이중층의 바깥(외강)에서 안쪽(내강) 층으로 이동시켜 비대칭을 형성한다.	O	q01.webp	90
+[막구조] 활면소포체(SER)를 포함한 소포체막의 인지질은 비대칭적으로 분포한다.	X → 소포체막의 인지질은 비대칭성이 없고, 비대칭은 골지체부터 시작된다. scramblase는 양방향성이라 비대칭을 만들지 않는다.	q01.webp	90
+[막구조] 세포막의 비대칭성은 지질의 비대칭성과 막단백질의 '당(sugar)' 비대칭성으로 이루어진다.	O	q04.webp	91
+[막구조] 포스파티딜세린(PS)은 세포막 인지질 이중층의 바깥쪽(exoplasmic) 층에 더 풍부하다.	X → PS는 안쪽(세포질 쪽) 층에 더 풍부하게 존재한다.	q04.webp	91
+[막구조] 돌리콜(dolichol)은 세포막 인지질 이중층의 비대칭성 형성에 직접 관여한다.	X → 돌리콜은 N-당화에서 올리고당을 운반하는 분자이며, 인지질 비대칭과는 무관하다.	q04.webp	91
+[막구조] FRAP 실험은 막단백질과 막지질이 막 평면을 따라 측면(lateral) 이동함을 보여준다.	O	q03.webp	90
+[막구조] 인지질은 막 이중층의 안팎(flip-flop)으로도 자유롭게 이동한다.	X → flip-flop(안팎 이동)은 거의 일어나지 않으며 플립페이스 같은 효소가 필요하다. 자유로운 것은 측면 이동이다.	q03.webp	90
+[막구조] 활면소포체(SER)의 cytochrome P450 효소는 방향족 화합물 등을 친수성으로 전환시켜 배출을 돕는다.	O → 해독·스테로이드 대사에 관여하며 광범위한 기질에 작용한다.	q05.webp	91
+[N당화] N-연결 당화에서 올리고당은 Asn-X-Ser/Thr 서열의 아스파라진(Asn) 잔기에 부착된다.	O	q06.webp	91
+[N당화] N-당화에서 올리고당은 단백질의 -OH기(세린/트레오닌)에 부착된다.	X → N-당화는 Asn 곁사슬의 아마이드(-NH₂)에 부착된다. -OH기 부착은 O-당화이다.	q06.webp	91
+[N당화] N-당화용 올리고당은 돌리콜에 먼저 조립된 뒤 폴리펩타이드로 전달된다.	O	q06.webp	91
+[막수송] 채널 단백질을 이용한 물질 수송은 수동수송(passive transport)이다.	O	q08.webp	92
+[막수송] Na⁺-포도당 공동수송체(SGLT)는 두 물질을 반대 방향으로 옮기는 역방향수송체(antiporter)이다.	X → SGLT는 두 물질을 같은 방향으로 옮기는 동일방향수송체(symporter)이다.	q08.webp	92
+[막수송] Ca²⁺-Na⁺ 역방향수송체(antiporter)는 ATP를 직접 소비하여 Ca²⁺을 내보내는 1차 능동수송체이다.	X → ATP를 직접 쓰지 않고 Na⁺의 농도기울기를 이용하는 2차 능동수송이다.	q08.webp	92
+[막수송] Na⁺/K⁺ ATPase는 Na⁺과 K⁺을 1:1 비율로 수송한다.	X → Na⁺ 3개(밖으로):K⁺ 2개(안으로)의 비율로 수송한다.	q09.webp	92
+[막수송] Na⁺의 농도는 세포 안보다 세포 밖에서 더 높게 유지된다.	O	q09.webp	92
+[막수송] GLUT-4는 근육·지방세포에서 인슐린 신호에 의존하여 포도당의 세포 내 흡수에 관여한다.	O	q07.webp	92
+[막수송] GLUT-3는 중추신경계 뉴런에서 포도당에 대한 친화력이 낮다.	X → GLUT-3는 포도당에 대한 높은 친화력을 보인다.	q07.webp	92
+[막수송] GLUT-9는 비장에서 요소(urea)를 흡수하는 데 관여한다.	X → GLUT-9는 신장에서 요산(uric acid)을 흡수하는 데 관여한다.	q07.webp	92
+[K채널] K⁺ 채널의 이온 선택성에는 채널 입구에서의 탈수화 에너지와 재용매화 에너지가 관여한다.	O	q10.webp	93
+[K채널] Li⁺은 이온 직경이 통로보다 작으므로 K⁺ 채널을 자유롭게 통과할 수 있다.	X → 직경 조건만으로는 부족하고 탈수화·재용매화 에너지 조건까지 만족해야 선택적으로 통과한다.	q10.webp	93
+[K채널] K⁺이 채널을 통과할 때 얻는 재용매화 에너지의 절대값이 지불하는 탈수화 에너지의 절대값보다 커서 자발적으로 진행된다.	O	q10.webp	93
+[K채널] 채널 안에서 카보닐기와 상호작용하던 K⁺은 뒤따라 들어온 다음 K⁺과의 전기적 반발력에 의해 밀려나간다.	O	q11.webp	93
+[세포내섭취] 저밀도지단백질(LDL)은 식세포작용(phagocytosis)으로 세포에 콜레스테롤을 공급한다.	X → LDL은 수용체 매개 세포내이입(endocytosis)으로 들어온다. 식세포작용은 위족운동의 일종으로 미세섬유를 이용한다.	q12.webp	94
+[세포내섭취] 후기 엔도좀의 낮은 pH(양성자 농도 증가)는 양성자 펌프(ATPase)의 능동수송으로 형성된다.	O	q12.webp	94
+[신호전달] L-티로신은 탈카복실화효소(decarboxylase)에 의해 L-DOPA로 전환된다.	X → L-티로신은 티로신하이드록실레이즈(tyrosine hydroxylase)에 의해 L-DOPA로 전환된다.	q13.webp	94
+[신호전달] L-DOPA는 탈카복실화효소(decarboxylase)에 의해 도파민으로 전환된다.	O	q13.webp	94
+[신호전달] 노르에피네프린은 탈아미노화되어 에피네프린(EPI)으로 전환된다.	X → 노르에피네프린은 메틸기(-CH₃)가 더해져 에피네프린이 된다.	q13.webp	94
+[신호전달] EGF-EGFR 복합체가 리소좀에서 분해되는 것은 EGF에 대한 세포의 민감성을 감소시키기 위해서이다.	O → 수용체 분해(receptor degradation)에 의한 신호 탈감작이다.	q14.webp	94
+[GPCR] 노르에피네프린 α₁ 수용체는 Gq를 거쳐 phospholipase C(PLC)를 활성화한다.	O	q15.webp	95
+[GPCR] 소마토스타틴 수용체는 Gq-PLC 경로로 신호를 전달한다.	X → 소마토스타틴 수용체는 Gi를 통해 cAMP를 감소시킨다.	q15.webp	95
+[GPCR] 티록신(갑상샘호르몬) 수용체는 세포막의 GPCR로 PLC를 활성화한다.	X → 티록신 수용체는 핵 수용체(리간드 의존성 전사인자)이다.	q15.webp	95
+[GPCR] 히스타민 H2 수용체는 Gq-PLC 경로로 위산 분비를 촉진한다.	X → H2 수용체는 Gs-cAMP 경로로 위산 분비를 촉진한다. Gq-PLC는 H1 수용체(염증·알레르기)이다.	q15.webp	95
+[M2수용체] 무스카린성 M2 수용체는 Gi·cAMP 감소를 통해 심박수를 감소시킨다.	O	q16.webp	96
+[M2수용체] M2 수용체 작용제(agonist)는 심장의 수축력을 증가시킨다.	X → 부교감(M2) 자극은 심박수를 낮춘다. 수축력 상승은 교감신경의 작용이다.	q16.webp	96
+[M2수용체] 디곡신 같은 강심제는 Na⁺/K⁺ 펌프를 억제해 세포 내 Na⁺을 늘리고, Na⁺/Ca²⁺ 교환체를 억제해 세포 내 Ca²⁺과 수축력을 높인다.	O	q16.webp	96
+[위산분비] 아세틸콜린이 벽세포 M3 수용체에 결합하면 Gq-PLC로 Ca²⁺이 증가해 위산 분비가 촉진된다.	O	q17.webp	96
+[위산분비] 가스트린이 수용체에 결합하면 아데닐산고리화효소(adenylyl cyclase)가 활성화되어 위산이 분비된다.	X → 가스트린 수용체는 Gq로 IP₃·DAG·Ca²⁺ 경로를 활성화한다. cAMP 경로는 히스타민 H2 수용체이다.	q17.webp	96
+[세포주기] Ras/Raf/ERK 성장인자 신호전달로 합성이 유도되는 사이클린은 Cyclin D이다.	O → Ras→Raf(MAPKKK)→MEK(MAPKK)→ERK(MAPK) 순으로 전달된다.	q18.webp	97
+[세포주기] 예정세포사(apoptosis)는 카스파아제(caspase) 같은 효소에 의해 일어나는 전형적인 세포 활동이다.	O	q19.webp	97
+[세포주기] 종양억제유전자는 두 대립유전자가 모두 영(null) 돌연변이로 불활성화되어야 암이 유발되므로 열성(기능소실)으로 작용한다.	O	q19.webp	97
+[RB단백질] 저인산화(활성) 상태의 RB는 E2F와 결합하여 세포가 S기로 진입하는 것을 억제한다.	O → RB가 과다인산화되면 E2F가 풀려 S기로 진입한다.	q20.webp	98
+[RB단백질] RB와 E2F 전사인자가 결합하면 세포 증식이 촉진된다.	X → RB-E2F 결합은 세포 증식을 억제하며, E2F가 풀려나야 증식이 일어난다.	q20.webp	98
+[종양유전자] β-카테닌(β-catenin)은 종양억제유전자이다.	X → β-카테닌은 원발암유전자(oncogene)로, Wnt 신호를 활성화해 세포 증식을 촉진한다.	q21.webp	98
+[종양유전자] APC는 Wnt 신호를 활성화하여 세포 증식을 촉진하는 원발암유전자이다.	X → APC는 β-카테닌 분해를 유도하고 Wnt 신호를 억제하는 종양억제유전자이다.	q21.webp	98
+[암바이러스] 원발암유전자(proto-oncogene)는 정상 세포의 성장과 분열을 억제한다.	X → 원발암유전자는 정상 세포의 성장과 분열을 촉진한다.	q22.webp	99
+[암바이러스] HTLV-1(인간 T세포 림프친화 바이러스)은 레트로바이러스로 성인 T세포 백혈병을 유발한다.	O	q22.webp	99
+[가족성암] 유전성 비용종성 대장암(HNPCC, 린치 증후군)은 DNA 수선(MMR) 유전자의 돌연변이로 나타난다.	O	q23.webp	99
+[가족성암] CFTR 유전자의 돌연변이는 가족성 용종성 대장암의 원인이다.	X → CFTR 돌연변이는 낭포성 섬유증의 원인이다. 가족성 선종성 용종증의 원인은 APC이다.	q23.webp	99
+[HBV] B형 간염 바이러스(HBV)는 부분 이중가닥 DNA를 유전체로 가지며 생활사에 역전사 과정을 포함한다.	O	q24.webp	100
+[HBV] B형 간염 바이러스는 외피가 없는 벌거벗은(naked) 바이러스이다.	X → HBV는 외피(envelope)를 가진 바이러스이다.	q24.webp	100
+[병원성바이러스] HIV의 외피 당단백질 gp120은 숙주세포의 CD4와 케모카인 수용체(CCR5)에 결합하여 감염을 시작한다.	O	q25.webp	100
+[병원성바이러스] HPV의 E6 단백질은 종양억제 유전자 산물 p53을 분해하여 자궁경부암 유발에 관여한다.	O	q25.webp	100
+[병원성바이러스] 우두 바이러스의 VCP-1은 보체 단백질 C3·C5 전환효소를 활성화시킨다.	X → VCP-1은 C3·C5 전환효소를 억제하여 숙주의 보체 면역을 회피한다.	q25.webp	100
+</script>
+
+<script type="text/plain" id="d-carbnuc">
+[탄수화물] 6탄당(알도헥소스+케토헥소스)의 입체이성질체는 모두 16가지이다.	X → 알도헥소스 2⁴=16가지 + 케토헥소스 2³=8가지 = 24가지. 16은 알도헥소스만의 수다.	n01.webp	72
+[탄수화물] 알도헥소스는 비대칭 탄소가 4개이므로 입체이성질체가 2⁴=16가지이며, 이 수에는 D형과 L형이 모두 포함된다.	O	n01.webp	72
+[탄수화물] 과당 같은 케토헥소스의 비대칭 탄소 수는 4개이다.	X → 3개(2³=8가지). C2가 카보닐(C=O)이라 비대칭 탄소가 하나 적다.	n01.webp	72
+[탄수화물] 1,000개의 포도당으로 구성된 녹말 분자 하나에는 환원당으로 작용하는 말단이 여러 개 존재한다.	X → 환원말단은 분자당 1개뿐이다. 가지 끝에 여러 개 있는 것은 비환원말단이다.	n01.webp	72
+[탄수화물] β-1,4 결합으로 형성된 셀룰로오스의 구조 안정화에 가장 중요한 약한 상호작용은 사슬 간 수소결합이다.	O	n01.webp	72
+[탄수화물] 글리코겐과 셀룰로오스의 단위체는 모두 α-1,4-글리코시드 결합으로 연결되어 있다.	X → 셀룰로오스는 β-1,4 결합이다. α-1,4는 글리코겐·녹말.	n02.webp	72
+[탄수화물] 글리코겐은 α-D-포도당의 중합체이다.	O	n26.webp	83
+[탄수화물] 수용액 속 고리형 포도당은 아세탈(acetal) 구조이다.	X → 헤미아세탈. 아세탈은 글리코시드 결합으로 C1이 다른 분자와 연결됐을 때다.	n26.webp	83
+[탄수화물] 수용액 평형 상태에서 사슬형 포도당이 고리형 β-포도당보다 많다.	X → 사슬형은 극소량이고 대부분 고리형(β형 > α형)으로 존재한다.	n26.webp	83
+[탄수화물] 사슬형 포도당이 고리형으로 바뀌는 반응은 물이 빠져나가는 탈수 반응이다.	X → 분자 내 -OH가 알데하이드에 첨가되는 헤미아세탈 형성 반응이며 물이 빠지지 않는다.	n26.webp	83
+[탄수화물] 설탕이 수크레이스에 의해 가수분해되면 포도당과 과당이 생성된다.	O	n27.webp	83
+[탄수화물] 루비스코의 기질인 RuBP는 리보오스가 인산화된 것이다.	X → 리불로오스(케토오스)가 인산화된 리불로오스 1,5-이인산이다.	n27.webp	83
+[탄수화물] ATP를 구성하는 당은 리불로오스이다.	X → 리보오스(알도펜토스)이다.	n27.webp	83
+[탄수화물] 대장균에서 포도당은 젖당 오페론의 전사를 촉진한다.	X → 포도당은 젖당 오페론 전사를 억제한다(카타볼라이트 억제).	n27.webp	83
+[단백질_가공·렉틴] 고등동물의 단백질을 구성하는 아미노산은 L-형이다.	O → D-Ala 같은 D-아미노산은 세균 세포벽(펩티도글리칸)에 있는 예외다.	n02.webp	72
+[단백질_가공·렉틴] 단백질 3차 구조를 안정화하는 비공유결합 중 접힘의 주된 원동력은 수소결합이다.	X → 소수성 상호작용이 접힘의 원동력이다.	n02.webp	72
+[단백질_가공·렉틴] 골지체에서 단백질을 소낭에 담아 내보내는 출구 쪽 면은 cis면이다.	X → trans면(성숙면). cis면은 소포체 쪽 형성면(입구)이다.	n03.webp	72
+[단백질_가공·렉틴] 골지체의 cis면은 조면소포체를 향하고 trans면은 세포막을 향한다.	O	n03.webp	72
+[단백질_가공·렉틴] 시스터나 성숙 모델에서는 시스터나 자체가 cis에서 trans 방향으로 성숙해 간다.	O	n03.webp	72
+[단백질_가공·렉틴] 골지체의 각 시스터나 막은 모두 서로 연결되어 있다.	X → 서로 분리된 납작한 주머니(시스터나)가 쌓인 구조다.	n03.webp	72
+[단백질_가공·렉틴] 만노오스 6-인산(M6P)이 붙은 단백질은 trans 골지에서 리소좀으로 가는 소낭에 포함된다.	O	n03.webp	72
+[단백질_가공·렉틴] 골지체에서 M6P를 인식해 결합하는 만노오스 6-인산 수용체도 당을 인식하는 렉틴의 일종이다.	O	n06.webp	73
+[단백질_가공·렉틴] O-연결 당화는 Ser/Thr의 -OH에 당이 붙는 반응으로 주로 골지체에서 일어난다.	O → 소포체에서 일어나는 것은 N-연결 당화다.	n07.webp	73
+[단백질_가공·렉틴] 이황화결합 형성과 단백질 접힘은 소포체 내강에서 일어난다.	O	n07.webp	73
+[단백질_가공·렉틴] BiP는 조면소포체 내강에 존재하는 HSP90 계열 샤페론이다.	X → HSP70 계열 샤페론이다.	n07.webp	73
+[단백질_가공·렉틴] 올리고머화(oligomerization)는 단백질의 3차 구조를 형성하는 과정이다.	X → 소단위체가 모이는 4차 구조 형성이며 소포체에서 일어난다.	n07.webp	73
+[단백질_가공·렉틴] 렉틴은 특정 당을 인식하여 결합하는 단백질이다.	O	n05.webp	73
+[단백질_가공·렉틴] 호중구가 혈관벽을 빠져나갈 때 호중구 표면의 올리고당에 결합하는 내피세포 단백질은 P-셀렉틴이다.	O	n05.webp	73
+[단백질_가공·렉틴] 헤미데스모좀은 카드헤린과 액틴 미세섬유로 구성된다.	X → 인테그린 + 케라틴 중간섬유로 구성된다.	n05.webp	73
+[단백질_가공·렉틴] 호중구의 혈관 이탈은 인테그린 결합이 먼저 일어난 뒤 셀렉틴-당 결합이 일어난다.	X → ① 셀렉틴-당 결합(굴러감) → ② 인테그린 결합 → ③ 위족운동으로 빠져나간다.	n06.webp	73
+[단백질_가공·렉틴] L-셀렉틴은 내피세포에, E-셀렉틴은 백혈구에 발현된다.	X → 반대. E-셀렉틴이 내피세포(Endothelium), L-셀렉틴이 백혈구(Leukocyte).	n06.webp	73
+[단백질_가공·렉틴] P-셀렉틴은 백혈구에만 발현되는 셀렉틴이다.	X → P-셀렉틴은 혈소판(platelet)과 내피세포에 발현된다.	n06.webp	73
+[단백질_가공·렉틴] 인플루엔자 바이러스의 헤마글루티닌은 숙주세포 표면의 시알산에 결합하는 렉틴이다.	O	n06.webp	73
+[단백질_가공·렉틴] 콜레라 독소는 숙주세포 표면의 당지질에 결합한다.	O	n06.webp	73
+[생합성_에너지] 글리코겐 합성 시 포도당은 UTP에 의해 UDP-포도당으로 활성화되며 이때 PPi가 방출된다.	O	n08.webp	74
+[생합성_에너지] 인지질 합성에서 포스파티드산(phosphatidate)을 활성화할 때는 ATP가 이용된다.	X → CTP가 이용되어 CDP-DAG가 된다.	n08.webp	74
+[생합성_에너지] 포스파티드산이 CTP와 반응해 CDP-DAG가 될 때 CMP가 방출되고, 여기에 친수성 머리 작용기가 붙을 때 PPi가 방출된다.	X → 반대. CDP-DAG 형성 때 PPi, 머리 작용기 결합 때 CMP가 방출된다.	n08.webp	74
+[생합성_에너지] 인산콜린은 CTP와 반응해 CDP-콜린이 된 뒤 DAG와 결합하여 포스파티딜콜린(PC)을 만든다.	O	n08.webp	74
+[생합성_에너지] 단백질 합성의 신장 과정에는 ATP가 직접 사용된다.	X → GTP가 사용된다.	n08.webp	74
+[생합성_에너지] ATP 외의 NTP(GTP, UTP, CTP)도 생체 내에서 에너지원으로 사용된다.	O	n08.webp	74
+[지질] 중성지방의 가수분해는 호르몬 민감성 리파아제(HSL)에 의해서만 일어난다.	X → 소장 내강에서는 이자 리파아제가 음식 속 중성지방을 분해한다.	n02.webp	72
+[지질] 지방조직에서는 저혈당 자극 시 cAMP → PKA → HSL 순으로 신호가 전달되어 중성지방이 분해된다.	O	n02.webp	72
+[지질] PKA에 의해 인산화된 HSL은 불활성화되어 지방 분해가 억제된다.	X → 인산화로 HSL이 활성화되어 지방 분해가 촉진된다.	n02.webp	72
+[지질] 지방조직의 HSL은 중성지방을 글리세롤과 지방산으로 완전히 분해하지만, 소장의 이자 리파아제는 주로 모노아실글리세롤과 지방산을 만든다.	O	n02.webp	72
+[지질] 인체의 영양상 필수 지방산은 올레산(18:1)이다.	X → 리놀레산(18:2)이다. 올레산은 동물도 만든다.	n20.webp	79
+[지질] 지방산 합성은 세포질에서 일어나며 최대 C16 포화지방산(팔미트산)까지 만든다.	O	n20.webp	79
+[지질] 지방산 합성은 저혈당 조건에서 활발하다.	X → 고혈당(영양 과잉) 조건에서 활발하다.	n20.webp	79
+[지질] 스테아르산(18:0)을 올레산(18:1)으로 바꾸는 불포화 반응은 동물도 할 수 있다.	O	n20.webp	79
+[지질] 올레산에서 리놀레산(18:2)·리놀렌산(18:3)으로의 불포화 반응은 동물과 식물 모두 가능하다.	X → 식물만 가능하다. 그래서 동물에게 필수지방산이다.	n20.webp	79
+[지질] 스핑고신과 아마이드 결합을 하는 것은 아미노산(페닐알라닌)이다.	X → 지방산(예: 리그노세르산)이 스핑고신의 -NH₂에 아마이드 결합한다(N-아실).	n21.webp	79
+[지질] 스핑고신의 C1 -OH에는 인산콜린이나 당(단당류·당사슬)이 붙을 수 있다.	O	n21.webp	79
+[지질] 혈소판에서 만들어지는 트롬복산은 혈액응고를 억제한다.	X → 혈액응고를 촉진한다(혈관 수축·혈소판 응집).	n21.webp	79
+[지질] 포스포리파아제 C는 포스파티딜콜린을 콜린과 디아실글리세롤 3-인산으로 분해한다.	X → 인산콜린과 디아실글리세롤(DAG)로 분해한다.	n30.webp	85
+[지질] 포스파티딜세린(PS)이 탈카르복실화되면 포스파티딜에탄올아민(PE)이 된다.	O	n30.webp	85
+[지질] PE의 아미노기에 SAM으로부터 메틸기 2개가 전달되면 포스파티딜콜린(PC)이 된다.	X → 메틸기 3개(SAM×3)가 전달된다.	n30.webp	85
+[지질] 지방산의 오메가(ω) 번호는 카르복실기 쪽 탄소부터 센다.	X → 메틸 말단(ω) 쪽부터 센다.	n30.webp	85
+[지질] 천연 지방산의 이중결합은 대부분 cis형이다.	O	n30.webp	85
+[NSAIDs] 스테로이드계 소염진통제(예: 코티솔 유사체)는 면역반응을 억제한다.	O	n22.webp	80
+[NSAIDs] COX-1은 염증·출혈 시 유도되어 발현되고, COX-2는 항상적으로 발현된다.	X → 반대. COX-1이 항상적, COX-2가 염증·출혈 시 발현된다.	n22.webp	80
+[NSAIDs] 위에서 COX-1이 만드는 프로스타글란딘은 HCl의 과도한 분비를 억제한다.	O	n22.webp	80
+[NSAIDs] 태반에서 COX-1이 만드는 프로스타글란딘은 자궁 평활근 수축을 억제한다.	X → 자궁 평활근 수축을 촉진한다.	n22.webp	80
+[NSAIDs] 내피세포의 COX-2는 프로스타사이클린을 만들어 혈관 이완과 혈액 응고 억제에 관여한다.	O	n22.webp	80
+[NSAIDs] 아스피린은 COX를 가역적(경쟁적)으로 억제한다.	X → 비가역적. 가역적(경쟁적)인 것은 이부프로펜·나프록센이다.	n22.webp	80
+[NSAIDs] 혈소판은 핵이 없어 COX를 새로 합성할 수 없으므로, 아스피린은 주로 혈소판의 트롬복산 생성을 억제한다.	O → 내피세포는 핵이 있어 COX를 다시 만든다.	n22.webp	80
+[NSAIDs] 위궤양 환자에게는 classical NSAIDs(아스피린·이부프로펜)의 복용이 권장된다.	X → 금지한다. COX-1 억제로 HCl이 과다 분비된다.	n22.webp	80
+[NSAIDs] 셀레콕시브는 COX-2만 선택적으로 억제하므로 위산 과다 부작용은 적지만, 혈액 응고 과다(혈전) 부작용이 생길 수 있다.	O	n22.webp	80
+[NSAIDs] 타이레놀(아세트아미노펜)은 해열·진통·소염 효과를 모두 가진다.	X → 해열·진통 효과만 있고 소염 효과는 없다.	n22.webp	80
+[핵산_구조] 퓨린과 피리미딘은 모두 완벽한 평면 구조로 염기쌍 간 쌓임(stacking)에 유리하다.	O	n09.webp	74
+[핵산_구조] 퓨린 고리는 두 개의 고리가 약간 비틀려 결합한 비평면 구조이다.	X → 퓨린도 완벽한 평면 구조다.	n09.webp	74
+[핵산_구조] 염기쌍 사이의 쌓임(stacking)은 주로 소수성 상호작용으로 이중나선을 안정화한다.	O	n09.webp	74
+[핵산_구조] 퓨린과 피리미딘은 모두 공명 구조를 가져 전자 분포가 안정화되어 있다.	O	n09.webp	74
+[핵산_구조] 호변이성화(tautomerization)로 염기의 수소결합 자리가 바뀌면 잘못된 염기쌍이 생겨 자연발생 돌연변이가 일어날 수 있다.	O	n09.webp	74
+[핵산_구조] 이중나선 RNA와 DNA-RNA 잡종 핵산은 A형 DNA와 유사한 구조를 가진다.	O	n32.webp	86
+[핵산_구조] Z형 DNA는 A형·B형 DNA와 같은 우선성 나선이다.	X → Z형만 좌선성 나선이다.	n32.webp	86
+[핵산_구조] DNA 결합 단백질은 B형 DNA의 부홈에 주로 결합한다.	X → 주홈에 주로 결합한다.	n32.webp	86
+[핵산_구조] Z형 DNA는 5′-CG-3′ 반복 서열(CpG)n 부위에서 형성된다.	O	n32.webp	86
+[핵산_구조] 생체 내 조건에서 B형 DNA와 Z형 DNA는 동시에 존재할 수 있다.	O	n11.webp	74
+[핵산_구조] RNA는 Z형 구조를 형성할 수 없다.	X → dsRNA도 고온·고염 같은 실험 조건에서 Z형을 형성할 수 있다.	n11.webp	74
+[DNA_변성·재생] 길이와 G/C 비율이 같다면 Tm은 DNA-DNA > DNA-RNA > RNA-RNA 순으로 낮아진다.	X → 반대로 RNA-RNA > DNA-RNA > DNA-DNA 순으로 Tm이 높다(과학적 이유는 밝혀지지 않음).	n11.webp	74
+[DNA_변성·재생] 열변성 후 재생 과정에서 DNA의 OD값은 변성 이전보다 높은 값에 머물러 더 이상 감소하지 않는다.	X → 결국 원래의 흡광도로 복귀한다.	n10.webp	74
+[DNA_변성·재생] 냉각 속도가 매우 빠르면 DNA는 열역학적으로 가장 안정한 짝보다 그 온도에서 수소결합이 가능한 아무 짝과 결합하려는 경향이 강하다.	O	n10.webp	74
+[DNA_변성·재생] 이력 현상 때문에 재생(냉각) 곡선은 변성(가열) 곡선보다 높은 온도 쪽으로 이동하며, 냉각이 빠를수록 더 높은 온도 쪽으로 간다.	X → 재생 곡선은 낮은 온도 쪽으로 이동하고, 냉각 속도가 빠를수록 더 낮은 쪽으로 간다.	n10.webp	74
+[DNA_변성·재생] 잘못 짝지어 재생된 DNA라도 다시 변성 이전의 온도로 되돌아가면 원래의 DNA로 복구될 수 있다.	O	n10.webp	74
+[DNA_변성·재생] Tm은 이중가닥 DNA의 50%가 단일가닥으로 변성되는 온도이다.	O	n33.webp	87
+[DNA_변성·재생] 완충용액에 NaCl 같은 가용성 염을 첨가하면 DNA의 Tm이 높아진다.	O	n25.webp	82
+[DNA_변성·재생] 계면활성제를 첨가하거나 pH를 급변시키면 DNA의 Tm이 높아진다.	X → Tm이 낮아진다.	n25.webp	82
+[DNA_변성·재생] 같은 조건에서 DNA의 길이가 길어질수록 Tm은 낮아진다.	X → 길이가 길수록 Tm은 높아진다.	n25.webp	82
+[DNA_변성·재생] G+C 함량이 증가하면 Tm이 감소하므로, G+C 함량(y축)-Tm(x축) 그래프는 음의 기울기를 가진다.	X → G+C가 많을수록 Tm이 높아져 양의 기울기를 가진다.	n33.webp	87
+[DNA_변성·재생] G+C 함량(y축)-Tm(x축) 그래프에서 NaCl 2.0% 직선은 0.7% 직선보다 오른쪽(고온 쪽)에 위치한다.	O → 같은 G+C에서 염 농도가 높을수록 Tm이 높다. y축을 먼저 고정하고 x축을 읽는다.	n33.webp	87
+[돌연변이·수선] DNA에서 시토신은 구아닌과 동일한 비율로 존재한다.	O	n12.webp	75
+[돌연변이·수선] 우라실은 RNA(코돈-안티코돈)에서 아데닌뿐 아니라 구아닌과도 상보적으로 결합할 수 있다.	O	n12.webp	75
+[돌연변이·수선] 시토신이 우라실로 바뀌는 반응은 메틸화 반응이다.	X → 탈아미노화(deamination) 반응이다.	n12.webp	75
+[돌연변이·수선] 아질산(NO₂⁻)은 시토신의 탈아미노화를 유발하는 돌연변이원이다.	O	n12.webp	75
+[돌연변이·수선] DNA 속 우라실은 뉴클레오티드 절제 수선(NER)으로 제거되어 시토신으로 복구된다.	X → 염기 절제 수선(BER)으로 복구된다. NER은 티민 이량체처럼 큰 손상을 고친다.	n12.webp	75
+[돌연변이·수선] 티민 이량체는 직접 수선이나 뉴클레오티드 절제 수선으로 복구될 수 있다.	O	n12.webp	75
+[돌연변이·수선] DNA가 원래 우라실을 쓴다면 시토신 탈아미노화로 생긴 우라실과 정상 우라실을 구분할 수 없어 수선이 불가능해진다.	O	n13.webp	75
+[돌연변이·수선] DNA가 우라실을 허용했다면 진화 동안 G·C 쌍은 점차 증가하고 A·U 쌍은 감소했을 것이다.	X → G·C 감소, A·U 증가 → 유전자 염기서열 다양성이 사라진다.	n13.webp	75
+[돌연변이·수선] 아데닌·구아닌의 탈아미노화는 시토신의 탈아미노화보다 약 100배 더 많이 일어난다.	X → 반대. 시토신의 탈아미노화가 약 100배 더 많다.	n13.webp	75
+[돌연변이·수선] 우라실에 메틸기가 붙으면 티민이 된다.	O	n13.webp	75
+[돌연변이·수선] 5-메틸시토신(5-mC)이 탈아미노화되면 티민이 되어, 복제 후 G·C 쌍이 A·T 쌍으로 바뀔 수 있다.	O → 한 번에 T가 되므로 돌연변이가 더 자주 일어난다.	n34.webp	88
+[돌연변이·수선] 시토신 탈아미노화로 생긴 U는 5-mC 탈아미노화로 생긴 T보다 수선될 확률이 낮다.	X → 높다. U는 BER로 잘 인식되지만 T는 정상 염기라 BER로 인식되지 않는다.	n34.webp	88
+[돌연변이·수선] 진핵세포의 메틸화된 CpG 섬은 5-mC 탈아미노화에 의한 돌연변이의 hot spot이다.	O	n34.webp	88
+[돌연변이·수선] 활성산소에 의해 G가 산화되어 생긴 OxoG는 복제 시 A와 짝을 이룰 수 있다.	O	n34.webp	88
+[돌연변이·수선] OxoG에 의한 돌연변이는 결과적으로 G·C 쌍을 C·G 쌍으로 바꾼다.	X → G·C를 T·A로 바꾼다(염기 전환, transversion).	n34.webp	88
+[돌연변이·수선] OxoG-A 염기쌍을 G-C로 되돌리는 과정에는 염기 절제 수선이 관여한다.	O	n34.webp	88
+[돌연변이·수선] 활성산소로 산화된 oxo-dGTP가 A 맞은편에 끼어들면 A·T 쌍이 C·G 쌍으로 바뀔 수 있다.	O	n34.webp	88
+[qPCR] qRT-PCR로 특정 조직의 유전자 발현량을 정량적으로 분석할 수 있다.	O → qRT-PCR = real-time RT-PCR. 조직 내 특정 유전자의 전사 여부와 양을 확인한다.	n14.webp	76
+[qPCR] TaqMan 탐침은 5′ 말단에 소광물질, 3′ 말단에 형광물질이 부착되어 있다.	X → 5′ 말단에 형광물질, 3′ 말단에 소광물질이 있다.	n14.webp	76
+[qPCR] 일정한 양의 시료로 qRT-PCR을 수행하면 매 cycle마다 형광 세기가 감소한다.	X → 증폭산물이 늘어 형광 세기가 증가한다.	n14.webp	76
+[qPCR] PCR 후반부에 증폭이 정체(plateau)되는 이유는 dNTP 고갈과 DNA 중합효소 활성 감소 때문이다.	O	n14.webp	76
+[qPCR] SYBR Green은 dsDNA에 비특이적으로 결합하므로, 증폭산물의 특이성을 확인하려면 단일 Tm 값을 확보해야 한다.	O	n15.webp	76
+[qPCR] TaqMan probe를 사용할 때도 비특이적 산물 확인을 위해 melting curve 분석이 반드시 필요하다.	X → 특이적 탐침이라 melting curve 분석이 필요 없다.	n15.webp	76
+[qPCR] Multiplex PCR에는 SYBR Green이 TaqMan probe보다 유리하다.	X → 서로 다른 형광색 probe를 쓸 수 있는 TaqMan이 유리하다.	n15.webp	76
+[qPCR] SYBR Green은 특이적 표지자이고, TaqMan probe와 molecular beacon probe는 비특이적 표지자이다.	X → 반대. SYBR Green이 비특이적이다.	n16.webp	77
+[qPCR] SYBR Green을 사용하면 PCR 산물의 양과 형광량은 비례한다.	O	n16.webp	77
+[qPCR] PCR 반응에 쓰는 주형 cDNA의 양을 늘리면 Ct 값은 감소한다.	O	n16.webp	77
+[qPCR] Ct 값이 작을수록 처음 시료에 들어 있던 표적 주형의 양이 적다.	X → 많다. 주형이 많으면 적은 cycle만에 역치에 도달한다.	n16.webp	77
+[qPCR] 액틴 Ct가 A 조직 9.5, B 조직 11.2라면 실험에 사용된 전체 cDNA 양은 A가 B보다 많다.	O	n16.webp	77
+[qPCR] X 유전자 Ct가 A 25.3·B 23.0, 액틴 Ct가 A 9.5·B 11.2라면 B 조직의 X 전사량은 A보다 32배 이상 많다.	X → ΔCt A=15.8, B=11.8 → ΔΔCt=4 → 2⁴=16배.	n17.webp	77
+[qPCR] 액틴 Ct를 함께 측정하는 것은 조직 간 전체 cDNA 양의 차이를 보정하기 위해서이다.	O	n17.webp	77
+[qPCR] 액틴 보정 없이 X 유전자의 Ct만으로 두 조직의 X 발현량을 직접 비교할 수 있다.	X → 불가능하다. 조직마다 액틴 발현량(전체 cDNA 양)이 달라 보정이 필요하다.	n17.webp	77
+[qPCR] ΔCt는 [대조군(액틴) Ct − 목적 유전자 Ct]로 계산한다.	X → ΔCt = 목적 유전자 Ct − 대조군 Ct.	n17.webp	77
+[qPCR] ΔCt가 클수록 대조군에 비해 목적 유전자의 발현량이 적다.	O	n17.webp	77
+[qPCR] 상대 발현량은 2^(−ΔΔCt)로 구한다.	O	n17.webp	77
+[qPCR] 모든 시료의 Internal control Ct가 같다면, 목적 유전자 Ct가 작은 시료일수록 ΔCt도 작다.	O → 그래서 ΔCt 크기는 B<C<D<E 순이다.	n18.webp	78
+[qPCR] C를 기준으로 상대 정량할 때 C 자신의 ΔΔCt 값은 1이다.	X → 0이다. 발현 비율 2⁰=1과 헷갈리지 말 것.	n18.webp	78
+[qPCR] C를 기준으로 할 때 C보다 Ct가 작은 B의 ΔΔCt는 양(+)의 값이다.	X → 음(−)의 값이다. B가 C보다 발현량이 많다.	n18.webp	78
+[CRISPR] Cas9은 PAM 서열의 유무로 자신의 CRISPR spacer와 바이러스의 proto-spacer를 구분하여 절단한다.	O → PAM은 바이러스 쪽에만 있어 세균 자신의 CRISPR 부위는 잘리지 않는다.	n19.webp	78
+[CRISPR] Cas9은 단일가닥 DNA만 절단하는 뉴클레아제이다.	X → 이중가닥을 절단한다. 단일가닥만 자르는 것은 변형된 nCas9(Cas9 nickase).	n19.webp	78
+[CRISPR] Cas9이 표적 DNA를 찾는 것은 guide RNA에 의존한다.	O	n19.webp	78
+[CRISPR] CRISPR-Cas9 시스템은 바이러스로부터 세균을 방어하는 면역 시스템이다.	O	n19.webp	78
+[CRISPR] CRISPR-Cas9에 의한 유전자 제거는 RNA 간섭에 비해 일시적인 효과를 가진다.	X → DNA 수준의 영구적 knock-out이다. 일시적인 RNA 수준 knock-down은 RNA 간섭.	n19.webp	78
+[CRISPR] Cas9 절단 후 NHEJ로 복구되면 무작위 삽입·결실이 생겨 유전자 knock-out이 일어나기 쉽다.	O	n19.webp	78
+[분리·추출] 순상(normal phase) 크로마토그래피에서는 고정상의 극성이 높고 이동상의 극성이 낮다.	O	n23.webp	81
+[분리·추출] 실리카를 이용한 순상 TLC에서 더 멀리 이동한 물질일수록 극성이 크다.	X → 극성이 작다. 극성이 큰 물질은 극성 고정상에 붙잡혀 덜 이동한다.	n23.webp	81
+[분리·추출] TLC의 분리 원리는 전개 용매에 대한 용해도와 극성 차이에 의한 이동 속도 차이이다.	O	n23.webp	81
+[분리·추출] Rf는 원점에서 물질까지의 거리를 원점에서 용매 전선까지의 거리로 나눈 값이다.	O → 여과지 끝이 아니라 원점부터 잰다(예: 18/27 = 2/3).	n23.webp	81
+[분리·추출] 역상(reversed-phase) 칼럼에서는 극성이 큰 용매를 이동상으로 사용한다.	O	n24.webp	81
+[분리·추출] 역상 칼럼에서는 일반적으로 극성이 작은 물질이 늦게 용리된다.	O	n24.webp	81
+[분리·추출] 순상 칼럼에서는 극성이 큰 물질이 빨리 용리된다.	X → 늦게 용리된다.	n24.webp	81
+[분리·추출] 역상 칼럼으로 약물과 그 간 대사체를 분리하면 일반적으로 대사체가 더 늦게 용리된다.	X → 간 해독작용으로 -OH 등이 붙어 친수성이 커지므로 대사체가 더 빨리 용리된다.	n24.webp	81
+[분리·추출] 종이 크로마토그래피에서 여과지의 원점은 전개용매에 완전히 잠겨야 한다.	X → 원점은 용매면 위에 있어야 한다. 잠기면 색소가 용매 속으로 녹아 나간다.	n31.webp	85
+[분리·추출] 비극성 용매(톨루엔)로 전개할 때 더 멀리 이동한 엽록소 a는 엽록소 b보다 극성이 작다.	O → a는 -CH₃, b는 -CHO를 가져 b의 극성이 더 크다.	n31.webp	85
+[분리·추출] 에테르는 물보다 가벼워 에테르-물 2층 분리 시 상층에 위치한다.	O	n28.webp	84
+[분리·추출] 클로로포름은 에테르처럼 물보다 가벼워 물과 2층을 이룰 때 상층에 위치한다.	X → 비중이 1보다 커서 하층에 위치한다.	n28.webp	84
+[분리·추출] 에테르-물 추출에서 RNA는 에테르 층으로 이동한다.	X → 수용성이므로 하층(수층)에 분포한다.	n28.webp	84
+[분리·추출] 에테르-물 추출에서 대부분의 수용성 단백질은 에테르 층에서 검출된다.	X → 수층(하층)에서 검출된다.	n28.webp	84
+[분리·추출] 물을 넣었을 때 미셀을 형성하고 글리코시드 결합이 검출되는 물질은 양친매성 당지질로 추론할 수 있다.	O	n28.webp	84
+</script>
+
+<script>
+/* ===== 목차: 새 주제는 여기에 한 항목 + 위에 데이터 블록만 추가하면 됩니다 ===== */
+var CATALOG = [
+  { id:'bio', name:'생물', color:'bio', topics:[
+    { id:'organelle', name:'세포소기관', desc:'현미경·세포분획부터 세포골격·세포연접까지', data:'d-organelle', img:'bio/organelle/img/', key:'quiz-bio-organelle', pageLabel:true },
+    { id:'cellcycle', name:'세포주기·암·세포자살', desc:'세포분열·감수분열·세포주기 조절부터 암·항암제·세포죽음까지', data:'d-cellcycle', img:'bio/cellcycle/img/', key:'quiz-bio-cellcycle-v2', pageLabel:true },
+    { id:'enzyme', name:'효소', desc:'물질대사·ATP부터 효소 작용·속도론·저해·조절·동질효소까지', data:'d-enzyme', img:'bio/enzyme/img/', key:'quiz-bio-enzyme', pageLabel:true },
+    { id:'plant', name:'식물', desc:'식물의 구조·조직계부터 물질수송·생식·식물호르몬·방어·개화조절까지', data:'d-plant', img:'bio/plant/img/', key:'quiz-bio-plant', pageLabel:true }
+  ]},
+  { id:'chem', name:'화학', color:'chem', topics:[
+    { id:'nmr', name:'NMR', desc:'분자 분광학부터 ¹³C NMR까지', data:'d-nmr', img:'chem/nmr/img/', key:'quiz-chem-nmr', pageLabel:false }
+  ]},
+  { id:'note', name:'문제집 오답', color:'note', topics:[
+    { id:'membrane', name:'세포신호전달', desc:'막 비대칭·막수송·K⁺ 채널부터 GPCR 신호전달·세포주기·암 바이러스까지 (4장 기출 문제집)', data:'d-membrane', img:'bio/membrane/img/', key:'quiz-bio-membrane', pageLabel:false, capLabel:'원본 문항' },
+    { id:'carbnuc', name:'탄수화물·핵산·지질', desc:'당 이성질체·렉틴·HSL부터 DNA 변성·탈아미노화·qPCR·CRISPR·NSAIDs·크로마토그래피까지 (3장 기출 문제집)', data:'d-carbnuc', img:'bio/carbnuc/img/', key:'quiz-bio-carbnuc', pageLabel:false, capLabel:'원본 문항' }
+  ]}
+];
+
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var label = function(ch){ return ch.replace(/_/g, ' '); };
+  /* ---------- 기록 저장: 이 브라우저(즉시) + 계정(클라우드, 기기·재접속 간 유지) ---------- */
+  var STORE = {}, cloud = null, timers = {}, writing = {}, again = {}, onCloudReady = null;
+  function lsGet(k){ try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch(e) { return null; } }
+  function lsSet(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e) {} }
+  function norm(v){ // 예전 형식({id:true})도 받아들임
+    if (!v || typeof v !== 'object') return { results:{}, pos:null, ch:'all', updatedAt:0 };
+    if (!v.results) return { results:v, pos:null, ch:'all', updatedAt:0 };
+    return { results:v.results || {}, pos:v.pos || null, ch:v.ch || 'all', sh:!!v.sh, ord:Array.isArray(v.ord) ? v.ord : null, clr:v.clr || 0, updatedAt:v.updatedAt || 0 };
+  }
+  // 두 기록 합치기: 한쪽이 덮어쓰지 않고, 푼 문제는 양쪽 모두 남김(같은 문제는 최신 쪽 우선).
+  // 단, 최신 쪽에서 [채점 기록 지우기]를 했다면 그 이전 기록은 버림.
+  function merge(a, b){
+    var nw = a.updatedAt >= b.updatedAt ? a : b, od = nw === a ? b : a, res = {};
+    if (!((nw.clr || 0) > od.updatedAt)) Object.assign(res, od.results);
+    Object.assign(res, nw.results);
+    return { results:res, pos:nw.pos, ch:nw.ch, sh:nw.sh, ord:nw.ord, clr:Math.max(a.clr || 0, b.clr || 0), updatedAt:nw.updatedAt };
+  }
+  function same(a, b){ return JSON.stringify(a.results) === JSON.stringify(b.results) && a.pos === b.pos; }
+  function needsReview(v){ return v === false || v === 'u'; } // 다시 볼 문제 = 틀림 + 모름
+  function stClass(v){ return v === false ? 'bad' : v === 'u' ? 'unsure' : ''; }
+  function rec(k){ if (!STORE[k]) STORE[k] = norm(lsGet(k)); return STORE[k]; }
+  function persist(k){
+    var r = rec(k); r.updatedAt = Date.now(); lsSet(k, r);
+    if (!cloud) return;
+    clearTimeout(timers[k]); timers[k] = setTimeout(function(){ flush(k); }, 800); // 연속 입력은 한 번에 저장
+  }
+  function flush(k){
+    if (!cloud) return;
+    if (writing[k]) { again[k] = true; return; }
+    writing[k] = true; setSync('saving');
+    var r = rec(k);
+    cloud.doc(k).set({ results:r.results, pos:r.pos, ch:r.ch, sh:!!r.sh, ord:r.ord || null, clr:r.clr || 0, updatedAt:r.updatedAt })
+      .then(function(){ setSync('ok'); }, function(e){
+        var c = e && e.code;
+        if (c === 'invalid_argument' || c === 'not_granted' || c === 'revoked') { cloud = null; setSync('denied'); }
+        else setSync(c === 'quota_exceeded' ? 'full' : 'error');
+      })
+      .then(function(){ writing[k] = false; if (again[k]) { again[k] = false; flush(k); } });
+  }
+  function setSync(s){
+    var txt = { ok:'☁ 기록이 계정에 저장돼요', saving:'☁ 저장 중…', local:'이 브라우저에만 저장 중 · 다른 기기로 옮기려면 [기록 백업]을 쓰세요', denied:'⚠ 이 계정은 "보기" 권한만 있어 기록이 서버에 저장되지 않아요 · 퀴즈 소유자에게 이 계정을 "편집 가능"으로 초대해 달라고 하세요', error:'저장에 실패했어요 · 이 브라우저에는 남아 있어요', full:'저장 공간이 가득 찼어요', wait:'기록 불러오는 중…', device:'📱 기록이 이 기기에 저장돼요 · 기기를 바꿀 땐 [기록 백업]을 쓰세요', nick:'이 브라우저에만 저장 중 · 첫 화면에서 이름을 입력하면 기록이 저장돼요' }[s] || '';
+    document.querySelectorAll('.sync').forEach(function(el){ el.dataset.s = s; el.textContent = txt; });
+  }
+  // 계정 저장이 왜 안 되는지 화면에 보여주고(진단), 가능한 우회로(권한 다시 요청 / 이름으로 저장)를 제공
+  var DB = null, listening = false;
+  function nickSlug(n){ return String(n || '').trim().replace(/[^A-Za-z0-9가-힣_\-]/g, '').slice(0, 20); }
+  async function startCloud(col, nick){
+    cloud = col; $('cfix').hidden = true;
+    $('who').hidden = !nick; if (nick) $('whoTxt').textContent = '👤 ' + nick + ' 이름으로 기록 중';
+    await pullAll();
+    if (!listening) { // 홈 화면 앱은 백그라운드에서 돌아올 때마다 계정 기록을 다시 받아 합침
+      listening = true;
+      document.addEventListener('visibilitychange', function(){ if (document.visibilityState === 'visible') pullAll(); });
+      window.addEventListener('pageshow', function(e){ if (e.persisted) pullAll(); });
+    }
+  }
+  async function initCloud(askPerm){
+    setSync('wait');
+    var d = { claude: !!(window.claude && claude.use) }, user = null, uid = null, perms = null;
+    if (!d.claude) { // 독립 사이트(GitHub Pages): 이 기기에 저장. 저장 공간이 지워지지 않게 브라우저에 요청
+      try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch(e) {}
+      setSync('device'); return;
+    }
+    try {
+      if (d.claude) {
+        perms = await claude.use('permissions');
+        if (askPerm && perms) { try { await perms.request(['db', 'user']); } catch(e) {} }
+        DB = await claude.use('db'); user = await claude.use('user');
+      }
+      d.db = !!DB; d.user = !!user;
+      uid = user ? await user.id() : null; d.id = !!uid;
+      if (user) { try { d.edit = await user.canEdit(); } catch(e) {} try { d.write = await user.can('data.write'); } catch(e) {} }
+      if (perms) { try { var st = await perms.state(); d.pdb = st.db || '없음'; d.puser = st.user || '없음'; } catch(e) {} }
+    } catch(e) { d.err = (e && (e.code || e.message)) || 'err'; }
+    if (DB && uid) return startCloud(DB.collection('data/users/' + uid));
+    // 계정 id는 없지만 db는 쓸 수 있는 경우: 이름으로 저장
+    var nick = nickSlug(lsGet('quiz-nick'));
+    if (DB && nick) return startCloud(DB.collection('nicks/' + nick + '/quiz'), nick);
+    setSync(DB ? 'nick' : 'local');
+    var yn = function(v){ return v === true ? 'O' : v === false ? 'X' : v == null ? '-' : v; };
+    $('cdiag').textContent = '진단 · 연결 ' + yn(d.claude) + ' · 저장소 ' + yn(d.db) + ' · 사용자 ' + yn(d.user) + ' · 계정ID ' + yn(d.id) +
+      ' · 편집권한 ' + yn(d.edit) + ' · 쓰기 ' + yn(d.write) + ' · 동의(db/user) ' + (d.pdb || '-') + '/' + (d.puser || '-') + (d.err ? ' · 오류 ' + d.err : '');
+    $('nickRow').hidden = $('nickNote').hidden = !DB;
+    $('cfix').hidden = false;
+  }
+  $('retryCloud').addEventListener('click', function(){ initCloud(true); });
+  $('nickGo').addEventListener('click', function(){
+    var n = nickSlug($('nickIn').value);
+    if (!n) { $('nickIn').focus(); return; }
+    lsSet('quiz-nick', n);
+    if (DB) startCloud(DB.collection('nicks/' + n + '/quiz'), n);
+  });
+  $('nickIn').addEventListener('keydown', function(e){ if (e.key === 'Enter') $('nickGo').click(); });
+  // 이름 바꾸기: 이 기기에 남은 이전 이름의 기록이 새 이름에 섞이지 않도록 이 기기의 임시 기록을 비우고 다시 시작
+  $('nickChange').addEventListener('click', function(){
+    try { localStorage.removeItem('quiz-nick'); allKeys().forEach(function(k){ localStorage.removeItem(k); }); } catch(e) {}
+    location.reload();
+  });
+  var pulling = false;
+  async function pullAll(){
+    if (!cloud || pulling) return;
+    pulling = true;
+    var keys = [], changed = [], failed = false;
+    CATALOG.forEach(function(s){ s.topics.forEach(function(t){ keys.push(t.key); }); });
+    for (var i = 0; i < keys.length; i++) {
+      var k = keys[i], local = rec(k), snap = null;
+      try { snap = await cloud.doc(k).get(); } catch(e) { failed = true; continue; } // 못 읽으면 덮어쓰지 않음
+      var remote = snap && snap.exists ? norm(snap.data()) : null;
+      if (!remote) { if (Object.keys(local.results).length || local.pos) flush(k); continue; }
+      var m = merge(local, remote);
+      if (!same(m, local)) { STORE[k] = m; lsSet(k, m); changed.push(k); }
+      if (!same(m, remote)) { STORE[k] = m; lsSet(k, m); flush(k); } // 합친 결과를 계정에 다시 올림
+    }
+    pulling = false;
+    setSync(failed ? 'error' : 'ok');
+    if (onCloudReady && changed.length) onCloudReady(changed);
+  }
+
+  // 데이터 파싱(주제별 1회)
+  var parsed = {};
+  function cardsOf(t){
+    if (parsed[t.id]) return parsed[t.id];
+    var el = $(t.data), txt = el ? el.textContent.trim() : '';
+    parsed[t.id] = !txt ? [] : txt.split('\n').map(function(line, i){
+      var p = line.split('\t'), m = p[0].match(/^\[(.+?)\]\s*(.*)$/) || [0,'기타',p[0]], a = (p[1] || '').trim();
+      return { id:i+1, ch:m[1], q:m[2].trim(), ans:a.charAt(0), exp:a.replace(/^[OX]\s*(→\s*)?/, '').trim(), img:(p[2] || '').trim(), page:(p[3] || '').trim() };
+    });
+    return parsed[t.id];
+  }
+  function findSubject(id){ for (var i = 0; i < CATALOG.length; i++) if (CATALOG[i].id === id) return CATALOG[i]; }
+  function findTopic(s, id){ for (var i = 0; i < s.topics.length; i++) if (s.topics[i].id === id) return s.topics[i]; }
+
+  /* ---------- 홈 / 주제 목록 ---------- */
+  function renderHome(){
+    var box = $('subjects'); box.textContent = '';
+    CATALOG.forEach(function(s){
+      var n = 0; s.topics.forEach(function(t){ n += cardsOf(t).length; });
+      var a = document.createElement('a'); a.className = 'tile ' + s.color; a.href = '#/' + s.id;
+      var b = document.createElement('span'); b.className = 'big'; b.textContent = '[' + s.name + ']';
+      var m = document.createElement('span'); m.className = 'meta2'; m.textContent = '주제 ' + s.topics.length + '개 · ' + n + '문항';
+      a.append(b, m); box.appendChild(a);
+    });
+    renderStats();
+  }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(ch){ return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[ch]; }); }
+  // 홈 학습 현황판: 모든 주제의 저장된 채점 기록을 모아 보여줌
+  function renderStats(){
+    var el = $('stats'); if (!el) return;
+    var tot = 0, done = 0, good = 0, rev = 0, rows = [];
+    CATALOG.forEach(function(s){ s.topics.forEach(function(t){
+      var cs = cardsOf(t), res = rec(t.key).results, d = 0;
+      cs.forEach(function(c){ var v = res[c.id]; if (v !== undefined) { d++; done++; if (v === true) good++; } if (needsReview(v)) rev++; });
+      tot += cs.length; rows.push({ s:s, t:t, d:d, n:cs.length });
+    }); });
+    var pct = tot ? Math.round(done / tot * 100) : 0, acc = done ? Math.round(good / done * 100) : 0;
+    el.innerHTML = '<h3>📊 나의 학습 현황</h3>' +
+      '<div class="sbox"><div class="hrow"><div class="ring" style="--p:' + pct + '%" role="img" aria-label="전체 진행률 ' + pct + '%"><b>' + pct + '%</b></div>' +
+      '<div class="kpis"><div><b>' + done + '</b><span>푼 문제</span></div><div><b>' + (done ? acc + '%' : '–') + '</b><span>정답률</span></div><div><b>' + rev + '</b><span>복습할 문제</span></div></div></div></div>' +
+      '<div class="sbox tps">' + rows.map(function(r){ var p = r.n ? Math.round(r.d / r.n * 100) : 0;
+        return '<a class="tp" href="#/' + r.s.id + '/' + r.t.id + '"><span>' + esc(r.t.name) + '</span><span class="pbar"><i style="width:' + p + '%"></i></span><em>' + p + '%</em></a>'; }).join('') + '</div>' +
+      (rev ? '<a class="cta" href="#/review">틀린·모르는 문제 ' + rev + '개 모아 풀기 →</a>' : '<div class="cta off">틀리거나 모르는 문제가 아직 없어요</div>');
+  }
+  // 여러 주제의 틀린·모르는 문제를 한 묶음으로
+  var REVIEW = { id:'review', name:'오답·모름 복습', desc:'모든 주제에서 틀렸거나 모르겠다고 표시한 문제를 모았어요.', key:'quiz-review', review:true, pageLabel:true };
+  function reviewCards(){
+    var out = [];
+    CATALOG.forEach(function(s){ s.topics.forEach(function(t){
+      var res = rec(t.key).results;
+      cardsOf(t).forEach(function(c){ if (needsReview(res[c.id])) out.push(Object.assign({}, c, { id:t.id + ':' + c.id, oid:c.id, no:'#' + c.id, t:t, ch:t.name })); });
+    }); });
+    return out;
+  }
+  function renderSubject(s){
+    $('sCrumb').textContent = s.name; $('sTitle').textContent = '[' + s.name + ']';
+    var box = $('topics'); box.textContent = '';
+    s.topics.forEach(function(t){
+      var cards = cardsOf(t), res = rec(t.key).results, done = 0, good = 0;
+      cards.forEach(function(c){ if (res[c.id] !== undefined) { done++; if (res[c.id]) good++; } });
+      var a = document.createElement('a'); a.className = 'topic'; a.href = '#/' + s.id + '/' + t.id;
+      var nm = document.createElement('span'); nm.className = 'name'; nm.textContent = '[' + t.name + ']';
+      var st = document.createElement('span'); st.className = 'stat mono';
+      var bb = document.createElement('b'); bb.textContent = cards.length + '문항';
+      st.append(bb, document.createTextNode('푼 문제 ' + done + ' · 정답 ' + good));
+      var ds = document.createElement('span'); ds.className = 'desc'; ds.textContent = t.desc;
+      a.append(nm, st, ds); box.appendChild(a);
+    });
+  }
+
+  /* ---------- 카드 학습기 ---------- */
+  var deck = null, cards = [], chapters = [], results = {};
+  var state = { ch:'all', wrongOnly:false, shuffle:false, order:[], idx:0, flipped:false, answered:false };
+  function save(){
+    if (!deck) return;
+    if (deck.review) { // 모아 풀기: 각 문제의 원래 주제 기록에 저장
+      var touched = {};
+      cards.forEach(function(c){ var tr = rec(c.t.key).results, v = results[c.id]; if (tr[c.oid] === v) return; if (v === undefined) delete tr[c.oid]; else tr[c.oid] = v; touched[c.t.key] = 1; });
+      Object.keys(touched).forEach(persist);
+      return;
+    }
+    var r = rec(deck.key), c = state.order[state.idx];
+    r.results = results; r.pos = c ? c.id : null; r.ch = state.ch; r.sh = state.shuffle; r.ord = state.shuffle ? state.seq : null; // 섞인 순서도 저장
+    persist(deck.key);
+  }
+  var cache = {};
+  function src(c){ return (c.t ? c.t.img : deck.img) + c.img; }
+  // 묶음 이미지(파일명#칸/칸수@가로x세로)는 해당 칸만 잘라 보여줌 — 파일 수 한도 때문에 쓰는 방식
+  function tile(el, c, lb){
+    var m = /#(\d+)\/(\d+)(?:@(\d+)x(\d+))?$/.exec(c.img || ''), s = el.style;
+    if (!m) { s.aspectRatio = s.objectFit = s.objectPosition = s.maxHeight = s.width = ''; return; }
+    var i = +m[1], n = +m[2], w = +(m[3] || 543), h = +(m[4] || 471);
+    s.aspectRatio = w + ' / ' + h; s.objectFit = 'cover'; s.maxHeight = 'none';
+    s.objectPosition = '0 ' + (n > 1 ? i / (n - 1) * 100 : 0) + '%';
+    s.width = lb ? 'min(100%, calc((100vh - 64px) * ' + w + ' / ' + h + '))' : '100%';
+  }
+  function preload(c){ if (c && c.img && !cache[src(c)]) { var im = new Image(); im.src = src(c); cache[src(c)] = im; } }
+
+  function openDeck(s, t){
+    deck = t; var r = rec(t.key);
+    if (t.review) { cards = reviewCards(); results = {}; cards.forEach(function(c){ results[c.id] = rec(c.t.key).results[c.oid]; }); }
+    else { cards = cardsOf(t); results = r.results; }
+    $('reset').hidden = !!t.review;
+    chapters = []; cards.forEach(function(c){ if (chapters.indexOf(c.ch) < 0) chapters.push(c.ch); });
+    state.ch = chapters.indexOf(r.ch) >= 0 ? r.ch : 'all'; state.wrongOnly = false; state.shuffle = !!r.sh; state.seq = r.sh ? r.ord : null; // 섭기 설정·순서를 주제별로 기억
+    $('shuffle').setAttribute('aria-pressed', state.shuffle ? 'true' : 'false');
+    $('qCrumbSub').textContent = s.name; $('qCrumbSub').href = '#/' + s.id; $('qBack').href = '#/' + s.id; $('qBack').setAttribute('aria-label', s.name + ' 주제 목록으로 돌아가기');
+    $('qCrumbTopic').textContent = t.name;
+    $('qTitle').textContent = t.name + ' OX 단어카드';
+    $('qSub').textContent = t.desc + ' ' + cards.length + '문항. O·X를 고르면 채점되고, 해설과 근거 이미지를 확인한 뒤 다음 문제로 넘어가요.';
+    $('figHint').textContent = t.pageLabel ? '주황 표시가 해당 줄 · 눌러서 크게 보기' : '눌러서 크게 보기';
+    renderChips(); buildOrder(); resume(r.pos);
+  }
+  // 마지막으로 보던 카드로 이동
+  // 마지막 위치부터 아직 안 푼 문제를 찾아 그곳에서 이어 풀기
+  function resume(pos){
+    var o = state.order, n = o.length, k = -1, i;
+    if (!n) return;
+    for (i = 0; i < n; i++) if (o[i].id === pos) { k = i; break; }
+    for (i = 0; i < n; i++) { var t = ((k < 0 ? 0 : k) + i) % n; if (results[o[t].id] === undefined) { state.idx = t; render(); return; } }
+    if (k >= 0) { state.idx = k; render(); }
+  }
+  // 계정 기록이 늦게 도착하면 지금 화면을 새 기록으로 다시 그림
+  onCloudReady = function(changed){
+    if (!$('vQuiz').hidden && deck) {
+      if (changed.indexOf(deck.key) < 0) return;
+      var r = rec(deck.key); results = r.results; renderChips(); buildOrder(); resume(r.pos);
+    } else route();
+  };
+
+  function buildOrder(){
+    var base = cards;
+    if (state.shuffle) { // 섞인 순서는 한 번 정해지면 다시 들어와도 유지
+      var byId = {}; cards.forEach(function(c){ byId[c.id] = c; });
+      var ok = state.seq && state.seq.length === cards.length && state.seq.every(function(id){ return byId[id]; });
+      if (!ok) { var ids = cards.map(function(c){ return c.id; }); for (var a = ids.length - 1; a > 0; a--) { var z = Math.floor(Math.random() * (a + 1)); var w = ids[a]; ids[a] = ids[z]; ids[z] = w; } state.seq = ids; }
+      base = state.seq.map(function(id){ return byId[id]; });
+    }
+    var list = base.filter(function(c){
+      return (state.ch === 'all' || c.ch === state.ch) && (!state.wrongOnly || needsReview(results[c.id]));
+    });
+    state.order = list; state.idx = 0; state.flipped = false; state.answered = false;
+    renderList(); render();
+  }
+
+  function renderChips(){
+    var box = $('chips'); box.textContent = '';
+    var add = function(text, pressed, fn, cls){
+      var b = document.createElement('button'); b.className = 'chip' + (cls ? ' ' + cls : ''); b.textContent = text;
+      b.setAttribute('aria-pressed', pressed ? 'true' : 'false'); b.addEventListener('click', fn); box.appendChild(b);
+    };
+    add('전체 ' + cards.length, state.ch === 'all', function(){ state.ch = 'all'; renderChips(); buildOrder(); });
+    chapters.forEach(function(ch){
+      var n = cards.filter(function(c){ return c.ch === ch; }).length;
+      add(label(ch) + ' ' + n, state.ch === ch, function(){ state.ch = ch; renderChips(); buildOrder(); });
+    });
+    var wrong = cards.filter(function(c){ return needsReview(results[c.id]); }).length;
+    add('틀린·모르는 문제만 ' + wrong, state.wrongOnly, function(){ state.wrongOnly = !state.wrongOnly; renderChips(); buildOrder(); }, 'wrong');
+  }
+
+  function render(){
+    var total = state.order.length, c = state.order[state.idx];
+    $('empty').hidden = total > 0; $('stage').hidden = total === 0; $('controls').hidden = total === 0;
+    var good = 0, bad = 0, unk = 0;
+    state.order.forEach(function(x){ var v = results[x.id]; if (v === true) good++; else if (v === false) bad++; else if (v === 'u') unk++; });
+    // 진행바 = 지금까지 푼 문항 수 / 전체
+    $('prog').style.width = total ? ((good + bad + unk) / total * 100) + '%' : '0';
+    $('pos').textContent = '푼 문항 ' + (good + bad + unk) + ' / ' + total;
+    $('score').textContent = '맞힘 ' + good + ' · 틀림 ' + bad + ' · 모름 ' + unk;
+    if (!c) return;
+    $('fTag').textContent = $('bTag').textContent = label(c.ch);
+    $('fNum').textContent = $('bNum').textContent = c.no || '#' + c.id;
+    $('fQ').textContent = c.q; $('bQ').textContent = c.q;
+    // 결과 표시: 답했으면 ✓/✗/△ 판정이 주인공, 정답은 보조 줄로만
+    var r = state.answered ? results[c.id] : undefined, res = $('result'), mark = $('mark');
+    var kind = r === true ? 'good' : r === false ? 'bad' : r === 'u' ? 'unsure' : '';
+    mark.className = 'mark ' + (kind || c.ans);
+    mark.textContent = kind === 'good' ? '✓' : kind === 'bad' ? '✗' : kind === 'unsure' ? '△' : c.ans;
+    res.className = 'result' + (kind ? ' ' + kind : '');
+    res.textContent = '';
+    var title = document.createElement('span');
+    title.textContent = kind === 'good' ? '맞았어요!' : kind === 'bad' ? '틀렸어요' : kind === 'unsure' ? '모르는 문제로 표시했어요' : (c.ans === 'O' ? '맞는 문장이에요' : '틀린 문장이에요');
+    res.appendChild(title);
+    if (kind) {
+      var al = document.createElement('span'); al.className = 'ansline'; al.textContent = '정답';
+      var ab = document.createElement('b'); ab.className = c.ans; ab.textContent = c.ans; al.appendChild(ab);
+      res.appendChild(al);
+    }
+    document.querySelector('#vQuiz .face.back').className = 'face back' + (kind ? ' ' + kind : '');
+    $('exp').textContent = c.exp || '문장 그대로 맞아요.';
+    if (c.img) {
+      $('fig').hidden = false;
+      if ($('figImg').getAttribute('src') !== src(c)) $('figImg').setAttribute('src', src(c));
+      tile($('figImg'), c);
+      var tp = c.t || deck, cl = tp && tp.capLabel;
+      $('figPage').textContent = cl ? cl + (c.page ? ' · 교재 p.' + c.page : '') : (c.page ? '내 필기 p.' + c.page : '근거 그림');
+    } else { $('fig').hidden = true; $('figImg').removeAttribute('src'); }
+    $('card').classList.toggle('flipped', state.flipped);
+    $('gO').hidden = $('gX').hidden = $('gU').hidden = state.flipped; $('goNext').hidden = !state.flipped;
+    preload(state.order[(state.idx + 1) % total]);
+  }
+
+  function renderList(){
+    var ul = $('list'); ul.textContent = '';
+    $('listTitle').textContent = (state.ch === 'all' ? '전체' : label(state.ch)) + (state.wrongOnly ? ' · 틀린·모르는 문제' : '') + ' 문항 ' + state.order.length + '개';
+    state.order.forEach(function(c, i){
+      var li = document.createElement('li'); li.className = stClass(results[c.id]);
+      var n = document.createElement('span'); n.className = 'n mono'; n.textContent = c.no || '#' + c.id;
+      var body = document.createElement('span'); body.textContent = c.q;
+      if (c.exp) { var e = document.createElement('span'); e.className = 'e'; e.textContent = '→ ' + c.exp; body.appendChild(e); }
+      var a = document.createElement('span'); a.className = 'a ' + c.ans; a.textContent = c.ans;
+      if (li.className) { var st = document.createElement('span'); st.className = 'st'; st.textContent = li.className === 'bad' ? '틀림' : '모름'; n.appendChild(document.createElement('br')); n.appendChild(st); }
+      li.append(n, body, a);
+      li.addEventListener('click', function(){ state.idx = i; state.flipped = false; state.answered = false; render(); save(); window.scrollTo({ top:0, behavior:'smooth' }); });
+      ul.appendChild(li);
+    });
+  }
+
+  function flip(){ if (state.order.length) { state.flipped = !state.flipped; render(); } }
+  function move(d){
+    var t = state.order.length; if (!t) return;
+    state.idx = (state.idx + d + t) % t; state.flipped = false; state.answered = false; render(); save();
+    $('stage').scrollIntoView({ block:'nearest', behavior:'smooth' });
+  }
+  function guess(g){
+    var c = state.order[state.idx]; if (!c || state.flipped) return;
+    results[c.id] = g === 'U' ? 'u' : (g === c.ans); save();
+    state.answered = true; state.flipped = true; render(); renderChips(); renderList();
+  }
+  function openLb(){ var c = state.order[state.idx]; if (!c || !c.img) return; $('lbImg').src = src(c); tile($('lbImg'), c, true); $('lb').hidden = false; $('lbClose').focus(); }
+  function closeLb(){ $('lb').hidden = true; }
+
+  $('card').addEventListener('click', function(e){ if (e.target.closest('#fig')) return; flip(); });
+  $('fig').addEventListener('click', function(e){ e.stopPropagation(); openLb(); });
+  $('lb').addEventListener('click', closeLb);
+  $('lbClose').addEventListener('click', function(e){ e.stopPropagation(); closeLb(); });
+  var sx = 0, sy = 0;
+  $('card').addEventListener('touchstart', function(e){ sx = e.changedTouches[0].clientX; sy = e.changedTouches[0].clientY; }, { passive:true });
+  $('card').addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) { e.preventDefault(); move(dx < 0 ? 1 : -1); }
+  });
+  $('prev').addEventListener('click', function(){ move(-1); });
+  $('next').addEventListener('click', function(){ move(1); });
+  $('goNext').addEventListener('click', function(){ move(1); });
+  $('goNext2').addEventListener('click', function(e){ e.stopPropagation(); move(1); });
+  $('gO').addEventListener('click', function(){ guess('O'); });
+  $('gX').addEventListener('click', function(){ guess('X'); });
+  $('gU').addEventListener('click', function(){ guess('U'); });
+  $('shuffle').addEventListener('click', function(){
+    state.shuffle = !state.shuffle; this.setAttribute('aria-pressed', state.shuffle ? 'true' : 'false');
+    state.seq = null; // 켤 때마다 새로 섞음
+    if (state.shuffle) { state.ch = 'all'; renderChips(); } // 섭기 = 단원 구분 없이 전체 문항을 무작위로
+    buildOrder(); resume(null); save();
+  });
+  $('reset').addEventListener('click', function(){
+    var b = this;
+    if (b.dataset.confirm !== '1') { b.dataset.confirm = '1'; b.textContent = '한 번 더 누르면 지워져요'; setTimeout(function(){ b.dataset.confirm = ''; b.textContent = '채점 기록 지우기'; }, 3000); return; }
+    results = {}; if (deck) rec(deck.key).clr = Date.now() + 1; save(); b.dataset.confirm = ''; b.textContent = '채점 기록 지우기';
+    state.wrongOnly = false; renderChips(); buildOrder();
+  });
+  document.addEventListener('keydown', function(e){
+    if ($('vQuiz').hidden || !$('bk').hidden) return;
+    if (!$('lb').hidden) { if (e.key === 'Escape' || e.key === 'z' || e.key === 'Z') closeLb(); return; }
+    if (e.target.tagName === 'BUTTON' && (e.key === ' ' || e.key === 'Enter')) return;
+    if (e.key === 'Enter') { e.preventDefault(); if (state.flipped) move(1); else flip(); }
+    else if (e.key === ' ') { e.preventDefault(); flip(); }
+    else if (e.key === 'ArrowLeft') move(-1);
+    else if (e.key === 'ArrowRight') move(1);
+    else if (e.key === 'o' || e.key === 'O') guess('O');
+    else if (e.key === 'x' || e.key === 'X') guess('X');
+    else if (e.key === 'm' || e.key === 'M' || e.key === '?') guess('U');
+    else if ((e.key === 'z' || e.key === 'Z') && state.flipped) openLb();
+  });
+
+  /* ---------- 화면 전환(해시) ---------- */
+  function route(){
+    var parts = (location.hash || '').replace(/^#\/?/, '').split('/').filter(Boolean);
+    var s = parts[0] && findSubject(parts[0]), t = s && parts[1] && findTopic(s, parts[1]);
+    if (parts[0] === 'review') { s = { id:'', name:'전체 주제' }; t = REVIEW; }
+    $('vHome').hidden = !!s; $('vSubject').hidden = !(s && !t); $('vQuiz').hidden = !t; closeLb();
+    if (t) openDeck(s, t); else if (s) renderSubject(s); else renderHome();
+    window.scrollTo(0, 0);
+  }
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'Backspace' && e.key !== 'Escape') return;
+    if (!$('lb').hidden || /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+    var v = !$('vQuiz').hidden ? $('qBack') : (!$('vSubject').hidden ? document.querySelector('#vSubject .navback') : null);
+    if (v) { e.preventDefault(); location.hash = v.getAttribute('href'); }
+  });
+  window.addEventListener('hashchange', route);
+  route();
+  initCloud();
+
+  /* ---------- 기록 백업 코드 ---------- */
+  function allKeys(){ var ks = []; CATALOG.forEach(function(s){ s.topics.forEach(function(t){ ks.push(t.key); }); }); return ks; }
+  function encode(){
+    var o = { v:1, d:{} };
+    allKeys().forEach(function(k){ var r = rec(k); if (Object.keys(r.results).length || r.pos) o.d[k] = r; });
+    return 'OXQ1-' + btoa(unescape(encodeURIComponent(JSON.stringify(o))));
+  }
+  function decode(code){
+    var c = String(code || '').replace(/\s+/g, '');
+    if (c.indexOf('OXQ1-') !== 0) throw new Error('fmt');
+    var o = JSON.parse(decodeURIComponent(escape(atob(c.slice(5)))));
+    if (!o || o.v !== 1 || typeof o.d !== 'object') throw new Error('fmt');
+    return o.d;
+  }
+  function openBk(){
+    $('bkOut').value = encode(); $('bkIn').value = '';
+    $('bkMsg').textContent = ''; $('bkCopyMsg').textContent = '';
+    $('bk').hidden = false; $('bkCopy').focus();
+  }
+  function closeBk(){ $('bk').hidden = true; $('backupBtn').focus(); }
+  $('backupBtn').addEventListener('click', openBk);
+  $('bkClose').addEventListener('click', closeBk);
+  $('bk').addEventListener('click', function(e){ if (e.target === this) closeBk(); });
+  $('bk').addEventListener('keydown', function(e){ if (e.key === 'Escape') { e.stopPropagation(); closeBk(); } else e.stopPropagation(); });
+  $('bkCopy').addEventListener('click', function(){
+    var t = $('bkOut'), m = $('bkCopyMsg');
+    var done = function(){ m.className = 'msg good'; m.textContent = '복사했어요. 메모장이나 카톡 나에게 보내기에 붙여두세요.'; };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t.value).then(done, function(){ t.select(); m.className = 'msg'; m.textContent = '코드가 선택됐어요. 길게 눌러 복사하세요.'; });
+    else { t.select(); m.className = 'msg'; m.textContent = '코드가 선택됐어요. 길게 눌러 복사하세요.'; }
+  });
+  $('bkLoad').addEventListener('click', function(){
+    var m = $('bkMsg'), d;
+    try { d = decode($('bkIn').value); } catch(e) { m.className = 'msg bad'; m.textContent = '코드 형식이 맞지 않아요. 처음부터 끝까지 그대로 붙여넣었는지 확인해 주세요.'; return; }
+    var ks = allKeys(), n = 0;
+    Object.keys(d).forEach(function(k){
+      if (ks.indexOf(k) < 0) return;
+      var r = norm(d[k]); STORE[k] = r; persist(k); n++; // persist가 시간 갱신 + 계정 저장
+    });
+    m.className = 'msg good'; m.textContent = n ? '주제 ' + n + '개의 기록을 불러왔어요.' : '불러올 기록이 없어요.';
+    if (n) route();
+  });
+})();
+</script>
+
+
+</body></html>
