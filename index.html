@@ -346,7 +346,7 @@ h2{font-size:1.1rem;margin:12px 0 0}
    · 문제 그림: 정답 전에 보여 줄 필기 없는 그림(같은 img 폴더). 고정 ID: 문장을 고쳐도 기록이 이어지게 예전 ID를 적어 둠
    채점 기록은 '문제 문장'에 붙어 저장되므로 문항을 중간에 넣거나 빼거나 순서를 바꿔도 기록이 유지됩니다.
    (문제 문장 자체를 고치면 그 한 문항만 새 문항으로 취급) 문항 파일을 고친 뒤에는 DATA_V를 올리고 version.txt도 같은 값으로 바꿔 주세요. */
-var DATA_V = '20261022g';
+var DATA_V = '20261022h';
 /* 새 버전 자동 반영: version.txt(캐시 없이 확인)가 이 페이지의 DATA_V와 다르면 한 번만 새로고침 */
 (function(){
   try {
@@ -358,17 +358,17 @@ var DATA_V = '20261022g';
   } catch(e) {}
 })();
 var CATALOG = [
-  { id:'bio', name:'생물', color:'bio', topics:[
+  { id:'bio', name:'생물🧬', color:'bio', topics:[
     { id:'organelle', name:'세포소기관', desc:'현미경·세포분획부터 세포골격·세포연접까지', src:'organelle/questions.txt', img:'organelle/img/', key:'quiz-bio-organelle', pageLabel:true },
     { id:'cellcycle', name:'세포주기·암·세포자살', desc:'세포분열·감수분열·세포주기 조절부터 암·항암제·세포죽음까지', src:'cellcycle/questions.txt', img:'cellcycle/img/', key:'quiz-bio-cellcycle-v2', pageLabel:true },
     { id:'enzyme', name:'효소', desc:'물질대사·ATP부터 효소 작용·속도론·저해·조절·동질효소까지', src:'enzyme/questions.txt', img:'enzyme/img/', key:'quiz-bio-enzyme', pageLabel:true },
     { id:'plant', name:'식물', desc:'식물의 구조·조직계부터 물질수송·생식·식물호르몬·방어·개화조절까지', src:'plant/questions.txt', img:'plant/img/', key:'quiz-bio-plant', pageLabel:true },
     { id:'dnastruct', name:'DNA 구조와 복제', desc:'유전물질 실험·DNA 2차 구조부터 초나선·위상학·위상이성질화효소, 복제 효소·과정·교정, 진핵 복제·텔로미어, 메틸화·기타 복제까지', src:'dnastruct/questions.txt', img:'dnastruct/img/', key:'quiz-bio-dnastruct', pageLabel:true }
   ]},
-  { id:'chem', name:'화학', color:'chem', topics:[
+  { id:'chem', name:'화학🧪', color:'chem', topics:[
     { id:'nmr', name:'NMR', desc:'분자 분광학부터 ¹³C NMR까지', src:'nmr/questions.txt', img:'nmr/img/', key:'quiz-chem-nmr', pageLabel:false }
   ]},
-  { id:'note', name:'문제집 오답', color:'note', topics:[
+  { id:'note', name:'문제집 오답💯', color:'note', topics:[
     { id:'membrane', name:'세포신호전달', desc:'막 비대칭·막수송·K⁺ 채널부터 GPCR·Ca²⁺·RTK-MAPK·mTOR 신호, CDK 조절, 세포자살·카스파아제까지 (4장 기출 문제집 + MDP)', src:'membrane/questions.txt', img:'membrane/img/', key:'quiz-bio-membrane', pageLabel:false, capLabel:'원본 문항' },
     { id:'carbnuc', name:'탄수화물·핵산·지질', desc:'당 이성질체·렉틴·HSL부터 DNA 변성·탈아미노화·qPCR·CRISPR·NSAIDs·크로마토그래피까지 (3장 기출 문제집)', src:'carbnuc/questions.txt', img:'carbnuc/img/', key:'quiz-bio-carbnuc', pageLabel:false, capLabel:'원본 문항' },
     { id:'dnarep', name:'핵산과 유전 (DNA 복제)', desc:'유전물질 실험·DNA 구조부터 복제 효소·지연가닥·진핵 복제·전사·수선·DNA 변성까지 (11장 기출 문제집)', src:'dnarep/questions.txt', img:'dnarep/img/', key:'quiz-bio-dnarep', pageLabel:false, capLabel:'원본 문항' },
