@@ -328,8 +328,18 @@ h2{font-size:1.1rem;margin:12px 0 0}
    questions.txt 한 줄 = [단원] 문제<TAB>정답(O/X) → 해설<TAB>이미지파일<TAB>쪽<TAB>(선택)문제 그림<TAB>(선택)고정 ID
    · 문제 그림: 정답 전에 보여 줄 필기 없는 그림(같은 img 폴더). 고정 ID: 문장을 고쳐도 기록이 이어지게 예전 ID를 적어 둠
    채점 기록은 '문제 문장'에 붙어 저장되므로 문항을 중간에 넣거나 빼거나 순서를 바꿔도 기록이 유지됩니다.
-   (문제 문장 자체를 고치면 그 한 문항만 새 문항으로 취급) 문항 파일을 고친 뒤에는 DATA_V를 올려 주세요. */
-var DATA_V = '20261022b';
+   (문제 문장 자체를 고치면 그 한 문항만 새 문항으로 취급) 문항 파일을 고친 뒤에는 DATA_V를 올리고 version.txt도 같은 값으로 바꿔 주세요. */
+var DATA_V = '20261022c';
+/* 새 버전 자동 반영: version.txt(캐시 없이 확인)가 이 페이지의 DATA_V와 다르면 한 번만 새로고침 */
+(function(){
+  try {
+    fetch('version.txt?t=' + Date.now(), { cache:'no-store' }).then(function(r){ return r.ok ? r.text() : ''; }).then(function(v){
+      v = (v || '').trim(); if (!v || v === DATA_V) return;
+      var k = 'quiz-reloaded-' + v; if (sessionStorage.getItem(k)) return;
+      sessionStorage.setItem(k, '1'); location.reload();
+    }).catch(function(){});
+  } catch(e) {}
+})();
 var CATALOG = [
   { id:'bio', name:'생물', color:'bio', topics:[
     { id:'organelle', name:'세포소기관', desc:'현미경·세포분획부터 세포골격·세포연접까지', src:'organelle/questions.txt', img:'organelle/img/', key:'quiz-bio-organelle', pageLabel:true },
