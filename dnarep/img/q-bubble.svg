@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 250" font-family="-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif">
+  <rect width="640" height="250" rx="12" fill="#ffffff"/>
+  <text x="320" y="28" text-anchor="middle" font-size="23" fill="#333">진핵세포의 복제 거품</text>
+  <g fill="none" stroke="#222" stroke-width="5" stroke-linecap="round">
+    <!-- (A) 위 가닥 -->
+    <path d="M108 130 H210 Q215 80 320 75 Q425 80 430 130 H560" />
+    <!-- (B) 아래 가닥 -->
+    <path d="M108 150 H210 Q215 200 320 205 Q425 200 430 150 H560" />
+  </g>
+  <!-- 복제원점 -->
+  <line x1="320" y1="52" x2="320" y2="228" stroke="#444" stroke-width="2" stroke-dasharray="7 6"/>
+  <text x="328" y="62" font-size="22" font-weight="700" fill="#222">복제원점</text>
+  <text x="262" y="112" text-anchor="middle" font-size="25" font-weight="700" fill="#222">(가)</text>
+  <text x="378" y="112" text-anchor="middle" font-size="25" font-weight="700" fill="#222">(나)</text>
+  <g font-size="25" font-weight="700" fill="#222">
+    <text x="8" y="136">(A) 5′</text>
+    <text x="8" y="160">(B) 3′</text>
+    <text x="570" y="136">3′</text>
+    <text x="570" y="160">5′</text>
+  </g>
+</svg>
