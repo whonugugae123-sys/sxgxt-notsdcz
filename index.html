@@ -174,6 +174,16 @@ button,.card,.list li{-webkit-tap-highlight-color:transparent;touch-action:manip
 .modal .stats .g b{color:var(--o)} .modal .stats .x b{color:var(--x)}
 .modal .rate{font-size:2.4rem;font-weight:800;text-align:center;color:var(--accent);margin:2px 0}
 .modal .rate small{display:block;font-size:.8rem;font-weight:500;color:var(--muted)}
+.hist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.hist li{display:grid;grid-template-columns:auto 1fr auto 3.6em;gap:8px;align-items:center;background:var(--bg);border-radius:10px;padding:8px 10px;font-size:.85rem}
+.hist .hn{color:var(--muted)} .hist .hd{color:var(--muted);min-width:0}
+.hist .hp{text-align:right} .hist .hdiff{text-align:right;font-size:.78rem;color:var(--muted)}
+.hist .hdiff.up{color:var(--o)} .hist .hdiff.down{color:var(--x)}
+.hist li.hcap{display:block;background:none;padding:10px 2px 2px;font-weight:700;font-size:.9rem}
+.hist li:first-child.hcap{padding-top:0}
+.histbox{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.histbox h2{margin:0}
+.histbox .hist li{background:var(--surface);border:1px solid var(--line)} .histbox .hist li.hcap{border:0;background:none}
 .modal .close{position:absolute;top:10px;right:10px;background:var(--bg);color:var(--ink);border:0;border-radius:999px;width:36px;height:36px;font-size:1rem;cursor:pointer}
 .keys{font-size:.78rem;color:var(--muted);text-align:center;margin:0}
 .touch{display:none}
@@ -302,6 +312,12 @@ h2{font-size:1.1rem;margin:12px 0 0}
   <p class="keys touch">카드를 탭하면 뒤집히고, 좌우로 밀면 다음·이전 카드로 넘어가요. 이미지를 누르면 크게 볼 수 있어요.</p>
   <p class="keys desk"><kbd>O</kbd> <kbd>X</kbd> 답 고르기 · <kbd>M</kbd> 모르겠어요 · <kbd>Enter</kbd> 다음 문제 · <kbd>Space</kbd> 뒤집기 · <kbd>←</kbd> <kbd>→</kbd> 이동 · <kbd>Z</kbd> 이미지 확대 · <kbd>Esc</kbd> 뒤로</p>
 
+  <section class="histbox" id="histBox" hidden>
+    <h2>회차 기록</h2>
+    <p class="sub">한 바퀴를 다 풀 때마다 그때의 정답률이 저장돼요. ▲▼는 같은 범위의 직전 회차와 비교한 값이에요.</p>
+    <ul class="hist" id="histList"></ul>
+  </section>
+
   <h2 id="listTitle"></h2>
   <ul class="list" id="list"></ul>
 </div>
@@ -326,6 +342,7 @@ h2{font-size:1.1rem;margin:12px 0 0}
     <p class="sub" id="doneSub"></p>
     <div class="rate" id="doneRate"></div>
     <div class="stats"><div class="g"><b id="doneGood"></b>맞힘</div><div class="x"><b id="doneBad"></b>틀림</div><div><b id="doneUnk"></b>모름</div></div>
+    <ul class="hist" id="doneHist" aria-label="최근 회차"></ul>
     <div class="row"><button class="btn go2" id="doneRetry">틀린·모르는 문제만 다시 풀기</button><button class="btn" id="doneOk">확인</button></div>
     <button class="close" id="doneClose" aria-label="닫기">✕</button>
   </div>
@@ -392,7 +409,12 @@ var CATALOG = [
   function norm(v){ // 예전 형식({id:true})도 받아들임
     if (!v || typeof v !== 'object') return { results:{}, pos:null, ch:'all', updatedAt:0 };
     if (!v.results) return { results:v, pos:null, ch:'all', updatedAt:0 };
-    return { results:v.results || {}, pos:v.pos || null, ch:v.ch || 'all', sh:!!v.sh, ord:Array.isArray(v.ord) ? v.ord : null, clr:v.clr || 0, updatedAt:v.updatedAt || 0 };
+    return { results:v.results || {}, pos:v.pos || null, ch:v.ch || 'all', sh:!!v.sh, ord:Array.isArray(v.ord) ? v.ord : null, clr:v.clr || 0, hist:Array.isArray(v.hist) ? v.hist : [], since:v.since, updatedAt:v.updatedAt || 0 };
+  }
+  // 회차 기록 합치기: 기록 시각(at)으로 중복 제거, 최근 100회까지
+  function mergeHist(a, b){
+    var m = {}; (a || []).concat(b || []).forEach(function(h){ if (h && h.at) m[h.at] = h; });
+    return Object.keys(m).map(function(k){ return m[k]; }).sort(function(x, y){ return x.at - y.at; }).slice(-100);
   }
   // 두 기록 합치기: 한쪽이 덮어쓰지 않고, 푼 문제는 양쪽 모두 남김(같은 문제는 최신 쪽 우선).
   // 단, 최신 쪽에서 [채점 기록 지우기]를 했다면 그 이전 기록은 버림.
@@ -400,9 +422,9 @@ var CATALOG = [
     var nw = a.updatedAt >= b.updatedAt ? a : b, od = nw === a ? b : a, res = {};
     if (!((nw.clr || 0) > od.updatedAt)) Object.assign(res, od.results);
     Object.assign(res, nw.results);
-    return { results:res, pos:nw.pos, ch:nw.ch, sh:nw.sh, ord:nw.ord, clr:Math.max(a.clr || 0, b.clr || 0), updatedAt:nw.updatedAt };
+    return { results:res, pos:nw.pos, ch:nw.ch, sh:nw.sh, ord:nw.ord, clr:Math.max(a.clr || 0, b.clr || 0), hist:mergeHist(a.hist, b.hist), since:nw.since, updatedAt:nw.updatedAt };
   }
-  function same(a, b){ return JSON.stringify(a.results) === JSON.stringify(b.results) && a.pos === b.pos; }
+  function same(a, b){ return JSON.stringify(a.results) === JSON.stringify(b.results) && a.pos === b.pos && (a.hist || []).length === (b.hist || []).length; }
   function needsReview(v){ return v === false || v === 'u'; } // 다시 볼 문제 = 틀림 + 모름
   function stClass(v){ return v === false ? 'bad' : v === 'u' ? 'unsure' : ''; }
   function rec(k){
@@ -440,7 +462,7 @@ var CATALOG = [
     if (writing[k]) { again[k] = true; return; }
     writing[k] = true; setSync('saving');
     var r = rec(k);
-    cloud.doc(k).set({ results:r.results, pos:r.pos, ch:r.ch, sh:!!r.sh, ord:r.ord || null, clr:r.clr || 0, updatedAt:r.updatedAt })
+    cloud.doc(k).set({ results:r.results, pos:r.pos, ch:r.ch, sh:!!r.sh, ord:r.ord || null, clr:r.clr || 0, hist:r.hist || [], since:r.since == null ? null : r.since, updatedAt:r.updatedAt })
       .then(function(){ setSync('ok'); }, function(e){
         var c = e && e.code;
         if (c === 'invalid_argument' || c === 'not_granted' || c === 'revoked') { cloud = null; setSync('denied'); }
@@ -658,7 +680,7 @@ var CATALOG = [
     $('qTitle').textContent = t.name + ' OX 단어카드';
     $('qSub').textContent = t.desc + ' ' + cards.length + '문항. O·X를 고르면 채점되고, 해설과 근거 이미지를 확인한 뒤 다음 문제로 넘어가요.';
     $('figHint').textContent = t.pageLabel ? '주황 표시가 해당 줄 · 눌러서 크게 보기' : '눌러서 크게 보기';
-    renderChips(); buildOrder(); resume(r.pos);
+    renderChips(); buildOrder(); resume(r.pos); renderHist();
   }
   // 마지막으로 보던 카드로 이동
   // 마지막 위치부터 아직 안 푼 문제를 찾아 그곳에서 이어 풀기
@@ -786,12 +808,50 @@ var CATALOG = [
     $('doneRate').innerHTML = pct + '%<small>정답률 (맞힘 ÷ 전체)</small>';
     $('doneGood').textContent = g; $('doneBad').textContent = b; $('doneUnk').textContent = u;
     $('doneRetry').hidden = b + u === 0;
+    // 회차 기록: 지난 회차 이후 새로 푼 문제가 있을 때만 한 회차로 저장(그냥 넘기기만 한 경우는 제외)
+    if (!deck.review) {
+      var r = rec(deck.key); r.hist = r.hist || [];
+      if (r.since !== 0) { r.hist.push({ at:Date.now(), ch:state.ch, w:state.wrongOnly ? 1 : 0, n:o.length, g:g, b:b, u:u }); if (r.hist.length > 100) r.hist = r.hist.slice(-100); r.since = 0; save(); }
+      histInto($('doneHist'), r.hist.filter(function(h){ return h.ch === state.ch && !!h.w === state.wrongOnly; }), 5);
+      renderHist();
+    } else $('doneHist').textContent = '';
     $('done').hidden = false; $('doneOk').focus();
+  }
+  function hpct(h){ return Math.round(h.g / h.n * 1000) / 10; }
+  function hdate(t){ var d = new Date(t); return (d.getMonth() + 1) + '/' + d.getDate() + ' ' + ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2); }
+  function hscope(h){ return (h.ch === 'all' ? '전체' : label(h.ch)) + (h.w ? ' · 오답만' : ''); }
+  // 회차 목록 그리기(최근 max개, 위가 최신) · 직전 회차 대비 증감 표시
+  function histInto(el, list, max, withScope){
+    el.textContent = ''; if (!list.length) return;
+    var start = Math.max(0, list.length - max);
+    for (var i = list.length - 1; i >= start; i--) {
+      var h = list[i], p = hpct(h), li = document.createElement('li');
+      var no = document.createElement('span'); no.className = 'hn mono'; no.textContent = (i + 1) + '회';
+      var dt = document.createElement('span'); dt.className = 'hd'; dt.textContent = hdate(h.at) + (withScope ? ' · ' + hscope(h) : '') + ' · ' + h.g + '/' + h.n;
+      var pc = document.createElement('b'); pc.className = 'hp'; pc.textContent = p + '%';
+      li.append(no, dt, pc);
+      if (i > 0) { var dd = Math.round((p - hpct(list[i - 1])) * 10) / 10, de = document.createElement('span'); de.className = 'hdiff ' + (dd > 0 ? 'up' : dd < 0 ? 'down' : ''); de.textContent = dd > 0 ? '▲' + dd : dd < 0 ? '▼' + (-dd) : '–'; li.appendChild(de); }
+      el.appendChild(li);
+    }
+  }
+  // 퀴즈 화면 아래 '회차 기록' 칸: 이 주제의 모든 회차를 범위별로 번호 매겨 표시
+  function renderHist(){
+    if (!deck || deck.review) { $('histBox').hidden = true; return; }
+    var all = rec(deck.key).hist || [], groups = {}, rows = [];
+    all.forEach(function(h){ var k = h.ch + '|' + h.w; (groups[k] = groups[k] || []).push(h); });
+    $('histBox').hidden = !all.length; if (!all.length) return;
+    var ul = $('histList'); ul.textContent = '';
+    Object.keys(groups).sort(function(a, b){ return groups[b][groups[b].length - 1].at - groups[a][groups[a].length - 1].at; }).forEach(function(k){
+      var g = groups[k], cap = document.createElement('li'); cap.className = 'hcap'; cap.textContent = hscope(g[0]) + ' · ' + g.length + '회';
+      ul.appendChild(cap); var tmp = document.createElement('ul'); histInto(tmp, g, 10); while (tmp.firstChild) ul.appendChild(tmp.firstChild);
+    });
   }
   function closeDone(){ $('done').hidden = true; }
   function guess(g){
     var c = state.order[state.idx]; if (!c || state.flipped) return;
-    results[c.id] = g === 'U' ? 'u' : (g === c.ans); save();
+    results[c.id] = g === 'U' ? 'u' : (g === c.ans);
+    if (!deck.review) { var rr = rec(deck.key); rr.since = (rr.since || 0) + 1; }
+    save();
     state.answered = true; state.flipped = true; render(); renderChips(); renderList();
   }
   function openLb(){ var c = state.order[state.idx]; if (!c || !c.img) return; $('lbImg').src = src(c); tile($('lbImg'), c, true); $('lb').hidden = false; $('lbClose').focus(); }
