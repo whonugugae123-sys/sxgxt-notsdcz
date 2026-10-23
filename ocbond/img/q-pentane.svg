@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 210" font-family="-apple-system,'Apple SD Gothic Neo','Noto Sans KR','Noto Sans CJK KR',sans-serif"><rect width="660" height="210" rx="12" fill="#ffffff"/><svg x="10.0" y="10" width="200" height="160" viewBox="0 0 200 160">
+
+
+<path class='bond-0 atom-0 atom-1' d='M 27.3,90.0 L 63.6,69.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 63.6,69.1 L 100.0,90.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-2 atom-3' d='M 100.0,90.1 L 136.4,69.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-3 atom-3 atom-4' d='M 136.4,69.1 L 172.7,90.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 61.8,70.1 L 63.6,69.1 L 65.5,70.1' style='fill:none;stroke:#000000;stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+<path d='M 98.2,89.0 L 100.0,90.1 L 101.8,89.0' style='fill:none;stroke:#000000;stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+<path d='M 134.6,70.2 L 136.4,69.1 L 138.2,70.2' style='fill:none;stroke:#000000;stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+
+</svg><text x="110.0" y="196.0" text-anchor="middle" font-size="22" font-weight="600" fill="#333">pentane</text><svg x="220.0" y="10" width="200" height="160" viewBox="0 0 200 160">
+
+
+<path class='bond-0 atom-0 atom-1' d='M 136.3,132.1 L 136.4,90.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 136.4,90.1 L 100.0,69.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-2 atom-3' d='M 100.0,69.1 L 100.1,27.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-3 atom-2 atom-4' d='M 100.0,69.1 L 63.6,90.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 136.4,92.2 L 136.4,90.1 L 134.6,89.1' style='fill:none;stroke:#000000;stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+
+</svg><text x="320.0" y="196.0" text-anchor="middle" font-size="22" font-weight="600" fill="#333">2-methylbutane</text><svg x="430.0" y="10" width="220" height="160" viewBox="0 0 220 160">
+
+
+<path class='bond-0 atom-0 atom-1' d='M 88.9,50.8 L 109.8,87.3' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 109.8,87.3 L 130.9,51.0' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-1 atom-3' d='M 109.8,87.3 L 73.3,108.2' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-3 atom-1 atom-4' d='M 109.8,87.3 L 146.1,108.4' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+
+</svg><text x="540.0" y="196.0" text-anchor="middle" font-size="22" font-weight="600" fill="#333">2,2-dimethylpropane</text></svg>
