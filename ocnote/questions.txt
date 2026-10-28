@@ -8,7 +8,7 @@
 [명명법] 그림 화합물의 IUPAC 이름은 1,4,4-trimethylcyclobutene이다.	O → 이중결합 C1=C2, 메틸이 붙은 이중결합 탄소가 1번 → 1,4,4 (반대 방향 2,3,3보다 첫 차이에서 작음).	q24.webp	23	q24c.svg
 [명명법] 그림 화합물의 이름 4-tert-butyl-1-isobutyl-2-methylcyclohexane은 옳다.	O → 알파벳 순서에서 tert-는 무시하지만 iso-는 포함한다: butyl(b) → isobutyl(i) → methyl(m).	q27.webp	25	q27b.svg
 [명명법] 그림 화합물의 IUPAC 이름은 5-methylbicyclo[4.4.0]dec-1-ene이다.	X → 6-methylbicyclo[4.4.0]dec-2-ene. 다리목 탄소가 1번, 이중결합을 따라 번호를 매기면 이중결합 2번, 메틸이 붙은 다리목은 6번.	q27.webp	25	q27d.svg
-[명명법] 그림의 세 화합물은 차례로 indazole, indole, indone이다.	X → 세 번째는 indene. indone은 카보닐(C=O)이 있는 indenone을 가리킨다. indazole(N 2개)·indole(N 1개)은 옳다.	q101.webp	71	q101e.svg
+[명명법] 그림의 세 화합물 (1), (2), (3)은 차례로 indazole, indole, indone이다.	X → 세 번째는 indene. indone은 카보닐(C=O)이 있는 indenone을 가리킨다. indazole(N 2개)·indole(N 1개)은 옳다.	q101.webp	71	q101.svg	q1fx6jni
 [끓는점·녹는점] 그림에서 녹는점은 2-펜텐이 펜테인보다 높다.	X → 탄소수가 같을 때 bp·mp: alkene < alkane < alkyne.	q23.webp	22	q23b.svg
 [끓는점·녹는점] 그림에서 끓는점은 tert-뷰탄올이 1-뷰탄올보다 높다.	X → 알코올 bp: 3° < 2° < 1°. 가지가 많을수록 표면적이 작고 OH 주변 입체장애로 수소결합이 약해진다.	q23.webp	22	q23c.svg
 [끓는점·녹는점] 그림에서 끓는점은 2-메틸-1-프로판올이 tert-뷰탄올보다 높다.	O → 2-메틸-1-프로판올은 1° 알코올이지만 입체 효과는 2° 알코올과 비슷하고, 여전히 3°인 tert-뷰탄올보다 수소결합에 유리하다.	q92.webp	66	q92c.svg
