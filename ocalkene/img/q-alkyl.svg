@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 220" font-family="-apple-system,'Apple SD Gothic Neo','Noto Sans KR','Noto Sans CJK KR',sans-serif"><rect width="440" height="220" rx="12" fill="#ffffff"/>
+<svg x="10" y="10" version='1.1' baseProfile='full'
+              xmlns='http://www.w3.org/2000/svg'
+                      xmlns:rdkit='http://www.rdkit.org/xml'
+                      xmlns:xlink='http://www.w3.org/1999/xlink'
+                  xml:space='preserve'
+width='210px' height='200px' viewBox='0 0 210 200'>
+
+<path class='bond-0 atom-0 atom-1' d='M 42.3,108.8 L 83.9,132.8' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-0 atom-0 atom-1' d='M 45.9,102.6 L 83.9,124.5' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 83.9,132.8 L 125.5,108.8' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-2 atom-3' d='M 125.5,108.8 L 101.4,67.2' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-3 atom-2 atom-4' d='M 125.5,108.8 L 149.4,67.2' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-4 atom-2 atom-5' d='M 125.5,108.8 L 167.1,132.7' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 81.8,131.6 L 83.9,132.8 L 86.0,131.6' style='fill:none;stroke:#000000;stroke-width:3.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />
+</svg>
+<line x1="230" y1="120.0" x2="356" y2="120.0" stroke="#222" stroke-width="3"/><polygon points="366,120.0 350,112.0 350,128.0" fill="#222"/><text x="295.0" y="106.0" text-anchor="middle" font-size="24" font-weight="600" fill="#222">HCl</text><text x="400.0" y="130.0" text-anchor="middle" font-size="40" font-weight="600" fill="#222">?</text></svg>

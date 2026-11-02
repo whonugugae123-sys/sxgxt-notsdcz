@@ -1,0 +1,148 @@
+[불포화도·성질·명명법] IHD(수소결핍지수)는 분자에 있는 다중결합의 수와 고리의 수를 합한 값이다.	O → 이중결합·고리 = 1, 삼중결합 = 2.	p216-ihd.webp	216
+[불포화도·성질·명명법] CₙHₐ의 IHD는 (2n+2−a)/2로 구한다.	O	p216-ihd.webp	216
+[불포화도·성질·명명법] IHD를 구할 때 할로젠은 무시하고, 산소는 수소 1개로 바꾸어 센다.	X → 반대. 할로젠은 그 수만큼 H를 더하고(CₙHₐX_b = CₙHₐ₊b), 산소는 무시한다.	p216-ihd.webp	216
+[불포화도·성질·명명법] 질소가 있는 화합물은 질소 수만큼 수소 수에 더해서 IHD를 구한다.	X → 뺀다. CₙHₐN_b = CₙHₐ₋b.	p216-ihd.webp	216
+[불포화도·성질·명명법] C₅H₇Br의 IHD는 2이다.	O → Br만큼 H를 더해 C₅H₈ → (12−8)/2 = 2.	p216-ihd.webp	216
+[불포화도·성질·명명법] C₄H₉N의 IHD는 0이다.	X → 1. N만큼 H를 빼 C₄H₈ → (10−8)/2 = 1.	p216-ihd.webp	216
+[불포화도·성질·명명법] 일반적으로 끓는점은 alkene < alkane < alkyne 순이다.	O → 알케인이 알켄보다 높다는 점이 함정(동그라미). 녹는점도 같은 순서.	p216-prop.webp	216
+[불포화도·성질·명명법] 일반적으로 녹는점은 alkane < alkene < alkyne 순이다.	X → alkene < alkane < alkyne. 끓는점과 같은 순서.	p216-prop.webp	216
+[불포화도·성질·명명법] 탄소 수가 같으면 내부 alkene은 말단 alkene보다, 내부 alkyne은 말단 alkyne보다 끓는점이 높다.	O	p216-prop.webp	216
+[불포화도·성질·명명법] cis-2-butene은 trans-2-butene보다 끓는점이 높고 녹는점도 높다.	X → 끓는점은 cis > trans(분산력+쌍극자), 녹는점은 cis < trans(trans의 쌓임 밀도가 커서).	p216-prop.webp	216
+[불포화도·성질·명명법] cis 알켄은 trans 알켄보다 극성이 커서 물에 대한 용해도가 크다.	O → μ: cis > trans → 극성 용매(H₂O)에 대한 용해도 cis > trans.	p216-prop.webp	216
+[불포화도·성질·명명법] 기하이성질체는 회전에 의한 상호전환이 일어나지 않는 고리나 이중결합에서 존재한다.	O	p216-prop.webp	216
+[불포화도·성질·명명법] 알켄 명명에서는 다중결합 포함 여부와 관계없이 가장 긴 탄소사슬을 모체로 한다.	X → 다중결합을 포함하는 가장 긴 탄소사슬이 모체.	p216-name.webp	216
+[불포화도·성질·명명법] cycloalkene은 고리 탄소가 8개 이상일 때부터 입체배열(cis/trans)을 표시한다.	O → 3~7각 고리는 cis만 가능하므로 표시하지 않는다.	p216-name.webp	216
+[불포화도·성질·명명법] 이중결합과 삼중결합의 위치 번호가 같으면 삼중결합에 낮은 번호를 준다.	X → 이중결합의 우선순위를 높게 취급해 낮은 번호를 준다. (예: 4-methylhex-1-en-5-yne)	p216-name.webp	216
+[불포화도·성질·명명법] 이중결합과 삼중결합이 모두 있으면 엔아인(enyne)으로 명명한다.	O → 예: 3-ethynyl-4-methylhept-1-en-6-yne.	p216-name.webp	216
+[불포화도·성질·명명법] 명명법 우선순위에서 –NH₂는 –OH보다 높다.	X → –NH₂ < –OH. R, X, OR < NO₂ < =, ≡ < NH₂ < OH < carbonyl < 카복실산 유도체 < carboxylic acid.	p216-name.webp	216
+[불포화도·성질·명명법] 치환기 CH₂=CH–는 ethynyl, HC≡C–는 vinyl이라고 부른다.	X → CH₂=CH– = ethenyl = vinyl, HC≡C– = ethynyl.	p216-name.webp	216
+[불포화도·성질·명명법] 고리 탄소에 =CH₂가 이중결합으로 붙은 화합물은 methylenecyclohexane, 고리에 CH₂=CH–가 붙은 화합물은 vinylcyclohexane(=cyclohexylethene)이다.	O	p216-name.webp	216
+[알켄 안정성] CIP 규칙에서 원자번호가 같으면 질량이 큰 쪽(동위원소)이 우선순위가 높다.	O → ①Z↑ ②Z 같으면 질량↑ ③다중결합은 결합 수만큼 count.	p217-cyclo.webp	217
+[알켄 안정성] CIP 규칙에서 다중결합은 단일결합 하나와 똑같이 한 번만 센다.	X → 다중결합의 수만큼 원자를 중복해서 센다.	p217-cyclo.webp	217
+[알켄 안정성] 3치환 알켄의 입체배열은 cis/trans 대신 E/Z로 나타내며, E는 cis와 유사한 배치이다.	X → E는 trans, Z는 cis와 유사. 2치환 알켄은 cis/trans, 3치환 알켄은 E/Z.	p217-cyclo.webp	217
+[알켄 안정성] 3~7각 cycloalkene은 cis 형태만 존재한다.	O → trans가 되려면 고리가 비틀려야 하므로 불가능.	p217-cyclo.webp	217
+[알켄 안정성] 8각 이상의 cycloalkene에서는 trans가 cis보다 더 안정하다.	X → 8각~은 cis/trans 모두 가능하지만 cis가 더 안정. 12각 이상에서야 trans가 더 안정.	p217-cyclo.webp	217
+[알켄 안정성] (E)-cyclooctene은 존재할 수 있다.	O → 8각부터 trans(E) 배치가 가능. 다만 (Z)-cyclooctene보다 불안정.	p217-cyclo.webp	217
+[알켄 안정성] 이치환 알켄의 안정성은 trans < geminal < cis 순이다.	X → 안정성은 cis < geminal < trans. 입체장애(steric)가 trans < geminal < cis 순이라 반대로 나타난다.	p217-zait.webp	217
+[알켄 안정성] 단일치환 알켄은 cis-이치환 알켄보다 안정하다.	X → 1치환 < cis < geminal < trans < 3치환 < 4치환.	p217-zait.webp	217
+[알켄 안정성] 3치환 알켄은 trans-이치환 알켄보다 안정하다.	O → 더 많이 치환된 알켄일수록 안정(Zaitsev).	p217-alk.webp	217
+[알켄 안정성] 안정성 순서는 누적(cumulated) diene < 말단 alkyne < 내부 alkyne < 고립된 diene < 짝지은 diene이다.	O → 빨간 필기 순서 그대로.	p217-diene.webp	217
+[알켄 안정성] 짝지은 diene이 고립된 diene보다 안정한 이유는 π전자의 비편재(공명) 때문이다.	O	p217-diene.webp	217
+[알켄 안정성] 말단 alkyne은 내부 alkyne보다 수소화열이 작다.	X → 크다(291 kJ > 275 kJ). 말단 alkyne이 덜 안정.	p217-diene.webp	217
+[알켄 안정성] 분자식이 같은 이성질체끼리는 더 안정할수록 연소열이 작다.	O	p217-zait.webp	217
+[알켄 안정성] 분자식이 달라도 연소열의 크기만으로 알켄의 안정성을 비교할 수 있다.	X → 분자식이 같은 이성질체일 때만 비교 가능. 분자식이 커지면 연소열은 그냥 커진다.	p217-zait.webp	217
+[알켄 안정성] 수소화열은 이중결합이 있는 분자에서만 측정할 수 있으며, 다중결합 수가 같은 이성질체끼리는 더 안정할수록 수소화열이 작다.	O	p217-zait.webp	217
+[알켄 안정성] 다중결합의 수가 많을수록 수소화열은 작아진다.	X → 다중결합 수↑ → 수소화열↑.	p217-zait.webp	217
+[알켄 안정성] 이중결합 탄소(sp²)에 CH₃(sp³)가 붙으면 s성질이 더 큰 CH₃가 전자를 끌어당기는 유도효과가 생긴다.	X → s성질은 sp²가 더 크다. s성질이 작은 CH₃(sp³)가 sp² 탄소 쪽으로 전자를 밀어준다(ΔS에 따른 유도효과) → 알켄 안정화.	p217-theory.webp	217
+[알켄 안정성] 알켄의 하이퍼컨쥬게이션은 전자가 있는 C–H σ 오비탈이 전자가 없는 π* 오비탈과 겹쳐 비편재화되는 효과이다.	O → 전자 있는 오비탈 ↔ 전자 없는 오비탈의 겹침.	p217-theory.webp	217
+[알켄 안정성] 이중결합에 CD₃가 붙은 알켄은 CH₃가 붙은 알켄보다 하이퍼컨쥬게이션이 커서 더 안정하다.	X → 결합력 C–H < C–D. 결합력이 큰 C–D는 전자쌍을 잘 내주지 않아 비편재화↓ → 안정성↓. CH₃ 쪽이 더 안정.	p217-theory.webp	217
+[알켄 제법] 위치선택성은 입체이성질체 생성물 중 하나가 더 많이 얻어지는 경우, 입체선택성은 구조이성질체 생성물 중 하나가 더 많이 얻어지는 경우이다.	X → 반대. 위치선택성 = 구조이성질체 중 하나가 더 많이, 입체선택성 = 입체이성질체 중 하나가 더 많이.	p218-top.webp	218
+[알켄 제법] 1° allyl 탄소양이온은 3° 탄소양이온보다 안정하다.	X → 1° allyl·1° benzyl C⁺ ≈ 2° C⁺, 2° allyl·2° benzyl ≈ 3° C⁺ 수준.	p218-top.webp	218
+[알켄 제법] vinyl C⁺와 aryl C⁺는 CH₃⁺보다도 불안정하다.	O → vinyl C⁺ < CH₃⁺ < 1° < 2° < 3° …	p218-top.webp	218
+[알켄 제법] 탄소양이온을 안정화하는 요인으로 유도효과, 공명효과, 하이퍼컨쥬게이션이 있다.	O	p218-top.webp	218
+[알켄 제법] 산(HY)이 산촉매로만 작용하려면 짝염기 Y⁻가 작고 친핵성이 커야 한다.	X → 짝염기가 bulky해야 한다 → 친핵체로는 쓰이지 않고 염기로만 쓰인다.	p218-top.webp	218
+[알켄 제법] H₂SO₄·가열로 알코올을 탈수시키는 반응은 탄소양이온을 거치는 E1 반응이다.	O	p218-e1.webp	218
+[알켄 제법] 산촉매 탈수의 반응성은 1° < 2° < 3° 알코올 순이다.	O → C⁺ 안정성↑ → 반응성↑.	p218-e1.webp	218
+[알켄 제법] 산촉매 탈수의 속도결정단계는 C–H 결합이 끊어져 알켄이 생기는 단계이다.	X → ROH(양성자화)에서 물이 떨어져 C⁺가 생기는 단계가 RDS.	p218-e1.webp	218
+[알켄 제법] 산촉매 탈수는 덜 치환된 알켄을 주로 만든다.	X → Zaitsev 규칙: 더 많이 치환된(안정한) 알켄이 주생성물.	p218-e1.webp	218
+[알켄 제법] POCl₃/pyridine에 의한 알코올 탈수는 anti-periplanar 배치가 필요한 E2 반응이다.	O	p218-pocl3.webp	218
+[알켄 제법] 그림의 trans-2-methylcyclohexanol을 POCl₃/pyridine으로 탈수하면 1-methylcyclohexene이 주생성물이다.	X → 3-methylcyclohexene. E2는 anti-periplanar H가 필요한데, OH가 축방향일 때 C2의 축방향 자리는 CH₃라 C6 쪽 H만 제거된다.	p218-pocl3.webp	218	q-pocl3.svg
+[알켄 제법] NaOEt 같은 강염기에 의한 할로젠화수소 제거는 E2이며, SN2와 경쟁한다.	O → 강염기: NaOH, NaOR, NaNR₂ (⁻OMe, ⁻OEt, ⁻OᵗBu, ⁻NH₂ 등).	p218-hx.webp	218
+[알켄 제법] LDA는 lithium diisopropylamide의 약자로, 제거반응에 쓰는 강염기이다.	O	p218-hx.webp	218
+[알켄 제법] trans-1-chloro-2-methylcyclohexane을 NaOEt로 처리하면 3-methylcyclohexene, EtOH와 가열하면 1-methylcyclohexene이 주로 얻어진다.	O → NaOEt(강염기) → E2·anti-periplanar. EtOH·가열(약염기, 가용매분해) → C⁺를 거치는 E1·Zaitsev.	p218-hx.webp	218
+[알켄 제법] Lindlar 촉매(Pd, BaSO₄, quinoline)로 알카인을 수소화하면 syn 첨가로 cis 알켄을 얻는다.	O → BaSO₄ 대신 CaCO₃도 가능.	p218-h2.webp	218
+[알켄 제법] 알카인 수소화에 Lindlar 대신 Ni₂B(P-2)를 쓰면 trans 알켄이 얻어진다.	X → 역시 syn 첨가 → cis 알켄. Ni₂B(P-2)는 수득률을 높인다.	p218-h2.webp	218
+[알켄 제법] 알카인을 Li 또는 Na/NH₃로 환원하면 anti 첨가로 trans 알켄이 생성된다.	O	p218-h2.webp	218
+[알켄 제법] Li/NH₃ 환원에서 NH₃는 전자를 공급하는 환원제 역할을 한다.	X → NH₃는 산(H⁺ 공급). 전자는 Li·Na가 준다.	p218-h2.webp	218
+[알켄 제법] Li/NH₃ 환원은 라디칼 → 음이온라디칼 → 음이온 중간체 순서로 진행된다.	X → e⁻ 첨가 → 음이온라디칼 → (NH₃의 H⁺) 라디칼 → e⁻ 첨가 → 음이온 → (H⁺) trans 알켄.	p218-h2.webp	218
+[Wittig·Hofmann] Wittig 반응의 ylide는 RX와 PPh₃의 SN2 반응으로 만든 포스포늄염을 BuLi 같은 강염기로 탈양성자화해 얻는다.	O → 염기: BuLi, RO⁻, LDA.	p219-wittig.webp	219
+[Wittig·Hofmann] Wittig 반응에서 카보닐의 산소는 최종 알켄 생성물에 남는다.	X → 베타인 중간체를 거쳐 산소는 Ph₃P=O로 빠지고, C=O가 C=CH₂로 바뀐다.	p219-wittig.webp	219
+[Wittig·Hofmann] Wittig 반응으로 만든 allyl vinyl ether를 가열하면 Claisen 자리옮김이 일어난다.	O → Wittig + Claisen 연계(필기).	p219-wittig.webp	219
+[Wittig·Hofmann] Hofmann 제거는 E2 반응이며 Zaitsev 규칙을 따른다.	X → E2이지만 Anti-Zaitsev: 덜 치환된 알켄이 주생성물.	p219-hof.webp	219
+[Wittig·Hofmann] Hofmann 제거에서 염기는 3차 H를 가장 쉽게 떼어낸다.	X → 부피 큰 이탈기 때문에 입체장애(1차 < 2차 < 3차 H)가 가장 작은 1차 H를 떼어낸다.	p219-hof.webp	219
+[Wittig·Hofmann] Hofmann 제거에서 과량의 CH₃I는 아민을 SN2로 반복 메틸화하고, Ag₂O/H₂O는 산(H⁺)을 공급한다.	X → Ag₂O/H₂O는 염기인 OH⁻를 공급한다.	p219-hof.webp	219
+[HX 첨가·자리옮김] 알켄의 친전자성 첨가반응에서 속도결정단계는 친전자체가 첨가되어 C⁺ 중간체가 생기는 단계이다.	O → 전자 풍부한 알켄 + 전자 부족한 E⁺ → C⁺(RDS) → Nu 공격.	p219-hx.webp	219
+[HX 첨가·자리옮김] HX 첨가 반응성은 HI < HBr < HCl < HF 순이다.	X → HF ≪ HCl < HBr < HI. 산성도(Ka)↑ → 반응성↑.	p219-hx.webp	219
+[HX 첨가·자리옮김] Markovnikov 규칙: 비대칭 알켄에 HX가 첨가될 때 H는 수소가 더 적은 탄소에 붙는다.	X → H(E)는 H가 더 많은 탄소에 첨가된다.	p219-hx.webp	219
+[HX 첨가·자리옮김] Markovnikov 규칙이 성립하는 이유는 더 안정한 C⁺ 중간체와 더 안정한 전이상태가 생기기 때문이며, 이는 Hammond 가설로 연결된다.	O → Hammond 가설: 전이상태는 에너지가 가장 비슷한 화학종을 닮는다.	p219-hx.webp	219
+[HX 첨가·자리옮김] HX 첨가 반응성은 CH₂=CH–OCH₃ > (CH₃)₂C=CH₂ > CH₂=CH–NO₂ 순이다.	O → –OCH₃(강EDG)가 C⁺를 안정화, –NO₂(강EWG)는 불안정화.	p219-hx.webp	219
+[HX 첨가·자리옮김] CH₂=CH–NO₂에 HX가 첨가될 때 C⁺는 NO₂가 붙은 탄소에 생긴다.	X → 강EWG 옆에 C⁺가 생기면 매우 불안정 → NO₂에서 먼 말단 탄소에 C⁺(O₂N–CH₂–CH₂⁺).	p219-hx.webp	219
+[HX 첨가·자리옮김] 탄소양이온 자리옮김은 더 안정한 C⁺를 만들 수 있을 때 바로 옆 탄소로부터 H:⁻ 또는 R:⁻가 옮겨오는 1,2-shift이다.	O	p219-shift.webp	219
+[HX 첨가·자리옮김] 탄소양이온 자리옮김은 느린 단계여서 전체 반응의 속도결정단계가 된다.	X → 자리옮김은 빠르다(fast) — RDS가 아니다.	p219-shift.webp	219
+[HX 첨가·자리옮김] 3-methyl-1-butene에 HBr을 첨가하면 1,2-hydride shift를 거친 2-bromo-2-methylbutane이 주생성물이다.	O → 2° C⁺ → 3° C⁺.	p219-shift.webp	219
+[HX 첨가·자리옮김] 그림의 1-isopropylcyclohexene에 HCl을 첨가하면 고리의 3° C⁺에서 곁사슬의 3° C⁺로 hydride shift가 일어나 그림의 생성물이 주생성물이 된다.	O → 차수 변화(3°→3°)가 없어도 자리옮김. 고리 탄소가 sp² C⁺이면 의자형이 안 되는데, C⁺가 곁사슬로 옮기면 고리가 의자형이 되어 ring strain↓.	p219-shift.webp	219	q-iprhex.svg
+[HX 첨가·자리옮김] 그림의 3,3-dimethyl-1-butene에 HCl을 첨가하면 2-chloro-3,3-dimethylbutane이 주생성물이다.	X → 1,2-methyl shift로 3° C⁺가 생겨 2-chloro-2,3-dimethylbutane이 주생성물(2-chloro-3,3-dimethylbutane은 minor).	p220-alkyl.webp	220	q-alkyl.svg
+[HX 첨가·자리옮김] 그림처럼 1-methyl-1-vinylcyclobutane에 HBr을 첨가하면 고리 확장으로 1-bromo-1,2-dimethylcyclopentane이 생긴다.	O → 4각 → 5각 고리 확장으로 고리 긴장 해소 + 3° C⁺.	p220-ring.webp	220	q-ringexp.svg
+[HX 첨가·자리옮김] 고리 확장으로 생긴 C⁺에 Br⁻이 첨가될 때는 한쪽 면에서만 공격하므로 하나의 입체이성질체만 생긴다.	X → C⁺는 sp² 평면 → 앞·뒤 양쪽에서 공격 → 라세미화(rac.).	p220-ring.webp	220
+[HX 첨가·자리옮김] 그림의 반응은 7각 고리가 6각 고리로 줄어드는 고리 축소이며, 고리 긴장이 해소되는 방향으로 일어난다.	O	p220-ring.webp	220	q-ringcon.svg
+[라디칼·할로젠화] HBr/ROOR 첨가는 anti-Markovnikov 생성물을 주며, 중간체는 탄소양이온이다.	X → 중간체는 탄소라디칼.	p220-rad.webp	220
+[라디칼·할로젠화] 과산화물 존재 하의 anti-Markovnikov 라디칼 첨가는 HBr에서만 나타나고 HCl·HI는 Markovnikov를 따른다.	O	p223-rad.webp	223
+[라디칼·할로젠화] HBr/ROOR 라디칼 첨가에서는 Br•가 먼저 알켄에 첨가되어 더 안정한 탄소라디칼을 만든다.	O → Br• 첨가 = RDS → 그 결과 H는 더 치환된 탄소로.	p220-rad.webp	220
+[라디칼·할로젠화] 1-methylcyclohexene에 HBr/ROOR을 반응시키면 하나의 입체이성질체만 얻어진다.	X → 평면 탄소라디칼에 H–Br의 H가 앞·뒤에서 전달 → 입체이성질체 혼합물(+En).	p220-rad.webp	220
+[라디칼·할로젠화] 라디칼 개시제로 ROOR(과산화물), benzoyl peroxide, AIBN 등을 쓴다.	O	p223-rad.webp	223
+[라디칼·할로젠화] 라디칼 첨가의 개시 단계에서 RO•는 HBr의 Br을 떼어 ROBr과 H•를 만든다.	X → RO•는 H를 떼어 ROH + Br•. (RO–OR —hν→ 2RO•)	p223-rad.webp	223
+[라디칼·할로젠화] vinyl 라디칼은 1° 알킬 라디칼보다 안정하다.	X → vinyl·aryl 라디칼 < CH₃• < 1° < 2° < 3° … allyl·benzyl 라디칼.	p223-rad.webp	223
+[라디칼·할로젠화] 알켄의 Br₂ 첨가는 브로모늄(고리) 중간체를 거쳐 anti 첨가가 일어난다.	O	p220-x2.webp	220
+[라디칼·할로젠화] 알켄의 할로젠화 반응에서 Br⁻은 SN2처럼 덜 치환된 탄소를 공격한다.	X → SN1-type: 전이상태 안정성을 고려해 더 많이 치환된 탄소를 공격.	p220-x2.webp	220
+[라디칼·할로젠화] 할로젠화 반응의 반응성은 1치환 < 2치환 < 3치환 < 4치환 알켄 순이다.	O → 더 많이 치환된 알켄↑.	p220-x2.webp	220
+[라디칼·할로젠화] 할로젠 고리중간체에서 친핵체는 결합을 풀었을 때 더 안정한 탄소양이온이 형성되는 탄소를 공격한다.	O	n1-open.webp	220
+[라디칼·할로젠화] 그림의 3,4-dihydro-2H-pyran에 Br–Cl을 첨가하면 Cl은 산소와 이웃한 탄소에 결합한다.	O → 두 탄소 모두 2°지만 O 옆 탄소의 C⁺는 O의 공명으로 안정화 → Cl⁻이 그 탄소를 공격.	n1-open.webp	220	q-pyran.svg
+[라디칼·할로젠화] 3,4-dihydro-2H-pyran을 NBS/H₂O로 처리하면 Br은 산소 옆 탄소에, OH는 산소에서 먼 탄소에 결합한다.	X → 반대. OH(H₂O 공격)가 O 옆 탄소, Br은 다른 탄소 → halohydrin.	n1-open.webp	220
+[할로하이드린·수화·옥시수은화] 할로하이드린은 Br₂/H₂O 외에 NBS/H₂O나 Br–OH로도 만들 수 있다.	O → Cl₂ 대신 NCS, Br₂ 대신 NBS.	p221-hoh.webp	221
+[할로하이드린·수화·옥시수은화] 1-methylcyclohexene을 Br₂/H₂O로 처리하면 OH는 덜 치환된 탄소에, Br은 더 치환된 탄소에 결합한다.	X → Markovnikov: OH가 더 치환된 탄소(SN1-type 공격), Br은 덜 치환된 탄소.	p221-hoh.webp	221
+[할로하이드린·수화·옥시수은화] 할로하이드린 형성에서 OH와 Br은 syn으로 첨가된다.	X → 고리중간체 → anti 첨가.	p221-hoh.webp	221
+[할로하이드린·수화·옥시수은화] 할로하이드린을 NaOH로 처리하면 분자내 Williamson 에터 합성으로 에폭사이드가 생긴다.	O	p221-hoh.webp	221
+[할로하이드린·수화·옥시수은화] 산촉매 수화반응은 Markovnikov 규칙을 따르고 탄소양이온 중간체를 거친다.	O	p221-hyd.webp	221
+[할로하이드린·수화·옥시수은화] 알켄의 수화에는 진한 황산·고온 조건이, 알코올의 탈수에는 묽은 황산 조건이 유리하다.	X → 반대. 묽은 산(H₂SO₄, H₂O) = 수화(SN1), 진한 산·고온 = 탈수(E1).	p221-hyd.webp	221
+[할로하이드린·수화·옥시수은화] 산촉매 수화에 쓰는 H⁺ 촉매로 H₂SO₄, H₃PO₄, TsOH, MsOH, TfOH가 있다.	O	p221-hyd.webp	221
+[할로하이드린·수화·옥시수은화] 옥시수은화/환원은 Markovnikov 방향으로 OH를 첨가하며, 고리중간체를 거치는 SN1-type 반응이다.	O	p221-oxy.webp	221
+[할로하이드린·수화·옥시수은화] 옥시수은화에서 H₂O 대신 ROH를 쓰면 에터가 생긴다(알콕시수은화).	O	p221-oxy.webp	221
+[할로하이드린·수화·옥시수은화] Hg(OCOCF₃)₂를 쓴 옥시수은화는 Hg(OCOCH₃)₂를 쓴 반응보다 느리다.	X → 빠르다(k₁ < k₂). CF₃(EWG)가 Hg의 δ+를 키워 더 강한 친전자체가 된다. CH₃는 EDG.	n1-hg.webp	220
+[수소화붕소·카벤] 수소화붕소첨가/산화는 입체 효과 때문에 anti-Markovnikov 방향으로 OH를 첨가한다.	O	p221-bh.webp	221
+[수소화붕소·카벤] 수소화붕소첨가에서 H와 B는 anti로 첨가된다.	X → syn 첨가.	p221-bh.webp	221
+[수소화붕소·카벤] 수소화붕소첨가는 탄소양이온 중간체를 거친다.	X → 고리 전이상태(중간체 없음).	p221-bh.webp	221
+[수소화붕소·카벤] 1-methylcyclohexene을 BH₃ 후 H₂O₂/NaOH로 처리하면 trans-2-methylcyclohexanol(+En)이 생긴다.	O → H와 OH가 syn으로 같은 쪽 → CH₃와 OH는 trans.	p221-bh.webp	221
+[수소화붕소·카벤] BH₃는 알켄과 1:3(BH₃:알켄)으로 반응하지만, R₂BH는 알켄과 1:1로 반응한다.	O	p221-bh.webp	221
+[수소화붕소·카벤] BH₃ 대신 9-BBN, Sia₂BH 같은 R₂BH를 쓰면 위치선택성이 낮아진다.	X → 높아진다. 부피 큰 R₂BH는 입체장애 때문에 덜 치환된 탄소에 더 선택적으로 B를 붙인다.	p221-bh.webp	221
+[수소화붕소·카벤] 수소화붕소첨가의 반응성은 1치환 < 2치환 < 3치환 < 4치환 알켄 순이다.	X → 입체장애가 적을수록 반응성↑: 4 < 3 < 2 < 1치환.	p221-bh.webp	221
+[수소화붕소·카벤] BH₃는 B₂H₆ 형태를 넣어도 쌍극자에 의한 정전기적 인력이 약해 곧 BH₃로 분해된다.	O	p221-bh.webp	221
+[수소화붕소·카벤] B(CH₂CH₂CH₃)₃를 H₂O₂/NaOH로 산화하면 CH₃CH₂CH₂OH가 생긴다.	O	p221-bh.webp	221
+[수소화붕소·카벤] CHCl₃/KOH로 만든 :CCl₂는 알켄에 syn 첨가해 사이클로프로페인을 만든다.	O → 고리 전이상태.	p221-carbene.webp	221
+[수소화붕소·카벤] 카벤 첨가는 전자가 부족한 알켄일수록 빠르다.	X → 카벤은 E⁺ → 전자 풍부한 알켄↑ (1 < 2 < 3 < 4치환).	p221-carbene.webp	221
+[수소화붕소·카벤] 단일항 카벤은 sp² 혼성으로 비공유전자쌍이 sp² 오비탈에 있고 p 오비탈은 비어 있으며, 결합각은 120°보다 작다.	O	p221-carbene.webp	221
+[수소화붕소·카벤] 삼중항 카벤은 결합각이 120°보다 작고, 두 전자가 한 오비탈에 쌍을 이룬다.	X → 결합각 > 135°, 두 홀전자가 서로 다른 오비탈에.	p221-carbene.webp	221
+[수소화붕소·카벤] CH₂N₂를 빛이나 열로 분해하면 :CH₂와 N₂가 생긴다.	O	n1-carb.webp	220
+[수소화붕소·카벤] Cl₃CCO₂Na를 가열하면 :CCl₂와 함께 CO와 NaCl이 생긴다.	X → CO가 아니라 CO₂(탈카복실화). Cl₃CCO₂Na →Δ :CCl₂ + CO₂ + NaCl.	n1-carb.webp	220
+[수소화붕소·카벤] CHX₃에 약한 염기를 가하면 :CX₂가 생긴다.	X → 강염기가 필요.	n1-carb.webp	220
+[유사카벤·수소화·에폭시화] CH₂I₂/Zn(Cu)는 I–CH₂–Zn–I 형태의 유사카벤(carbenoid)을 만든다(Simmons–Smith 반응).	O	n1-carb.webp	220
+[유사카벤·수소화·에폭시화] Simmons–Smith 반응은 탄소양이온 중간체를 거쳐 anti로 첨가된다.	X → syn 첨가, 고리 전이상태.	p222-ss.webp	222
+[유사카벤·수소화·에폭시화] 유사카벤(carbenoid)은 하나의 원자가 친핵성과 친전자성을 모두 가진다.	O	p222-top.webp	222
+[유사카벤·수소화·에폭시화] cyclohex-2-en-1-ol에 CH₂I₂/Zn(Cu)를 반응시키면 OH와 같은 방향으로 CH₂가 첨가된다.	O → Zn이 OH와 complex를 만들어 그 면으로 전달.	p222-top.webp	222
+[유사카벤·수소화·에폭시화] OH 방향 지시 효과는 유사카벤뿐 아니라 카벤(:CH₂)을 쓸 때도 똑같이 나타난다.	X → carbenoid일 때만 적용, carbene은 적용 X.	p222-top.webp	222
+[유사카벤·수소화·에폭시화] cyclohexene에 CHPhI₂/Zn(Cu)를 반응시키면 Ph의 방향이 다른 두 입체이성질체가 생길 수 있다.	O	p222-top.webp	222
+[유사카벤·수소화·에폭시화] 금속촉매 수소첨가(H₂; Pt, Pd, Ni, Rh)는 syn 첨가이다.	O	p222-h2.webp	222
+[유사카벤·수소화·에폭시화] 금속촉매 수소첨가의 반응성은 4치환 알켄이 가장 크다.	X → 입체장애가 적은 알켄↑: 4 < 3 < 2 < 1치환.	p222-h2.webp	222
+[유사카벤·수소화·에폭시화] mCPBA 에폭시화는 syn 첨가이며 고리 전이상태를 거친다.	O	p222-epox.webp	222
+[유사카벤·수소화·에폭시화] 에폭시화는 전자가 부족한 알켄일수록 잘 일어나므로, 다이엔에서는 덜 치환된 이중결합이 먼저 반응한다.	X → 과산화산의 O가 E⁺ → 전자 풍부한(더 치환된) 이중결합이 먼저.	p222-epox.webp	222
+[유사카벤·수소화·에폭시화] 에폭시화 시약 RCO₃H(과산화산)로 mCPBA, MMPP, HCO₃H 등을 쓴다.	O	p222-epox.webp	222
+[유사카벤·수소화·에폭시화] 알릴 알코올을 mCPBA로 에폭시화하면 OH와 수소결합하여 OH와 같은 면에 에폭사이드가 생긴다.	O	p222-epox.webp	222
+[다이올·산화성분해] syn-1,2-diol은 OsO₄(NaHSO₃) 또는 차갑고 염기성인 KMnO₄로 얻는다.	O	p222-diol.webp	222
+[다이올·산화성분해] anti-1,2-diol은 OsO₄ 히드록시화로 얻는다.	X → 에폭사이드 가수분해로 anti-diol.	p222-diol.webp	222
+[다이올·산화성분해] KMnO₄ 히드록시화는 산성·가열 조건에서 syn-diol을 준다.	X → syn-diol은 저온·염기성. 가열·산성(H⁺)이면 산화성 분해.	p222-diol.webp	222
+[다이올·산화성분해] OsO₄ 히드록시화와 가오존분해는 모두 고리중간체를 거치며, 전자 풍부한 알켄일수록 빠르다.	O	p222-ozone.webp	222
+[다이올·산화성분해] 가오존분해 후 Zn/AcOH 또는 CH₃SCH₃로 처리하면 알데하이드·케톤이 생긴다.	O → 환원적 처리.	p222-ozone.webp	222
+[다이올·산화성분해] 1-methylcyclohexene을 O₃ 후 H₂O₂로 처리하면 6-oxoheptanal이 생긴다.	X → H₂O₂ 처리는 한 번 더 산화 → 6-oxoheptanoic acid(카복실산). 알데하이드는 Zn/AcOH 처리일 때.	p222-ozone.webp	222
+[다이올·산화성분해] 메탄올을 계속 산화하면 포름알데하이드 → 포름산을 거쳐 탄산 단계 없이 바로 CO₂ + H₂O가 된다.	X → CH₃OH → 포름알데하이드 → 포름산 → 탄산 → CO₂ + H₂O.	p222-ozone.webp	222
+[다이올·산화성분해] 2° 알코올을 산화하면 카복실산까지 산화된다.	X → 케톤에서 멈춘다. 1° 알코올은 알데하이드 → 카복실산.	p222-ozone.webp	222
+[다이올·산화성분해] HIO₄(또는 NaIO₄)는 1,2-diol의 C–C 결합을 끊어 두 개의 카보닐 화합물을 만든다.	O	p223-cleave.webp	223
+[다이올·산화성분해] 두 OH가 고리중간체를 만들 수 없는 trans-diol(데칼린 접합부, 축방향 trans)은 HIO₄와 반응하지 않는다.	O → HIO₄ 분해는 고리중간체를 거친다 → N.R.	p223-cleave.webp	223
+[다이올·산화성분해] cis-데칼린 diol의 HIO₄ 분해로 생긴 1,6-다이케톤을 NaOH로 처리하면 분자내 aldol과 E1cB를 거쳐 고리 엔온이 생긴다.	O	p223-cleave.webp	223
+[다이올·산화성분해] 1-methylcyclohexene을 뜨거운 산성 KMnO₄로 처리하면 6-oxoheptanoic acid가 생긴다.	O	p223-cleave.webp	223
+[다이올·산화성분해] 1-butene을 뜨거운 산성 KMnO₄로 산화하면 말단 CH₂는 포름알데하이드로 얻어진다.	X → 말단 CH₂는 CO₂로 산화 → 말단 알켄의 정성분석에 이용.	p223-cleave.webp	223
+[다이엔 첨가] 1,3-butadiene에 HBr을 저온(0°C)에서 첨가하면 1,2-첨가 생성물이 속도론적 생성물로 주로 생긴다.	O	p223-diene.webp	223
+[다이엔 첨가] 고온(40°C)에서 1,4-첨가 생성물이 주생성물이 되는 이유는 1,4-첨가가 1,2-첨가보다 빠르기 때문이다.	X → 빠른 쪽은 1,2(속도론적). 고온은 열역학적 조건 → 더 안정한(2치환 알켄) 1,4-생성물이 주생성물.	p223-diene.webp	223
+[다이엔 첨가] 짝지은 다이엔의 1,2-첨가물과 1,4-첨가물은 서로 다른 탄소양이온 중간체에서 생긴다.	X → 공명 안정화된 같은 allyl C⁺ 중간체에서 공격 위치만 다르다.	p223-mech.webp	223
+[다이엔 첨가] 1,3-butadiene에 Br₂를 저온에서 첨가하면 1,4-dibromo-2-butene이 주생성물이다.	X → 저온 = 속도론적 → 1,2-첨가물(3,4-dibromo-1-butene). 1,4는 고온(열역학적).	p223-mech.webp	223
+[다이엔 첨가] 1,3-butadiene의 HBr/ROOR 첨가에서 중간체는 공명 안정화된 allyl 라디칼이다.	O	p223-rad.webp	223
+[반응성 비교] 중간체가 C⁺인 반응에서는 더 안정한 C⁺를 만드는 알켄일수록 반응성이 크다.	O	n2-react.webp	223
+[반응성 비교] 에폭시화·OsO₄·가오존분해처럼 전자 풍부한 알켄이 유리한 반응에서는 1치환 알켄이 가장 빠르다.	X → 전자 풍부↑ → 1 < 2 < 3 < 4치환. 1치환이 가장 빠른 것은 H₂·BH₃처럼 입체장애가 중요한 반응.	n2-react.webp	223
