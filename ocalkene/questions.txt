@@ -146,3 +146,59 @@
 [다이엔 첨가] 1,3-butadiene의 HBr/ROOR 첨가에서 중간체는 공명 안정화된 allyl 라디칼이다.	O	p223-rad.webp	223
 [반응성 비교] 중간체가 C⁺인 반응에서는 더 안정한 C⁺를 만드는 알켄일수록 반응성이 크다.	O	n2-react.webp	223
 [반응성 비교] 에폭시화·OsO₄·가오존분해처럼 전자 풍부한 알켄이 유리한 반응에서는 1치환 알켄이 가장 빠르다.	X → 전자 풍부↑ → 1 < 2 < 3 < 4치환. 1치환이 가장 빠른 것은 H₂·BH₃처럼 입체장애가 중요한 반응.	n2-react.webp	223
+[Alkyne 성질·제법] 알카인의 일반식은 CₙH₂ₙ이다.	X → CₙH₂ₙ₋₂. CₙH₂ₙ은 알켄(또는 사이클로알케인).	y-prop.webp	224
+[Alkyne 성질·제법] cycloalkyne은 고리 탄소가 9개 이상일 때부터 가능하다(필기 기준).	O → 삼중결합은 선형(180°)이라 작은 고리에 들어가기 어렵다. ⚠ 필기와 다름: 교과서에서는 cyclooctyne(8각)을 분리 가능한 가장 작은 cycloalkyne으로 소개하기도 한다.	y-prop.webp	224
+[Alkyne 성질·제법] 탄소 수가 증가하면 알카인의 끓는점은 높아지지만 녹는점은 낮아진다.	X → C수↑ → bp·mp 모두 ↑.	y-prop.webp	224
+[Alkyne 성질·제법] 3-ethynylhexa-1,5-diene은 이중결합 두 개를 포함하는 6탄소 사슬을 모체로 하고, 삼중결합(–C≡CH)을 ethynyl 치환기로 이름 붙인다.	O → 다중결합을 가장 많이 포함하는 사슬이 모체.	y-prop.webp	224
+[Alkyne 성질·제법] Vicinal dihalide(이웃자리 이할로젠화물)를 2NaNH₂로 처리하면 E2가 두 번 일어나 알카인이 생긴다.	O → geminal dihalide(같은자리)도 같은 방법으로 알카인이 된다.	y-prep.webp	224
+[Alkyne 성질·제법] Dihalide로부터 알카인을 만드는 반응은 탄소양이온을 거치는 E1 반응이다.	X → 강염기(2B⁻)에 의한 E2 두 번.	y-prep.webp	224
+[Alkyne 성질·제법] Dihalide 이중 제거로 알카인을 만들 때는 염기 1당량(B⁻)이면 충분하다.	X → 2당량(2B⁻, 2NaNH₂) — E2가 두 번 일어나야 한다. 강염기: NaNH₂, NaNR₂, NaOH.	y-prep.webp	224
+[Alkyne HX·라디칼·할로젠] 알카인에 HX가 첨가될 때 vinyl 탄소양이온 중간체가 형성된다.	X → vinyl C⁺는 매우 불안정해 형성되지 않는다(not formed) — 중간체 없이 진행.	y-prep.webp	224
+[Alkyne HX·라디칼·할로젠] 알카인의 HX 첨가 속도식은 r = k[Alkyne][HX]²이다.	O → HX 두 분자가 관여하는 3분자 반응(필기).	y-prep.webp	224
+[Alkyne HX·라디칼·할로젠] 에너지 도표에서 vinyl C⁺로 가는 장벽은 알켄에서 2° C⁺로 가는 장벽보다 낮다.	X → 더 높다 → HX 첨가 반응성 alkyne < alkene.	y-prep.webp	224
+[Alkyne HX·라디칼·할로젠] 알카인의 HX 첨가 반응성은 알켄보다 크다.	X → alkyne < alkene.	y-hx.webp	224
+[Alkyne HX·라디칼·할로젠] 알카인에 HX 1당량이 첨가되면 Markovnikov 방향으로 anti 첨가되어 vinyl halide가 생긴다.	O → 중간체 X.	y-hx.webp	224
+[Alkyne HX·라디칼·할로젠] Vinyl halide에 HX가 한 번 더 첨가되면 vicinal dihalide(이웃자리 이할로젠화물)가 생긴다.	X → geminal dihalide(같은자리). 할로젠이 붙은 탄소의 C⁺가 할로젠 공명으로 안정 → 같은 탄소에 X가 하나 더.	y-hx.webp	224
+[Alkyne HX·라디칼·할로젠] Vinyl halide의 두 번째 HX 첨가는 첫 번째와 달리 C⁺ 중간체를 거친다.	O → 첫 번째: 중간체 X / 두 번째: 중간체 O(C⁺).	y-hx.webp	224
+[Alkyne HX·라디칼·할로젠] 그림처럼 phenylacetylene에 HBr을 첨가하면 Br은 벤젠이 붙은 탄소에 결합한다.	O → Markovnikov.	y-ex.webp	226	q-y-ph.svg
+[Alkyne HX·라디칼·할로젠] 말단 알카인에 HBr/ROOR, hν를 반응시키면 anti-Markovnikov 첨가로 Br이 말단 탄소에 붙은 vinyl bromide가 생긴다.	O	y-rad.webp	224
+[Alkyne HX·라디칼·할로젠] 말단 알카인의 HBr 라디칼 첨가에서는 cis(Z)-vinyl bromide가 주생성물이다.	X → trans(E)가 major, cis(Z)가 minor.	y-rad.webp	224
+[Alkyne HX·라디칼·할로젠] 알카인에 Br₂를 과량(2X₂) 반응시키면 tetrahaloalkane이 생긴다.	O → Cl₂, Br₂ 모두 가능.	y-x2.webp	224
+[Alkyne HX·라디칼·할로젠] 알카인의 할로젠화 반응은 고리중간체를 거쳐 syn 첨가된다.	X → anti 첨가.	y-x2.webp	224
+[Alkyne HX·라디칼·할로젠] 알카인의 할로젠화 반응성은 알켄보다 작다.	O → 알카인에서 생기는 고리(브로모늄) 중간체가 알켄의 것보다 불안정 — 알켄 쪽 고리중간체가 안정(필기).	y-x2.webp	224
+[Alkyne HX·라디칼·할로젠] 말단 알카인에 I–Cl을 첨가하면 I는 말단 탄소에, Cl은 안쪽(더 치환된) 탄소에 anti로 결합한다.	O → 덜 전기음성적인 I가 E⁺로 고리중간체 형성 → Cl⁻이 SN1-type으로 더 치환된 탄소 공격.	y-x2.webp	224
+[Alkyne HX·라디칼·할로젠] I–Cl에서 친전자체(E⁺) 역할을 하는 것은 Cl이다.	X → 전기음성도가 작은 I가 δ+ → E⁺.	y-x2.webp	224
+[Alkyne 수화·수소화붕소] 말단 알카인을 HgSO₄, H₂SO₄, H₂O로 처리하면 메틸 케톤이 생긴다.	O → Markovnikov → enol → keto 토토머화.	y-oxy.webp	225
+[Alkyne 수화·수소화붕소] 알카인의 옥시수은화는 Hg(OAc)₂ 처리 후 NaBH₄ 환원이 필요하다.	X → 알카인은 HgSO₄/H₂SO₄/H₂O로 끝. Hg(OAc)₂/H₂O → NaBH₄는 알켄 → 알코올.	y-oxy.webp	225
+[Alkyne 수화·수소화붕소] 알카인의 옥시수은화는 고리중간체를 거쳐 SN1-type으로 물이 anti 첨가된다.	O	y-oxy.webp	225
+[Alkyne 수화·수소화붕소] Ph–C≡C–CH₃의 옥시수은화에서 물은 CH₃가 붙은 탄소를 공격해 PhCH₂COCH₃가 주로 생긴다.	X → 벤젠이 붙은 탄소(C⁺ 안정화가 더 큰 쪽)를 공격 → PhCOCH₂CH₃.	y-oxy.webp	225
+[Alkyne 수화·수소화붕소] 말단 알카인을 1. BH₃·THF, 2. H₂O₂/NaOH/H₂O로 처리하면 알데하이드가 생긴다.	O → anti-Markovnikov → enol → keto(알데하이드).	y-bh.webp	225
+[Alkyne 수화·수소화붕소] 알카인의 수소화붕소첨가는 syn 첨가이며 탄소양이온 중간체를 거친다.	X → 고리 TS, 중간체 X.	y-bh.webp	225
+[Alkyne 수화·수소화붕소] R₂BH도 BH₃처럼 알카인 3분자와 반응한다.	X → Alkyne : BH₃ = 3 : 1, Alkyne : R₂BH = 1 : 1.	y-bh.webp	225
+[Alkyne 수화·수소화붕소] 알카인의 수소화붕소첨가에서 위치선택성을 높이려면 BH₃ 대신 9-BBN이나 Sia₂BH 같은 R₂BH를 쓴다.	O	y-bh.webp	225
+[Alkyne 수화·수소화붕소] 수소화붕소첨가의 반응성은 alkene > alkyne이다.	X → alkene < alkyne. 입체장애가 평면인 알켄 > 선형인 알카인이므로 알카인이 더 빠르다.	y-bh.webp	225
+[Alkyne 수화·수소화붕소] 그림의 1-phenylpropyne을 수소화붕소첨가/산화하면 B가 입체장애가 적은 CH₃ 쪽 탄소에 붙어 최종적으로 PhCH₂COCH₃가 생긴다.	O → H는 Ph 쪽, B(→OH)는 CH₃ 쪽 → enol → 케톤.	y-bh.webp	225	q-y-phbh.svg
+[케토-엔올 토토머화] 일반적으로 케토형이 엔올형보다 안정한데, C=C 결합이 C=O 결합보다 결합력이 약하기 때문이다.	O → 결합력 C=C < C=O.	y-tbase.webp	225
+[케토-엔올 토토머화] 염기 조건의 토토머화에서 OH⁻는 카보닐 산소의 비공유전자쌍을 공격해 enolate 이온을 만든다.	X → OH⁻는 α-수소를 떼어 enolate 이온을 만들고, 이후 산소가 양성자화되어 엔올이 된다.	y-tbase.webp	225
+[케토-엔올 토토머화] 산 조건의 토토머화는 먼저 α-수소가 떨어진 뒤 카보닐 산소가 양성자화된다.	X → 산 조건: 카보닐 O가 먼저 양성자화(H₃O⁺) → H₂O가 α-H를 떼어 엔올.	y-tacid.webp	225
+[케토-엔올 토토머화] 케토-엔올 토토머화가 일어나려면 제거할 수 있는 α-수소가 있어야 한다.	O	y-tbase.webp	225
+[케토-엔올 토토머화] 엔올형이 방향족이 되는 경우(예: phenol)에는 엔올형이 우세하다.	O	y-tbase.webp	225
+[케토-엔올 토토머화] 그림의 cyclohexa-2,5-dienone과 phenol은 토토머화 관계이다(필기 기준).	X → α 탄소가 모두 sp²라 떼어낼 α-H가 없다 → 토토머화 관계 X(필기). ⚠ 필기 기준: 일부 교재는 γ-H 이동(비닐로그 토토머화)까지 토토머로 보기도 한다.	y-tacid.webp	225	q-y-tau1.svg
+[케토-엔올 토토머화] 그림의 cyclohexa-2,4-dienone과 phenol은 토토머화 관계이다.	O → sp³ α 탄소(CH₂)의 α-H를 떼어 방향족 phenol이 된다.	y-tacid.webp	225	q-y-tau2.svg
+[케토-엔올 토토머화] 그림의 2,4-pentanedione(diketo)은 유기용매에서 K = [enol]/[keto] > 1이다.	O → 분자내 수소결합 + 짝지음(conjugation)으로 엔올이 안정.	y-tacid.webp	225	q-y-acac.svg
+[케토-엔올 토토머화] 2,4-pentanedione을 물에 녹이면 분자내 수소결합이 강화되어 엔올형이 더 우세해진다.	X → H₂O에서는 K < 1(케토 우세). 물이 카보닐과 수소결합(수화)해 분자내 수소결합이 깨진다.	y-tacid.webp	225
+[Alkyne 환원·산화·알킬화] 알카인을 과량의 H₂와 Pt, Pd, Ni, Rh 촉매로 수소화하면 알케인이 된다.	O → H₂ 과량 취급 → 두 번 syn 첨가.	y-h2.webp	225
+[Alkyne 환원·산화·알킬화] 촉매 수소화의 반응성은 alkene > alkyne이어서 Pt 촉매로는 알켄 단계에서 멈춘다.	X → 반응성 alkene < alkyne. 알켄에서 멈추려면 Lindlar Pd·Ni₂B(P-2)처럼 활성을 낮춘 촉매가 필요.	y-h2.webp	225
+[Alkyne 환원·산화·알킬화] Li/NH₃ 환원에서 알칼리금속(Li, Na)은 촉매량만 사용한다.	X → 과량 사용 — 전자를 두 번 공급하는 시약으로 소모된다.	y-na.webp	226
+[Alkyne 환원·산화·알킬화] Li/NH₃ 환원 중 생기는 vinyl 라디칼은 cis·trans가 평형을 이루며, 더 안정한 trans 쪽이 전자를 받아 trans 알켄이 된다.	O	y-na.webp	226
+[Alkyne 환원·산화·알킬화] 말단 알카인을 KMnO₄ 또는 O₃, H₂O로 산화성 분해하면 카복실산과 CO₂가 생긴다.	O → 말단의 ≡CH는 CO₂로 산화.	y-ox.webp	226
+[Alkyne 환원·산화·알킬화] 내부 알카인을 산화성 분해하면 카복실산 하나와 CO₂가 생긴다.	X → 내부 알카인 → 카복실산 2개(RCO₂H). CO₂는 말단 알카인일 때.	y-ox.webp	226
+[Alkyne 환원·산화·알킬화] 알카인의 산화성 분해에서 기체(CO₂) 발생 유무로 말단 알카인과 내부 알카인을 구분할 수 있다(정성분석).	O	y-ox.webp	226
+[Alkyne 환원·산화·알킬화] 알카인의 산화성 분해는 anti 첨가이며 탄소양이온을 거친다.	X → syn 첨가, 고리중간체.	y-ox.webp	226
+[Alkyne 환원·산화·알킬화] phenylacetylene을 O₃, H₂O로 처리하면 benzaldehyde와 CO₂가 생긴다.	X → O₃, H₂O(산화성 분해) → benzoic acid + CO₂.	y-ex.webp	226
+[Alkyne 환원·산화·알킬화] phenylacetylene을 H₂/Ni₂B로 환원한 뒤 뜨거운 산성 KMnO₄로 산화하면 benzoic acid와 CO₂가 생긴다.	O → Ni₂B → styrene, KMnO₄/H⁺/Δ → 말단 CH₂는 CO₂.	y-ex.webp	226
+[Alkyne 환원·산화·알킬화] 그림처럼 말단 알카인을 NaNH₂로 탈양성자화한 뒤 CH₃Br과 반응시키면 SN2로 내부 알카인이 생긴다.	O → 알킬화 = 알카인 반응이자 알카인 제법.	y-alk.webp	226	q-y-alk.svg
+[Alkyne 환원·산화·알킬화] acetylide 음이온의 알킬화는 1°, 2°, 3° 할로젠화 알킬 모두에서 잘 일어난다.	X → MeX, 1°RX까지만 유효. 2°·3°RX는 acetylide가 염기로 작용해 E2가 우세.	y-alk.webp	226
+[Alkyne 환원·산화·알킬화] 말단 알카인의 탈양성자화에는 NaOH 같은 약한 염기로 충분하며, RMgX나 RLi는 쓸 수 없다.	X → 강염기 필요: NaNH₂, NaNR₂, NaH, LDA, KOᵗBu, RMgX(Grignard), RLi(알킬리튬).	y-alk.webp	226
+[Alkyne HX·라디칼·할로젠] 그림처럼 말단 알카인을 Br₂/H₂O로 처리하면 OH가 안쪽 탄소에 붙은 엔올을 거쳐 α-bromo 케톤이 생긴다.	O → Markovnikov, 고리중간체, SN1-type, keto-enol 토토머화.	y-hoh.webp	226	q-y-hoh.svg
+[Alkyne HX·라디칼·할로젠] 알카인의 할로하이드린 형성 반응성은 알켄보다 크다.	X → Alkyne < Alkene.	y-hoh.webp	226
