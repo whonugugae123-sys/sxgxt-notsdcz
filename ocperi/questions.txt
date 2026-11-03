@@ -1,0 +1,45 @@
+[고리협동반응 개요] 고리첨가반응은 대부분 분자간 반응이며, 한 분자의 HOMO와 다른 분자의 LUMO가 겹쳐 일어난다.	O	z-peri.webp	227
+[고리협동반응 개요] [2+2] 고리첨가는 열 조건에서, [4+2] 고리첨가(Diels-Alder)는 빛 조건에서 진행된다.	X → 반대. [2+2] = photo reaction(빛, hν), [4+2] = thermal reaction(열).	z-peri.webp	227
+[고리협동반응 개요] 에텐 두 분자를 가열하면 [2+2] 고리첨가로 cyclobutane이 생긴다.	X → [2+2]는 빛(hν) 조건에서 진행 — photo reaction.	z-peri.webp	227
+[고리협동반응 개요] 전자고리화 반응과 [3,3] 시그마트로픽 자리옮김은 모두 분자내 반응이다.	O → 고리첨가는 대부분 분자간(분자내도 가능).	z-peri.webp	227
+[고리협동반응 개요] Cope 자리옮김은 allyl vinyl ether에서, Claisen 자리옮김은 1,5-diene에서 일어난다.	X → 반대. Claisen = allyl phenyl ether·allyl vinyl ether, Cope = 1,5-diene. 둘 다 [3,3] sigmatropic.	z-peri.webp	227
+[고리협동반응 개요] Diels-Alder는 [4+2] 고리첨가이고, 짝지음이 끊긴 고립 다이엔의 분자내 고리화는 [2+2]로 진행된다.	O → D-A(고리첨가): 분자내 or 분자간. 전자고리화: 분자내 + full conjugation 필요.	z-vs.webp	429
+[고리협동반응 개요] 전자고리화 반응은 중간에 sp³ 탄소로 짝지음이 끊긴 폴리엔에서도 일어난다.	X → 전자고리화는 full conjugation(완전히 짝지은 계)이 필요하다.	z-vs.webp	429
+[Diels-Alder: 다이엔] Diels-Alder 반응에서 다이엔은 반드시 s-cis 배열이어야 한다.	O	z-scis.webp	227
+[Diels-Alder: 다이엔] Diels-Alder에서는 다이엔의 LUMO와 친다이엔체의 HOMO가 겹친다.	X → 다이엔(Nu, e-rich)의 HOMO + 친다이엔체(E, e-poor)의 LUMO.	z-scis.webp	227
+[Diels-Alder: 다이엔] 1,3-butadiene의 s-cis 배열은 s-trans 배열보다 에너지가 낮아 더 안정하다.	X → s-trans가 더 안정. s-cis가 되려면 회전장벽 에너지를 넘어야 한다.	z-scis.webp	227
+[Diels-Alder: 다이엔] s-cis와 s-trans 배열은 단일결합 회전으로 바뀌는 이형태체이므로 에너지는 다르고 물성은 같다.	O	z-scis.webp	227
+[Diels-Alder: 다이엔] (Z,Z)-다이엔은 말단 치환기끼리 부딪혀 s-cis로 존재할 수 없으므로 Diels-Alder 반응을 하지 않는다.	O	z-dtip.webp	227
+[Diels-Alder: 다이엔] (Z)-1,3-pentadiene은 (E)-1,3-pentadiene보다 Diels-Alder 반응성이 크다.	X → (Z) < (E). (E) 배열이 s-cis로 회전하는 장벽 에너지가 더 작다.	z-dtip.webp	227
+[Diels-Alder: 다이엔] 사슬 다이엔의 Diels-Alder 반응성은 (Z,Z) < (E,Z) < (E,E) 순이다.	O	z-dtip.webp	227
+[Diels-Alder: 다이엔] Cycloalkadiene의 Diels-Alder 반응성은 cyclopenta-1,3-diene < cyclohexa-1,3-diene < cyclohepta-1,3-diene 순이다.	X → 반대. cyclohepta < cyclohexa < cyclopenta — 5각 고리일수록 두 말단 탄소가 가까워 반응성이 크다.	z-cyc.webp	227
+[Diels-Alder: 다이엔] cyclopentadiene은 실온(25°C)에서 Diels-Alder로 이량체(dimer)를 만들고, 170°C로 가열하면 Retro Diels-Alder(열분해)로 다시 단량체가 된다.	O	z-cyc.webp	227
+[Diels-Alder: 다이엔] cyclopentadiene은 실온에 두면 이량체를 만들기 때문에, 단량체를 얻으려면 더 낮은 온도로 냉각해야 한다.	X → 이량체를 170°C로 가열해 Retro Diels-Alder(열분해)로 단량체를 얻는다.	z-cyc.webp	227
+[Diels-Alder: 치환기·입체] 친다이엔체는 전자가 부족할수록(EWG가 있을수록) 반응성이 크다.	O → 친다이엔체 = E(e-poor).	z-subst.webp	228
+[Diels-Alder: 치환기·입체] 친다이엔체의 반응성 순서는 CH₂=CH–CN < CH₂=CH–CF₃ < CH₂=CH₂ < CH₂=CH–CH₃ 이다.	X → 반대. propene < ethene < CF₃-ethene < CN-ethene < NC–CH=CH–CN.	z-subst.webp	228
+[Diels-Alder: 치환기·입체] 다이엔은 전자가 풍부할수록 반응성이 크므로 2-methoxy-1,3-butadiene이 2,3-dimethyl-1,3-butadiene보다 반응성이 크다.	O → 다이엔 = Nu(e-rich): butadiene < 2-methyl < 2,3-dimethyl < 2-methoxy.	z-subst.webp	228
+[Diels-Alder: 치환기·입체] 1,3-butadiene은 2-methyl-1,3-butadiene보다 Diels-Alder 반응성이 크다.	X → CH₃(EDG)가 있는 2-methyl 쪽이 더 크다.	z-subst.webp	228
+[Diels-Alder: 치환기·입체] 그림처럼 1,3-butadiene과 cis-친다이엔체(dimethyl maleate)가 반응하면 두 COOCH₃가 cis인 cyclohexene이 생긴다.	O → 입체배열은 보존된다.	z-stereo.webp	228	q-z-cis.svg
+[Diels-Alder: 치환기·입체] trans-친다이엔체(dimethyl fumarate)와 1,3-butadiene의 반응에서는 cis 생성물과 trans 생성물이 섞여 생긴다.	X → trans 생성물만(라세미) 생긴다 — 입체배열 보존.	z-stereo.webp	228
+[Diels-Alder: 치환기·입체] cyclopentadiene과 maleic anhydride가 실온에서 반응하면 endo-form이 속도론적 생성물로 주로 생긴다.	O → exo-form = 열역학적 생성물.	z-endo.webp	228
+[Diels-Alder: 치환기·입체] endo 생성물에서는 친다이엔체의 EWG(카보닐)가 다이엔의 π계에서 먼 쪽(바깥)을 향한다.	X → 그건 exo. endo는 EWG가 π계 아래(안쪽)를 향한다.	z-endo.webp	228
+[Diels-Alder: 치환기·입체] endo-form은 열역학적 생성물이고 exo-form은 속도론적 생성물이다.	X → 반대. endo = 속도론적(빠름), exo = 열역학적(안정).	z-endo.webp	228
+[비대칭 Diels-Alder] 비대칭 Diels-Alder의 위치선택성은 공명 구조로 다이엔과 친다이엔체에서 전자가 풍부한 곳(−)과 부족한 곳(+)을 찾아, −와 +가 만나도록 판단한다.	O → minus reacts with plus. 판단은 오로지 공명으로.	z-unsym.webp	229
+[비대칭 Diels-Alder] 그림처럼 1-methoxy-1,3-butadiene과 acrolein이 반응하면 1,2-생성물("ortho")이 생긴다.	O → OCH₃의 공명으로 C4가 δ−, acrolein의 말단 CH₂가 δ+.	z-unsym.webp	229	q-z-1ome.svg
+[비대칭 Diels-Alder] 그림처럼 2-methoxy-1,3-butadiene과 acrolein이 반응하면 1,3-생성물("meta")이 생긴다.	X → 1,4-생성물("para"). 그림의 생성물처럼 OCH₃와 CHO가 1,4 관계.	z-unsym.webp	229	q-z-2ome.svg
+[비대칭 Diels-Alder] 2-methyl-1,3-butadiene과 vinyl chloride처럼 공명으로 판단이 안 되는 경우에도 1,4-생성물을 답으로 한다(암기).	O → 1,3은 없으므로 1,4 정답(필기).	z-unsym2.webp	229
+[비대칭 Diels-Alder] 비대칭 Diels-Alder에서는 다이엔의 치환기와 친다이엔체의 치환기가 1,3 관계인 생성물이 주로 생긴다.	X → 1,2(ortho) 또는 1,4(para) 생성물. 1,3은 생기지 않는다.	z-unsym2.webp	229
+[전자고리화] π전자가 4n개인 계는 열 조건에서 conrotatory, 빛 조건에서 disrotatory로 고리화한다.	O → "열받으면 4Con".	z-wh.webp	428
+[전자고리화] π전자가 4n+2개인 계는 열 조건에서 conrotatory로 고리화한다.	X → 4n+2: 열 = disrotatory, 빛 = conrotatory.	z-wh.webp	428
+[전자고리화] 4n 계에서 열 조건의 disrotatory 고리화는 허용(allowed)된다.	X → forbidden. 4n 열 조건은 conrotatory만 허용.	z-wh.webp	428
+[전자고리화] (2E,4E)-hexa-2,4-diene이 열 조건에서 conrotatory로 고리화하면 trans-3,4-dimethylcyclobutene이 생긴다.	O → 두 탄소가 같은 방향으로 회전(conrotatory).	z-con.webp	428
+[전자고리화] cis-3,4-dimethylcyclobutene을 가열해 열면 (2E,4E)-hexa-2,4-diene이 생긴다.	X → (2Z,4E)-hexa-2,4-diene. (2E,4E)는 trans-3,4-dimethylcyclobutene에서.	z-ecyc.webp	428
+[전자고리화] (2E,4E)-hexa-2,4-diene에 빛을 쪼이면 cis-3,4-dimethylcyclobutene이 생긴다.	O → 4n 빛 = disrotatory.	z-ecyc.webp	428
+[전자고리화] 그림의 (2E,4Z,6E)-octa-2,4,6-triene을 가열하면 cis-5,6-dimethylcyclohexa-1,3-diene이 생긴다.	O → 6π(4n+2) 열 = disrotatory → 바깥쪽 두 CH₃가 같은 쪽 → cis.	z-ecyc.webp	428	q-z-tri.svg
+[전자고리화] (2E,4Z,6Z)-octa-2,4,6-triene을 가열하면 cis-5,6-dimethylcyclohexa-1,3-diene이 생긴다.	X → trans. 한 CH₃는 안쪽, 한 CH₃는 바깥쪽 → disrotatory 후 trans.	z-ecyc.webp	428
+[전자고리화] butadiene–cyclobutene 계(4π)는 4n+2 계에 해당한다.	X → 4π = 4n 계(n=1). 6π hexatriene이 4n+2 계.	z-ecyc.webp	428
+[[3,3] 시그마트로픽] Cope 자리옮김은 1,5-diene이 가열에 의해 [3,3] 시그마트로픽 자리옮김을 하는 반응으로, 평형 반응이다.	O	z-cope.webp	429
+[[3,3] 시그마트로픽] 그림처럼 3-methyl-1,5-hexadiene을 가열하면 더 많이 치환된 알켄을 가진 hepta-1,5-diene 쪽으로 평형이 이동한다.	O	z-cope.webp	429	q-z-cope.svg
+[[3,3] 시그마트로픽] 그림처럼 cis-1,2-divinylcyclopropane은 가열하면 Cope 자리옮김으로 1,4-cycloheptadiene이 된다.	O → 고리 긴장(3각 고리) 해소가 추진력.	z-cope.webp	429	q-z-dvcp.svg
+[[3,3] 시그마트로픽] Cope 자리옮김에서는 C3–C4 σ결합이 끊어지고 C1–C6 사이에 새로운 σ결합이 생긴다.	O → [3,3]: 1-2-3 / 1-2-3 번호의 3–3 결합이 끊기고 1–1 결합 생성.	z-cope.webp	429
+[[3,3] 시그마트로픽] 그림의 Oxy-Cope 자리옮김에서는 3-hydroxy-1,5-diene이 엔올을 거쳐 알코올로 남는다.	X → 엔올 → keto 토토머화로 카보닐(알데하이드)이 된다.	z-cope.webp	429	q-z-oxy.svg

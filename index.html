@@ -378,7 +378,7 @@ h2{font-size:1.1rem;margin:12px 0 0}
    · 문제 그림: 정답 전에 보여 줄 필기 없는 그림(같은 img 폴더). 고정 ID: 문장을 고쳐도 기록이 이어지게 예전 ID를 적어 둠
    채점 기록은 '문제 문장'에 붙어 저장되므로 문항을 중간에 넣거나 빼거나 순서를 바꿔도 기록이 유지됩니다.
    (문제 문장 자체를 고치면 그 한 문항만 새 문항으로 취급) 문항 파일을 고친 뒤에는 DATA_V를 올리고 version.txt도 같은 값으로 바꿔 주세요. */
-var DATA_V = '20261103a';
+var DATA_V = '20261103b';
 /* 새 버전 자동 반영: version.txt(캐시 없이 확인)가 이 페이지의 DATA_V와 다르면 한 번만 새로고침 */
 (function(){
   try {
@@ -403,7 +403,8 @@ var CATALOG = [
   ]},
   { id:'org', name:'유기화학⚗️', color:'org', topics:[
     { id:'ocbond', name:'구조와 결합', desc:'명명법·물리적 성질부터 형태이성질체·라디칼 치환, 고리 긴장·사이클로헥세인 의자형, 여러고리·Bredt 규칙, 산성도·염기성도까지 (구조식 그림 포함)', src:'ocbond/questions.txt', img:'ocbond/img/', key:'quiz-org-ocbond', pageLabel:false },
-    { id:'ocalkene', name:'Alkene & Alkyne', desc:'불포화도·명명법·물성, 알켄·다이엔 안정성(하이퍼컨쥬게이션), 알켄 제법(E1·E2·Lindlar·Li/NH₃·Wittig·Hofmann), HX 첨가·자리옮김·라디칼 첨가, 할로젠화·할로하이드린·수화·옥시수은화·수소화붕소, 카벤·유사카벤·에폭시화·다이올·가오존분해·산화성분해, 다이엔 1,2/1,4-첨가, Alkyne 제법·HX/할로젠 첨가·수화·수소화붕소·케토-엔올 토토머화·환원·산화성분해·알킬화까지 (구조식 그림 포함)', src:'ocalkene/questions.txt', img:'ocalkene/img/', key:'quiz-org-ocalkene', pageLabel:false }
+    { id:'ocalkene', name:'Alkene & Alkyne', desc:'불포화도·명명법·물성, 알켄·다이엔 안정성(하이퍼컨쥬게이션), 알켄 제법(E1·E2·Lindlar·Li/NH₃·Wittig·Hofmann), HX 첨가·자리옮김·라디칼 첨가, 할로젠화·할로하이드린·수화·옥시수은화·수소화붕소, 카벤·유사카벤·에폭시화·다이올·가오존분해·산화성분해, 다이엔 1,2/1,4-첨가, Alkyne 제법·HX/할로젠 첨가·수화·수소화붕소·케토-엔올 토토머화·환원·산화성분해·알킬화까지 (구조식 그림 포함)', src:'ocalkene/questions.txt', img:'ocalkene/img/', key:'quiz-org-ocalkene', pageLabel:false },
+    { id:'ocperi', name:'고리협동반응', desc:'고리첨가·전자고리화·시그마트로픽 개요, Diels-Alder(s-cis·다이엔 반응성·cycloalkadiene·dimer/retro), 치환기 효과·입체배열 보존·endo/exo, 비대칭 Diels-Alder(1,2/1,4 생성물), Woodward-Hoffmann 규칙과 con/dis 고리화, Cope·Oxy-Cope 자리옮김까지 (구조식 그림 포함)', src:'ocperi/questions.txt', img:'ocperi/img/', key:'quiz-org-ocperi', pageLabel:false }
   ]},
   { id:'note', name:'문제집 오답💯', color:'note', groups:[{ id:'nbio', g:'bio', name:'생물 오답🧬', color:'bio' }, { id:'norg', g:'org', name:'유기 오답⚗️', color:'org' }], topics:[
     { id:'membrane', name:'세포신호전달', desc:'막 비대칭·막수송·K⁺ 채널부터 GPCR·Ca²⁺·RTK-MAPK·mTOR 신호, 측분비·성장인자, CDK 조절, 세포자살·Ced·카스파아제까지 (4장 기출 문제집 + MDP + 6장 OX review)', src:'membrane/questions.txt', img:'membrane/img/', key:'quiz-bio-membrane', pageLabel:false, capLabel:'원본 문항' },
