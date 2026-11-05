@@ -1,0 +1,75 @@
+[다이엔·고리협동] 1,3-butadiene + HBr에서 1,2-첨가 생성물은 활성화 에너지가 낮아 빨리 생기지만, 1,4-첨가 생성물보다 불안정하다.	O → 0°C = 속도론적(1,2), 40°C = 열역학적(1,4) 조건(필기).	q01.webp	94
+[다이엔·고리협동] 1,3-butadiene에 HBr을 첨가할 때 1,2-생성물과 1,4-생성물은 서로 다른 탄소양이온 중간체에서 만들어진다.	X → 같은 알릴 양이온(공명 안정화)에서 Br⁻이 공격하는 위치만 다르다.	q01.webp	94
+[다이엔·고리협동] 1,3-butadiene에 HBr을 첨가하면 반응 온도와 관계없이 1,2-첨가 생성물이 주로 생긴다.	X → 온도 조건에 따라 달라진다 — 저온은 1,2, 고온은 1,4가 우세(필기).	q69.webp	143
+[다이엔·고리협동] 1-methyl-1,3-cyclohexadiene에 저온에서 HBr을 첨가하면 1,4-첨가가 우세하다.	X → 저온 = 속도론적 → 3차 알릴 양이온에 Br이 바로 붙는 1,2-첨가가 major, 1,4는 minor(필기 그림).	q69.webp	143
+[다이엔·고리협동] 반응물에 카이랄 중심이 없으면 Diels-Alder 생성물은 라세미, 메소, 또는 비카이랄로 얻어진다.	O → Tip D-A 반응 1).	q03.webp	95
+[다이엔·고리협동] 반응물에 카이랄 중심이 있으면 Diels-Alder 생성물은 한 쌍의 거울상이성질체(라세미)로 얻어진다.	X → 부분입체이성질체로 얻어진다(Tip D-A 반응 2).	q03.webp	95
+[다이엔·고리협동] Oxy-Cope 자리옮김에서는 엔올이 생긴 뒤 토토머화되어, 원래 OH가 붙어 있던 탄소가 카보닐 탄소가 된다.	O → 이중고리 기질에서는 고리가 확장된 고리형 케톤(cyclodecenone)이 생긴다.	q33.webp	120
+[다이엔·고리협동] 광화학 [2+2] 고리첨가에서는 들뜬 에틸렌의 HOMO(π*)와 바닥상태 에틸렌의 LUMO(π*)가 겹친다.	O → 빛을 쪼이면 전자 하나가 π*로 올라가 π*가 HOMO가 된다(필기).	q36.webp	123
+[다이엔·고리협동] 열에 의한 Diels-Alder에서는 다이엔의 ψ₂(HOMO)와 친다이엔체의 π*(LUMO)가 상호작용한다.	O → 1,3-butadiene은 ψ₁·ψ₂가 채워져 있어 ψ₂가 HOMO.	q36.webp	123
+[다이엔·고리협동] 광화학 [2+2] 반응에서 겹치는 오비탈은 두 에틸렌의 결합성 π 오비탈(HOMO)끼리이다.	X → 들뜬 분자의 HOMO(π*) ↔ 바닥상태 분자의 LUMO(π*). π끼리는 둘 다 꽉 차 있어 결합이 생기지 않는다.	q36.webp	123
+[다이엔·고리협동] 4n π계에 빛을 쪼이면 disrotatory, 가열하면 conrotatory로 고리화한다.	O → cyclobutene ⇄ diene: hν dis, Δ con(필기).	q67.webp	142
+[다이엔·고리협동] cis-3,4-dimethylcyclobutene을 가열해 열면 (2E,4E)-hexa-2,4-diene이 생긴다.	X → Δ = conrotatory → (2E,4Z). (E,E)는 trans-3,4-dimethylcyclobutene에서 생긴다.	q67.webp	142
+[다이엔·고리협동] 6π(4n+2) 계에 빛을 쪼이면 conrotatory로 고리화한다.	O → 4n+2: 열 = dis, 빛 = con.	q67.webp	142
+[다이엔·고리협동] 8π(4n) 계인 tetraene에 빛을 쪼이면 conrotatory로 고리화한다.	X → 4n 빛 = disrotatory(필기 45번 2).	q45.webp	129
+[다이엔·고리협동] 2-pyrone과 DMAD의 Diels-Alder 첨가물을 가열하면 CO₂가 빠지는 retro-Diels-Alder로 dimethyl phthalate가 생긴다.	O → 분자 내에 기체가 생길 수 있으면 쉽게 분해된다(필기).	q50.webp	132
+[다이엔·고리협동] styrene의 비닐기와 벤젠 고리는 짝지어 있으므로 Diels-Alder의 다이엔으로 잘 반응한다.	X → 짝지어 있지만 D-A 반응을 하면 벤젠의 방향족성이 사라지므로 반응하지 않는다(필기).	q65.webp	140
+[다이엔·고리협동] 1,1′-binaphthyl의 두 나프탈렌 고리는 입체장애로 같은 평면에 있지 못해 서로 짝지어 있지 않으며, 축 카이랄성을 가질 수 있다.	O → biphenyl도 오쏘 치환기가 크면(X ≠ Y) chiral(필기).	q65.webp	140
+[다이엔·고리협동] allene(C=C=C)의 두 π결합은 서로 짝지어 있다.	X → 중앙 탄소(sp)에서 두 π결합이 서로 수직 → 짝지음 X.	q65.webp	140
+[다이엔·고리협동] Diels-Alder에서 친다이엔체의 반응성은 trans-2-butene < 2-butenal(CHO) < (Z)-1,2-dinitroethene처럼 EWG가 강하고 많을수록 크다.	O → 친다이엔체 = E(전자 부족).	q65.webp	140
+[입체화학·TAM] trans 알켄에 anti 첨가를 하면 meso 화합물이 생긴다(TAM).	O → TAM = Trans alkene, Anti 첨가 → Meso.	q31.webp	118
+[입체화학·TAM] trans-2-butene에 Br₂를 첨가하면 (2R,3S) 라세미 혼합물이 생긴다.	X → trans + anti → meso-2,3-dibromobutane(TAM). 라세미가 아니다.	q31.webp	118
+[입체화학·TAM] trans-2-butene에 Br₂가 첨가되는 반응은 환원 반응이다.	X → 전기음성 원자(Br)가 C에 붙는 할로젠화 = 산화.	q31.webp	118
+[입체화학·TAM] 2-butyne을 Na/NH₃로 환원한 뒤 OsO₄로 처리하면 meso-2,3-butanediol이 생긴다.	X → trans 알켄 + syn 첨가 → 라세미(±)-2,3-butanediol. meso는 trans + anti 또는 cis + syn.	q08.webp	98
+[입체화학·TAM] 2-butyne의 Na/NH₃ 환원은 음이온라디칼 → vinyl 라디칼 → vinyl 음이온 순서로 진행된다.	O → e⁻ 첨가 → NH₃가 H⁺ 공급 → e⁻ 첨가 → H⁺.	q31.webp	118
+[입체화학·TAM] 2-pentyne을 Lindlar 촉매로 cis 알켄으로 만든 뒤 mCPBA·HO⁻/H₂O로 처리하면 두 OH가 anti로 첨가된 diol이 라세미로 생긴다.	O → 에폭사이드 개환 = anti. cis + anti → 라세미.	q15.webp	103
+[입체화학·TAM] 1-butyne을 3-hexyne으로 알킬화한 뒤 Lindlar 환원, mCPBA, H₃O⁺ 순으로 처리하면 meso-3,4-hexanediol이 생긴다.	X → cis 알켄 + anti 첨가(에폭사이드 가수분해) → 라세미(threo) diol, + enantiomer.	q40.webp	126
+[입체화학·TAM] trans 알켄을 차가운 염기성 KMnO₄로 처리하면 syn-diol이 거울상이성질체 쌍(라세미)으로 생긴다.	O → 52번 b) 필기 “+ en”.	q52.webp	133
+[입체화학·TAM] trans-2-butene에 CH₂I₂/Zn(Cu)를 반응시키면 cis-1,2-dimethylcyclopropane이 생긴다.	X → Simmons–Smith = syn, 입체배열 보존 → trans-1,2-dimethylcyclopropane(+ enantiomer).	q46.webp	130
+[입체화학·TAM] CHCl₃/KOC(CH₃)₃로 만든 :CCl₂가 α-methylstyrene에 첨가되면 1,1-dichloro-2-methyl-2-phenylcyclopropane이 라세미로 생긴다.	O → 57번 필기 “+ en”.	q57.webp	135
+[입체화학·TAM] NBS/H₂O로 만든 브로모하이드린을 염기(NaH, NaOH)로 처리하면 분자내 SN2로 에폭사이드가 생긴다.	O → O⁻가 Br의 뒤쪽을 공격 — OH와 Br이 anti여야 한다.	q57.webp	135
+[첨가 위치선택성] indene에 NBS/H₂O를 반응시키면 물이 벤질 탄소를 공격해 OH가 벤질 자리에 붙는다.	O → 벤질 탄소의 C⁺ 성격이 안정(필기).	q30.webp	117
+[첨가 위치선택성] indene의 브로모하이드린(OH와 Br trans)을 NaN₃로 SN2 치환하면 N₃는 OH와 trans가 된다.	X → Br 자리를 뒤쪽에서 공격(반전) → N₃는 OH와 cis.	q30.webp	117
+[첨가 위치선택성] N-Boc-1,2,3,4-tetrahydropyridine에 I–Cl/NaOMe을 반응시키면 OMe는 질소 옆 탄소에, I는 그 이웃 탄소에 결합한다.	O → 양이온은 질소 옆일 때 안정(N 비공유전자쌍) → MeO⁻가 그 탄소를 공격(필기).	q32.webp	119
+[첨가 위치선택성] 알킬벤젠을 Br₂/hν로 브로민화하면 3차 벤질 C–H가 선택적으로 브로민화된다.	O → 3차 벤질 라디칼이 가장 안정(필기).	q32.webp	119
+[첨가 위치선택성] 1-methylcyclohexene oxide에 HBr을 반응시키면 Br⁻은 덜 치환된 2차 탄소를 공격한다.	X → 3차 탄소가 있으면 SN1 type → Br⁻이 3차 탄소 공격. 3차가 없으면 SN2 type(필기).	q48.webp	131
+[첨가 위치선택성] 2-methyl-2-butene에 HBr/ROOR을 반응시키면 Br은 3차 탄소에 결합한다.	X → Br•가 먼저 붙어 3차 라디칼을 만들므로 Br은 2차 탄소에 결합(anti-Markovnikov).	q58.webp	136
+[첨가 위치선택성] 2-methyl-2-butene에 1. HBr, 2. tBuOK/tBuOH·가열, 3. HBr/ROOR 순으로 처리하면 1-bromo-2-methylbutane이 생긴다.	O → 2-bromo-2-methylbutane → Hofmann: 2-methyl-1-butene → anti-Markovnikov.	q58.webp	136
+[첨가 위치선택성] 2-bromopropene(vinyl bromide)에 HBr을 첨가하면 1,2-dibromopropane이 생긴다.	X → 2,2-dibromopropane(geminal) — Br이 붙은 탄소의 C⁺가 Br 공명으로 안정.	q14.webp	102
+[첨가 위치선택성] 2-phenylethyl chloride를 KOC(CH₃)₃로 처리해 생긴 styrene에 HBr을 첨가하면 Br은 말단 탄소에 붙는다.	X → 벤질 C⁺가 안정 → Br은 벤질 탄소(1-bromo-1-phenylethane).	q42.webp	127
+[첨가 위치선택성] 2-phenylethyl chloride를 KOC(CH₃)₃ 후 H₃O⁺로 처리하면 1-phenylethanol이 생긴다.	O → E2 → styrene → Markovnikov 수화(필기 “styrene”).	q42.webp	127
+[첨가 위치선택성] 1-butyne을 수소화붕소첨가/산화하면 2-butanone이 생긴다.	X → anti-Markovnikov → butanal(알데하이드).	q61.webp	137
+[첨가 위치선택성] 1-butyne과 2-butyne을 HgSO₄ 존재하 H₃O⁺로 수화하면 모두 2-butanone이 생긴다.	O	q61.webp	137
+[첨가 위치선택성] 1-methylcyclopentene을 BH₃ 후 H₂O₂/OH⁻로 처리하면 trans-2-methylcyclopentanol이 생긴다.	O → H와 B가 syn → CH₃와 OH는 trans, OH는 덜 치환된 탄소.	q49.webp	131
+[탈리·Hofmann] KOtBu 같은 부피 큰 염기는 E2에서 입체장애가 적은 H(1° < 2° < 3° 순으로 떼기 어려움)를 떼어 덜 치환된 알켄(Hofmann 생성물)을 준다.	O → Tip! KOtBu(bulky base) — 1°RX: E2, Anti-Zaitsev.	q14.webp	102
+[탈리·Hofmann] chlorocyclohexane(2°)을 KOC(CH₃)₃로 처리하면 SN2로 cyclohexyl tert-butyl ether가 주로 생긴다.	X → 부피 큰 강염기 → E2 → cyclohexene.	q63.webp	138
+[탈리·Hofmann] 1-methylcyclohexylamine에 과량의 CH₃I/K₂CO₃, 이어서 Ag₂O/H₂O·가열을 하면 methylenecyclohexane이 주로 생긴다.	O → Hofmann 제거 — 덜 치환된 알켄.	q27.webp	114
+[탈리·Hofmann] Hofmann 제거로 1-methylcyclohexylamine에서 주로 얻어지는 생성물은 1-methylcyclohexene이다.	X → Anti-Zaitsev → methylenecyclohexane.	q27.webp	114
+[탈리·Hofmann] POCl₃/pyridine에 의한 3차 알코올 탈수는 E2 반응이다.	O → 49번 필기.	q49.webp	131
+[탈리·Hofmann] 2-butene의 cis-trans 상호변환은 산 조건에서 H⁺ 첨가로 생긴 탄소양이온의 C–C 단일결합 회전을 통해 일어날 수 있다.	O → 산조건: H⁺ → C⁺ → 회전 → H⁺ 이탈(필기).	q05.webp	96
+[탈리·Hofmann] 빛 조건의 cis-trans 상호변환에서는 π결합이 끊어지지 않은 채 C=C가 회전한다.	X → hν로 π결합이 끊어진(이중라디칼) 뒤 회전한다 — 상호변환에는 π결합이 끊어져야 한다.	q05.webp	96
+[탈리·Hofmann] cis-2-butene이 trans-2-butene보다 불안정한 이유는 두 메틸기 사이의 입체장애 때문이다.	O	q05.webp	96
+[탈리·Hofmann] 2-cyclopentenyl chloride를 CH₃OH에서 반응시키면 한 가지 거울상이성질체만 생긴다.	X → SN1(가용매분해) — 평면 알릴 양이온을 양쪽에서 공격 → 라세미 혼합물.	q03.webp	95
+[환원·산화] 촉매 수소화(H₂/Pd·Ni·Pt·Rh) 반응성은 케톤 C=O < 알켄 C=C < 알카인 C≡C 순이다.	O → Tip: ③ < ① < ②.	q48.webp	131
+[환원·산화] 2-cyclohexenone을 H₂/Pd로 1당량 수소화하면 C=O가 먼저 환원되어 알릴 알코올이 생긴다.	X → C=C가 먼저 환원 → cyclohexanone. 과량 H₂일 때 알코올까지.	q48.webp	131
+[환원·산화] 벤질 위치의 C=O(acetophenone)는 H₂/Pd로 CH₂까지 환원되어 ethylbenzene이 될 수 있다.	O → Tip ④.	q48.webp	131
+[환원·산화] nitrobenzene은 H₂/Pd로 aniline으로 환원된다.	O → Tip ⑤.	q48.webp	131
+[환원·산화] 가수소분해(hydrogenolysis)는 벤질 자리에 O나 N이 붙어 있을 때 H₂/Pd로 그 C–O·C–N 결합이 끊어지는 반응이다.	O → benzyl–OR → toluene + H–OR(Tip ⑥).	q48.webp	131
+[환원·산화] H₂/Pt로 1-phenylbut-1-en-3-yne을 수소화하면 곁사슬과 벤젠 고리가 모두 포화된다.	X → 벤젠 고리는 그대로 남고 곁사슬만 포화 → butylbenzene.	q62.webp	137
+[환원·산화] Lindlar 촉매로 내부 알카인을 수소화하면 trans 알켄이 생긴다.	X → syn 첨가 → cis 알켄(62번 필기 “cis”).	q62.webp	137
+[환원·산화] (E)-2-butene과 (Z)-2-butene은 H₂/Pt로 반응시키면 같은 생성물(butane)을 준다.	O	q61.webp	137
+[환원·산화] H₂ 1당량/Pt로 limonene을 처리하면 입체장애가 적은(덜 치환된) 이중결합이 먼저 수소화되어 삼치환 알켄이 남는다.	O → 이소프로페닐(1,1-이치환)이 환원 → 1-methyl-4-isopropylcyclohexene.	q28.webp	115
+[환원·산화] limonene(A)과 그로부터 만든 에폭사이드 D의 불포화도는 같다.	X → A = 3(고리 + C=C 2개), D = 2(고리 + 에폭사이드 고리)(필기 3, 2).	q28.webp	115
+[환원·산화] limonene에서 만든 브로모하이드린 C의 카이랄 탄소는 모두 S 배열이다.	X → R과 S가 섞여 있다(필기).	q28.webp	115
+[환원·산화] 1,1-이치환 알켄을 뜨거운 산성 KMnO₄로 산화하면 케톤과 CO₂가 생긴다.	O → 말단 =CH₂ → CO₂.	q48.webp	131
+[환원·산화] benzene → CH₃Cl/AlCl₃ → KMnO₄, OH⁻/H₃O⁺ → HNO₃/H₂SO₄ 순으로 반응시키면 p-nitrobenzoic acid가 주로 생긴다.	X → –COOH는 meta 지향 → m-nitrobenzoic acid.	q52.webp	133
+[환원·산화] 산 수용액(H₃O⁺)에서 아세탈(케탈)은 가수분해되어 카보닐 화합물과 다이올로 돌아간다.	O → 46번 ㄷ 필기 “acetal” — 아세탈은 염기에는 안정.	q46.webp	130
+[구조·안정성·공명] 완전연소식 2 CₓHᵧ + 21 O₂ → 16 CO₂ + 10 H₂O의 탄화수소는 C₈H₁₀이며 불포화도는 4이다.	O → (18 − 10)/2 = 4(필기).	q41.webp	127
+[구조·안정성·공명] (3E)-3,4-dimethylhexa-1,3,5-triene은 C₈H₁₀이다.	X → C₈H₁₂(불포화도 3). m-xylene·5-cyclopropylcyclopenta-1,3-diene 등은 C₈H₁₀.	q41.webp	127
+[구조·안정성·공명] 1,2-pentadiene, 1,3-pentadiene, 1,4-pentadiene은 모두 C₅H₈로 서로 구조 이성질체이다.	O	q39.webp	126
+[구조·안정성·공명] n-pentane을 만드는 수소화 반응의 |ΔH°|는 1,2-pentadiene이 1,3-pentadiene보다 작다.	X → 누적 다이엔(allene)이 가장 불안정 → |ΔH°|가 더 크다.	q39.webp	126
+[구조·안정성·공명] 1,4-pentadiene은 1,3-pentadiene보다 자외선 최대 흡수 파장이 길다.	X → 짝지음(conjugation)이 있는 1,3-pentadiene이 더 길다 — conjugation될수록 λmax↑(필기).	q39.webp	126
+[구조·안정성·공명] C₅H₈ 이성질체의 안정성은 1,2-pentadiene < 1-pentyne < 2-pentyne < 1,4-pentadiene < 1,3-pentadiene 순이다.	O → 그래서 2당량 H₂ 수소화열은 1,2-pentadiene이 가장 크다(필기).	q59.webp	136
+[구조·안정성·공명] 1,4-pentadiene(고립)은 1,3-pentadiene(짝지은)보다 안정하다.	X → 짝지은 다이엔이 더 안정.	q59.webp	136
+[구조·안정성·공명] 알릴 라디칼에서 라디칼 탄소가 옥텟을 만족하지 않는 구조로 그린 공명구조는 공명구조이긴 하지만 매우 불안정해 가장 타당한 공명구조가 아니다.	O → 65번 필기.	q65.webp	140
+[구조·안정성·공명] 아세톤 C=O의 공명구조로 O에 +, C에 −를 둔 구조는 타당한 공명구조이다.	X → 전기음성도가 큰 O가 −, C가 +여야 한다.	q65.webp	140
