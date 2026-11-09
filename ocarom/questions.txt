@@ -1,0 +1,107 @@
+[명명법] 벤젠 고리가 치환기로 쓰이면 페닐기라 하고, 벤젠 고리에 CH₂가 붙은 C₆H₅CH₂–는 벤질기라 한다.	O	a01T.webp	254
+[명명법] C₆H₅CH₂– 기를 페닐기(phenyl group)라 한다.	X → 벤질기(benzyl). 페닐기는 C₆H₅–.	a01T.webp	254
+[명명법] C₆H₅–CH(CH₃)CH₂CH₂CH₃처럼 알킬 치환기가 고유 이름이 없으면 phenylalkane으로 명명해 2-phenylpentane이라 한다.	O → 고유 이름이 있으면 alkylbenzene(isopropylbenzene, sec-butylbenzene, tert-butylbenzene).	a01T.webp	254
+[명명법] 두 치환기가 1,3-관계로 연결된 이치환 벤젠은 para(p-)로 나타낸다.	X → 1,2 = ortho(o-), 1,3 = meta(m-), 1,4 = para(p-).	a01T.webp	254
+[명명법] 1-bromo-4-chloro-2-nitrobenzene처럼 치환기 이름은 알파벳 순으로 나열한다.	O	a01T.webp	254
+[명명법] anisole은 C₆H₅OCH₃, benzonitrile은 C₆H₅CH₂NH₂이다.	X → benzonitrile = C₆H₅C≡N. styrene = C₆H₅CH=CH₂, aniline = C₆H₅NH₂(필기).	a01T.webp	254
+[명명법] naphthalene에 일치환 반응이 일어나면 생성물은 2가지, anthracene은 3가지가 가능하다.	O → phenanthrene은 5가지(필기).	a01B.webp	254
+[명명법] phenanthrene에 일치환 반응이 일어나면 가능한 생성물은 3가지이다.	X → 5가지(1·2·3·4·9번). 3가지는 anthracene(1·2·9번).	a01B.webp	254
+[명명법] imidazole에서 N–H 질소가 1번, 다른 질소가 3번이다.	O	a01B.webp	254
+[명명법] quinoline의 질소는 2번, isoquinoline의 질소는 1번 위치이다.	X → quinoline N = 1번, isoquinoline N = 2번(필기).	a01B.webp	254
+[방향족성 판정] Hückel 4n+2 규칙은 고리가 1개일 때만 적용된다.	O → 필기.	a02T.webp	254
+[방향족성 판정] 방향족이 되려면 고리 구조, 평면 sp², 완전한 짝지음(full conjugation), π 전자 4n+2개(n = 0, 1, 2…)를 모두 만족해야 한다.	O	a02T.webp	254
+[방향족성 판정] 고리·평면·완전 짝지음을 만족하고 π 전자가 4n개(n = 1, 2, 3…)이면 반방향족이다.	O	a02T.webp	254
+[방향족성 판정] 고리 화합물이 평면이 아니거나 sp³ 탄소가 있으면 반방향족이다.	X → 비방향족(non-aromatic). 반방향족은 평면·완전 짝지음이면서 π e⁻ = 4n.	a02T.webp	254
+[방향족성 판정] 에너지는 반방향족 > 비방향족 > 방향족 순이다.	O → 반방향족은 비방향족·방향족이 되려고 자발적으로 반응한다.	a02T.webp	254
+[방향족성 판정] 방향족 고리는 같은 π계의 사슬 화합물보다 안정해 첨가반응보다 치환반응을 한다.	O → 반방향족 고리는 사슬보다 불안정해 첨가반응(필기).	a02T.webp	254
+[방향족성 판정] 반방향족 고리 화합물은 같은 수의 π 전자를 가진 사슬 화합물보다 안정하다.	X → 반방향족 < 사슬. 비방향족 ≈ 사슬 < 방향족.	a02T.webp	254
+[방향족성 판정] 그림의 A~D 중 방향족은 A(cyclopropenyl 양이온)와 C(cycloheptatrienyl 양이온) 두 가지뿐이다.	X → B(cyclopentadienyl 음이온, 6π)도 방향족. 방향족 = A·B·C, 반방향족 = D(8π).	a03T.webp	255	f-ions.svg
+[방향족성 판정] cyclopropenyl 양이온은 π 전자가 2개뿐이어서 Hückel 규칙을 만족하지 못하므로 반방향족이다.	X → 2 = 4n+2(n = 0) → 방향족. 음이온(4π)이 반방향족.	a03T.webp	255
+[방향족성 판정] cyclobutadiene은 두 공명구조 사이를 오가므로 결합 길이가 모두 같다.	X → 반방향족이라 공명 ✕(필기 ✕) — 직사각형으로 결합 길이가 다르다.	a03T.webp	255
+[방향족성 판정] cyclobutadiene은 −78 ℃에서도 스스로 Diels–Alder 반응을 하여 이량체가 된다.	O → 반방향족 → 첨가반응으로 안정해지려 함.	a03T.webp	255
+[방향족성 판정] 그림에서 cyclobutadiene 이양이온(B)과 이음이온(C)은 모두 방향족이다.	O → B 2π, C 6π. A(중성 cyclobutadiene, 4π)는 반방향족(필기).	a03T.webp	255	f-cbd.svg
+[방향족성 판정] cyclopentadienyl 양이온은 π 전자 6개의 방향족이다.	X → 양이온 4π = 반방향족, 음이온 6π = 방향족.	a03B.webp	255
+[방향족성 판정] 그림의 A와 B를 물에서 SN1 반응시키면, B가 더 빠르다.	X → A > B. A의 알릴 양이온은 공명으로 안정하지만 B는 반방향족 cyclopentadienyl 양이온이 생긴다(필기 기출).	a03B.webp	255	f-sn1.svg
+[방향족성 판정] cyclopentadiene의 pKa(16.0)는 물(15.7)과 비슷해, NaOH로 상당량을 탈양성자화할 수 있다.	O → 짝염기가 방향족 cyclopentadienyl 음이온이기 때문.	a03B.webp	255
+[방향족성 판정] 2,4-cyclopentadienol을 H₂SO₄로 처리하면 물이 빠져 cyclopentadienyl 양이온이 쉽게 생긴다.	X → 양이온은 반방향족이라 생기지 않는다(not formed).	a03B.webp	255
+[방향족성 판정] cycloheptatrienol을 산(pH < 3)으로 처리하면 방향족 tropylium 이온이 생긴다.	O → 6π, 평면. cycloheptatrienyl 음이온(8π)은 반방향족.	a04T.webp	256
+[방향족성 판정] cyclooctatetraene은 8π의 평면 고리이므로 반방향족이다.	X → 터브(tub) 모양으로 평면이 아니어서 비방향족(필기 '평면 ✕ → 공명 ✕').	a04B.webp	256	f-cot.svg
+[방향족성 판정] cyclooctatetraene에서는 이웃 2p 오비탈이 약 63° 엇갈려 있어 서로 겹치지 않는다.	O → 단일·이중결합 길이가 1.48 Å, 1.34 Å로 서로 다르다.	a04B.webp	256
+[방향족성 판정] cyclooctatetraene을 2 K로 환원한 이음이온은 π 전자가 10개인 방향족이다.	O → 평면이 되어 4n+2(n = 2).	a04B.webp	256
+[방향족성 판정] all-cis-[10]annulene은 10π이므로 방향족이다.	X → 각 긴장(angle strain)이 커서 평면 ✕ → 비방향족(필기).	a05T.webp	257
+[방향족성 판정] trans,cis,trans,cis,cis-[10]annulene이 평면이 될 수 없는 것은 고리 안쪽 수소끼리의 입체장애 때문이다.	O → 필기 'steric → 평면 ✕'.	a05T.webp	257
+[방향족성 판정] 그림의 화합물은 CH₂ 다리 때문에 p 오비탈 겹침이 이상적이지 않아 비방향족이다.	X → 겹침이 이상적이진 않지만 전자가 비편재되기엔 충분 → 방향족(bridged [10]annulene).	a05T.webp	257	f-methano.svg
+[방향족성 판정] anthracene은 9, 10번 위치에서 benzyne과 Diels–Alder 반응을 할 수 있다.	O → 생성물 triptycene. phenanthrene은 9, 10번에서 Br₂ 첨가(할로젠화) 가능(필기).	a05B.webp	257	f-phen.svg
+[방향족성 판정] phenanthrene은 방향족이므로 Br₂와 9, 10번 위치에서 첨가반응을 할 수 없다.	X → 9, 10번에서 첨가반응(할로젠화) 가능(필기). 9,10 결합은 이중결합성이 크다.	a05B.webp	257
+[방향족성 판정] azulene은 5원자 고리가 양전하, 7원자 고리가 음전하를 띤 공명구조의 기여가 커서 쌍극자 모멘트가 크다.	X → 반대. 5원자 고리 음전하(6π), 7원자 고리 양전하(6π, tropylium) — 둘 다 방향족.	a06T.webp	258	f-azulene.svg
+[방향족성 판정] azulene은 쌍극자 모멘트가 커서 나프탈렌보다 끓는점과 녹는점이 높다.	O → 필기.	a06T.webp	258	f-azulene.svg
+[헤테로고리] pyrrole의 질소 비공유전자쌍은 p 오비탈에 있어 방향족 π계(6π)에 참여한다.	O → 그래서 염기로 잘 쓰이지 않는다(필기).	a06B.webp	258
+[헤테로고리] furan의 산소는 비공유전자쌍 두 개를 모두 방향족 π계에 제공한다.	X → 하나만 p 오비탈(π계), 다른 하나는 sp² 오비탈에 있다. thiophene의 S도 같다.	a06B.webp	258
+[헤테로고리] pyrrole(1.81 D)과 pyrrolidine(1.58 D)은 쌍극자 방향이 서로 반대이다.	O → pyrrole은 N의 전자쌍이 고리로 비편재되어 고리 쪽이 음성 말단.	a06B.webp	258
+[헤테로고리] furan의 쌍극자 모멘트(0.70 D)는 tetrahydrofuran(1.73 D)보다 크다.	X → 작다. O의 전자쌍이 고리로 비편재되어 C–O 결합 극성을 상쇄. thiophene 0.51 D < thiolane 1.90 D도 마찬가지.	a06B.webp	258
+[헤테로고리] pyrrole·furan·thiophene의 녹는점은 각각의 포화 고리 화합물보다 높다.	O → 평면 방향족이라 더 잘 쌓인다(필기). 끓는점은 항상 높지는 않다(thiophene 84 ℃ < thiolane 119 ℃).	a06B.webp	258
+[헤테로고리] pyridine의 질소 비공유전자쌍은 sp² 오비탈에 있어 방향족 π계에 참여하지 않으므로 염기로 작용할 수 있다.	O	a07T.webp	259	f-pyim.svg
+[헤테로고리] imidazole은 pyridine보다 염기성이 약하다.	X → imidazole > pyridine(필기). 고리 내 N–H 질소가 전자를 밀어 sp² N(3번)의 전자밀도가 크다.	a07T.webp	259	f-pyim.svg
+[헤테로고리] 방향족성은 benzene > furan > pyrrole > thiophene 순이다.	X → benzene > thiophene > pyrrole > furan. 방향족성이 가장 작은 furan은 [4+2] 첨가반응(Diels–Alder)을 한다(필기).	a13T.webp	264	f-hetero5.svg
+[헤테로고리] EAS 반응성은 benzene < thiophene < furan < pyrrole 순이다.	O → 6원자 고리보다 5원자 고리가 전자가 풍부. pyridine은 benzene보다도 느리다(필기).	a13B.webp	264	f-hetero5.svg
+[헤테로고리] pyridine은 전자가 풍부해 benzene보다 EAS 반응성이 크다.	X → 전기음성 N 때문에 전자가 부족 → pyridine < benzene.	a13B.webp	264
+[헤테로고리] pyrrole을 CHCl₃/KOH로 처리하면 dichlorocarbene이 첨가된 뒤 고리가 확장되어 3-chloropyridine이 생긴다.	O → 필기.	a13B.webp	264
+[EAS 기본] 벤젠의 브로민화에서 Lewis 산 촉매로 FeBr₃·AlBr₃ 등을 쓰며, Fe와 과량의 Br₂를 넣어도 된다.	O → Fe + Br₂(과량) → FeBr₃ + Br₂(필기).	a07B.webp	259
+[EAS 기본] 벤젠의 니트로화에서 친전자체는 NO₂⁺이며, 진한 HNO₃와 진한 H₂SO₄를 사용한다.	O → H₂SO₄는 H⁺ 촉매(필기).	a07B.webp	259
+[EAS 기본] nitrobenzene은 LiAlH₄로 환원해 aniline을 얻는다.	X → H₂/Pd, Fe/HCl, Sn/HCl을 쓴다(LiAlH₄ ✕). 필기: 알킬 R–NO₂에는 LiAlH₄ 가능.	a07B.webp	259
+[EAS 기본] benzenesulfonic acid를 NaOH와 300 ℃에서 알칼리 융해하면 phenol이 생긴다.	O	a08T.webp	260
+[EAS 기본] tert-butylbenzene의 para를 SO₃H로 막은 뒤 니트로화하고 탈설폰화하면 o-nitro-tert-butylbenzene을 얻는다.	O → 지향성 차단 TIP.	a08T.webp	260
+[EAS 기본] 탈설폰화는 진한 H₂SO₄와 SO₃로 한다.	X → 묽은 H₂SO₄(H⁺, H₂O, Δ). 진한 H₂SO₄·SO₃는 설폰화.	a08T.webp	260
+[Friedel–Crafts] Friedel–Crafts 알킬화에서 탄소양이온이 생길 수 있으면 SN1, 생기지 않을 때는 SN2 경로로 진행한다.	O → 필기 형광펜.	a08B.webp	260
+[Friedel–Crafts] 1-butene과 H⁺ 촉매로 벤젠을 알킬화하면 2차 탄소양이온을 거쳐 라세미 sec-butylbenzene이 생긴다.	O → 평면 탄소양이온을 양쪽에서 공격(필기 Rac.).	a08B.webp	260
+[Friedel–Crafts] vinyl chloride나 chlorobenzene은 AlCl₃와 함께 벤젠을 알킬화한다.	X → aryl·vinyl halide는 반응하지 않는다(no reaction). styrene·biphenyl은 (CH₂=CH)₂CuLi·Ph₂CuLi + PhBr로 만든다(필기).	a08B.webp	260
+[Friedel–Crafts] 알킬화 생성물은 반응물보다 반응성이 커서 다중알킬화가 일어나며, 벤젠을 크게 과량으로 쓰면 일치환 생성물이 주생성물이 된다.	O → 필기: 벤젠 50 mol + RX 1 mol → 일치환 주.	a09T.webp	261
+[Friedel–Crafts] 벤젠과 1-chloropropane을 AlCl₃로 반응시키면 propylbenzene만 생긴다.	X → 수소화 이동(자리옮김)으로 isopropylbenzene(55%)과 propylbenzene(45%)이 섞여 생긴다.	a09T.webp	261
+[Friedel–Crafts] propylbenzene은 propanoyl chloride/AlCl₃로 아실화한 뒤 카보닐을 환원해 만들 수 있다.	O → 아실륨 이온은 자리옮김을 하지 않는다(필기 1)·2)). (n-Pr)₂CuLi + PhBr도 가능.	a09T.webp	261
+[Friedel–Crafts] 고리에 NO₂, CHO, COCH₃, SO₃H, CO₂H, CN이 있으면 Friedel–Crafts 알킬화·아실화가 일어나지 않는다.	O → 강 EWG. NH₂도 반응 ✕(AlX₃와 착물).	a09T.webp	261
+[Friedel–Crafts] 아닐린은 NH₂가 강한 활성화기이므로 Friedel–Crafts 반응이 잘 일어난다.	X → 염기 NH₂가 Lewis 산(AlX₃)과 반응해 H₂N⁺–AlX₃⁻가 되어 강한 불활성화기가 된다.	a10B.webp	262
+[Friedel–Crafts] Friedel–Crafts 아실화의 친전자체는 아실륨 이온이며, AlCl₃를 촉매량(0.1 당량)만 써도 충분하다.	X → 생성 케톤이 AlCl₃와 착물을 이뤄 1.1 당량 이상 필요. 0.1 당량은 알킬화.	a09B.webp	261
+[Friedel–Crafts] 아실화의 친전자체(아실륨 이온)는 acyl halide·acid anhydride + Lewis 산, 또는 RCOOH + H⁺로 만들 수 있다.	O	a09B.webp	261
+[Friedel–Crafts] H₂/Pd는 aryl alkyl ketone의 C=O만 CH₂로 환원하고, 일반 dialkyl ketone은 알코올로 환원한다.	O → 필기: 2-butanone + H₂/Pd → 라세미 2-butanol.	a09B.webp	261
+[Friedel–Crafts] Zn(Hg)/HCl, N₂H₄/KOH, thioacetal/Raney Ni는 aryl alkyl ketone만 CH₂로 환원한다.	X → 이 셋은 모든 카보닐을 CH₂로 환원(필기). aryl alkyl ketone에만 되는 것은 H₂/Pd.	a09B.webp	261
+[Friedel–Crafts] 수소 첨가 반응성은 alkyne < alkene ≪ ketone 순이다.	X → ketone ≪ alkene < alkyne. 엔·인·온을 H₂(1 당량)로 처리하면 삼중결합만 이중결합이 된다(필기).	a13T.webp	264
+[Friedel–Crafts] PhCH₂OR을 H₂/Pd로 가수소분해하면 PhCH₃와 ROH가 생긴다.	O → 수소 첨가 TIP ⑥.	a13T.webp	264
+[치환기 효과] EAS 속도는 NH₂ > OH > OR > NHCOR > R > Ph > H > X 순이다.	O	a10T.webp	262
+[치환기 효과] 할로젠 치환 벤젠의 EAS 속도는 I > Br > Cl > F 순이다.	X → F > Cl > Br > I(필기).	a10T.webp	262
+[치환기 효과] 할로젠은 고리를 불활성화하지만 ortho·para 지향기이다.	O	a10T.webp	262
+[치환기 효과] –NR₃⁺는 비공유전자쌍이 없는 가장 강한 불활성화기이며 meta 지향기이다.	O → 필기 '예외'(N 원자인데 meta 지향).	a10T.webp	262
+[치환기 효과] –NO₂는 –SO₃H보다 고리를 덜 불활성화한다.	X → NO₂가 더 강하다. 순서: C(=O)Y·CN·SO₃H > NO₂ > NR₃⁺(느린 쪽으로 갈수록 더 불활성).	a10T.webp	262
+[치환기 효과] aniline과 phenol을 Br₂ 수용액으로 처리하면 2,4,6-트라이브로모 생성물이 100% 생긴다.	O → 다중할로젠화. 해결책: NBS로 p-bromoaniline(+ o-이성질체).	a10B.webp	262
+[치환기 효과] aniline을 진한 HNO₃/H₂SO₄로 니트로화하면 ortho·para 생성물만 얻어진다.	X → NH₂가 H⁺와 반응해 anilinium(meta 지향)이 되어 meta·para가 약 50 : 50으로 섞인다.	a11T.webp	263
+[치환기 효과] aniline을 아세틸화(Ac₂O, pyridine)한 뒤 F-C 아실화와 NaOH/H₂O 가수분해를 거치면 4-aminobenzophenone을 얻는다.	O → 아마이드는 염기 조건에서 가수분해(필기).	a11T.webp	263
+[치환기 효과] acetanilide를 니트로화한 뒤 가수분해하면 o-nitroaniline이 주생성물이다.	X → para가 주생성물(p 90% : o 10%). o-nitroaniline은 para를 SO₃H로 막고 니트로화한 뒤 가수분해로 얻는다.	a11B.webp	263
+[치환기 효과] 그림의 화합물을 Br₂/acetic acid로 브로민화하면 NHCH₃의 ortho에 Br이 들어간다.	O → 2-bromo-4-chloro-N-methylaniline(87%). 더 강한 EDG가 지향.	a12T.webp	264	f-clnma.svg
+[치환기 효과] 그림의 화합물을 니트로화하면 tert-butyl기의 ortho에 NO₂가 주로 들어간다.	X → CH₃의 ortho → 4-tert-butyl-2-nitrotoluene(88%). EDG 능력이 비슷하면 입체장애가 작은 쪽.	a12T.webp	264	f-ptbt.svg
+[치환기 효과] 그림의 화합물을 CH₃COCl/AlCl₃로 아실화하면 두 메틸기 사이(2번)에 주로 치환된다.	X → 두 ortho 메틸기의 입체장애로 2번은 막힌다 → 4번에 치환(2,4-dimethylacetophenone, 80%).	a12B.webp	264	f-mxyl.svg
+[치환기 효과] 그림의 화합물을 니트로화하면 OH의 ortho에 NO₂가 들어간다.	O → EDG(CH₃)와 강 EDG(OH)가 있으면 강 EDG가 지향 → 4-methyl-2-nitrophenol.	a12B.webp	264	f-cresol.svg
+[EAS 위치선택성] naphthalene의 EAS는 주로 2번(β) 위치에서 일어난다.	X → 1번(α) 위치.	a14T.webp	265
+[EAS 위치선택성] quinoline의 EAS는 질소가 있는 고리의 3번 위치에서 주로 일어난다.	X → 피리딘 고리는 벤젠보다 반응성이 작아, 벤젠 고리(5·8번)에서 일어난다.	a14T.webp	265	f-fused.svg
+[EAS 위치선택성] indole과 benzothiophene의 EAS는 3번 위치에서 일어난다.	O	a14T.webp	265	f-fused.svg
+[EAS 위치선택성] benzofuran의 EAS는 indole처럼 3번 위치에서 일어난다.	X → benzofuran은 예외로 2번(필기 '예외').	a14T.webp	265	f-fused.svg
+[EAS 위치선택성] pyrrole·furan·thiophene의 EAS는 모두 2번 위치에서 일어난다.	O	a14T.webp	265	f-hetero5.svg
+[EAS 위치선택성] pyridine의 EAS는 질소의 meta(3번) 위치로 일어난다.	O	a14B.webp	265
+[SNAr] SNAr은 강한 친핵체만 사용할 수 있으며, 속도식은 Rate = k[Sub]이다.	X → Rate = k[Sub][Nu](2차), 강·약 친핵체 모두 사용 가능.	a14B.webp	265
+[SNAr] SNAr은 이탈기의 ortho·para에 강한 EWG가 있을수록 빠르다.	O → 음이온 중간체 안정화. 2,4,6-trinitrochlorobenzene + OH⁻ → picric acid.	a14B.webp	265
+[SNAr] SNAr에서 할로젠 이탈기의 반응성은 I > Br > Cl > F 순이다.	X → F > Cl > Br > I(F 312 : Cl 1.0 : Br 0.8 : I 0.4). 음이온 안정화 효과.	a14B.webp	265
+[SNAr] 그림의 화합물을 NaOCH₃/CH₃OH로 처리하면 2-methoxypyridine이 생긴다.	O → N으로부터 ortho·para 자리에서 SNAr(필기).	a14B.webp	265	f-clpy.svg
+[SNAr] Chichibabin 반응은 할로젠이 있는 pyridine에서만 일어난다.	X → 할로젠이 없어도 SNAr 가능 — pyridine + NaNH₂ → 2-aminopyridine.	a15T.webp	265
+[SNAr] Chichibabin 반응에서 NH₂⁻는 전자가 가장 부족한 2번 탄소를 공격하고, 떨어져 나온 H⁻가 H₂를 만든다.	O → 추진력: 방향족성 회복, H₂ 기체 생성(엔트로피 증가).	a15T.webp	265
+[벤자인] o-chlorotoluene을 NaNH₂/NH₃로 처리하면 m-toluidine(55%)이 o-toluidine(45%)보다 많이 생긴다.	O → 입체장애로 Nu가 메틸에서 먼 쪽(meta)을 공격(필기 'steric이 더 중요').	a15B.webp	266
+[벤자인] p-chlorotoluene을 NaNH₂/NH₃로 처리하면 p-toluidine이 주생성물이다.	X → m-toluidine 62% : p 38%. 벤자인을 거치므로 meta도 생긴다.	a15B.webp	266
+[벤자인] 벤자인에서 치환기에 의한 음이온 안정성은 유도효과만 고려한다.	O → 필기. 벤자인의 sp² 오비탈은 고리 π계와 수직이라 공명 ✕.	a15B.webp	266
+[벤자인] ¹⁴C로 표지한 chlorobenzene을 NaNH₂/NH₃(−33 ℃)로 처리하면 NH₂는 표지 탄소에만 붙는다.	X → 벤자인 중간체 → 표지 탄소와 그 이웃 탄소에 약 반반씩 붙는다.	a16T.webp	266
+[벤자인] 벤자인 형성에서 할로젠 반응성은 F < Cl < Br 순이며, 이탈기의 o·p 자리에 강한 EWG가 없어야 한다.	O → 강한 염기(B⁻) 사용, 중간체 = 벤자인. SNAr(F > Cl)과 반대.	a16T.webp	266
+[벤자인] 그림의 화합물을 NaNH₂/NH₃로 처리하면 CF₃의 ortho에 NH₂가 붙은 생성물이 주로 생긴다.	X → meta가 주생성물(3-trifluoromethylaniline). CF₃의 유도효과로 음전하가 CF₃ 쪽 탄소에 놓일 때 안정 → Nu는 먼 탄소 공격.	a16T.webp	266	f-cf3cl.svg
+[벤자인] bromobenzene을 NH₂⁻/NH₃(l)로 처리할 때 furan을 넣으면, 벤자인(친다이엔체)과 furan(다이엔)의 Diels–Alder 생성물이 얻어진다.	O → 벤자인 존재의 증거.	a16B.webp	266
+[벤자인] benzenediazonium-2-carboxylate에서 CO₂와 N₂가 빠지면 벤자인이 생긴다.	O	a16B.webp	266
+[벤자인] o-bromofluorobenzene을 Mg/THF로 처리하면 F가 먼저 Mg와 반응해 Grignard 시약이 된다.	X → Br이 MgBr이 되고(F는 반응 ✕) F⁻가 빠지며 벤자인이 생긴다.	a16B.webp	266
+[결사슬 산화·Birch] 그림 (A)와 (B)를 KMnO₄ 후 H₃O⁺로 처리하면 둘 다 benzoic acid가 생긴다.	X → (B) isopropylbenzene만 benzoic acid. (A) tert-butylbenzene은 벤질 H가 없어 반응 ✕.	a17T.webp	267	f-tbu.svg
+[결사슬 산화·Birch] ethyl·propyl·butylbenzene을 KMnO₄로 산화하면 사슬 길이와 관계없이 모두 benzoic acid가 된다.	O → 벤질 H가 1개 이상이면 된다.	a17T.webp	267
+[결사슬 산화·Birch] 1-phenylethanol을 Na₂Cr₂O₇ 또는 KMnO₄로 산화하면 acetophenone이 주생성물이다.	X → 알코올 산화와 결사슬 산화가 모두 가능하면 결사슬 산화가 우세 → benzoic acid. acetophenone은 PCC·PDC·DMP·CrO₃(필기).	a17T.webp	267
+[결사슬 산화·Birch] Birch 환원(Na, NH₃, EtOH)은 벤젠을 1,4-cyclohexadiene으로 만들며, 중간체 음이온의 안정성을 고려하는 속도론적 조절 반응이다.	O	a17B.webp	267
+[결사슬 산화·Birch] Birch 환원에서 EDG는 sp³ 탄소(환원된 탄소)에 남고, EWG는 이중결합 탄소에 남는다.	X → 반대. EDG는 이중결합 탄소(EDG가 붙은 C에 음전하 ✕), EWG는 sp³ 탄소(음전하 안정화 위치가 환원됨)에 남는다.	a17B.webp	267
