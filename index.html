@@ -378,7 +378,7 @@ h2{font-size:1.1rem;margin:12px 0 0}
    · 문제 그림: 정답 전에 보여 줄 필기 없는 그림(같은 img 폴더). 고정 ID: 문장을 고쳐도 기록이 이어지게 예전 ID를 적어 둠
    채점 기록은 '문제 문장'에 붙어 저장되므로 문항을 중간에 넣거나 빼거나 순서를 바꿔도 기록이 유지됩니다.
    (문제 문장 자체를 고치면 그 한 문항만 새 문항으로 취급) 문항 파일을 고친 뒤에는 DATA_V를 올리고 version.txt도 같은 값으로 바꿔 주세요. */
-var DATA_V = '20261109c';
+var DATA_V = '20261113a';
 /* 새 버전 자동 반영: version.txt(캐시 없이 확인)가 이 페이지의 DATA_V와 다르면 한 번만 새로고침 */
 (function(){
   try {
@@ -408,7 +408,8 @@ var CATALOG = [
     { id:'ocalkene', name:'Alkene & Alkyne', desc:'불포화도·명명법·물성, 알켄·다이엔 안정성(하이퍼컨쥬게이션), 알켄 제법(E1·E2·Lindlar·Li/NH₃·Wittig·Hofmann), HX 첨가·자리옮김·라디칼 첨가, 할로젠화·할로하이드린·수화·옥시수은화·수소화붕소, 카벤·유사카벤·에폭시화·다이올·가오존분해·산화성분해, 다이엔 1,2/1,4-첨가, Alkyne 제법·HX/할로젠 첨가·수화·수소화붕소·케토-엔올 토토머화·환원·산화성분해·알킬화까지 (구조식 그림 포함)', src:'ocalkene/questions.txt', img:'ocalkene/img/', key:'quiz-org-ocalkene', pageLabel:false },
     { id:'ocperi', name:'고리협동반응', desc:'고리첨가·전자고리화·시그마트로픽 개요, Diels-Alder(s-cis·다이엔 반응성·cycloalkadiene·dimer/retro), 치환기 효과·입체배열 보존·endo/exo, 비대칭 Diels-Alder(1,2/1,4 생성물), Woodward-Hoffmann 규칙과 con/dis 고리화, Cope·Oxy-Cope 자리옮김까지 (구조식 그림 포함)', src:'ocperi/questions.txt', img:'ocperi/img/', key:'quiz-org-ocperi', pageLabel:false },
     { id:'ocstereo', name:'입체화학', desc:'이성질체 분류·카이랄/대칭면·카이랄 중심, R/S와 Fischer 투영식(180°·90° 회전), 광학활성·고유광회전도·%ee, 부분입체이성질체·메조·라세미, 카이랄 판단(알렌·biphenyl·spirane·trans-cycloalkene), 분할과 카이랄 크로마토그래피, 선구 카이랄(Re/Si·pro-R/S), 아민 반전, CAR·TAM까지', src:'ocstereo/questions.txt', img:'ocstereo/img/', key:'quiz-org-ocstereo', pageLabel:false },
-    { id:'ocarom', name:'방향족 화합물', desc:'벤젠 유도체 명명법·o/m/p, Hückel 규칙과 방향족·반방향족·비방향족(cyclopropenyl, cyclopentadienyl, tropylium, cyclobutadiene, COT, [10]annulene, azulene), 헤테로고리(pyrrole, furan, thiophene, pyridine, imidazole) 쌍극자·염기성·반응성, EAS(할로젠화, 니트로화, 설폰화, 지향성 차단, Friedel–Crafts 한계, 카보닐 환원), 치환기 효과와 이치환 벤젠 지향성, 아닐린 보호(아세틸화), 융합 고리 EAS 위치, SNAr·Chichibabin, 벤자인, 결사슬 산화, Birch 환원까지 (ACE 유기화학 V. Aromatic compounds 254~267쪽, 구조식 그림 포함)', src:'ocarom/questions.txt', img:'ocarom/img/', key:'quiz-org-ocarom', pageLabel:false }
+    { id:'ocarom', name:'방향족 화합물', desc:'벤젠 유도체 명명법·o/m/p, Hückel 규칙과 방향족·반방향족·비방향족(cyclopropenyl, cyclopentadienyl, tropylium, cyclobutadiene, COT, [10]annulene, azulene), 헤테로고리(pyrrole, furan, thiophene, pyridine, imidazole) 쌍극자·염기성·반응성, EAS(할로젠화, 니트로화, 설폰화, 지향성 차단, Friedel–Crafts 한계, 카보닐 환원), 치환기 효과와 이치환 벤젠 지향성, 아닐린 보호(아세틸화), 융합 고리 EAS 위치, SNAr·Chichibabin, 벤자인, 결사슬 산화, Birch 환원까지 (ACE 유기화학 V. Aromatic compounds 254~267쪽, 구조식 그림 포함)', src:'ocarom/questions.txt', img:'ocarom/img/', key:'quiz-org-ocarom', pageLabel:false },
+    { id:'ocalc', name:'알코올과 에테르', desc:'알코올 끓는점·용해도·명명법, 페놀 산성도(치환기·위치·할로젠·입체장애·용매 효과), 알코올 제법(수화, 옥시수은화, 수소화붕소, syn/anti-diol, 카보닐 환원), 환원제(NaBH₄, LiAlH₄, DIBAH, NaH), 산화(PCC, Jones), HX·Lucas·SOCl₂·PBr₃·설포네이트·POCl₃ 반응, Pinacol, Kolbe–Schmitt, 아스피린, Grignard·알킬리튬·Gilman 시약과 보호기, 에테르 명명법·제법(Williamson, 알콕시수은화)·산성 분해, Claisen 자리옮김, 에폭사이드 제법(mCPBA, 할로하이드린, Sharpless)·고리열림, 크라운 에테르까지 (ACE 유기화학 VI. Alcohol & Ether 270~280·483~485쪽 + 필기, 구조식 그림 포함)', src:'ocalc/questions.txt', img:'ocalc/img/', key:'quiz-org-ocalc', pageLabel:false }
   ]},
   { id:'note', name:'문제집 오답💯', color:'note', groups:[{ id:'nbio', g:'bio', name:'생물 오답🧬', color:'bio' }, { id:'norg', g:'org', name:'유기 오답⚗️', color:'org' }], topics:[
     { id:'membrane', name:'세포신호전달', desc:'막 비대칭·막수송·K⁺ 채널부터 GPCR·Ca²⁺·RTK-MAPK·mTOR 신호, 측분비·성장인자, CDK 조절, 세포자살·Ced·카스파아제까지 (4장 기출 문제집 + MDP + 6장 OX review)', src:'membrane/questions.txt', img:'membrane/img/', key:'quiz-bio-membrane', pageLabel:false, capLabel:'원본 문항' },

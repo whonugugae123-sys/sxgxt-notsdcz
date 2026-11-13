@@ -1,0 +1,103 @@
+[성질·명명법] 이성질체 알코올의 끓는점은 1차 ROH > 2차 ROH > 3차 ROH 순이다.	O → 입체장애가 작아 수소결합이 더 잘 된다(필기). 아민도 1차 > 2차 > 3차.	c01T.webp	270
+[성질·명명법] 분자량이 비슷하면 아민이 알코올보다 끓는점이 높다.	X → Alcohol > Amine. O–H가 N–H보다 강한 수소결합(필기).	c01T.webp	270
+[성질·명명법] 분자량이 비슷하면 카복실산이 아마이드보다 끓는점이 높다.	X → Carboxylic acid < Amide. 아마이드는 쌍극자 모멘트가 크다(필기).	c01T.webp	270
+[성질·명명법] 알코올은 OH가 친수성이므로 탄소 수가 6개 이상이어도 물에 잘 녹는다.	X → C1~C5 ROH는 녹지만 C6 이상은 녹지 않는다. 탄소수가 늘수록 소수성 부분이 커진다(필기 그래프).	c01T.webp	270
+[성질·명명법] 이성질체 알코올의 물에 대한 용해도는 1차 ROH > 2차 ROH > 3차 ROH 순이다.	X → 1차 < 2차 < 3차. 둥글고 작은 3차는 물분자가 둘러싸기 쉽다(필기).	c01T.webp	270
+[성질·명명법] 알코올은 OH를 포함하는 가장 긴 탄소사슬을 모체로 하고, OH가 붙은 탄소의 번호가 작아지게 번호를 매긴다.	O → 접미사 -e를 -ol로 바꾼다.	c01B.webp	270
+[성질·명명법] OH가 두 개인 화합물은 alkane의 마지막 -e를 지우고 -diol을 붙인다(예: hexandiol).	X → -e를 지우지 않는다(hexane-1,6-diol). 다음 글자 -d가 모음이 아니기 때문.	c01B.webp	270
+[산성도] 페놀에 EWG가 붙으면 산성도가 커지고(pKa < 10), EDG가 붙으면 산성도가 작아진다(pKa > 10).	O → 공명 + 유도효과(필기).	c02F.webp	270
+[산성도] 할로젠 치환 페놀에서 할로젠이 OH에 가까울수록 산성도가 커져 Ka는 o-F > m-F > p-F 순이다.	O → OH에 가까울수록 X의 유도효과 증가(필기).	c02F.webp	270	f-fphenol.svg
+[산성도] p-fluorophenol은 p-chlorophenol보다 산성이 크다.	X → p-F < p-Cl. 방향족 고리의 X는 공명(전자 주기)도 고려 → EWG: F < Cl < Br < I(필기). ⚠ 필기와 다름: 필기에는 p-Br < p-F로 적혀 있으나, 실제 pKa는 p-Br(9.37) ≈ p-Cl(9.38) < p-F(9.89)로 p-Br이 p-F보다 산성이 크다.	c02F.webp	270
+[산성도] 지방족 할로젠화물(R–X)에서 EWG 능력은 F > Cl > Br > I 순이다.	O → 유도효과만 작용(필기). 방향족(Ar–X)은 공명 때문에 반대 경향.	c02F.webp	270
+[산성도] 그림 A는 NO₂ 양옆의 tBu 때문에 NO₂가 회전해 고리와 공명하지 못하므로 B보다 산성도가 작다.	O → A: p 오비탈 겹침 ✕ → 공명 ✕. B: 공명 + 유도로 페녹사이드 안정(필기).	c02F.webp	270	f-nitro.svg
+[산성도] 에탄올의 산성도는 양성자성 용매(H₂O)에서보다 비양성자성 용매(DMSO)에서 더 크다.	X → H₂O(protic)에서 더 크다. 양성자성 용매가 수소결합으로 알콕사이드를 안정화(필기).	c02F.webp	270
+[알코올 제법] 알켄의 산촉매 수화반응은 안티-마르코브니코프 규칙을 따른다.	X → 마르코브니코프(탄소양이온 중간체). H⁺ 촉매: H₂SO₄, H₃PO₄, TsOH, MsOH, TfOH. 안티-마르코브니코프는 수소화붕소 첨가/산화.	c03T.webp	271
+[알코올 제법] 옥시수은화/환원 반응은 탄소양이온 중간체를 거치므로 자리옮김이 일어난다.	X → 고리 중간체(수은 이온)를 거치는 SN1-type이라 자리옮김이 없다. 마르코브니코프 규칙.	c03T.webp	271
+[알코올 제법] 수소화붕소 첨가/산화반응은 안티-마르코브니코프, syn-첨가이며 고리 전이상태를 거친다.	O → Alkene : BH₃ = 3 : 1, 입체장애가 적은 알켄일수록 반응성↑.	c03T.webp	271
+[알코올 제법] 1-methylcyclohexene을 BH₃ 후 H₂O₂/NaOH로 처리하면 1-methylcyclohexanol이 생긴다.	X → 안티-마르코브니코프 + syn → trans-2-methylcyclohexanol(+ 거울상).	c03T.webp	271
+[알코올 제법] OsO₄/NaHSO₃와 차가운 KMnO₄/OH⁻는 모두 고리 중간체를 거쳐 syn-diol을 만든다.	O → 전자가 풍부한 알켄일수록 반응성↑(분홍 박스).	c03B.webp	271
+[알코올 제법] 차가운 KMnO₄/OH⁻로 알켄을 처리하면 anti-diol이 생긴다.	X → syn-diol. anti-diol은 에폭사이드 가수분해로 얻는다.	c03B.webp	271
+[알코올 제법] 에폭사이드를 염기 조건(NaOH/H₂O)에서 가수분해하면 입체장애가 작은 탄소를 공격하는 SN2-type으로 anti-diol이 생긴다.	O	c03B.webp	271
+[알코올 제법] 에폭사이드의 산 조건 가수분해는 전이상태 안정성을 고려한 SN1-type이며 syn-diol을 만든다.	X → 산 조건도 anti-첨가 → anti-diol(1,2-diol, 라세미).	c04T.webp	272
+[환원제] 카복실산은 LiAlH₄로 1차 알코올까지 환원된다.	O → NaBH₄는 카복실산과 반응하지 않는다.	c04T.webp	272
+[환원제] 카복실산 유도체의 환원 반응성은 에스터 > 산 무수물 > 아실 할라이드 순이다.	X → 아실 할라이드 > 산 무수물 > 에스터.	c04T.webp	272
+[환원제] methyl acetate를 LiAlH₄로 환원하면 에탄올과 메탄올이 생긴다.	O → 에스터 → 알코올 두 개. 산 무수물 → 같은 알코올 2분자.	c04T.webp	272
+[환원제] 카보닐의 환원 반응성은 케톤 > 알데하이드이다.	X → 알데하이드 > 케톤. 둘 다 LiAlH₄·NaBH₄로 환원(폼알데하이드 → 메탄올, 알데하이드 → 1차, 케톤 → 2차 알코올).	c04B.webp	272
+[환원제] NaBH₄는 알코올(ROH) 용매에서 사용할 수 있고, H⁻를 주는 친핵체로만 작용한다.	O → 과량 취급(필기).	c07F.webp	272
+[환원제] LiAlH₄는 강한 환원제로 친핵체이자 염기이므로 무수 ether 용매에서 사용한다.	O → 물·알코올과 격렬히 반응.	c07F.webp	272
+[환원제] NaH·KH는 H⁻를 주는 강한 친핵체로 카보닐을 환원한다.	X → NaH·KH는 염기(B)로만 작용한다(필기). Williamson 합성에서 알코올 탈양성자화에 쓴다.	c07F.webp	272
+[산화] 1차 알코올을 PCC, PDC, DMP로 산화하면 알데하이드에서 멈춘다.	O → KMnO₄·Na₂Cr₂O₇·CrO₃(Jones)는 카복실산까지 산화.	c06T.webp	274
+[산화] Jones 시약(CrO₃, H₂CrO₄)으로 1차 알코올을 산화하면 알데하이드에서 멈춘다.	X → 카복실산까지 산화. 알데하이드에서 멈추는 것은 PCC·PDC·DMP.	c06T.webp	274
+[산화] 1차 알코올은 α-수소가 2개라서 두 번 산화될 수 있고, 2차 알코올은 1개라서 한 번만 산화된다.	O → 2차 ROH → 케톤(필기).	c06T.webp	274
+[산화] 3차 알코올은 KMnO₄로 산화하면 케톤이 된다.	X → 3차 ROH는 α-수소가 없어 산화되지 않는다.	c06T.webp	274
+[산화] NaBH₄는 카복실산을 1차 알코올로 환원할 수 있다.	X → NaBH₄는 카복실산과 반응 ✕. 산화상태 +3인 카복실산은 LiAlH₄가 필요(필기).	c06T.webp	274
+[알코올 반응] Lucas 시약(HCl/ZnCl₂)에서 ZnCl₂는 HCl의 반응성을 높이기 위한 Lewis 산 촉매이다.	O → 필기.	c06B.webp	274
+[알코올 반응] Lucas test는 반응 속도를 이용해 알코올이 몇 차인지 판단하는 시험이다.	O → 3차 ROH가 가장 빠르다(1°ROH < 2°ROH < 3°ROH).	c08B.webp	275
+[알코올 반응] HCl/ZnCl₂와 반응할 때 1차 알코올은 SN1, 2차·3차 알코올은 SN2로 반응한다.	X → 1차 = SN2, 2차·3차 = SN1.	c08B.webp	275
+[알코올 반응] 알코올과 HX의 반응성은 1차 ROH < 2차 ROH < 3차 ROH이고, 할로젠화 수소의 반응성은 HF ≪ HCl < HBr < HI이다.	O → 1차·2차는 반응성을 위해 가열.	c06B.webp	274
+[알코올 반응] 1-butanol을 NaBr/H₂SO₄로 처리하면 그 자리에서 HBr이 만들어져 1-bromobutane이 생긴다.	O → HX 제법: NaCl + H₂SO₄ → HCl, NaBr + H₂SO₄ → HBr, KI + H₃PO₄ → HI.	c08T.webp	275
+[알코올 반응] SOCl₂/pyridine과 PBr₃는 1차·2차 알코올을 SN2로 할로젠화하며, 반응성은 1차 > 2차이다.	O → 키랄 중심의 배열이 반전된다(분홍 박스).	c08T.webp	275
+[알코올 반응] (R)-1-deuterioethanol을 SOCl₂/pyridine으로 처리하면 배열이 보존된 염화물이 생긴다.	X → SN2 → 배열 반전.	c08T.webp	275
+[알코올 반응] MsCl·TsCl·TfCl/pyridine으로 설폰산 에스터를 만들면 키랄 탄소의 입체배열이 보존된다.	O → C–O 결합은 끊어지지 않고 O가 S를 공격. 반응성 1차 > 2차 > 3차(입체장애).	c09T.webp	276
+[알코올 반응] 알코올을 TsCl과 반응시킬 때 반응성은 3차 ROH > 2차 > 1차 순이다.	X → 1차 > 2차 > 3차. ROH가 S를 공격하므로 입체장애가 작을수록 빠르다(필기 steric).	c08B.webp	275
+[알코올 반응] POCl₃/pyridine은 알코올을 E2로 탈수시켜 알켄을 만들며, 반응성은 2차 ROH < 3차 ROH이다.	O → H⁺, Δ 조건은 E1(분홍 박스).	c09T.webp	276
+[알코올 반응] POCl₃/pyridine에 의한 알코올 탈수는 E1 반응이라 자리옮김이 잘 일어난다.	X → E2(필기 동그라미). E1은 H⁺, Δ 조건.	c09T.webp	276
+[알코올 반응] 3차 알코올을 SOCl₂/pyridine으로 처리하면 E2로 알켄이 생긴다.	O → 필기: SOCl₂, py → E2 → Alkene.	c06B.webp	274
+[알코올 반응] pinacol을 H₂SO₄로 처리하면 탄소양이온을 거쳐 메틸이 이동해 pinacolone(케톤)이 생긴다.	O → 자리옮김 추진력: 산소의 octet 만족(옥소카베늄). 반응성 1차 < 2차 < 3차 ROH.	c11T.webp	277	f-pinacol.svg
+[알코올 반응] Pinacol 자리옮김에서 메틸이 이동하는 추진력은 더 많이 치환된 알켄이 생기기 때문이다.	X → 산소 양이온(옥소카베늄)이 octet을 만족해 안정해지기 때문.	c11T.webp	277
+[페놀 반응] 벤젠설폰산을 NaOH와 300 ℃에서 알칼리 융해하면 페놀이 생긴다.	O → 그 밖의 페놀 제법: 클로로벤젠 + NaOH(벤자인), 다이아조늄염 + H₂O.	c05B.webp	273
+[페놀 반응] Kolbe–Schmitt 반응에서는 페녹사이드가 CO₂를 공격해 para 위치에 COOH가 들어간 생성물이 주로 생긴다.	X → ortho → 2-hydroxybenzoic acid(살리실산). 마지막에 토토머화로 엔올(방향족) 회복.	c09B.webp	276
+[페놀 반응] Kolbe–Schmitt 반응 마지막 단계에서는 keto보다 enol(방향족)이 우세해 토토머화가 일어난다.	O → 염기: NaOH, Na 등.	c09B.webp	276
+[페놀 반응] Fischer 에스터화는 비가역 반응이라 물을 제거할 필요가 없다.	X → 가역 반응(탈수축합) — Dean–Stark trap으로 물을 제거해 평형을 생성물 쪽으로 이동.	c09B.webp	276
+[페놀 반응] 살리실산을 메탄올·산 촉매와 반응시키면 아스피린(acetylsalicylic acid)이 생긴다.	X → COOH가 에스터화되어 methyl salicylate가 생긴다. 아스피린은 페놀 OH가 아세틸화된 것(아세트산 무수물 사용).	c10F.webp	276
+[페놀 반응] 살리실산을 아세트산 무수물과 반응시키면 아스피린과 아세트산이 생긴다.	O → 산무수물/pyridine도 가능(필기 기타 방법).	c10F.webp	276
+[유기금속] Grignard 시약을 만들 때 할로젠화물의 반응성은 Cl > Br > I 순이다.	X → Cl < Br < I. 결합력이 약할수록 균일분해가 쉽다(필기).	c11B.webp	277
+[유기금속] Grignard 시약은 물이나 알코올 용매에서도 만들 수 있다.	X → 무수 용매만 가능 — 물·알코올과 산-염기 반응으로 파괴된다(필기 '산염기반응 ✕').	c11B.webp	277
+[유기금속] Grignard 시약과 알킬리튬 시약은 친핵체이자 강한 염기로 작용한다.	O → Gilman 시약은 친핵체로만 작용.	c11B.webp	277
+[유기금속] Gilman 시약(R₂CuLi)은 알킬리튬 2당량과 CuI를 무수 ether에서 반응시켜 만든다.	O	c11B.webp	277
+[유기금속] 분자 안에 –OH, –NH₂, –COOH, –SH, 말단 알카인 같은 산성 수소가 있으면 Grignard 시약이 염기로 작용해 파괴된다.	O → 알데하이드·케톤·에스터·NO₂·CN·에폭사이드가 있으면 RMgX가 친핵체로 작용(필기).	c11B.webp	277
+[유기금속] Grignard 시약은 카복실산과 반응해 3차 알코올을 만든다.	X → 카복실산과는 산-염기 반응만 하고 첨가 ✕(필기). 에스터와는 반응 → 3차 알코올.	c12T.webp	278
+[유기금속] 알코올을 TMSCl·TBDMSCl로 보호한 뒤 Grignard 반응을 하고, H₃O⁺나 TBAF(Bu₄N⁺F⁻)로 탈보호한다.	O → 보호 반응성 1차 > 2차 > 3차 ROH.	c12T.webp	278
+[유기금속] 폼알데하이드에 MeMgBr을 반응시킨 뒤 H₃O⁺로 처리하면 2차 알코올이 생긴다.	X → 1차 알코올(에탄올). 알데하이드 → 2차, 케톤 → 3차 알코올.	c12T.webp	278
+[유기금속] 아실 할라이드·산 무수물·에스터는 Grignard 시약 2당량과 반응해 3차 알코올을 만든다.	O → 반응성 아실 할라이드 > 산 무수물 > 에스터.	c05T.webp	273
+[유기금속] Grignard 시약은 에폭사이드의 더 많이 치환된 탄소를 공격한다.	X → 덜 치환된 탄소를 위치선택적으로 공격(필기).	c12T.webp	278
+[유기금속] Grignard 시약을 CO₂와 반응시킨 뒤 H₃O⁺로 처리하면 카복실산이 생긴다.	O	c12T.webp	278
+[유기금속] Grignard 시약은 α,β-불포화 카보닐과 반응할 때 주로 1,2-첨가를 한다.	O → Gilman 시약은 1,4-첨가.	c12T.webp	278
+[유기금속] Grignard 시약(sec-butylMgBr)을 D₂O로 처리하면 C–D 결합이 생긴다.	O → Grignard는 염기로 작용해 D⁺를 받는다.	c12T.webp	278
+[유기금속] Gilman 시약은 알데하이드·케톤과 반응해 알코올을 만든다.	X → 알데하이드·케톤과 반응 ✕. 카보닐 중 유일하게 아실 할라이드와만 반응해 케톤(분홍 박스).	c12B.webp	278
+[유기금속] Gilman 시약이 vinyl halide와 치환반응하면 이중결합의 입체배열이 뒤집힌다.	X → 반응 전후 입체배열이 유지된다(필기). alkyl·vinyl·aryl 할라이드와 치환반응해 새 C–C 결합.	c12B.webp	278
+[유기금속] Gilman 시약은 cyclohexenone 같은 α,β-불포화 카보닐에 1,2-첨가한다.	X → 1,4-첨가(약염기·친핵체, 필기).	c12B.webp	278
+[유기금속] Gilman 시약은 에폭사이드의 덜 치환된 탄소를 공격한다.	O	c12B.webp	278
+[에테르] 에테르의 관용명은 알킬기를 알파벳 순서로 나열하고 'ether'를 붙인다(예: tert-butyl methyl ether).	O → IUPAC명은 OR을 alkoxy로(2-methoxy-2-methylpropane).	c13T.webp	279
+[에테르] oxolane은 tetrahydropyran(THP), oxane은 tetrahydrofuran(THF)의 다른 이름이다.	X → oxolane = THF(5원자), oxane = THP(6원자). oxirane = ethylene oxide, oxetane = 4원자.	c13T.webp	279
+[에테르] 1차 알코올 2분자를 H₂SO₄와 130 ℃로 가열해 대칭 에테르를 만드는 반응은 SN1으로 진행한다.	X → SN2(1차 ROH, 형광펜).	c13B.webp	279
+[에테르] 그림의 1,5-pentanediol을 H₂SO₄로 처리하면 분자 내 SN2로 tetrahydropyran이 생긴다.	O → 한쪽 OH가 양성자화되어 H₂O가 이탈, 다른 OH가 공격(필기 Mechanism).	c13B.webp	279	f-diol.svg
+[에테르] Williamson 에테르 합성은 SN2 반응이므로 알킬 할라이드로 CH₃X나 1차 RX를 쓴다.	O → 염기: NaH, NaOH, Na, K, RMgX(필기 추가).	c14T.webp	280
+[에테르] Williamson 에테르 합성에서 3차 할로젠화 알킬을 쓰면 3차 에테르가 잘 생긴다.	X → 3차 RX는 SN2가 안 되고 E2(제거)가 일어난다. CH₃X·1차 RX만 사용.	c14T.webp	280
+[에테르] 에탄올에 Na 금속을 넣으면 sodium ethoxide와 H₂ 기체가 생긴다.	O	c14T.webp	280
+[에테르] 알콕시수은화/환원 반응은 마르코브니코프 규칙을 따르며 1차·2차·3차 알코올을 모두 쓸 수 있다.	O → 반응성 Hg(OAc)₂ < Hg(OCOCF₃)₂. cyclohexene + Hg(O₂CCF₃)₂/t-BuOH → tert-butyl cyclohexyl ether(98%).	c14B.webp	280
+[에테르] 알콕시수은화 반응에서 Hg(OAc)₂가 Hg(OCOCF₃)₂보다 반응성이 크다.	X → Hg(OAc)₂ < Hg(OCOCF₃)₂. CF₃의 EWG 효과로 수은이 더 친전자성.	c14B.webp	280
+[에테르] 산소에 3차, 2차 알릴, 2차 벤질 탄소가 직접 결합한 에테르는 HX에 의해 SN1로 분해된다.	O → 그런 탄소가 없으면 SN2. HX 반응성 HCl ≪ HBr < HI.	c14B.webp	280
+[에테르] 그림 A(isopropyl ethyl ether)를 HBr로 분해하면 Br⁻가 isopropyl 탄소를 공격해 2-bromopropane과 에탄올이 생긴다.	X → SN2 → 입체장애가 작은 에틸 탄소 공격 → 2-propanol + bromoethane.	c14B.webp	280	f-ethers.svg
+[에테르] 그림 B(tert-butyl ethyl ether)를 HBr로 분해하면 SN1으로 tert-butyl bromide와 에탄올이 생긴다.	O → 3차 탄소양이온이 생기는 쪽이 끊어진다.	c14B.webp	280	f-ethers.svg
+[에테르] allyl phenyl ether를 250 ℃로 가열하면 [3,3]-시그마트로픽 Claisen 자리옮김으로 o-allylphenol이 생긴다.	O → 협동반응, 고리 TS, 토토머화(keto보다 enol 우세).	c15T.webp	483	f-claisen.svg
+[에테르] allyl vinyl ether를 가열하면 Claisen 자리옮김으로 α,β-불포화 카보닐 화합물이 생긴다.	X → γ,δ-불포화 카보닐(형광펜).	c15T.webp	483	f-claisen.svg
+[에테르] Claisen 자리옮김은 탄소양이온 중간체를 거치는 단계적 반응이다.	X → 협동반응(concerted), 고리 전이상태.	c15T.webp	483
+[에폭사이드] mCPBA에 의한 에폭시화는 syn-첨가이며, 전자가 풍부한 알켄일수록 반응성이 크다.	O → 고리 TS. RCO₃H: mCPBA, MMPP(magnesium monoperoxyphthalate).	c15T.webp	483
+[에폭사이드] mCPBA로 에폭시화하면 알켄의 cis/trans 배열이 뒤바뀐다.	X → syn-첨가, 고리 TS → 입체배열 보존.	c15T.webp	483
+[에폭사이드] 할로하이드린을 염기로 처리하면 분자내 SN2(분자내 Williamson)로 에폭사이드가 생기며, O⁻와 이탈기가 anti여야 한다.	O → 염기: Na, NaNH₂, NaOH, NaH.	c15B.webp	483
+[에폭사이드] 한 분자 안에서는 친핵성 치환반응이 산염기 반응보다 빠르다.	X → 산염기 반응 > 친핵성 치환반응. 이유: ΔS(필기). 그래서 먼저 O⁻가 생긴 뒤 분자내 SN2가 일어난다.	c15B.webp	483
+[에폭사이드] 분자내 Williamson 반응의 고리 형성 속도는 k₃ ≥ k₅ > k₆ > k₄ ≥ k₇ 순이다.	O → 원래는 5각 > 6각 > … > 3각이지만 분자내 Williamson에서는 3원자 고리가 가장 빠르다(필기).	c15B.webp	483
+[에폭사이드] Sharpless 에폭시화는 알릴 알코올에만 적용되는 거울상선택성 반응이다.	O → 시약: ᵗBuOOH, Ti(OⁱPr)₄, (+) 또는 (−)-DET. OH를 12시~3시 방향에 두고 산소 첨가 위치를 결정.	c15B.webp	483
+[에폭사이드] Sharpless 에폭시화에서 (+)-DET를 쓰면 평면 위에서, (−)-DET를 쓰면 평면 아래에서 산소가 첨가된다.	X → 반대. (−)-DET = 평면 위, (+)-DET = 평면 아래(TIP).	c16T.webp	484
+[에폭사이드] 강친핵체(⁻OH, ⁻OR, ⁻NH₂, LiAlH₄, RMgX, R₂CuLi 등)로 에폭사이드를 열면 입체장애가 작은 탄소를 SN2-type으로 공격한다.	O → anti-첨가. NH₃·PH₃도 이 경우에 속한다(형광펜).	c16T.webp	484
+[에폭사이드] 약친핵체로 에폭사이드를 열 때는 촉매가 필요 없다.	X → H⁺(H₂SO₄, TsOH, H₃PO₄, MsOH)나 Lewis 산(BF₃, AlX₃, ZnCl₂, SnCl₄) 촉매가 필요(형광펜).	c16T.webp	484
+[에폭사이드] 산 촉매·약친핵체 조건에서 에폭사이드는 더 많이 치환된 탄소(알릴·벤질 자리)를 SN1-type으로 공격받는다.	O → TS 안정성 고려, anti-첨가.	c16T.webp	484
+[에폭사이드] HX로 에폭사이드를 열 때 3차·2차 알릴·2차 벤질 탄소가 없으면 SN2-type으로 덜 치환된 탄소에 X가 붙는다.	O → 있으면 SN1-type. HX 반응성 HCl ≪ HBr < HI.	c16B.webp	484
+[에폭사이드] cyclohexene oxide를 산 또는 염기 조건에서 가수분해하면 cis-1,2-cyclohexanediol이 생긴다.	X → 두 조건 모두 anti-첨가 → trans-1,2-diol(라세미).	c17F.webp	484
+[에폭사이드] 산 촉매 가수분해에서는 H⁺가 에폭사이드 산소를 양성자화한 뒤 약친핵체 H₂O가 공격한다.	O → 염기 조건은 강친핵체 ⁻OH가 바로 공격(필기 Mech).	c17F.webp	484
+[에폭사이드] 그림의 에폭사이드를 H⁺/MeOH로 처리하면 MeOH는 알릴 자리 탄소를 공격한다.	O → 전이상태가 안정한 알릴 자리(SN1-type), anti(필기 ex).	c17F.webp	484	f-allylep.svg
+[크라운 에테르] 18-crown-6은 K⁺, 15-crown-5는 Na⁺, 12-crown-4는 Li⁺와 잘 결합한다.	O	c18F.webp	485
+[크라운 에테르] 18-crown-6은 Na⁺와 가장 잘 결합하는 크라운 에테르이다.	X → 18-crown-6 = K⁺. Na⁺는 15-crown-5.	c18F.webp	485
+[크라운 에테르] KCN에 18-crown-6을 넣으면 K⁺가 갇힌 착물이 벤젠 같은 비극성 용매에 녹고, 노출된 CN⁻는 더 강한 친핵체가 된다.	O → 상전이 촉매, 친핵성 치환반응 속도 증가(형광펜).	c18F.webp	485
+[크라운 에테르] 크라운 에테르는 음이온을 붙잡아 친핵체의 반응성을 낮춘다.	X → 양이온(K⁺)을 붙잡아 음이온을 '벌거벗은' 상태로 만들어 친핵성을 높인다.	c18F.webp	485
