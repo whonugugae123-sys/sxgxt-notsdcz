@@ -378,7 +378,7 @@ h2{font-size:1.1rem;margin:12px 0 0}
    · 문제 그림: 정답 전에 보여 줄 필기 없는 그림(같은 img 폴더). 고정 ID: 문장을 고쳐도 기록이 이어지게 예전 ID를 적어 둠
    채점 기록은 '문제 문장'에 붙어 저장되므로 문항을 중간에 넣거나 빼거나 순서를 바꿔도 기록이 유지됩니다.
    (문제 문장 자체를 고치면 그 한 문항만 새 문항으로 취급) 문항 파일을 고친 뒤에는 DATA_V를 올리고 version.txt도 같은 값으로 바꿔 주세요. */
-var DATA_V = '20261113a';
+var DATA_V = '20261114a';
 /* 새 버전 자동 반영: version.txt(캐시 없이 확인)가 이 페이지의 DATA_V와 다르면 한 번만 새로고침 */
 (function(){
   try {
@@ -422,6 +422,7 @@ var CATALOG = [
     { id:'genenote', name:'유전자 발현', desc:'1유전자 1효소·영양요구 돌연변이, σ 인자·전사 조절 서열, mRNA 가공·폴리아데닐화 신호, RNA 중합효소 Ⅰ·Ⅱ·Ⅲ, 유전암호·동요, 리보솜 E·P·A 자리, 번역 개시·신장·종결, Ala-tRNA^Cys 실험, 코돈 해석, SRP와 소포체 수송, 돌연변이(침묵·미스센스·넌센스·틀이동, 프로모터 돌연변이, 치환·침묵 지점)까지 (12장 기출 문제집)', src:'genenote/questions.txt', img:'genenote/img/', key:'quiz-bio-genenote', pageLabel:false, capLabel:'원본 문항' },
     { id:'genox', name:'유전자 발현 (OX·N제)', desc:'유전자·프로모터(TATA/Pribnow), sense·antisense, RNA 중합효소·σ 인자·45S rRNA, 전사 종결·AAUAAA, 원핵/진핵 RNA 가공·5′ cap, 리보자임·miRNA, tRNA 구조·아미노아실-tRNA 합성효소, 동요·동의코돈, 번역 개시·GTP·E/P/A 자리, 항생제·디프테리아 독소, 돌연변이(탈아미노화·CpG·미스센스·넌센스·틀이동), 겸상 적혈구까지 (12장 Perfect OX review + 필수 N제)', src:'genox/questions.txt', img:'genox/img/', key:'quiz-bio-genox', pageLabel:false, capLabel:'원본 문항' },
     { id:'respnote', name:'세포호흡', desc:'해당과정 투자기·회수기와 효소(aldolase·mutase·enolase), G1P 3ATP, 피루브산 수송·TCA 비가역 단계·CO₂ 방출 단계·NADH/FADH₂, 전자전달계 복합체 II·IV, ATP/O·셔틀, 저해제 비교, 발효(젖산·알코올)와 코리회로, PFK·PDH 조절, 비타민 B군, 짝풀림·UCP1·호흡률까지 (7장 객관식 기출 문제집)', src:'respnote/questions.txt', img:'respnote/img/', key:'quiz-bio-respnote', pageLabel:false, capLabel:'원본 문항' },
+    { id:'digenote', name:'소화계', desc:'소화 기본(양성 되먹임, 위수강, 대사수, 필수 아미노산), 비타민 B군·K·D, 연동·분절운동, 침·위의 세포(주세포·부세포·내인성 인자·R단백질·키모신), 소장·대장 흡수와 미세융모·윤상주름, 포도당 흡수(Na⁺-K⁺ 펌프·공동수송·GLUT), 지방 소화(킬로미크론·암죽관 경로·담즙 재흡수), 간·이자, 소화 호르몬(가스트린·세크레틴·CCK·소마토스타틴), 악성 빈혈·위 절제, 렙틴·그렐린 식욕 조절까지 (17장 동물의 소화계 객관식 기출 262~271쪽)', src:'digenote/questions.txt', img:'digenote/img/', key:'quiz-bio-digenote', pageLabel:false, capLabel:'원본 문항' },
     { id:'ocnote', g:'org', name:'구조와 결합 (유기화학)', desc:'수화 평형·α-H 산도, 헤테로고리 염기도·Bredt 규칙, 다이엔·이중고리 명명법, 끓는점·녹는점, 쌍극자 모멘트, 결합 길이·세기, 라디칼·탄소양이온, 1,3-다이옥세인 형태, 피롤 쌍극자·명명법·Newman, pKa·아민/아마이드·암페타민·아스파탐·아이오도폼까지 (ACE 유기화학 구조와 결합 · 분홍 박스·동그라미·형광펜 문항, 구조식 그림 포함)', src:'ocnote/questions.txt', img:'ocnote/img/', key:'quiz-org-ocnote', pageLabel:false, capLabel:'원본 문항' },
     { id:'ocalknote', g:'org', name:'알케인과 사이클로알케인', desc:'일치환 사이클로헥세인 ΔE(CH₃·Et·iPr·tBu), 치환기별 ΔE 순서, 분자내 수소결합·NO₂/OH 경쟁, cis/trans 관계와 축·적도방향, 데칼린 접합부 H, 라디칼 할로젠화 선택성·반응성·Hammond 가설·결합 해리 에너지, butane·2-bromobutane 뉴먼 투영, 사이클로뷰테인 구조까지 (ACE 유기화학 알케인과 사이클로알케인 · 틀린 문항·분홍 형광펜·빨간 필기)', src:'ocalknote/questions.txt', img:'ocalknote/img/', key:'quiz-org-ocalknote', pageLabel:false, capLabel:'원본 문항' },
     { id:'ocaknote', g:'org', name:'알켄과 알카인', desc:'TAM(trans+anti=meso)과 syn/anti 첨가 입체화학, 브로모하이드린·에폭사이드 개환·라디칼 첨가 위치선택성, KOtBu·Hofmann 제거, 촉매 수소화 반응성·가수소분해·limonene, 다이엔 1,2/1,4-첨가·Diels-Alder·FMO·전자고리화·Oxy-Cope, 불포화도·C₅H₈ 안정성·공명구조까지 (ACE 유기화학 알켄과 알카인 · 틀린 문항·분홍 형광펜·빨간 필기)', src:'ocaknote/questions.txt', img:'ocaknote/img/', key:'quiz-org-ocaknote', pageLabel:false, capLabel:'원본 문항' },
