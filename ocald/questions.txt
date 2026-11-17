@@ -1,0 +1,52 @@
+[명명법] 알데하이드는 알케인 이름의 −e를 −al로 바꾸며, −CHO 탄소가 항상 1번 탄소이다.	O → Methanal, Ethanal, Propanal.	k01A.webp	286
+[명명법] CHO기가 고리에 결합하면 고리 이름에 접미사 −al을 붙인다(예: cyclohexanal).	X → −carbaldehyde를 붙인다(cyclohexanecarbaldehyde, benzenecarbaldehyde = benzaldehyde).	k01A.webp	286
+[명명법] 케톤은 −e를 −one으로 바꾸며, 번호는 카보닐 탄소에 가까운 말단 탄소부터 매긴다.	O → 예: butan-2-one(ethyl methyl ketone).	k01A.webp	286
+[명명법] 알데하이드와 케톤이 함께 있으면 케톤이 우선 작용기가 되고, 알데하이드는 oxo로 표시한다.	X → 우선순위 aldehyde > ketone. 케톤이 치환기 oxo가 된다(4-oxopentanal, 필기).	k01A.webp	286
+[명명법] but-3-en-2-one의 관용명은 ethyl vinyl ketone이다.	X → methyl vinyl ketone(MVK). 케톤 관용명은 양쪽 알킬기를 알파벳 순으로 + ketone.	k01A.webp	286
+[명명법] 알데하이드의 관용명은 대응하는 카복실산 관용명의 −ic acid(−oic acid)를 −aldehyde로 바꾸어 만든다.	O → 예: acetic acid → acetaldehyde.	k01A.webp	286
+[제법] PCC, PDC, DMP는 1차 알코올을 알데하이드로, 2차 알코올을 케톤으로 산화할 때 사용한다.	O → 필기: DMP는 alcohol → aldehyde·ketone 산화.	k01B.webp	286
+[제법] 2차 알코올을 케톤으로 산화할 때 KMnO₄, Na₂Cr₂O₇, CrO₃는 사용할 수 없다.	X → 2차 ROH → 케톤에는 KMnO₄·Na₂Cr₂O₇·CrO₃도 사용 가능(더 산화될 α-H가 없음).	k01B.webp	286
+[제법] 1-methylcyclohexene을 O₃ 후 Zn/AcOH로 처리하면 케톤과 알데하이드를 모두 가진 사슬 화합물이 생긴다.	O → 가오존분해/환원: syn-첨가, 고리 중간체, 전자가 풍부한 알켄일수록 반응성↑.	k01B.webp	286
+[제법] 3치환 알켄을 KMnO₄, H⁺, Δ로 산화하면 H가 붙은 탄소는 알데하이드가 된다.	X → 카복실산까지 산화된다(필기). 알데하이드에서 멈추려면 O₃ 후 Zn/AcOH(환원 조건).	k01B.webp	286
+[제법] 에스터를 DIBAH 1당량으로 −78 ℃에서 환원하면 알데하이드가 생긴다.	O → 1당량, 저온 조건. 아실 클로라이드도 DIBAH(저온)로 알데하이드.	k01B.webp	286
+[제법] 카복실산을 알데하이드로 환원할 때는 DIBAH를 1당량만 쓴다.	X → 2 DIBAH(저온) — 첫 당량은 산성 H와 반응(필기).	k01B.webp	286
+[제법] Friedel–Crafts 아실화에서 AlCl₃는 1.1당량이 필요하며, 친전자체는 아실륨 양이온이다.	O → acyl halide 또는 acid anhydride + Lewis 산(BF₃도 가능).	k02A.webp	287
+[제법] 말단 알카인을 HgSO₄, H₂SO₄, H₂O로 수화하면 마르코브니코프 규칙에 따라 메틸 케톤이 생긴다.	O → 고리 중간체, keto-enol 토토머화, SN1-type.	k02A.webp	287
+[제법] 말단 알카인 수화에는 Hg(OAc)₂, 알켄의 옥시수은화에는 HgSO₄를 쓴다.	X → 반대. 말단 alkyne 수화 = HgSO₄, alkene 옥시수은화 = Hg(OAc)₂(필기).	k02A.webp	287
+[제법] 말단 알카인을 BH₃ 후 H₂O₂/NaOH로 처리하면 안티-마르코브니코프로 알데하이드가 생긴다.	O → syn-첨가, 고리 TS, keto-enol 토토머화.	k02A.webp	287
+[제법] 말단 알카인의 수소화붕소 첨가/산화 반응에서는 메틸 케톤이 생긴다.	X → 알데하이드(안티-마르코브니코프). 메틸 케톤은 HgSO₄ 수화.	k02A.webp	287
+[제법] Gilman 시약(Me₂CuLi)은 카보닐 화합물 중 아실 할라이드와만 반응해 케톤을 만든다.	O → 필기.	k02B.webp	287
+[제법] 이웃자리 다이올(vicinal diol)을 HIO₄ 또는 NaIO₄로 처리하면 C–C 결합이 끊어져 카보닐 화합물 두 분자가 생긴다.	O → pinacol + HIO₄ → 아세톤 2분자(필기).	k02B.webp	287
+[제법] Pinacol 자리옮김에서 메틸이 이동하는 추진력은 탄소양이온이 1차에서 3차로 바뀌기 때문이다.	X → 산소 양이온(옥소카베늄)의 octet 만족. 반응성 1차 < 2차 < 3차 ROH, 중간체 C⁺.	k02B.webp	287
+[제법] benzonitrile에 Grignard 시약을 반응시킨 뒤 H₃O⁺로 가수분해하면 케톤이 생긴다.	O → R⁻가 C≡N 탄소를 공격 → 이민 음이온 → 가수분해 → 케톤.	k02C.webp	287
+[제법] 나이트릴과 Grignard 시약의 반응에서는 3차 알코올이 최종 생성물이다.	X → 케톤에서 멈춘다. 중간체(이민 음이온)가 음전하라 두 번째 Grignard가 공격하지 못하고, 가수분해 후 케톤.	k02C.webp	287
+[친핵성 첨가] 카보닐 탄소는 전자가 부족하고 입체장애가 작을수록 친핵성 첨가가 잘 일어나며, 사면체 sp³ 중간체를 거친다.	O → 산 촉매: 산소 양성자화로 E를 강화. 염기: Nu⁻가 직접 공격.	k03A.webp	288
+[친핵성 첨가] 친핵성 첨가 반응성은 폼알데하이드 > 알데하이드 > 케톤 순이다.	O → EDG(알킬)가 0·1·2개(필기). 폼알데하이드가 반응성이 가장 크다.	k03A.webp	288
+[친핵성 첨가] 방향족 알데하이드(benzaldehyde)는 지방족 알데하이드보다 친핵성 첨가 반응성이 크다.	X → 지방족 > 방향족. 벤젠 고리는 공명으로 카보닐에 전자를 준다(유도효과 < 공명효과, 필기).	k03A.webp	288
+[친핵성 첨가] 수화반응의 평형상수 K는 아세톤이 폼알데하이드보다 크다.	X → 아세톤 < 아세트알데하이드 < 폼알데하이드. 알킬기(EDG)가 많을수록 작다.	k03A.webp	288
+[친핵성 첨가] 카보닐의 수화반응은 산이나 염기 촉매 어느 쪽에서도 일어나며 1,2-diol을 생성한다.	X → 1,1-diol(geminal-diol). 1,2-diol(vicinal)은 알켄의 dihydroxylation.	k03A.webp	288
+[친핵성 첨가] 사이아노하이드린을 LiAlH₄로 처리하면 1차 아민이, H₃O⁺로 가수분해하면 카복실산이 생긴다.	O → CN → CH₂NH₂ / COOH(필기).	k03B.webp	288
+[친핵성 첨가] 사이아노하이드린을 H₃O⁺로 가수분해하면 1차 아민이 생긴다.	X → α-hydroxy 카복실산. 1차 아민은 LiAlH₄ 환원.	k03B.webp	288
+[이민·엔아민] 카보닐과 1차 아민이 반응하면 C=N을 가진 이민(Schiff base)이 생긴다.	O → H⁺ 촉매, 가역(H₂O 생성).	k03C.webp	288
+[이민·엔아민] 이민 형성은 강산성 조건(pH 1~2)에서 가장 빠르다.	X → 약산성(pH 4~5). 너무 산성이면 아민이 양성자화되어 친핵성을 잃는다.	k03C.webp	288
+[이민·엔아민] 이민을 H₃O⁺로 가수분해하면 원래의 카보닐 화합물과 암모늄 이온이 생긴다.	O → 필기.	k03C.webp	288
+[이민·엔아민] 카보닐과 하이드라진(NH₂NH₂)이 반응하면 옥심이 생긴다.	X → 옥심 = 카보닐 + 하이드록실아민(NH₂OH). 하이드라진과는 하이드라존(Wolff–Kishner).	k03D.webp	288
+[이민·엔아민] DNP test에서 2,4-dinitrophenylhydrazine은 알데하이드·케톤과 반응해 노란색 침전을 만든다.	O → 알데하이드·케톤 검출법(형광펜).	k03D.webp	288
+[이민·엔아민] DNP test는 알코올을 검출하는 방법이다.	X → 알데하이드·케톤(카보닐) 검출법.	k03D.webp	288
+[이민·엔아민] 카보닐과 2차 아민이 반응하면 C=C–N 구조의 엔아민이 생긴다.	O → 약산성(pH 4~5)에서 가장 빠르다. 예: cyclohexanone + pyrrolidine.	k03E.webp	288
+[이민·엔아민] 카보닐과 2차 아민이 반응하면 이민이 생긴다.	X → 2차 아민 = 엔아민(N에 H가 하나뿐이라 C=N 대신 α-H가 빠져 C=C). 1차 아민 = 이민.	k03E.webp	288
+[이민·엔아민] 엔아민을 H₃O⁺로 가수분해하면 엔올을 거쳐 케톤과 2차 암모늄 이온이 생긴다.	O → 필기.	k03E.webp	288
+[환원·보호] Wolff–Kishner 반응은 카보닐을 하이드라진(NH₂NH₂)으로 하이드라존으로 만든 뒤 KOH로 처리해 CH₂로 환원한다.	O → 아세톤 → 프로페인(필기).	k04A.webp	289
+[환원·보호] Wolff–Kishner 반응은 산성 조건에서 카보닐을 알코올로 환원한다.	X → 염기(KOH) 조건, 카보닐 → CH₂(알케인).	k04A.webp	289
+[환원·보호] 아세탈은 카보닐과 알코올 2분자(또는 다이올)가 H⁺ 촉매로 반응해 생기며, 카보닐 보호기로 쓰인다.	O → H₂O 제거: Dean–Stark trap.	k04A.webp	289
+[환원·보호] 아세탈 형성에는 염기 촉매가 필요하다.	X → H⁺(산) 촉매. 예: cyclohexanone + ethylene glycol, H⁺ → 고리형 아세탈.	k04A.webp	289
+[환원·보호] 아세탈 형성은 비가역 반응이라 물을 제거할 필요가 없다.	X → 가역 반응 — Dean–Stark trap으로 H₂O를 제거해 평형 이동.	k04A.webp	289
+[Wittig] Wittig 반응은 카보닐과 인 일라이드(Ph₃P⁺–CH₂⁻)가 반응해 알켄과 Ph₃P=O를 만든다.	O → 용매 THF.	k04B.webp	289
+[Wittig] 인 일라이드는 RX와 PPh₃의 SN2 반응으로 포스포늄염을 만든 뒤, BuLi 같은 강염기로 탈양성자화해 만든다.	O → 필기.	k04B.webp	289
+[Wittig] 인 일라이드를 만들 때 PPh₃와 RX는 SN1 반응을 한다.	X → SN2(형광펜).	k04B.webp	289
+[Wittig] Wittig 반응은 betaine을 거쳐 4원자 고리 중간체 oxaphosphetane을 형성한 뒤 알켄과 Ph₃P=O로 분해된다.	O → [2+2](필기).	k04B.webp	289
+[Wittig] Wittig 반응의 고리 중간체는 5원자 고리인 oxaphospholane이다.	X → 4원자 고리 oxaphosphetane.	k04B.webp	289
+[1,4-첨가] α,β-불포화 카보닐에 soft Nu(X⁻, RS⁻, CN⁻, N₃⁻, 아민, R₂CuLi, 엔올·엔아민)가 작용하면 1,4-첨가가 일어난다.	O → 약염기·강친핵체, 짝산 pKa < 15(필기).	k04C.webp	289
+[1,4-첨가] 2-cyclohexenone에 CH₃MgBr을 반응시킨 뒤 H₃O⁺로 처리하면 3-methylcyclohexanone이 생긴다.	X → Grignard(·CH₃Li)는 1,2-첨가 → 1-methyl-2-cyclohexen-1-ol(95%). 3-methylcyclohexanone은 Gilman(1,4-첨가, 97%).	k04C.webp	289
+[1,4-첨가] 2-cyclohexenone에 Li(CH₃)₂Cu를 반응시키면 1,4-첨가로 3-methylcyclohexanone이 생긴다.	O	k04C.webp	289
+[1,4-첨가] 짝산의 pKa가 큰 강염기성 친핵체일수록 α,β-불포화 카보닐에 1,4-첨가를 한다.	X → 짝산 pKa < 15인 약염기(soft Nu)가 1,4-첨가. 강염기(Grignard·RLi)는 1,2-첨가.	k04C.webp	289
