@@ -1,0 +1,84 @@
+[탈수·제거] 2차 알코올을 POCl₃/pyridine으로 탈수하면 탄소양이온 없이 E2로 진행한다.	O → POCl₃/pyridine = E2(필기 2°ROH E2). 그래서 자리옮김이 일어나지 않고, OH와 anti-periplanar인 β-H가 있어야 한다.	a09.webp	278
+[탈수·제거] 3차 알코올을 TsOH로 가열해 탈수하는 반응은 E2로 진행한다.	X → 산 촉매(TsOH, H₂SO₄) 탈수는 탄소양이온을 거치는 E1(필기). POCl₃/pyridine이 E2.	a09.webp	278
+[탈수·제거] 1-methylcyclohexanol을 POCl₃/pyridine(E2)과 TsOH(E1)로 각각 탈수하면 서로 부분입체이성질체인 알켄이 생긴다.	X → 둘 다 1-methylcyclohexene(같은 화합물). 21번 ㄱ(형광펜 POCl₃/Pyridine).	a21.webp	289
+[탈수·제거] 다리목(bridgehead) 탄소에 OH가 있는 quinuclidine 유도체를 SOCl₂로 가열 탈수하면 다리목 탄소에 이중결합이 생긴다.	X → Bredt 규칙: 작은 이중고리의 다리목에는 이중결합이 생길 수 없다. 다리목이 아닌 탄소 쪽으로 이중결합이 생긴다(11번 ㄴ, 형광펜).	a11.webp	280
+[탈수·제거] 3-bromocyclohexanol을 PCC로 산화한 뒤 NaOEt로 가열하면 E1cB로 cyclohex-2-enone이 생긴다.	O → 케톤의 α-H가 빠져 엔올레이트 → β-Br이 떨어짐(E1cB, 필기). 11번 ㄷ.	a11.webp	280
+[탈수·제거] 1,5-다이케톤을 KOH/EtOH로 처리하면 분자 내 알돌 반응으로 4각 고리가 생긴다.	X → 6각 고리가 생기고, 탈수(E1cB)되어 cyclohexenone이 된다(1번 ㄱ, 형광펜·필기).	a01.webp	270
+[자리옮김] 산 촉매로 알켄과 OH가 반응할 때, 더 안정한 탄소양이온이 생기는 쪽 말단이 작용기(OH)와 결합한다.	O → Tip!! 알켄 + OH + H⁺: ① 더 안정한 C⁺ 말단 ② C⁺ 안정성이 같으면 OH 쪽(필기).	a07.webp	276
+[자리옮김] 2-allylphenol을 TsOH로 처리하면 페놀 OH가 2차 탄소양이온을 공격해 2-methyl-2,3-dihydrobenzofuran이 생긴다.	O → 7번 ㄴ. 같은 기질에 Hg(OAc)₂ → NaBH₄를 쓰면 고리 대신 2차 알코올(마르코브니코프)이 생긴다(2번 필기).	a07.webp	276
+[자리옮김] 측쇄 끝에 OH가 있는 dihydropyran을 AcOH로 처리하면, 고리 산소 옆 탄소양이온(옥소카베늄)을 OH가 공격해 스파이로 아세탈(spiroketal)이 생긴다.	O → 7번 ㄷ은 융합 고리 에테르로 그려서 틀린 보기(필기: 스파이로 화합물).	a07.webp	276
+[자리옮김] 1-(hydroxydiphenylmethyl)cyclopentanol을 H₂SO₄로 처리하면 고리가 확장되어 2,2-diphenylcyclohexanone이 생긴다.	O → Ph₂C⁺(더 안정한 C⁺) 생성 → 고리 C–C 결합이 이동(고리 확장) → 6각 케톤. 7번 ㄱ.	a07.webp	276
+[자리옮김] 1-aryl-propane-1,2-diol의 피나콜 재배열에서는 2차 탄소의 OH가 먼저 떨어져 나간다.	X → 벤질 위치 OH가 떨어져 더 안정한 벤질 C⁺가 생기고, 이웃 C의 H가 이동해 ArCH₂COCH₃(케톤)가 된다. 17번 ㄱ(내가 고른 보기, 1,2-diol 피나콜 재배열).	a17.webp	285
+[자리옮김] 4,4-dimethylcyclohexa-2,5-dienone을 HCl로 처리하면 메틸기가 이동해 3,4-dimethylphenol이 생긴다.	O → 다이에논-페놀 자리옮김. 17번 정답 ③ ㄷ.	a17.webp	285
+[자리옮김] 5-phenyl-2,3-dimethylpentan-2-ol을 H₂SO₄로 처리하면 분자 내 Friedel–Crafts 반응으로 5각 고리(indane)가 생긴다.	X → 3차 C⁺와 벤젠 오쏘 탄소 사이에 6각 고리(tetralin)가 생긴다. 17번 ㄴ.	a17.webp	285
+[자리옮김] neopentyl alcohol은 β-탄소가 4차라 입체장애가 커서 HCl과 SN2로 반응하기 어렵다.	O → 필기: tBu–CH₂–X처럼 α 뒤가 막혀 SN2 x → SN1(10번 ㄴ, 형광펜).	a10.webp	279
+[자리옮김] neopentyl alcohol을 HBr과 65°C에서 반응시키면 neopentyl bromide(1-bromo-2,2-dimethylpropane)가 주생성물이다.	X → 1차 C⁺ 대신 메틸 이동으로 3차 C⁺ → 2-bromo-2-methylbutane(26번 정답 ④). 내가 고른 ③(HIO₄)은 옳은 반응.	a26.webp	293
+[자리옮김] 1-(cyclopent-1-enyl)cyclopropanol을 HBr로 처리하면 알릴 위치 Br 치환 생성물이 생긴다.	X → H⁺가 OH에 붙든 이중결합에 붙든 3차 C⁺(필기) → 사이클로프로페인 고리 확장 → 스파이로 사이클로뷰탄온. 20번 ㄷ.	a20.webp	288
+[자리옮김] Friedel–Crafts 알킬화의 마지막 단계에서는 AlCl₄⁻가 아레늄 이온의 sp³ 탄소에 붙은 H⁺를 떼어 내고 방향족성이 회복된다.	O → 10번 ㄱ은 이 전자 이동을 잘못 그린 보기(필기 수정). 10번 정답 ④ ㄴ, ㄷ, 내가 고른 ⑤ ㄱ, ㄴ, ㄷ.	a10.webp	279
+[자리옮김] tert-butyl chloride를 물에서 가수분해하는 반응은 물이 C–Cl 뒤쪽을 공격하는 SN2로 진행한다.	X → SN1. Cl⁻가 먼저 떨어져 3차 C⁺ → 물 첨가 → H⁺ 이탈(10번 ㄷ).	a10.webp	279
+[치환·입체화학] OH가 1차와 3차에 하나씩 있는 다이올을 TsCl/pyridine으로 처리하면 1차 OH만 토실화되고, NaBr과 가열하면 SN2로 1차 브로민화물이 생긴다.	O → 20번 ㄱ(형광펜): 내가 놓친 맞는 보기. 20번 정답 ④ ㄱ, ㄴ, 내가 고른 ② ㄴ.	a20.webp	288
+[치환·입체화학] 3,4-dihydroxyacetophenone을 MeI/Li₂CO₃로 가열하면 아세틸기의 파라 위치 OH가 먼저 메틸화된다.	O → 파라 OH는 페녹사이드가 C=O와 공명 안정화돼 산성이 더 크다 → 먼저 탈양성자화 → 4-OMe. 20번 ㄴ.	a20.webp	288
+[치환·입체화학] (S)-2차 알코올을 SOCl₂/pyridine으로 처리하면 입체배열이 유지된 염화물이 생긴다.	X → pyridine 존재 시 SN2 → 반전(필기). 24번 ㄴ: (R) 생성물.	a24.webp	291
+[치환·입체화학] trans-4-tert-butylcyclohexanol을 TsCl/pyridine → LiBr로 처리하면 cis-1-bromo-4-tert-butylcyclohexane이 생긴다.	O → 토실화는 배열 유지, Br⁻ SN2는 반전(26번 ⑤, 필기).	a26.webp	293
+[치환·입체화학] (R)-2-octanol을 PBr₃로 처리하는 단계는 SN2로 진행되어 입체배열이 반전된다.	O → 21번 ㄷ 필기(PBr₃ SN2). TsCl/pyridine은 배열 유지.	a21.webp	289
+[치환·입체화학] 2-chlorobutane을 CH₃CO₂Na로 SN2 치환한 뒤 NaOH/H₂O로 처리하면 2-butanol이 생긴다.	O → 에스터의 염기 가수분해(비누화)(필기). 22번 정답 ⑤ ㄱ, ㄴ, ㄷ: 내가 놓친 보기 ㄱ.	a22.webp	290
+[치환·입체화학] 1-chloro-1-phenylethane을 CH₃CO₂K → NaOH/H₂O로 처리한 생성물은 acetophenone을 NaBH₄로 환원한 생성물과 같다.	O → 둘 다 1-phenylethanol. 15번 정답 ① ㄱ, 내가 고른 ② ㄴ.	a15.webp	283
+[치환·입체화학] 1-butene을 Hg(OAc)₂, H₂O → NaBH₄로 처리하면 1-butanol이 생긴다.	X → 옥시수은화 = 마르코브니코프 수화 → 2-butanol(22번 ㄷ). 1-butanol은 수소화붕소-산화.	a22.webp	290
+[치환·입체화학] 1-methylcyclohexene을 Br₂/H₂O로 처리하면 Br은 3차 탄소, OH는 2차 탄소에 붙는다.	X → 브로모늄 고리를 물이 더 치환된(3차) 탄소에서 공격 → OH가 3차, Br이 2차, anti. 1번 ㄴ.	a01.webp	270
+[에폭사이드] 에폭사이드에 Grignard 시약(EtMgBr)이 반응하면 덜 치환된 탄소를 SN2로 공격한다.	O → 1번 ㄷ.	a01.webp	270
+[에폭사이드] 강한 친핵체 NH₃가 말단 에폭사이드를 열 때는 더 치환된 탄소를 공격한다.	X → 강친핵체(염기 조건) = 덜 치환된 CH₂를 SN2 공격(필기). 24번 ㄱ: 내가 놓친 보기, 정답 ④ ㄱ, ㄴ.	a24.webp	291
+[에폭사이드] 2,3-epoxybutane을 LiAlH₄로 연 뒤 H₃O⁺로 처리하면 2-butanol이 생긴다.	O → H⁻가 에폭사이드 탄소를 SN2 공격(22번 ㄴ).	a22.webp	290
+[에폭사이드] 1-hexyne에 Br₂/H₂O를 처리한 생성물과 1-hexene에 Br₂/H₂O → NaOH를 처리한 생성물은 같다.	X → 알카인: α-브로모케톤(1-bromohexan-2-one), 알켄: 브로모하이드린 → NaOH → 에폭사이드(1,2-epoxyhexane). 15번 ㄷ.	a15.webp	283
+[에폭사이드] 1-bromohexan-2-one을 NaBH₄로 환원하면 생긴 알콕사이드가 Br을 밀어내 에폭사이드가 된다.	O → 15번 필기.	a15.webp	283
+[에폭사이드] cyclohexanone에 dimethylsulfonium methylide(황 일라이드)를 반응시키면 알켄(methylenecyclohexane)이 생긴다.	X → 베타인 A(O⁻, CH₂–S⁺Me₂) → 분자 내 SN2로 Me₂S가 떨어져 스파이로 에폭사이드 B. 알켄은 Wittig. 34번.	a34.webp	299
+[에폭사이드] 황 일라이드와 케톤의 반응에서 Me₂S가 떨어지는 단계는 알콕사이드의 분자 내 SN2이다.	O → 34번 필기(빨간 그림).	a34.webp	299
+[에폭사이드] cis 알켄을 과산(CH₃CO₃H)으로 에폭사이드화한 뒤 H₃O⁺로 열면 anti-diol이 생긴다.	O → 35번 정답 ① ㄱ. 에폭사이드 개환 = anti.	a35.webp	299
+[에폭사이드] 알켄을 차갑고 묽은 염기성 KMnO₄(OH⁻, 저온)로 처리하면 anti-diol이 생긴다.	X → syn-diol(35번 ㄴ, 형광펜). OsO₄/NMO도 syn. ⚠ 필기와 다름: 15번 필기는 '저온, 산조건'으로 적혀 있지만 교과서는 차갑고 묽은 '염기성' KMnO₄.	a35.webp	299
+[산화·절단] 1-phenylpropane-1,2-diol을 HIO₄로 처리한 생성물과 trans-1-phenylpropene을 KMnO₄/NaOH로 가열한 생성물은 같다.	X → HIO₄는 한 번만 산화: benzaldehyde + acetaldehyde. 뜨거운 KMnO₄는 끝까지 산화: benzoic acid + acetic acid. 15번 ㄴ(내가 고른 보기).	a15.webp	283
+[산화·절단] 1-methylcyclohexane-1,2-diol을 HIO₄로 처리하면 고리가 열려 6-oxoheptanal이 생긴다.	O → 1,2-diol 산화성 분해(1번만 산화). 26번 ③.	a26.webp	293
+[산화·절단] DMP(Dess–Martin periodinane)는 1차 알코올을 알데하이드로 산화하며, 이웃한 카이랄 중심의 결합은 건드리지 않는다.	O → 다만 CIP 순위가 바뀌면 R/S 표기는 바뀔 수 있다. 24번 ㄷ: OSi > CHO > CH₂OAr로 (S)라서 R이 아니다(필기 ①②③).	a24.webp	291
+[산화·절단] 간에서 에탄올이 아세트알데하이드로 바뀌는 반응은 알코올의 산화 반응이다.	O → 42번 ㄱ. 이후 아세트산으로 더 산화된다(필기).	a42.webp	306
+[산화·절단] 알코올 탈수소효소가 에탄올에서 수소를 떼어 내는 과정은 탄소양이온을 거치는 E1 반응과 유사하다.	X → 탄소양이온을 거치지 않고 H⁻(하이드라이드)를 NAD⁺로 넘긴다. 42번 ㄴ(내가 고른 보기).	a42.webp	306
+[산화·절단] 아세트알데하이드는 단백질의 아민기와 공유결합(이민)을 형성해 세포독성을 유발할 수 있다.	O → 42번 ㄷ(형광펜). 정답 ④ ㄱ, ㄷ, ㄹ, ㅁ, 내가 고른 ① ㄱ, ㄴ.	a42.webp	306
+[산화·절단] 에탄올을 아세트알데하이드로 바꾸는 효소는 NAD⁺를 전자수용체로 사용한다.	O → 42번 ㄹ(형광펜).	a42.webp	306
+[산화·절단] 1차 알코올을 알데하이드에서 멈추게 산화하려면 PCC보다 Na₂Cr₂O₇/H₂SO₄(존스 시약)가 더 적절하다.	X → 크롬산 수용액은 카복실산까지 과산화. 알데하이드에서 멈추려면 PCC(42번 ㅁ, 내가 X로 판단해 틀린 보기).	a42.webp	306
+[환원·카보닐 반응성] NaBH₄는 카복실산을 환원하지 못하므로, 케톤과 카복실산이 함께 있으면 케톤만 알코올로 환원된다.	O → 필기: 카복실산과 반응하지 x(14번 ㄱ, 형광펜).	a14.webp	282
+[환원·카보닐 반응성] 5,5-dimethylpyrrolidin-2-one(락탐)을 LiAlH₄로 환원하면 고리가 열려 아미노 알코올이 생긴다.	X → 아마이드 C=O가 CH₂로 환원 → 고리 아민(2,2-dimethylpyrrolidine)(필기). 14번 ㄴ.	a14.webp	282
+[환원·카보닐 반응성] Wolff–Kishner 환원(H₂NNH₂, OH⁻, 가열)은 케톤 C=O를 CH₂로 바꾸고 카복실산은 그대로 둔다.	O → 14번 정답 ② ㄷ(형광펜).	a14.webp	282
+[환원·카보닐 반응성] 고리형 산 무수물을 LiAlH₄로 환원한 뒤 H₃O⁺로 처리하면 다이올이 생긴다.	O → 산 무수물의 환원(필기). 5번 ㄴ(형광펜).	a05.webp	274
+[환원·카보닐 반응성] NaBH₄에 의한 환원 속도는 benzaldehyde가 acetophenone보다 빠르다.	O → 반응성: 케톤 < 알데하이드 < 폼알데하이드(필기). 18번 ㄱ.	a18.webp	286
+[환원·카보닐 반응성] NaBH₄에 의한 환원 속도는 cyclobutanone이 cyclopentanone보다 빠르다.	O → 4각 고리는 각 긴장이 커서 sp² → sp³가 되며 긴장이 풀린다(필기: 4각이 불안정). 18번 ㄴ.	a18.webp	286
+[환원·카보닐 반응성] NaBH₄에 의한 환원 속도는 benzophenone이 acetone보다 빠르다.	X → acetone이 더 빠르다. 방향족 고리는 공명으로 전자를 주어 C=O 탄소의 δ+를 줄인다(필기). 18번 ㄷ: 내가 고른 보기, 정답 ③ ㄱ, ㄴ.	a18.webp	286
+[환원·카보닐 반응성] benzaldehyde가 acetaldehyde보다 친핵성 첨가 반응성이 크다.	X → PhCHO < CH₃CHO. 방향족은 공명으로 전자를 주고, 지방족(CH₃)은 유도효과만 준다(필기).	a18.webp	286
+[유기금속] Gilman 시약(R₂CuLi)은 aryl halide, vinyl halide와도 짝지음 반응을 할 수 있다.	O → bromobenzene + (isopentyl)₂CuLi → isopentylbenzene(8번 ①, 형광펜).	a08.webp	277
+[유기금속] Gilman 시약은 카보닐 화합물 중 acyl halide와 반응해 3차 알코올까지 만든다.	X → acyl halide와만 반응해 케톤에서 멈춘다(23번 ㄴ, 필기). 23번 정답 ④ ㄱ, ㄷ, 내가 고른 ⑤.	a23.webp	290
+[유기금속] benzoyl chloride에 CH₃MgBr 2당량을 넣고 H₃O⁺로 처리하면 2-phenylpropan-2-ol이 생긴다.	O → Grignard는 acyl chloride → 케톤 → 3차 알코올까지 반응(23번 ㄱ).	a23.webp	290
+[유기금속] propanoyl chloride를 LiAlH₄로 환원하면 propanal(알데하이드)에서 멈춘다.	X → LiAlH₄는 알데하이드까지 다시 환원해 1-propanol(23번 ㄷ).	a23.webp	290
+[유기금속] 그리냐르 시약은 분자 안에 OH, NH, SH 같은 산성 수소가 있으면 만들 수 없다.	O → Grignard의 limitation: acidic-H 존재하면 안 됨(29번 필기). -NHR, -SH가 그 예.	a29.webp	296
+[유기금속] -CHO기를 가진 할로젠화 알킬은 Mg와 반응시켜 그리냐르 시약의 재료로 쓸 수 있다.	X → 알데하이드는 Grignard가 공격하는 친전자체. 29번 정답 ① methylcyclohexyl(R기), 내가 고른 ② -CHO.	a29.webp	296
+[유기금속] 3-bromo-2-methylpropan-1-ol을 Mg로 처리한 뒤 HCHO와 반응시키면 2-methylbutane-1,4-diol이 생긴다.	X → 같은 분자의 OH(산성 H)가 Grignard를 파괴한다. 먼저 OH를 보호해야 한다(8번 ⑤).	a08.webp	277
+[유기금속] 아이소프로필 Grignard 시약을 formaldehyde와 반응시키면 tert-butyl alcohol이 생긴다.	X → HCHO + RMgX → 1차 알코올: 2-methylpropan-1-ol(41번 ㄷ, 형광펜).	a41.webp	305
+[유기금속] 아세톤에 EtMgBr를 첨가하면 tert-butyl alcohol이 생긴다.	X → 2-methylbutan-2-ol. tert-butyl alcohol은 아세톤 + MeMgBr(41번 정답 ① ㄱ, ㄹ 형광펜).	a41.webp	305
+[유기금속] 2-bromopropane을 그대로 가열하면 tert-butyl alcohol이 만들어진다.	X → 탄소 수가 늘지 않는다(3개 → 4개 불가). 41번 ㄴ.	a41.webp	305
+[보호기] 4-penten-2-ol을 pentane-1,4-diol로 바꾸려면 OH를 benzyl ether로 보호 → 수소화붕소-산화 → H₂, Pd/C로 탈보호하는 순서가 적절하다.	O → 4번 정답 ④ ㅁ → ㄴ → ㄹ → ㄷ(Williamson ether → 반응 → 가수소분해).	a04.webp	273
+[보호기] BH₃는 알코올의 OH와 반응하지 않으므로 4-penten-2-ol을 보호 없이 수소화붕소화해도 된다.	X → OH의 H와 B–H가 반응해 BH₃가 소모된다. 에테르는 반응성이 작으므로 보호시킨다(4번 필기).	a04.webp	273
+[보호기] benzyl ether 보호기는 H₂, Pd/C(가수소분해)로 제거할 수 있다.	O → 4번 필기(Hydrogenolysis, 탈보호).	a04.webp	273
+[보호기] benzyl ether 보호기를 H₂, Pd/C로 제거할 때 분자 안의 C=C는 영향을 받지 않는다.	X → H₂, Pd/C는 C=C도 수소화한다. 그래서 4번에서는 수소화붕소-산화로 C=C를 먼저 없앤 뒤 마지막에 탈보호(ㄷ)한다.	a04.webp	273
+[보호기] Me₃SiCl(1당량)은 입체장애가 작은 1차 OH를 2차·3차 OH보다 먼저 보호한다.	O → 1° > 2° > 3° ROH(필기). 38번 ㄴ: TMS 보호 → PCC로 2차 OH만 산화 → H₃O⁺ 탈보호. 38번 정답 ④ ㄴ, ㄷ, 내가 고른 ② ㄴ.	a38.webp	302
+[에테르 합성·분해] 사이클로펜탄올에 Hg(OCOCF₃)₂와 (CH₃)₂C=CH₂를 넣고 NaBH₄로 처리하면 cyclopentyl tert-butyl ether가 생긴다.	O → 알콕시수은화 반응: 알코올이 마르코브니코프 방향(3차 탄소)으로 첨가(37번 정답 ① ㄱ).	a37.webp	301
+[에테르 합성·분해] 3차 알코올은 PBr₃와 잘 반응해 3차 브로민화물이 된다.	X → 3차 알코올은 PBr₃와 반응 x(SN2 불가, 37번 ㄴ 필기).	a37.webp	301
+[에테르 합성·분해] 에테르를 HX로 분해할 때 3차 탄소가 있으면 SN1, 없으면 SN2로 진행한다.	O → 37번 필기.	a37.webp	301
+[에테르 합성·분해] anisole을 BBr₃로 처리하면 Br⁻가 페닐 탄소를 공격해 bromobenzene과 메탄올이 생긴다.	X → 페닐 탄소는 SN2 불가. O가 BBr₃에 배위한 뒤 Br⁻가 CH₃를 SN2 공격 → phenol + CH₃Br(37번 필기 Mech).	a37.webp	301
+[에테르 합성·분해] 다이올을 p-TsCl/pyridine으로 처리해 고리형 에테르를 만드는 과정에는 분자 내 SN2가 포함된다.	O → 한쪽 OH를 토실화 → 다른 OH가 OTs를 밀어냄. 5번 ㄷ.	a05.webp	274
+[에테르 합성·분해] 알카인과 maleic anhydride의 광화학 반응(감광제, hν)으로 사이클로뷰텐 고리가 생기는 것은 [4+2] 고리첨가이다.	X → [2+2] 고리첨가(5번 ㄱ).	a05.webp	274
+[에테르 합성·분해] benzyl bromide를 NaCN과 반응시킨 뒤 H₃O⁺로 가열하면 acetophenone이 생긴다.	X → 나이트릴의 가수분해 → 카복실산(phenylacetic acid)(3번 ㄴ, 형광펜). acetophenone은 FC 아실화나 phenylacetylene 수화로 얻는다.	a03.webp	272
+[고리협동 자리옮김] 오쏘 위치가 비어 있는 allyl phenyl ether를 가열하면 allyl기가 파라 위치로 옮겨 4-allylphenol이 생긴다.	X → [3,3] Claisen → 토토머화로 오쏘(2-allylphenol). 파라는 두 오쏘가 막혔을 때(Claisen + Cope). 40번 ㄷ.	a40.webp	304
+[고리협동 자리옮김] 두 오쏘 위치가 모두 메틸기로 막힌 aryl crotyl ether를 가열하면 Claisen 후 Cope 자리옮김이 이어져 파라 위치에 치환기가 붙는다.	O → [3,3] Claisen → 1,5-diene → [3,3] Cope → 토토머화. 32번(별표, 형광펜).	a32.webp	297
+[고리협동 자리옮김] 2,6-dimethylphenyl but-2-enyl ether를 가열하면 파라 위치에 1-methylallyl(가지 달린)기가 붙은 페놀이 생긴다.	X → [3,3]이 두 번 일어나 알릴기가 두 번 뒤집히므로 원래 모양 but-2-enyl(CH₂CH=CHCH₃)로 붙는다(32번 정답 ①).	a32.webp	297
+[고리협동 자리옮김] 4-methylphenol의 페녹사이드를 benzyl chloride·allyl chloride로 알킬화한 뒤 가열하면 Claisen 자리옮김으로 allyl기가 오쏘 위치로 옮겨 간다.	O → 페놀이 산성도가 더 커서 먼저 반응(필기), allyl aryl ether → Claisen(38번 ㄷ: 내가 X로 판단한 맞는 보기).	a38.webp	302
+[고리협동 자리옮김] cis-1,2-divinylcyclobutane을 가열하면 Cope 자리옮김으로 1,5-cyclooctadiene이 생긴다.	O → 40번 ㄱ(형광펜, 번호 매긴 필기).	a40.webp	304
+[고리협동 자리옮김] Oxy-Cope 자리옮김의 최종 생성물은 엔올(알코올) 형태로 남는다.	X → 처음 생긴 엔올이 토토머화되어 케톤이 된다(40번 ㄴ, 형광펜).	a40.webp	304
+[광학활성] 광학 활성인 2-methylcyclohexanol을 POCl₃/pyridine으로 탈수해 Zaitsev 생성물 1-methylcyclohexene이 주로 생기면, 이 주생성물은 광학 활성을 가진다.	X → 1-methylcyclohexene은 카이랄 중심이 없다(9번 ①, 형광펜). OH와 anti-periplanar인 3차 쪽 H가 있어 E2로 Zaitsev 생성물.	a09.webp	278
+[광학활성] 4-phenylcyclohexylidene 아세트산 에틸을 H₂, Pd/C로 수소화한 생성물(1,4-이치환 사이클로헥세인)은 광학 활성이 없다.	O → cis든 trans든 대칭면이 있다(9번 ③, 형광펜).	a09.webp	278
+[광학활성] 3,4,5,6각 고리의 1,2-이치환체는 두 치환기가 서로 다르면 cis든 trans든 항상 카이랄이다.	O → 9번 필기. 3-carene 오존분해 생성물(1,2-이치환 사이클로프로페인)이 광학 활성(정답 ⑤).	a09.webp	278
+[광학활성] 광학 활성인 1-cyclohexylethanol을 CrO₃/H₂SO₄로 산화해도 생성물은 광학 활성을 유지한다.	X → 카이랄 중심(CH–OH)이 C=O가 되어 비카이랄 케톤(9번 ④).	a09.webp	278
