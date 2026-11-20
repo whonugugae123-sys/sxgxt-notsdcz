@@ -1,0 +1,68 @@
+[보호기·합성 순서] 케토 에스터의 에스터만 환원해 알데하이드로 만들려면 케톤을 먼저 HOCH₂CH₂OH, H⁺로 아세탈 보호해야 한다.	O → 1번 정답 ④ ㄴ → ㄷ → ㅁ → ㄱ → ㄹ(보호 → LiAlH₄ → PCC → Wittig → 탈보호).	b01.webp	310
+[보호기·합성 순서] 1번 합성에서 Wittig 반응을 LiAlH₄ 환원보다 먼저 하면 가장 효율적이다.	X → 에스터는 Wittig 반응을 하지 않는다. 에스터 → (LiAlH₄) 1차 알코올 → (PCC) 알데하이드로 만든 뒤에 Wittig(ㄱ). 내가 고른 ③ ㄴ → ㄱ → ㄷ → ㅁ → ㄹ은 순서 오류.	b01.webp	310
+[보호기·합성 순서] 4-oxocyclohexanecarboxylate의 케톤을 에틸렌 글라이콜(H⁺)로 보호한 뒤 LiAlH₄로 환원하고 H₃O⁺로 탈보호하면 4-(hydroxymethyl)cyclohexanone이 생긴다.	O → 11번 ㄴ(형광펜)·ㄷ, 정답 ⑤ ㄱ, ㄴ, ㄷ.	b11.webp	320
+[보호기·합성 순서] 케톤과 에스터를 함께 가진 화합물을 과량의 LiAlH₄로 처리하면 케톤만 환원된다.	X → 케톤과 에스터가 모두 환원되어 다이올(11번 ㄱ: B)이 생긴다.	b11.webp	320
+[보호기·합성 순서] 아세톤에 산을 처리하면 카보닐 탄소에 양성자가 붙는다.	X → 카보닐 산소에 양성자가 붙어 탄소의 친전자성이 커진다(19번 ㄱ).	b19.webp	327
+[보호기·합성 순서] 아세톤에서 가장 친전자성이 큰 위치는 3번 탄소이다.	X → 카보닐 탄소인 2번 탄소(19번 ㄴ).	b19.webp	327
+[보호기·합성 순서] 아세톤에 산 처리 후 에틸렌 글라이콜을 넣으면 H₂O가 빠지고 아세토나이드가 형성되는 가역반응이 일어난다.	O → 아세토나이드 = 아세톤으로 만든 아세탈(19번 ㄷ, 형광펜). 19번 정답 ④ ㄱ, ㄷ.	b19.webp	327
+[보호기·합성 순서] 산 촉매 아세탈 교환에서 ¹⁸O 표지 메탄올(CH₃O*H)을 쓰면 표지 산소는 고리형 옥소카베늄 이온을 공격해 생성물의 OCH₃에 들어간다.	O → 7번 ㄴ(형광펜, 필기 그림). 7번 정답 ② ㄴ.	b07.webp	316
+[보호기·합성 순서] ¹⁸O로 표지된 메틸 벤조에이트(C(=O)–O*CH₃)를 산 가수분해하면 표지 산소는 메탄올로 나온다.	O → 아실–산소 결합이 끊어지므로 O*는 CH₃O*H로 나간다. 7번 ㄱ은 벤조산 쪽에 O*를 그려서 틀린 보기.	b07.webp	316
+[보호기·합성 순서] ¹⁸O 표지 케톤(C=O*)이 1,3-propanediol과 아세탈을 만들면 표지 산소는 고리 안에 남는다.	X → 카보닐 산소는 물(H₂O*)로 빠져나간다(7번 ㄷ, 형광펜). 고리 산소는 다이올에서 온다.	b07.webp	316
+[고리 중간체] 알켄에 Br₂를 첨가하는 반응은 고리형 브로모늄 이온 중간체를 거친다.	O → 2번 ㄱ. 2번 정답 ④ ㄱ, ㄷ.	b02.webp	311
+[고리 중간체] Wittig 반응은 고리형 중간체 없이 일라이드가 카보닐 산소를 직접 공격해 진행된다.	X → 고리형 옥사포스페테인 중간체를 거쳐 알켄과 Ph₃P=O가 생긴다(2번 ㄷ).	b02.webp	311
+[고리 중간체] allyl bromide와 소듐 에톡사이드의 Williamson 에터 합성은 고리형 중간체를 거친다.	X → 중간체 없는 SN2 협동 반응(2번 ㄴ).	b02.webp	311
+[작용기 검출] 루카스 시약(진한 HCl, ZnCl₂)과의 반응 속도는 3차 > 2차 > 1차 알코올 순이며, 3차 알코올은 바로 혼탁해진다.	O → 3번 ①(별표, 형광펜). SN1으로 생긴 알킬 염화물이 층 분리를 일으킨다.	b03.webp	312
+[작용기 검출] 보라색 KMnO₄ 용액이 알켄과 반응하면 KMnO₄는 산화되어 갈색 MnO₂ 침전이 된다.	X → KMnO₄는 알켄을 산화시키고 자신은 환원되어 MnO₂가 된다(3번 ② 필기).	b03.webp	312
+[작용기 검출] 2,4-DNPH(주황색)는 케톤과 반응해 노란색~주황색 하이드라존 침전을 만든다.	O → 3번 ③(DNP test).	b03.webp	312
+[작용기 검출] 톨렌스 시약(AgNO₃, NH₄OH)은 케톤을 산화시켜 은거울을 만든다.	X → 알데하이드만 산화시킨다(은거울 반응 ⇒ aldehyde 검출). 3번 ④.	b03.webp	312
+[작용기 검출] 클로로벤젠에 AgNO₃/HNO₃를 넣으면 AgCl 흰색 침전이 생긴다.	X → aryl halide는 C–Cl이 끊어지지 않아 침전이 생기지 않는다. 3번 정답 ⑤.	b03.webp	312
+[작용기 검출] 톨렌스 시약으로 benzaldehyde와 benzyl alcohol을 구분할 수 있다.	O → 23번 정답 ⑤ ㄱ, ㄴ, ㄷ(hexanal/hexanone, pentanal/diethyl ether도 구분 가능).	b23.webp	329
+[작용기 검출] 톨렌스 시약은 [Ag(NH₃)₂]⁺이며 알데하이드가 카복실산으로 산화될 때 Ag가 석출된다.	O → 23번 필기.	b23.webp	329
+[작용기 검출] 금속 Na를 넣으면 에탄올과 폼산은 반응하지만 아세트알데하이드는 반응하지 않는다.	O → (가) 금속 Na: 산성 수소 존재 확인(필기). 17번(별표, 형광펜).	b17.webp	325
+[작용기 검출] 펠링 용액은 폼산과 반응하지 않으므로 에탄올과 폼산을 구분할 수 없다.	X → 펠링 = 폼일기(–CHO) 검출 시약. 폼산(HCOOH)은 폼일기를 가지므로 반응한다(17번 정답 ① A 아세트알데하이드, B 폼산, C 에탄올).	b17.webp	325
+[수화·이민 가수분해] cyclohexylacetylene을 H₂SO₄, HgSO₄, H₂O로 수화하면 cyclohexylacetaldehyde(알데하이드)가 생긴다.	X → 마르코브니코프 수화 → 메틸 케톤(4번 ㄱ). 알데하이드는 수소화붕소-산화.	b04.webp	313
+[수화·이민 가수분해] 이민(C=N–NMe₂)은 산 조건(HCl, H₂O)에서 가수분해되어 케톤으로 돌아간다.	O → 4번 ㄴ(형광펜): 이민의 산조건 가수분해.	b04.webp	313
+[수화·이민 가수분해] 4-tert-butyl-1-methylcyclohexene을 H₂SO₄/H₂O로 수화하면 OH가 축 방향인 생성물이 주생성물이다.	X → SN1 가역 반응이라 더 안정한 OH 적도(equatorial) 생성물이 주생성물, 축 방향은 부생성물(4번 ㄷ 필기).	b04.webp	313
+[유기금속] 나이트릴에 Grignard 시약을 첨가하면 이민 음이온이 생기고, H₃O⁺로 가수분해하면 케톤이 된다.	O → 8번 ㄱ(형광펜): PhCN + iPrMgBr → isobutyrophenone.	b08.webp	317
+[수화·이민 가수분해] 3-methylbutanenitrile에 EtMgBr를 반응시키고 H₃O⁺로 처리하면 5-methylhexan-3-one이 생긴다.	O → 15번 ③(형광펜).	b14.webp	323
+[수화·이민 가수분해] 1-bromopropane을 NaCN → PhMgBr → H₃O⁺로 처리하면 1-phenylbutanone이 생긴다.	O → 15번 ④(형광펜). 15번 정답 ⑤, 내가 고른 ④는 옳은 이름.	b14.webp	323
+[엔아민·짝첨가] 2-methylcyclohexanone과 pyrrolidine(H⁺)으로 엔아민을 만드는 반응은 축합 반응이다.	O → H₂O가 빠진다(5번 ㄱ, 형광펜). 5번 정답 ③ ㄱ, ㄴ.	b05.webp	314
+[엔아민·짝첨가] 2-methylcyclohexanone의 엔아민은 더 치환된 이중결합(C)이 열역학적으로 안정해 주생성물이 된다.	X → 덜 치환된 B가 9 : 1로 많다. C는 메틸과 pyrrolidine 고리가 같은 평면에 있어 입체장애가 크다(5번 ㄴ, 필기).	b05.webp	314
+[엔아민·짝첨가] 엔아민과 acrylonitrile(CH₂=CHCN)의 Stork 반응은 1,2-첨가 반응이다.	X → 1,4-첨가(짝첨가). 엔아민의 1,4첨가(5번 ㄷ, 필기).	b05.webp	314
+[엔아민·짝첨가] Gilman 시약(LiEt₂Cu)은 α,β-불포화 케톤의 카보닐 탄소에 1,2-첨가해 3차 알코올을 만든다.	X → β 탄소에 1,4-첨가 → β-에틸 케톤(8번 ㄴ, 필기). 8번 정답 ① ㄱ, 내가 고른 ③.	b08.webp	317
+[엔아민·짝첨가] But-3-en-2-one을 Me₂CuLi로 처리하면 pentan-2-one이 생긴다.	O → 1,4-첨가(22번 정답 ① ㄱ).	b21.webp	328
+[엔아민·짝첨가] But-3-en-2-one을 MeMgBr 또는 MeLi로 처리해도 1,4-첨가로 pentan-2-one이 생긴다.	X → Grignard·유기리튬은 1,2-첨가 → 3차 알코올(22번 필기).	b21.webp	328
+[엔아민·짝첨가] 1-acetylcyclohexene을 Me₂CuLi → H₂O로 처리하면 2-methyl-1-acetylcyclohexane이 생긴다.	O → 20번 2) β 탄소에 메틸 첨가.	b19.webp	327
+[알돌·축합] benzaldehyde와 acetophenone을 NaOH로 처리하면 알돌 첨가 후 E1cB 탈수로 chalcone(PhCH=CHCOPh)이 생긴다.	O → 6번 ㄴ(형광펜, 필기 Aldol·E1cB).	b06.webp	315
+[알돌·축합] benzaldehyde와 diethyl malonate를 NaOEt로 처리하면 말론산 에스터 탄소가 에스터 카보닐을 공격하는 Claisen 축합이 일어난다.	X → 말론산 엔올레이트가 알데하이드를 공격하는 알돌형 첨가 후 E1cB 탈수 → PhCH=C(CO₂Et)₂(6번 ㄹ, 형광펜).	b06.webp	315
+[유기금속] 6번 반응에서 PhMgBr 2당량과 반응해 Ph₃COH를 만드는 카보닐 화합물 A는 benzaldehyde이다.	X → Grignard 2당량으로 Ph₃COH가 되려면 A는 벤조산 에스터나 benzoyl chloride(필기). 6번 정답 ⑤ ㄴ, ㄷ, ㄹ, 내가 고른 ②.	b06.webp	315
+[알돌·축합] Wittig 시약 Ph₃P=CHCO₂CH₃와 반응해 PhCH=CHCO₂CH₃를 만드는 카보닐 화합물은 benzaldehyde이다.	O → 6번 ㄷ. B, C, D가 모두 benzaldehyde라 구조가 동일.	b06.webp	315
+[환원] 4-(trifluoromethyl)phenylacetonitrile을 LiAlH₄로 환원한 뒤 물로 처리하면 1차 아민이 생긴다.	O → 나이트릴 환원 ⇒ 1차 amine(9번 ① 필기). 9번 정답 ①: 알데하이드가 아닌 것.	b09.webp	318
+[환원] 1-octanol을 PCC/CH₂Cl₂로 산화하면 카복실산이 생긴다.	X → 알데하이드에서 멈춘다(9번 ⑤ 형광펜). 내가 고른 답(⑤)은 알데하이드가 생기는 반응.	b09.webp	318
+[환원] 1-pentyne을 BH₃ → H₂O₂, NaOH로 처리하면 알데하이드가 생긴다.	O → 반마르코브니코프 수화 → 엔올 → 알데하이드(9번 ②).	b09.webp	318
+[환원] 에스터를 DIBAH로 환원한 뒤 H₃O⁺로 처리하면 1차 알코올이 생긴다.	X → 저온에서 알데하이드에서 멈춘다(9번 ④). LiAlH₄면 1차 알코올.	b09.webp	318
+[환원] cyclohexanone을 H₂NNH₂, KOH와 가열하면 cyclohexanol이 생긴다.	X → Wolff–Kishner → C=O가 CH₂(cyclohexane). 10번 ㄴ(형광펜).	b10.webp	319
+[환원] cyclohexanone과 pyrrolidine(H⁺)의 생성물은 이중결합이 고리 안 질소 붙은 탄소에 있는 엔아민이다.	O → 1-(cyclohex-1-enyl)pyrrolidine. 10번 ㄷ은 이중결합을 다른 위치에 그려서 틀린 보기. 10번 정답 ① ㄱ.	b10.webp	319
+[환원] 케톤을 알케인(C=O → CH₂)으로 환원하는 데 Zn(Hg)/HCl과 H₂NNH₂/KOH를 모두 쓸 수 있다.	O → Clemmensen과 Wolff–Kishner(14번 가, 라).	b13.webp	322
+[환원] 싸이오아세탈(HSCH₂CH₂SH, BF₃)을 만든 뒤 Raney Ni(H₂)로 처리하면 케톤이 CH₂로 환원된다.	O → 14번 나(형광펜). 14번 정답 ⑥ 가, 나, 라, 내가 고른 ⑩.	b13.webp	322
+[환원] NaBH₄/CH₃OH나 LiAlH₄/ether로 케톤을 처리하면 알케인(CH₂)으로 환원된다.	X → 2차 알코올까지만 환원된다(14번 다, 마).	b13.webp	322
+[환원] 알데하이드를 1차 알코올로 환원하는 데 LiAlH₄와 H₂, Pd/C를 모두 쓸 수 있다.	O → 21번 정답 ④ ㄴ, ㄷ(H₂, Pd/C 형광펜).	b21.webp	328
+[환원] 알데하이드를 NaOH, H₂O로 처리하면 1차 알코올로 환원된다.	X → 수화되어 1,1-다이올(gem-diol)이 생긴다(21번 ㄱ, 형광펜). 내가 고른 ⑤는 ㄱ까지 포함.	b21.webp	328
+[명명법] 이중고리 케톤 C=O가 있는 bicyclo 화합물은 고리 원자 수가 7개이므로 bicyclo[2.2.1]heptan-2-one이다.	O → 13번. 다리목 사이 다리 원자 수 2, 2, 1. 내가 고른 ③(1S,4R) vs 정답 ④(1R,4S).	b13.webp	322
+[명명법] 이중고리 화합물 이름 bicyclo[2.1.2]heptane은 올바른 IUPAC 표기이다.	X → 다리 원자 수를 큰 것부터 내림차순으로 적어 bicyclo[2.2.1]heptane(13번 ②).	b13.webp	322
+[Wittig·에폭사이드] cyclohexanone에 Ph₃P=CH₂를 반응시키면 methylenecyclohexane이 생긴다.	O → 10번·20번 1). 12번 ㄱ: 생성물이 에폭사이드가 아니다.	b12.webp	321
+[Wittig·에폭사이드] trans-2-bromocyclohexanol을 NaOH로 처리하면 OH⁻가 Br을 치환해 trans-1,2-다이올이 생긴다.	X → 알콕사이드가 anti 위치의 Br을 분자 내 SN2로 밀어내 에폭사이드가 생긴다(12번 ㄴ).	b12.webp	321
+[Wittig·에폭사이드] cyclohexene에 mCPBA를 처리하면 에폭사이드가 생긴다.	O → 12번 ㄷ.	b12.webp	321
+[명명법] 3-pentanone을 CH₃CH₂CH=PPh₃로 처리한 생성물의 IUPAC 이름은 4-ethylhex-3-ene이다.	X → 3-ethylhex-3-ene(15번 정답 ⑤, 필기 번호 매기기). 이중결합에 낮은 번호를 주면 에틸기는 3번.	b14.webp	323
+[유기금속] benzaldehyde에 EtMgBr를 첨가한 뒤 Na₂Cr₂O₇/H₂SO₄로 산화하면 1-phenylpropan-1-one이 생긴다.	O → 2차 알코올 → 케톤(15번 ①).	b14.webp	323
+[Wittig·에폭사이드] 1-hexyne을 HgSO₄, H₂SO₄, H₂O로 수화하면 2-hexanone이 생긴다.	O → 15번 ②.	b14.webp	323
+[유기금속] 에스터에 과량의 EtMgBr을 넣고 H₃O⁺로 처리하면 Et가 두 개 붙은 3차 알코올이 생긴다.	O → 과량반응(8번 ㄷ, 형광펜): 에스터 → 케톤 → 3차 알코올.	b08.webp	317
+[카복실산 합성] benzyl bromide를 NaCN/CH₃CN → H₃O⁺, 가열로 처리하면 2-phenylacetic acid가 생긴다.	O → 16번 ③(내가 고른 답). 16번 정답. 형광펜 친 ⑤ 할로폼 경로는 benzoic acid가 생긴다.	b16.webp	324
+[카복실산 합성] 벤젠을 CH₃COCl/AlCl₃로 아실화한 뒤 I₂(과량), NaOH(과량)로 처리하면 2-phenylacetic acid가 생긴다.	X → 할로폼 반응: acetophenone → benzoic acid(PhCOOH) + CHI₃↓(16번 ⑤ 필기). 탄소 하나가 빠진다.	b16.webp	324
+[카복실산 합성] 할로폼 반응에서 메틸 케톤은 CI₃⁻가 아니라 CH₃⁻가 떨어져 나가며 카복실산이 된다.	X → CH₃가 CI₃로 바뀐 뒤 OH⁻가 카보닐을 공격해 CI₃⁻가 떨어진다 → CHI₃↓(16번 필기).	b16.webp	324
+[카복실산 합성] styrene을 Br₂/CCl₄ → 2NaNH₂ → H₃O⁺, Hg²⁺로 처리하면 2-phenylacetic acid가 생긴다.	X → 다이브로마이드 → 알카인 → 수화 = acetophenone(케톤)(16번 ①).	b16.webp	324
+[카복실산 합성] styrene을 뜨거운 KMnO₄/H₃O⁺로 처리하면 결사슬 산화로 benzoic acid가 생긴다.	O → 16번 ④: 2-phenylacetic acid가 아니다.	b16.webp	324
+[반응 분류] cyclohexene에 Br₂를 첨가해 trans-1,2-dibromocyclohexane을 만드는 반응은 첨가반응이다.	O → 첨가반응 ⇒ 불포화도 감소(18번, 별표). 18번 정답 ① ㄱ.	b18.webp	326
+[반응 분류] 벤젠을 Br₂/FeBr₃로 브로민화하는 반응은 첨가반응이다.	X → 친전자성 방향족 치환(EAS). 방향족성이 유지되어 불포화도가 변하지 않는다(18번 ㄷ).	b18.webp	326
+[반응 분류] CH₃Cl + NaOH → CH₃OH는 첨가반응이다.	X → SN2 치환반응. 불포화도 변화 없음(18번 ㄴ).	b18.webp	326
+[반응 분류] cyclohexanone oxime을 H₂SO₄로 처리해 caprolactam을 만드는 Beckmann 반응은 첨가반응이다.	X → 자리옮김 반응 ⇒ 반응물과 생성물이 구조 이성질체 관계(18번 ㄹ, 형광펜).	b18.webp	326
