@@ -32,3 +32,16 @@
 [이형태체·뉴먼 투영] 2-bromobutane의 C2–C3 가장 안정한 형태에서는 모든 치환기가 서로 gauche이다.	X → 두 CH₃는 anti, Br–CH₃만 gauche.	aq20.webp	91
 [고리 구조] 사이클로뷰테인의 가장 안정한 구조는 평면 사각형이며, 뉴먼 투영도에서 모든 C–H가 가려진(eclipsed) 형태이다.	X → 평면 사각형은 가장 안정한 구조가 아니다 — 고리가 접혀(puckered) 가려짐 스트레인을 줄인다.	aq12.webp	86
 [고리 구조] 사이클로뷰테인은 고리를 약간 접어 각 스트레인은 조금 늘지만 비틀림(가려짐) 스트레인을 줄인다.	O	aq12.webp	86
+[N제 오답 · 이형태체] 1,2-ethanediol(HOCH₂CH₂OH)의 가장 안정한 형태는 두 OH의 이면각이 60°인 gauche 형태이다.	O → 두 OH가 가까워 분자 내 수소결합으로 안정해진다(3번 정답 ③ 60°, 필기 뉴먼).	aq03.webp	N제 1
+[N제 오답 · 이형태체] 1,2-ethanediol은 두 OH가 가장 멀리 떨어진 anti(180°) 형태가 가장 안정하다.	X → 분자 내 수소결합이 가능한 gauche(60°)가 가장 안정하다. 3번에서 내가 고른 ⑤ 180°.	aq03.webp	N제 1
+[N제 오답 · 끓는점] 탄소 수가 같으면 사이클로알케인이 사슬 알케인보다 끓는점이 높다.	O → 필기: b.p. Alkane < cycloalkane (단, C수 동일). 13번 정답 ② 2-methylbutane < pentane < cyclopentane.	aq13.webp	N제 5
+[N제 오답 · 끓는점] cyclopentane은 고리라서 표면적이 작으므로 pentane이나 2-methylbutane보다 끓는점이 낮다.	X → cyclopentane이 가장 높다. 고리는 단단하고 촘촘히 쌓여 분산력이 크다. 13번에서 내가 고른 ④는 cyclopentane을 가장 낮게 둔 순서.	aq13.webp	N제 5
+[N제 오답 · 끓는점] 가지 달린 2-methylbutane은 pentane보다 끓는점이 낮다.	O → 가지가 많을수록 표면적이 작아 분산력이 약하다(13번).	aq13.webp	N제 5
+[N제 오답 · 혼성·결합 수] 5-fluorouracil 분자의 σ결합은 모두 12개이다.	O → 고리 결합 6 + C=O 2 + C–F 1 + C–H 1 + N–H 2 = 12. 14번 1)에서 내가 쓴 답 11개.	aq14.webp	N제 5
+[N제 오답 · 혼성·결합 수] 5-fluorouracil의 고리 탄소 4개 중 하나는 sp³ 혼성이다.	X → 4개 모두 sp²(C=C 2개, C=O 2개). sp³ 탄소 0개, π결합 3개(14번 2)~4)).	aq14.webp	N제 5
+[N제 오답 · 고리 형태] 사이클로헥세인의 뒤틀린 보트형(twist-boat)은 보트형보다 안정하다.	O → 20번 ㄱ. 보트형의 깃대 H 반발과 가려짐이 줄어든다.	aq20.webp	N제 8
+[N제 오답 · 고리 형태] 평면 사각형 사이클로뷰테인은 접힌(나비) 형태보다 결합각 스트레인은 작고 비틀림 스트레인은 크다.	O → 20번 ㄴ(형광펜): 내가 놓친 맞는 보기. 20번 정답 ④ ㄱ, ㄴ, 내가 고른 ① ㄱ.	aq20.webp	N제 8
+[N제 오답 · 명명법] 두 고리가 단일결합으로 이어진 화합물은 탄소 수가 더 많은 고리를 모체로 이름 짓는다.	O → 24번: 모체 cyclohexane, 치환기 2-methylcyclopentyl.	aq24.webp	N제 9
+[N제 오답 · 명명법] 24번 화합물의 IUPAC 이름은 1-(2-methylcyclopentyl)-3-methylcyclohexane이다.	X → 1-methyl-3-(2-methylcyclopentyl)cyclohexane(24번 정답 ②). 알파벳 비교에서 methyl이 methylcyclopentyl보다 앞선다(필기: 뒤에 알파벳 X 더 빠름). 내가 고른 ①.	aq24.webp	N제 9
+[N제 오답 · 의자형 관계] 의자형 고리에서 X와 gauche·anti 관계는 이웃한 탄소(1,2 위치)에 있는 원자나 원자단 사이에서만 따진다.	O → 필기: anti θ = 180°, gauche θ = 60°, 이웃한 탄소에 존재하는 원자 or 원자단의 관계. 25번 정답 ② A, C.	aq25.webp	N제 10
+[N제 오답 · 의자형 관계] X와 같은 탄소에 붙은 다른 치환기도 X와 gauche 관계로 센다.	X → 같은 탄소에 붙은 것은 이면각을 정의할 수 없어 gauche·anti를 따지지 않는다. 25번에서 내가 고른 ⑤ B, E.	aq25.webp	N제 10
