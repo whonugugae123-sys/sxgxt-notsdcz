@@ -1,0 +1,34 @@
+[유도체 반응성] 카복실산 유도체의 친핵성 아실 치환 반응성은 산 염화물 > 산 무수물 > 싸이오에스터 > 에스터 > 아마이드 순이다.	O → 1번 빨간 필기(알데하이드는 맨 앞). 19번 RCOCl > (RCO)₂O > RCO₂R > RCONH₂.	w02.webp	1
+[유도체 반응성] KOH 수용액 가수분해 속도는 아마이드(PhCONMe₂)가 에스터(PhCO₂Me)보다 빠르다.	X → 에스터가 더 빠르다. N이 공명으로 전자를 더 잘 주어 아마이드가 가장 덜 반응한다(1번 ㄱ).	w02.webp	1
+[유도체 반응성] 2-chloroethyl ethyl sulfide(CH₃CH₂SCH₂CH₂Cl)는 1-chloropentane보다 물과의 치환반응이 훨씬 빠르다.	O → 이웃기 참여(NGP): S가 분자 내로 Cl을 밀어내 고리형 설포늄 이온을 만든 뒤 물이 연다(1번 ㄷ, Tip!! 겨자가스 반응).	w02.webp	1
+[유도체 반응성] 겨자가스류의 빠른 가수분해에서 속도결정단계는 물이 탄소를 직접 공격하는 SN2 단계이다.	X → S가 이웃 탄소를 공격해 삼원고리 설포늄을 만드는 단계가 RDS. 물의 개환은 빠르다(1번 필기 RDS·fast).	w02.webp	1
+[유도체 합성] 2-phenylacetaldehyde(PhCH₂CHO)를 톨렌스 시약(Ag₂O, NH₄OH)으로 산화하면 phenylacetic acid가 생긴다.	O → R–CHO → R–COOH + Ag↓(2번 ㄴ, 형광펜).	w03.webp	2
+[유도체 합성] ethylbenzene을 뜨거운 KMnO₄/OH⁻로 산화하면 곁사슬 탄소가 모두 남은 phenylacetic acid가 생긴다.	X → 벤질 탄소만 남고 끊어져 benzoic acid가 생긴다(2번 ㄷ, 빨간 그림). 2번 정답 ④ ㄴ, ㄹ, 내가 고른 ②·⑤.	w03.webp	2
+[유도체 합성] PhCH₂CH₂MgCl에 CO₂를 반응시킨 뒤 H₃O⁺로 처리하면 탄소가 하나 늘어난 3-phenylpropanoic acid가 생긴다.	O → 2번 ㄹ(형광펜). Grignard + CO₂ = 탄소 1개 증가 카복실산.	w03.webp	2
+[유도체 합성] N-methylbenzamide를 H₃O⁺로 가열하면 benzoic acid(와 메틸암모늄)가 생긴다.	O → 아마이드 산 가수분해(2번 ㄱ 필기). ㄴ~ㄹ과 생성물이 달라 ㄱ은 '동일한 생성물' 묶음에 들지 않는다.	w03.webp	2
+[유도체 합성] benzoyl chloride에 pyrrolidine을 2당량 넣으면 1당량은 아마이드를 만들고 1당량은 생긴 HCl을 중화한다.	O → 3번 ㄱ(형광펜, '2당량' 밑줄). 3번 정답 ① ㄱ, 내가 고른 ③ ㄱ, ㄷ.	w04.webp	3
+[유도체 합성] benzoic acid에 NaOEt를 넣으면 ethyl benzoate(에스터)가 생긴다.	X → 산-염기 반응이 먼저 일어나 benzoate 음이온(PhCOO⁻) + EtOH가 생긴다(3번 ㄷ·18번 ㄷ, 빨간 박스). 내가 두 번 틀린 보기.	w16.webp	18
+[유도체 합성] benzamide를 LiAlH₄ → H₂O로 환원하면 benzyl alcohol이 생긴다.	X → 아마이드의 C=O가 CH₂로 환원되어 benzylamine이 생긴다(3번 ㄴ, 필기 화살표).	w04.webp	3
+[산화·환원] cyclohexyl methyl ketone에 PhCO₃H를 반응시키면 Baeyer–Villiger 산화로 cyclohexyl acetate가 생긴다.	O → 더 치환된 기(2차 cyclohexyl)가 산소 쪽으로 이동(4번 ①, 형광펜).	w05.webp	4
+[산화·환원] Baeyer–Villiger 산화에서 이동 경향은 메틸이 2차 알킬보다 크다.	X → 3° > 2° ≈ 페닐 > 1° > 메틸. 그래서 4번 ①과 16번(2-methylcyclohexanone → 더 치환된 쪽에 O가 끼어든 7원 락톤)이 나온다.	w14.webp	16
+[산화·환원] 에스터를 LiAlH₄(과량)로 환원하면 C=O가 CH₂가 되어 에테르가 생긴다.	X → 산 부분과 알코올 부분이 각각 1차 알코올로 나온다(8번 ④, 형광펜, 빨간 필기 propanol + ethanol).	w09.webp	8
+[산화·환원] 에스터를 DIBAH로 환원한 뒤 H₂O로 처리하면 알데하이드가 생긴다.	O → 8번 ⑤(형광펜).	w09.webp	8
+[산화·환원] 2-pyrrolidinone(γ-락탐)을 LiAlH₄ → H₂O로 환원하면 고리가 열려 4-aminobutan-1-ol이 생긴다.	X → 아마이드 C=O가 CH₂로 바뀌어 고리 아민(pyrrolidine)이 생긴다(7번 ㄱ, 형광펜).	w08.webp	7
+[유기금속] 에스터는 Gilman 시약((CH₃)₂CuLi)과 반응하지 않는다.	O → No reaction(6번 ②, 형광펜). Gilman은 산 염화물과만 반응해 케톤에서 멈춘다.	w07.webp	6
+[유기금속] cyclohexanecarbonyl chloride를 (CH₃)₂CuLi로 처리하면 두 번 첨가되어 3차 알코올이 생긴다.	X → 한 번만 반응해 cyclohexyl methyl ketone에서 멈춘다(7번 ㄷ, 빨간 필기 '한번만 반응함').	w08.webp	7
+[유기금속] benzonitrile에 CH₃MgBr → H₃O⁺를 반응시키면 acetophenone이 생긴다.	O → 이민 음이온 → 가수분해(6번 ④·7번 ㄴ, 형광펜).	w07.webp	6
+[유기금속] 2,3-diphenylbutane-2,3-diol을 HIO₄로 처리하면 acetophenone 두 분자가 생긴다.	O → 1,2-다이올의 C–C 결합만 끊고 각 탄소가 C=O가 된다(6번 ⑤, 형광펜).	w07.webp	6
+[분리·정제] benzaldehyde와 nitroacetic acid 혼합물에 KOH 수용액을 넣으면 산이 염(카복실레이트)이 되어 수층으로 옮겨 간다.	O → 산-염기 중화로 극성·물 용해도↑(9번 나·다, 형광펜). benzaldehyde는 유기층.	w10.webp	9
+[분리·정제] 9번 분리는 산-염기 반응을 쓰지 않고 끓는점 차이로 분리하는 과정이다.	X → 용해도 차이(산-염기 중화)로 분별깔때기에서 분리한다. 9번 정답 ⑤ 가, 나, 다, 라, 내가 고른 ③ 가, 나, 라.	w10.webp	9
+[분리·정제] 아세트산과 메탄올로 methyl acetate를 만드는 Fischer 에스터화에는 산 촉매(H⁺)가 필요하다.	O → 10번(형광펜, 빨간 필기 Fischer 에스터화 반응).	w10.webp	10
+[분리·정제] Fischer 에스터화는 비가역 반응이라 물을 제거하지 않아도 에스터가 완전히 생긴다.	X → 평형 반응. 과량의 알코올을 쓰거나 물을 제거해 생성물 쪽으로 이동시킨다.	w10.webp	10
+[나이트릴·아마이드] 1차 아마이드를 P₄O₁₀(또는 SOCl₂)으로 처리하면 탈수되어 나이트릴이 생긴다.	O → 11번 필기(탈수반응). 11번 경로: tBuBr → Mg·CO₂·H₃O⁺ → 카복실산(A) → SOCl₂·NH₃ → 아마이드(B) → P₄O₁₀ → tBuCN.	w11.webp	11
+[나이트릴·아마이드] 11번 경로에서 A는 Grignard 시약 tBuMgBr이다.	X → A는 CO₂ 첨가와 H₃O⁺ 처리를 마친 pivalic acid(카복실산), B는 아마이드. 11번 정답 ③.	w11.webp	11
+[나이트릴·아마이드] 15번 Sulpiride 합성에서 LiAlH₄는 N-아세틸 아마이드와 카복실산을 모두 환원한다.	O → Amide 환원(N-에틸) + 카복실산 환원(CH₂OH). 이후 SOCl₂(SN2) → NH₃(SN2) → 1차 아민(15번 빨간 필기, 형광펜).	w14.webp	15
+[나이트릴·아마이드] 15번 마지막 단계에서 1차 아민은 메틸 에스터(COOMe)와 친핵성 아실 치환을 해 아마이드를 만든다.	O → 15번 빨간 필기(친핵성 아실치환). 아민 친핵성: 2° > 1° > 3°(입체장애 때문).	w14.webp	15
+[명명법] 3-methylcyclohex-2-enone을 3-methylcyclohex-3-enone으로 부르면 틀린 이름이다.	O → C=O가 1번, 이중결합 2–3(12번 ②, 형광펜).	w12.webp	12
+[명명법] 1,4-벤젠다이카브알데하이드는 phthalaldehyde, 1,3-는 isophthalaldehyde, 1,2-는 terephthalaldehyde이다.	X → 1,2 = phthal-, 1,3 = isophthal-, 1,4 = terephthal-(12번 빨간 필기, ③ 형광펜).	w12.webp	12
+[명명법] HO₂C–CH₂–CO₂H의 관용명은 malonic acid이다.	O → 12번 ④(형광펜). 숙신산은 HO₂C(CH₂)₂CO₂H.	w12.webp	12
+[명명법] 12번에서 이름이 틀린 것은 (1S,3R)-3-bromocyclopentanol이다.	X → 정답은 ②(3-methylcyclohex-2-enone이어야 함). 내가 고른 ①은 옳은 이름(필기 S, S).	w12.webp	12
+[유도체 반응성] 아세트산 무수물에 MeOH를 넣으면 반응성이 더 낮은 methyl acetate와 AcOH가 생긴다.	O → 산무수물은 자신보다 반응성이 낮은 에스터를 만들 수 있다(17번 ㄴ, 형광펜).	w15.webp	17
+[유도체 반응성] acetamide에 MeOH를 넣으면 methyl acetate와 NH₃가 생긴다.	X → 아마이드는 에스터보다 반응성이 낮아 더 반응성 큰 유도체로 바뀌지 않는다(17번 ㄷ).	w15.webp	17
