@@ -1,0 +1,88 @@
+[엔올레이트 위치] 1-phenyl-2,4-hexanedione(PhCH₂COCH₂COCH₂CH₃)에서 가장 산성이 큰 수소는 두 카보닐 사이 C3의 수소이다.	O → C3 pKa 약 9(1번 필기). NaNH₂ 첫 1당량은 C3를 탈양성자화한다.	a01.webp	350
+[엔올레이트 위치] 1-phenyl-2,4-hexanedione에 NaNH₂ 2당량을 넣으면 두 번째 탈양성자화는 에틸 쪽 C5에서 일어난다.	X → C1(벤질이면서 α, pKa 20↓)이 C5(pKa 20)보다 산성이 커서 C1에서 두 번째 음이온이 생긴다(1번 필기).	a01.webp	350
+[엔올레이트 위치] 1-phenyl-2,4-hexanedione 다이음이온에 PhCH₂Cl 1당량을 넣으면 가장 안정한 C3 음이온에서 벤질화가 일어난다.	X → 내가 고른 ①. 덜 안정한(짝산 pKa가 큰) C1 음이온이 염기성·친핵성이 커서 C1에서 알킬화 → 정답 ② PhCH(CH₂Ph)COCH₂COCH₂CH₃.	a01.webp	350
+[엔올레이트 위치] 다이음이온의 두 탄소 음이온 중 짝산의 pKa가 큰 쪽이 Kb가 커서 친핵체로 먼저 반응한다.	O → 1번 필기 'pKa > → Ka < → Kb >'. 나중에 생긴(덜 안정한) 음이온이 반응한다.	a01.webp	350
+[엔올레이트 위치] LDA, −78 °C 조건에서는 더 치환된 α-탄소에서 열역학적 엔올레이트가 생긴다.	X → 속도론적 조건: 부피 큰 강염기가 덜 치환된 α-탄소의 수소를 빠르게 뗀다(11번 ㄱ·30번 ④ 필기 '속도론적').	a11.webp	360
+[엔올레이트 위치] 2-methylcyclohexanone을 LDA로 처리한 뒤 CH₃I를 넣으면 2,2-dimethylcyclohexanone이 생긴다.	X → 속도론적 엔올레이트는 덜 치환된 C6에서 생겨 2,6-dimethylcyclohexanone이 생긴다(30번 ④).	a30.webp	374
+[엔올레이트 위치] 한쪽에 아세틸기, 곁사슬 끝에 Br이 있는 화합물(11번 ㄱ)을 LDA(−78 °C)로 처리하면 고리 탄소 쪽 엔올레이트가 Br을 밀어내 고리 접합부에 아세틸기가 붙은 5–5 융합 고리가 생긴다.	X → 속도론적 조건이라 메틸(CH₃) 쪽 엔올레이트가 Br 탄소를 공격해 7원 고리 케톤이 융합된 5–7 고리가 생긴다(11번 ㄱ 필기 1~7 번호).	a11.webp	360
+[α-할로젠화] 산 촉매 α-할로젠화(Br₂, CH₃COOH)의 속도결정단계는 엔올이 Br₂와 반응하는 단계이다.	X → 케톤의 엔올화가 RDS(18번 필기 'RDS'). 그래서 속도는 [Br₂]와 무관하다.	a18.webp	367
+[α-할로젠화] 산 촉매 조건에서는 첫 할로젠이 도입된 뒤 두 번째 할로젠화가 더 빨라진다.	X → α-할로 카보닐은 카보닐 산소의 염기성이 감소해 양성자화·엔올화(RDS)가 어려워진다 → 한 번에서 멈춘다(18번 필기).	a18.webp	367
+[α-할로젠화] 염기 조건에서는 할로젠이 하나 붙을수록 남은 α-H의 산성도가 커져 다중 할로젠화가 일어난다.	O → 그래서 메틸 케톤 + I₂/OH⁻(과량)은 CI₃까지 간 뒤 할로폼 반응을 한다(4번·5번 ③).	a05.webp	354
+[α-할로젠화] 2-methylcyclohexanone을 Br₂/CH₃COOH로 처리하면 Br은 더 치환된 C2에 들어간다.	O → 산 촉매는 더 치환된(더 안정한) 엔올을 경유한다(5번 ④ 'α-halogenation').	a05.webp	354
+[α-할로젠화] 2-bromo-2-methylcyclohexanone을 pyridine으로 처리하면 E2 제거로 6-methylcyclohex-2-enone이 생긴다.	X → Br이 있던 C2와 C3 사이에 이중결합 → 2-methylcyclohex-2-enone(필기). 5번에서 '옳지 않은 것'은 ④.	a05.webp	354
+[α-할로젠화] cyclopentanone을 Br₂/CH₃CO₂H로 2-bromocyclopentanone으로 바꾸는 반응은 환원 반응의 예이다.	X → α-탄소 산화수 −2 → 0, 산화 반응이다(16번 ① 필기 '산화').	a16.webp	365
+[α-할로젠화] propiophenone을 Br₂/CH₃COOH → Li₂CO₃, LiBr, DMF로 처리하면 phenyl vinyl ketone(PhCOCH=CH₂)이 생긴다.	O → α-브로민화 후 E2로 HBr 제거(29번 필기).	a29.webp	373
+[α-할로젠화] α-브로모 케톤에 Li₂CO₃, LiBr, DMF를 가하는 단계의 역할은 Br을 다른 친핵체로 바꾸는 SN2 치환이다.	X → 염기에 의한 E2 제거로 α,β-불포화 케톤을 만든다(29번 필기 'E2').	a29.webp	373
+[α-할로젠화] 3'-chloropropiophenone의 α-탄소에 Br을 도입하려면 HBr, H₂O를 쓴다.	X → 내가 고른 ④. HBr/H₂O는 알켄 첨가 시약(필기 '첨가반응'). α-브로민화는 Br₂, CH₃COOH(정답 ⑤).	a03.webp	352
+[α-할로젠화] 카복실산을 Br₂, PBr₃로 처리한 뒤 H₂O로 처리한 최종 생성물은 산 브로마이드(RCOBr)이다.	X → Hell–Volhard–Zelinskii 반응. H₂O 처리 후 α-bromo 카복실산(RCHBrCOOH)이 생긴다(30번 ⑤ 필기).	a30.webp	374
+[α-할로젠화] HVZ 반응에서 PBr₃는 카복실산을 엔올화가 쉬운 산 브로마이드로 바꿔 α-브로민화를 가능하게 한다.	O → 카복실산 자체는 엔올 함량이 매우 낮아 직접 α-할로젠화가 어렵다.	a30.webp	374
+[방향족 합성 순서] 벤젠에 propanoic acid(CH₃CH₂CO₂H)와 AlCl₃를 처리하면 Friedel–Crafts 아실화로 propiophenone이 생긴다.	X → 아실화에는 산 염화물 CH₃CH₂COCl이 필요하다(3번 ①·② 지움).	a03.webp	352
+[방향족 합성 순서] propiophenone에 Cl₂, AlCl₃를 가하면 Cl은 메타 자리에 들어간다.	O → 아실기는 메타 지향 불활성화기(3번 B, 형광펜).	a03.webp	352
+[방향족 합성 순서] propiophenone을 SOCl₂로 처리하면 벤젠 고리에 Cl이 도입된다.	X → SOCl₂는 –OH를 –Cl로 바꾸는 시약이다. 고리 염소화는 Cl₂/AlCl₃(3번 B).	a03.webp	352
+[할로폼] benzalacetone(PhCH=CHCOCH₃)에 I₂(과량), OH⁻(과량)를 가하면 cinnamate 음이온과 CHI₃가 생긴다.	O → 메틸 케톤의 할로폼 반응(4번 ㄷ 형광펜·필기 'Haloform').	a04.webp	353
+[할로폼] 할로폼 반응 직후에는 카복실산이 R–COOH 형태로 존재하므로 산 처리가 필요 없다.	X → 염기 조건이라 R–COO⁻로 존재 → H₃O⁺ work-up이 필요하다(4번 필기).	a04.webp	353
+[할로폼] acetophenone의 할로폼 반응에서는 C(=O)–페닐 결합이 끊어지고 CH₃ 쪽 탄소가 카복실산염으로 남는다.	X → CI₃⁻가 떨어져 나가고 페닐 쪽 카보닐이 benzoate(PhCOO⁻)로 남는다(5번 ③).	a05.webp	354
+[알돌 축합] benzaldehyde와 acetone을 NaOEt로 반응시키면 아세톤 엔올레이트가 benzaldehyde를 공격하고, β-하이드록시 케톤이 E1cB로 탈수되어 benzalacetone이 된다.	O → 4번 ㄷ 필기 'E1cB'. benzaldehyde는 α-H가 없어 친전자체로만 작용한다.	a04.webp	353
+[알돌 축합] benzaldehyde에 acetaldehyde와 H₃O⁺만 처리해도 cinnamic acid(PhCH=CHCOOH)가 생긴다.	X → 산화 단계가 없어 COOH가 생기지 않는다(4번 ㄱ 지움, 정답 ④ ㄴ, ㄷ).	a04.webp	353
+[알돌 축합] cyclohexanone을 NaOH/EtOH로 처리하면 자기 알돌 축합으로 2-cyclohexylidenecyclohexanone이 생긴다.	O → 15번 ④(형광펜). 엔올레이트가 다른 분자 C=O를 공격한 뒤 탈수.	a15.webp	364
+[알돌 축합] 2,5-hexanedione 계열 1,4-다이케톤을 OH⁻, 가열하면 분자 내 알돌 축합으로 5원 고리 cyclopentenone이 생긴다.	O → 8번 ③ 필기 '5각고리', 21번 1).	a08.webp	357
+[알돌 축합] 2,7-octanedione을 OH⁻, H₂O, 가열하면 1-acetyl-2-methylcyclopentene이 생긴다.	O → 11번 ㄴ. 메틸 케톤의 CH₂ 쪽 α-탄소가 반대쪽 C=O를 공격해 5원 고리(필기 '5각').	a11.webp	360
+[알돌 축합] 알데하이드와 메틸 케톤을 함께 가진 13번 ㄷ 화합물은 KOH에서 산성이 더 큰 알데하이드 α-탄소 엔올레이트 경로의 생성물이 주생성물이다.	X → 그 경로는 4원 고리가 생겨 불리하다. 케톤 CH₃ 엔올레이트가 알데하이드를 공격해 6원 고리 엔온이 생긴다(필기 'aldehyde 산성도가 더 높지만 4각고리 나오므로 x').	a13.webp	362
+[알돌 축합] 분자 내 알돌 반응은 산성이 가장 큰 α-H 위치보다 5원·6원 고리를 만들 수 있는 위치가 우선한다.	O → 8번 ③, 11번 ㄴ, 13번 ㄷ, 25번 모두 5·6원 고리 생성물.	a13.webp	362
+[알돌 축합] 알돌 축합의 추진력은 탈수로 α,β-불포화 카보닐이 생기는 것이며, 첨가 후 α-탄소에 H가 없으면 탈수가 일어나지 않는다.	O → 25번 필기 '추진력이 α,β-불포화 카보닐 생성인데 α-H (X)'.	a25.webp	370
+[알돌 축합] 2-(4-oxopentyl)cyclohexanone을 NaOH, 가열하면 고리 α-탄소(곁사슬이 붙은 C2) 엔올레이트가 곁사슬 케톤을 공격한 생성물이 주생성물이다.	X → 그 경로는 첨가 후 α-탄소에 H가 없어 탈수 불가(가역). 곁사슬 C4 엔올레이트가 고리 C=O를 공격해 5원 고리를 만든 뒤 탈수 → 아세틸기가 붙은 6–5 융합 고리(필기 1~6).	a25.webp	370
+[알돌 축합] 사치환 고리 알켄을 KMnO₄, H₃O⁺로 산화 절단하면 C=C의 두 탄소가 모두 케톤이 되어, 27번 2)에서는 1,5-다이케톤이 생긴다.	O → 필기 '산화성 분해반응 → 1,5-diketo 生'.	a27.webp	371
+[알돌 축합] 1,5-다이케톤을 NaOH, ethanol로 처리하면 분자 내 알돌 축합으로 6원 고리 α,β-불포화 케톤이 생긴다.	O → 27번 2) 필기 'Aldol'. 메틸 케톤 CH₃ 엔올레이트가 고리 C=O를 공격한다.	a27.webp	371
+[알돌 축합] KMnO₄(산성, 가열)로 알켄을 절단할 때 C=C 탄소에 H가 하나 붙어 있으면 그 탄소는 알데하이드로 남는다.	X → 카복실산까지 산화된다. H가 없는(이치환) 탄소만 케톤으로 남는다.	a27.webp	371
+[Claisen·Dieckmann] ethyl acetate에 NaOEt를 가하면 Claisen 축합으로 ethyl acetoacetate가 생긴다.	O → 20번 1) 필기. 에스터 엔올레이트가 다른 에스터 C=O를 공격하고 EtO⁻가 떨어진다.	a20.webp	368
+[Claisen·Dieckmann] Claisen 축합은 NaOEt를 촉매량만 써도 완결된다.	X → 전체적으로 역반응이 우세한 평형이다. 생성물 β-케토 에스터의 α-H를 떼는 단계가 추진력이므로 염기가 1당량 필요하다(20번 필기).	a20.webp	368
+[Claisen·Dieckmann] Claisen 축합의 추진력은 생성된 β-케토 에스터에서 두 카보닐 사이 α-H가 떨어져 안정한 엔올레이트가 되는 단계이다.	O → 20번 필기 '추진력에 해당하는 β-ketoester의 α-H'.	a20.webp	368
+[Claisen·Dieckmann] ethyl 2-methylpropanoate에 NaOEt를 가하면 ethyl 2,2,4-trimethyl-3-oxopentanoate가 높은 수율로 얻어진다.	X → α-H가 1개뿐이라 생성물의 두 카보닐 사이 탄소에 H가 없다 → 탈양성자화(추진력) 불가 → 완결되지 않는다(23번 필기 'α-H 2개 이상인 ester만').	a23.webp	369
+[Claisen·Dieckmann] 에스터가 세 개인 22번 화합물 A에서 Dieckmann 생성물이 한 종류만 생기는 것은 α-H가 2개 이상인 에스터 쪽 고리화만 완결되기 때문이다.	O → 22번 필기. 생성물은 5원 고리 β-케토 에스터.	a22.webp	369
+[Claisen·Dieckmann] 1,6-다이에스터(adipate 골격)를 NaOEt로 처리하면 Dieckmann 축합으로 6원 고리 β-케토 에스터가 생긴다.	X → 5원 고리(10번 ㄴ·12번 ㄴ, 정답 포함). 6원 고리는 1,7-다이에스터(pimelate).	a12.webp	361
+[Claisen·Dieckmann] 케톤과 에스터를 함께 가진 13번 ㄴ 화합물을 NaOEt로 처리하면 에스터 α-탄소(pKa 약 25) 엔올레이트가 케톤을 공격한다.	X → 산성이 더 큰 케톤 α-탄소(pKa 약 20)가 엔올레이트가 되어 에스터를 공격 → 5원 고리 1,3-다이온(13번 ㄴ 필기).	a13.webp	362
+[말론산·아세토아세트산 에스터] benzaldehyde를 diethyl malonate/NaOEt로 축합한 뒤 H₃O⁺, 가열하면 가수분해·탈카복실화로 cinnamic acid가 생긴다.	O → 4번 ㄴ(정답 ④ ㄴ, ㄷ).	a04.webp	353
+[말론산·아세토아세트산 에스터] ethyl 2-oxocyclohexanecarboxylate를 NaOEt, PhCH₂Br로 알킬화한 뒤 H₃O⁺, 가열하면 2-benzylcyclohexanone이 생긴다.	O → 12번 ㄱ. 두 카보닐 사이 탄소 알킬화 → 에스터 가수분해 → 탈카복실화.	a12.webp	361
+[말론산·아세토아세트산 에스터] diethyl malonate를 1,4-dibromobutane, NaOEt(2당량)로 반응시킨 뒤 H₃O⁺, 가열하면 cyclobutanecarboxylic acid가 생긴다.	X → 말론산 탄소 + 사슬 탄소 4개 = 5원 고리 → cyclopentanecarboxylic acid(12번 ㄷ 필기). 내가 고른 ⑤ ㄱ, ㄴ, ㄷ, 정답 ③ ㄱ, ㄴ.	a12.webp	361
+[말론산·아세토아세트산 에스터] 말론산 에스터나 아세토아세트산 에스터로 cyclobutane 고리를 만들려면 1,3-dibromopropane을 쓴다.	O → 17번(ethyl acetoacetate + 1,3-dibromopropane → cyclobutyl methyl ketone).	a12.webp	361
+[말론산·아세토아세트산 에스터] 다이할로젠화물로 고리를 닫는 말론산 에스터 합성에 염기 2당량이 필요한 이유는 두 번의 탈양성자화(첫 알킬화, 분자 내 두 번째 알킬화)가 필요하기 때문이다.	O → 12번 ㄷ 필기 메커니즘.	a12.webp	361
+[Michael·Robinson] Michael 반응에서 엔올레이트는 α,β-불포화 카보닐의 카보닐 탄소를 공격한다.	X → β-탄소를 공격하는 1,4-첨가(2번 필기 'Michael 반응 1,4 치환').	a02.webp	351
+[Michael·Robinson] 2번에서 고리형 β-케토 에스터 엔올레이트가 ethyl vinyl ketone에 Michael 첨가하면 새 C–C 결합은 에스터와 케톤 사이 탄소에 생긴다.	O → 그 탄소는 4차 탄소가 된다(2번 필기 번호 1~5).	a02.webp	351
+[Michael·Robinson] 2번의 NaOEt/EtOH 조건에서 Michael 생성물(1,5-다이카보닐)이 분자 내 알돌 축합을 하면 새 6원 고리 엔온이 생긴다(Robinson 고리화).	O → 2번 정답 ①.	a02.webp	351
+[Michael·Robinson] diethyl malonate와 MVK의 Michael 반응에는 NaOEt를 1당량 이상 써야 반응이 완결된다.	X → 촉매량. 생성물의 α-H가 떨어져 생긴 엔올레이트가 추가 반응을 할 수 있고, 과량이면 역반응이 일어날 수 있다(19번 필기).	a19.webp	367
+[Michael·Robinson] ethyl acetoacetate와 MVK를 NaOEt/ethanol에서 반응시키면 아세토아세트산 에스터의 두 카보닐 사이 탄소가 MVK의 β-탄소에 먼저 첨가한다.	O → 24번 필기(Michael).	a24.webp	370
+[Michael·Robinson] 24번에서 Michael 생성물의 고리 닫기는 에스터 C=O로의 Dieckmann(Claisen)형 공격이다.	X → MVK 유래 메틸 케톤 CH₃ 엔올레이트가 아세토아세트산 쪽 케톤 C=O를 공격하는 알돌 축합(필기 'Aldol') → 6원 고리 엔온.	a24.webp	370
+[Michael·Robinson] 24번의 주생성물은 ethyl 2-methyl-4-oxocyclohex-2-ene-1-carboxylate(CO₂Et가 붙은 탄소 옆 C=C에 메틸이 있는 사이클로헥센온)이다.	O → 24번 정답 ②.	a24.webp	370
+[Michael·Robinson] (CH₂=CH)₂CuLi는 phenyl vinyl ketone의 β-탄소에 1,4-첨가해 1-phenylpent-4-en-1-one을 만든다.	O → 29번 필기 '1,4'. 따라서 출발물 A는 propiophenone(정답 ②).	a29.webp	373
+[Cannizzaro] benzaldehyde를 진한 NaOH, H₂O로 가열하면 benzoate와 benzyl alcohol이 생기는 Cannizzaro 반응(불균등화)이 일어난다.	O → 9번 필기. 두 분자 중 하나는 산화, 하나는 환원.	a09.webp	358
+[Cannizzaro] Cannizzaro 반응에서는 수소화 음이온(H⁻)이 한 알데하이드에서 다른 알데하이드로 직접 이동한다.	O → 9번 ㄱ(형광펜, 정답 ① ㄱ).	a09.webp	358
+[Cannizzaro] Cannizzaro 반응에서 OH⁻는 첫 단계에서 알데하이드의 α-수소를 떼어낸다.	X → α-H가 없는 알데하이드만 한다(필기 'α-H X'). OH⁻는 카보닐 탄소에 첨가해 사면체 중간체를 만든다.	a09.webp	358
+[Cannizzaro] Cannizzaro 반응을 H₂O 대신 D₂O에서 하면 benzyl alcohol의 CH₂ 탄소에 D가 들어간다.	X → 탄소에 붙는 H는 다른 benzaldehyde에서 온 H⁻이다. D는 O–D에만 들어간다(9번 ㄴ).	a09.webp	358
+[Cannizzaro] benzaldehyde 대신 acetophenone을 같은 조건(NaOH, H₂O, 가열)으로 처리하면 benzoate와 2-phenyl-2-propanol이 생긴다.	X → acetophenone은 α-H가 있어 알돌 축합이 진행된다(9번 ㄷ 형광펜·필기).	a09.webp	358
+[카보닐 첨가·환원] cyclopropanecarbaldehyde를 H₂NNH₂, KOH, 가열로 처리하면 Wolff–Kishner 환원으로 methylcyclopropane이 생긴다.	O → 5번 ①·15번 ①(형광펜, 필기 'Wolff-Kishner').	a05.webp	354
+[카보닐 첨가·환원] Wolff–Kishner 환원은 강산 조건에서 C=O를 CH₂로 바꾼다.	X → 하이드라진 + 강염기(KOH), 가열. 강산 조건 환원은 Clemmensen(Zn(Hg), HCl).	a15.webp	364
+[카보닐 첨가·환원] cyclopent-2-enone에 CH₃Li를 반응시킨 뒤 H₃O⁺ 처리하면 1,4-첨가로 3-methylcyclopentanone이 생긴다.	X → 유기리튬은 1,2-첨가 → 1-methylcyclopent-2-en-1-ol(15번 ② 필기 '1,2'). 15번 '옳지 않은 것'은 ②.	a15.webp	364
+[카보닐 첨가·환원] cyclohex-2-enone에 CH₃MgBr를 반응시킨 뒤 H₃O⁺ 처리하면 주로 1,2-첨가로 1-methylcyclohex-2-en-1-ol이 생긴다.	O → 5번 ⑤. 1,4-첨가는 Gilman 시약(R₂CuLi).	a05.webp	354
+[카보닐 첨가·환원] 2-methylcyclohex-2-enone에 Ph₃P=CHCH₃를 반응시키면 C=O가 C=CHCH₃로 바뀐다.	O → 5번 ② Wittig.	a05.webp	354
+[카보닐 첨가·환원] CH₃COCH₂CH₂CO₂Et에 CH₃MgBr 1당량을 가하면 에스터가 먼저 반응해 3차 알코올이 생긴다.	X → 1당량이면 더 반응성 큰 케톤과 반응한다(11번 ㄷ 필기 'Grignard시약은 ester와 반응x').	a11.webp	360
+[카보닐 첨가·환원] CH₃COCH₂CH₂CO₂Et + CH₃MgBr(1당량) 반응에서 생긴 알콕사이드가 분자 내 에스터를 공격해 5,5-dimethyl-γ-butyrolactone이 생긴다.	O → 11번 ㄷ 필기. 내가 ㄷ을 X로 보고 ② ㄴ을 골랐지만 정답 ④ ㄴ, ㄷ.	a11.webp	360
+[카보닐 첨가·환원] NaBH₄는 알데하이드와 함께 카복실산도 1차 알코올로 환원한다.	X → NaBH₄는 카복실산과 반응하지 않는다(13번 ㄱ 필기). 알데하이드만 환원된다.	a13.webp	362
+[카보닐 첨가·환원] 알데하이드-카복실산을 NaBH₄로 환원한 뒤 H⁺ 촉매를 가하면 분자 내 Fischer 에스터화로 고리형 락톤이 생긴다.	O → 13번 ㄱ 필기 'Fischer'(정답 ③ ㄱ, ㄴ).	a13.webp	362
+[카보닐 첨가·환원] CH₃COCH₂CH₂CONH₂를 LiAlH₄ → H₃O⁺로 처리하면 2-methyl-1-pyrroline(고리형 이민)이 생긴다.	X → LiAlH₄는 아마이드 C=O를 CH₂로(아민), 케톤을 알코올로 환원한다(10번 ㄱ).	a10.webp	359
+[카보닐 첨가·환원] benzonitrile에 CH₃CH₂MgBr를 반응시킨 뒤 H₃O⁺로 처리한 주생성물은 이민 PhC(=NH)CH₂CH₃이다.	X → 이민은 H₃O⁺에서 가수분해되어 propiophenone(케톤)이 된다(30번 ① 필기).	a30.webp	374
+[카보닐 첨가·환원] 알데하이드와 1,3-propanedithiol을 BF₃로 반응시키면 고리형 싸이오아세탈(1,3-dithiane)이 생기며 BF₃는 루이스 산 촉매이다.	O → 8번 ⑤(BF₃ 형광펜).	a08.webp	357
+[고리화·기타] dopamine 계열 β-arylethylamine과 알데하이드를 pH 6 물에서 반응시키면 먼저 이민(이미늄 이온)이 생긴다.	O → 10번 ㄷ(형광펜, 필기).	a10.webp	359
+[고리화·기타] 10번 ㄷ 고리화에서 친핵체는 아민 질소이고 친전자체는 방향족 고리이다.	X → OH로 활성화된 방향족 고리가 친핵체, 이미늄 탄소가 친전자체 → tetrahydroisoquinoline(6원 고리, 필기 번호 1~6).	a10.webp	359
+[고리화·기타] 이웃한 두 탄소에 OH가 있는 사슬 화합물을 HIO₄로 처리하면 C–C가 끊어져 사슬형 카보닐 화합물이 생긴다.	O → 8번 ②(형광펜). 주생성물이 고리 화합물이 아닌 반응 = 정답 ②.	a08.webp	357
+[고리화·기타] 3차 탄소를 가진 에폭사이드를 HBr로 열면 Br⁻은 덜 치환된 CH₂ 탄소를 공격한다.	X → HX는 3차 유무부터 판단: 3차가 있으면 치환기 많은 쪽 공격 → Br이 3차 탄소, OH는 CH₂(21번 2) 필기).	a21.webp	368
+[고리화·기타] 1차·2차 탄소만 있는 에폭사이드를 HX로 열면 치환기가 적은 쪽이 공격받는다.	O → 21번 2) 필기 '1,2차 – 치환기 적은 쪽 공격'.	a21.webp	368
+[고리화·기타] 2-bromo-2-methylbutane에 CH₃O⁻를 가해 2-methyl-2-butene을 얻는 반응은 제거 반응의 예이다.	O → 16번 ③(형광펜). 더 치환된 알켄(Zaitsev).	a16.webp	365
+[카복실산 반응] 2,4,6-trimethylbenzoic acid를 SOCl₂로 처리하면 산 염화물이 생긴다.	O → 30번 정답 ②.	a30.webp	374
+[카복실산 반응] benzoic acid를 CH₃CH₂OH, HCl 촉매로 반응시키면 benzoyl chloride가 생긴다.	X → Fischer 에스터화로 ethyl benzoate가 생긴다(30번 ③ 형광펜·필기).	a30.webp	374
+[카복실산 반응] Fischer 에스터화에서 에스터의 –OR 산소는 카복실산의 OH 산소에서 온다.	X → 알코올의 산소에서 온다. 카복실산의 OH는 물로 떨어진다(30번 ③ 필기 동그라미).	a30.webp	374
+[나일론] HOOC(CH₂)₈COOH와 H₂N(CH₂)₆NH₂의 반응 생성물은 nylon 6,10이다.	O → 28번 ㄱ(형광펜).	a28.webp	372
+[나일론] nylon 이름 'm,n'에서 앞 숫자는 다이아민, 뒤 숫자는 다이카복실산의 탄소 수이다.	O → 6(hexamethylenediamine), 10(decanedioic acid, 탄소 10개).	a28.webp	372
+[나일론] 다이카복실산과 다이아민으로 나일론을 만드는 반응은 첨가중합이다.	X → 물이 빠지는 축합중합(28번 ㄴ 필기). 28번 '옳지 않은 것' = ② ㄴ.	a28.webp	372
+[나일론] nylon 6,10은 아마이드 작용기(–CONH–)를 가진 폴리아마이드이다.	O → 28번 ㄷ(형광펜).	a28.webp	372
+[나일론] adipic acid(HOOC(CH₂)₄COOH)와 hexamethylenediamine으로 nylon 6,6이 생긴다.	O → 28번 필기.	a28.webp	372
+[나일론] nylon 6은 다이카복실산과 다이아민 두 단량체의 축합으로 만든다.	X → caprolactam 한 단량체의 개환 중합으로 만든다(28번 필기 'Nylon 6').	a28.webp	372
